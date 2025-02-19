@@ -51,6 +51,7 @@
   li {
     flex: 1;
     height: 1.5rem;
+    width: 100%;
     text-align: center;
     outline: 1px solid gray;
   }
