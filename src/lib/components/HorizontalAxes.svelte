@@ -3,14 +3,14 @@
 </script>
 
 {#if width <= 480}
-  <ul>
+  <ul class="axes-x">
     <li>A</li>
     <li>B</li>
     <li>C</li>
     <li>D</li>
   </ul>
 {:else if width > 480 && width <= 720}
-  <ul>
+  <ul class="axes-x">
     <li>A</li>
     <li>B</li>
     <li>C</li>
@@ -22,7 +22,7 @@
     <li>I</li>
   </ul>
 {:else}
-  <ul>
+  <ul class="axes-x">
     <li>A</li>
     <li>B</li>
     <li>C</li>
