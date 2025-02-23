@@ -1,35 +1,40 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { onMount, getContext, hasContext } from "svelte";
   import "../styles.css";
+  import { GRID } from "$lib/utils/gridData";
   import Navbar from "$lib/components/Navbar.svelte";
   import HorizontalAxes from "$lib/components/HorizontalAxes.svelte";
+  // import { windowSize } from "$lib/components/WindowSize.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
-  // let width = $state(0);
-  // let height = $state(0);
-  // let grid = $state<HTMLElement | null>(null);
-  const getGridDistance = (cols: number) => {
-    if (!grid) return;
-    const computedStyle = window.getComputedStyle(grid);
-    const columnGap = parseFloat(computedStyle.columnGap);
-    const columnWidth = parseFloat(
-      computedStyle.gridTemplateColumns.split(" ")[1]
-    );
-    return +columnWidth.toFixed(2) * cols + columnGap * (cols - 1);
-  };
-  let { width, height } = $props();
-
-  // onMount(() => {
-  //   grid = document.querySelector("main");
-  //   function onResize() {
-  //     width = document.documentElement.clientWidth;
-  //     height = document.documentElement.clientHeight;
-  //   }
-  //   window.addEventListener("resize", onResize);
-  //   onResize();
-  //   return () => {
-  //     window.removeEventListener("resize", onResize);
-  //   };
+  // const getGridDistance = (cols: number) => {
+  //   if (!hasContext("GRID")) return;
+  //   const grid = getContext("GRID");
+  //   const computedStyle = window.getComputedStyle(grid);
+  //   const columnGap = parseFloat(computedStyle.columnGap);
+  //   const columnWidth = parseFloat(
+  //     computedStyle.gridTemplateColumns.split(" ")[1]
+  //   );
+  //   return +columnWidth.toFixed(2) * cols + columnGap * (cols - 1);
+  // };
+  let grid = $state<ReturnType<typeof GRID>>(GRID());
+  let WINDOW: { width: number; height: number } = getContext("WINDOW");
+  // $effect(() => {
+  //   console.log(WINDOW.width, WINDOW.height);
   // });
+  // console.log(windowSize);
+  // getGridDistance(1);
+
+  onMount(() => {
+    grid = GRID();
+    window.addEventListener("resize", () => {
+      grid = GRID();
+    });
+    console.log($state.snapshot(grid.sidePadding));
+    return () => {
+      window.removeEventListener("resize", () => {});
+    };
+  });
+  const isMobile = $derived(WINDOW.width < 480);
 </script>
 
 <main>
@@ -37,42 +42,61 @@
     <article>
       <div>
         <h1>
-          <span>{width}</span>
-          <span>{height}</span>
+          <span>{WINDOW.width}</span>
+          <span>{WINDOW.height}</span>
         </h1>
       </div>
     </article>
   </section>
-  <DividerTrapezoid x={width} y={16} w={16} />
-  <DividerTrapezoid x={width} y={16} w={16} invert />
-  <section class="main-grid work-experience"></section>
-  <DividerTrapezoid x={width} y={16} w={16} />
-  <DividerTrapezoid x={width} y={16} w={16} invert />
+  <DividerTrapezoid
+    x={WINDOW.width}
+    y={isMobile ? 12 : 100}
+    w={isMobile ? grid.sidePadding : grid.getColumnsDistance(1) + grid.gap}
+    startEnd={1}
+  />
   <section class="main-grid projects"></section>
-  <DividerTrapezoid x={width} y={16} w={16} />
+  <DividerTrapezoid
+    x={WINDOW.width}
+    y={16}
+    w={16}
+    startEnd={isMobile ? 1 : 2}
+  />
+  <DividerTrapezoid
+    x={WINDOW.width}
+    y={16}
+    w={16}
+    startEnd={isMobile ? 1 : 2}
+    invert
+  />
+  <section class="main-grid work-experience"></section>
+  <!-- <section class="main-grid work-experience"></section>
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
+  <section class="main-grid projects"></section>
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
   <article class="cta-banner">
     <h2>
       <span>cta banner</span>
     </h2>
   </article>
-  <DividerTrapezoid x={width} y={16} w={16} invert />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
   <section class="main-grid new"></section>
-  <DividerTrapezoid x={width} y={16} w={16} />
-  <DividerTrapezoid x={width} y={16} w={16} invert />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
   <section class="main-grid new"></section>
-  <DividerTrapezoid x={width} y={16} w={16} />
-  <DividerTrapezoid x={width} y={16} w={16} invert />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
   <div class="stripped-divider"></div>
-  <DividerTrapezoid x={width} y={16} w={16} />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
   <article class="cta-banner" style="height: 40svh">
     <h2>
       <span>cta banner</span>
     </h2>
   </article>
-  <DividerTrapezoid x={width} y={16} w={16} invert />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
   <div class="stripped-divider"></div>
-  <DividerTrapezoid x={width} y={16} w={16} />
-  <DividerTrapezoid x={width} y={16} w={16} invert />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
+  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert /> -->
 </main>
 
 <style>
@@ -87,6 +111,12 @@
     grid-column: 1 / -1;
     width: 100%;
   }
+  section {
+    border: 1.5px solid blue;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
   .cta-banner {
     background-color: #d8d3c8;
     grid-column: 1 / -1;

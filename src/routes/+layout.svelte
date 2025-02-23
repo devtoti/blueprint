@@ -1,17 +1,14 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { onMount, setContext } from "svelte";
+  let { children } = $props();
   import Navbar from "$lib/components/Navbar.svelte";
   import Footer from "$lib/components/Footer.svelte";
-  import HorizontalAxes from "$lib/components/HorizontalAxes.svelte";
-  let { children, data } = $props();
-  let width = $state(0);
-  let height = $state(0);
-  let grid = $state<HTMLElement | null>(null);
+  let wnd = $state({ width: 0, height: 0 });
+  setContext("WINDOW", wnd);
   onMount(() => {
-    grid = document.querySelector("main");
     function onResize() {
-      width = document.documentElement.clientWidth;
-      height = document.documentElement.clientHeight;
+      wnd.width = document.documentElement.clientWidth;
+      wnd.height = document.documentElement.clientHeight;
     }
     window.addEventListener("resize", onResize);
     onResize();
@@ -21,6 +18,6 @@
   });
 </script>
 
-<Navbar {width} {height} />
+<!-- <Navbar {width} {height} /> -->
 {@render children()}
-<Footer {width} {height} />
+<!-- <Footer {width} {height} /> -->

@@ -15,10 +15,6 @@ footer {
   justify-items: center;
   column-gap: 8px;
   padding: 0 16px;
-  outline: 1px solid gray;
-  & > * {
-    outline: 1px solid lightgray;
-  }
   & .main-grid {
     grid-column: 1 / -1;
   }
