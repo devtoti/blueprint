@@ -8,7 +8,8 @@ const initialGrid = {
     getColumnsDistance(cols: number) {
         return 0;
     },
-    sidePadding: 0
+    sidePadding: 0,
+    widthNoPadding: 0
 }
 const GRID = () => {
    if (typeof document === 'undefined') return initialGrid  ;
@@ -17,12 +18,13 @@ const GRID = () => {
     const computedStyle = window.getComputedStyle(grid);
     const columnGap = parseFloat(computedStyle.columnGap);
     const columnWidth = parseFloat(
-        computedStyle.gridTemplateColumns.split(" ")[1]
+        computedStyle.gridTemplateColumns.split(" ")[2]
     );
     const columns = computedStyle.getPropertyValue("grid-template-columns");
     const padding = parseFloat(computedStyle.getPropertyValue("padding").split(" ")[1])
     const gridData = {
         width: grid.clientWidth,
+        widthNoPadding: grid.clientWidth - padding * 2,
         height: grid.clientHeight,
         columns: columns.split(" ").length,
         columnWidth: columnWidth,

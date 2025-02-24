@@ -29,92 +29,97 @@
     window.addEventListener("resize", () => {
       grid = GRID();
     });
-    console.log($state.snapshot(grid.sidePadding));
+    console.log(window.innerWidth, grid.widthNoPadding);
     return () => {
       window.removeEventListener("resize", () => {});
     };
   });
-  const isMobile = $derived(WINDOW.width < 480);
+  const isMobile = $derived(WINDOW.width <= 480);
+  const setDividerWidth = (width: number) => {
+    // 464px value because it takes away 2 times the column gap (2*8px)
+    // 1012px value because it takes away 2 times the column gap (2*8px)
+    switch (true) {
+      case width <= 464:
+        return grid.getColumnsDistance(4);
+      case width > 464 && width <= 1012:
+        return grid.getColumnsDistance(6);
+      case width > 1012:
+        return grid.getColumnsDistance(10);
+      default:
+        return grid.getColumnsDistance(10);
+    }
+  };
 </script>
 
+{#snippet sectionDividers(num: number)}
+  {#if num === 1}
+    <DividerTrapezoid
+      width={setDividerWidth(WINDOW.width)}
+      y={isMobile ? 24 : 100}
+      w={isMobile ? 24 : 100}
+      startEnd={isMobile ? 2 : 3}
+    />
+  {:else if num === 2}
+    <DividerTrapezoid
+      width={setDividerWidth(WINDOW.width)}
+      y={16}
+      w={isMobile ? 16 : 12}
+      startEnd={isMobile ? 2 : 3}
+    />
+    <DividerTrapezoid
+      width={setDividerWidth(WINDOW.width)}
+      y={16}
+      w={isMobile ? 16 : 12}
+      startEnd={isMobile ? 2 : 3}
+      invert
+    />
+  {/if}
+{/snippet}
+
 <main>
-  <section class="hero">
+  <section class="hero" style={`--side-padding: ${grid.sidePadding}px`}>
     <article>
       <div>
         <h1>
           <span>{WINDOW.width}</span>
-          <span>{WINDOW.height}</span>
+          <span>{grid.widthNoPadding}</span>
         </h1>
       </div>
     </article>
   </section>
   <DividerTrapezoid
-    x={WINDOW.width}
-    y={isMobile ? 12 : 100}
-    w={isMobile ? grid.sidePadding : grid.getColumnsDistance(1) + grid.gap}
+    width={WINDOW.width}
+    y={isMobile ? 16 : 100}
+    w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
   />
-  <section class="main-grid projects"></section>
-  <DividerTrapezoid
-    x={WINDOW.width}
-    y={16}
-    w={16}
-    startEnd={isMobile ? 1 : 2}
-  />
-  <DividerTrapezoid
-    x={WINDOW.width}
-    y={16}
-    w={16}
-    startEnd={isMobile ? 1 : 2}
-    invert
-  />
-  <section class="main-grid work-experience"></section>
-  <!-- <section class="main-grid work-experience"></section>
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
-  <section class="main-grid projects"></section>
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
-  <article class="cta-banner">
-    <h2>
-      <span>cta banner</span>
-    </h2>
-  </article>
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
-  <section class="main-grid new"></section>
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
-  <section class="main-grid new"></section>
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
-  <div class="stripped-divider"></div>
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
-  <article class="cta-banner" style="height: 40svh">
-    <h2>
-      <span>cta banner</span>
-    </h2>
-  </article>
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert />
-  <div class="stripped-divider"></div>
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} />
-  <DividerTrapezoid x={WINDOW.width} y={16} w={16} invert /> -->
+  <section class="main-content projects"></section>
+  {@render sectionDividers(2)}
+  <section class="main-content projects">
+    <h1>{WINDOW.width}</h1>
+  </section>
+  {@render sectionDividers(2)}
+  <section class="main-content projects"></section>
+  {@render sectionDividers(1)}
 </main>
 
 <style>
-  .main-grid {
+  .main-content {
     background-color: #e9e8e6;
-    width: 100%;
     height: 40svh;
+    grid-column: 2 / -2;
   }
   .hero {
     height: calc(100svh - 1.5rem);
     background-color: #e9e8e6;
     grid-column: 1 / -1;
-    width: 100%;
   }
   section {
     border: 1.5px solid blue;
     border-top: 0;
     border-bottom: 0;
+    grid-column: 1 / -1;
+    width: -webkit-fill-available;
   }
 
   .cta-banner {
@@ -138,5 +143,15 @@
     );
     height: 100px;
     background-color: #e9e8e6;
+  }
+  @media (min-width: 480px) {
+    .main-content {
+      grid-column: 3 / -3;
+    }
+  }
+  @media (min-width: 1029px) {
+    .main-content {
+      grid-column: 3 / -3;
+    }
   }
 </style>

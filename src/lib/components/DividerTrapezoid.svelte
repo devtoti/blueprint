@@ -1,31 +1,31 @@
 <script>
-  let { x, y, w, startEnd = 1, invert = false } = $props();
+  let { width, y, w, startEnd = 2, invert = false } = $props();
 </script>
 
 <svg
   class:invert
-  viewBox="0 0 {x} {y}"
+  viewBox="0 0 {width} {y}"
   height={y}
-  width="100%"
   preserveAspectRatio="none"
-  style={`--start: ${startEnd}; --end: -${startEnd}`}
+  style={`--start: ${startEnd}; --end: -${startEnd}; --width: ${width}px`}
 >
-  <polygon points="0,0 {w},{y} {x - w},{y} {x},0" fill="#E9E8E6" />
+  <polygon points="0,0 {w},{y} {width - w},{y} {width},0" fill="#E9E8E6" />
   <polyline points="0,0 {w},{y}" fill="none" stroke="blue" />
   <polyline
-    points="{w},{y} {x - w}, {y}"
+    points="{w},{y} {width - w}, {y}"
     fill="none"
     stroke-dasharray="8"
     stroke-width="1.5"
     stroke="blue"
   />
-  <polyline points="{x - w},{y} {x},0" fill="none" stroke="blue" />
+  <polyline points="{width - w},{y} {width},0" fill="none" stroke="blue" />
 </svg>
 
 <style>
   svg {
+    position: relative;
     grid-column: var(--start) / var(--end);
-    width: 100%;
+    /* width: var(--width); */
   }
   svg.invert {
     transform-box: fill-box;
