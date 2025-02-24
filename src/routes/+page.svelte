@@ -1,35 +1,18 @@
 <script lang="ts">
-  import { onMount, getContext, hasContext } from "svelte";
+  import { onMount, getContext } from "svelte";
   import "../styles.css";
   import { GRID } from "$lib/utils/gridData";
-  import Navbar from "$lib/components/Navbar.svelte";
-  import HorizontalAxes from "$lib/components/HorizontalAxes.svelte";
-  // import { windowSize } from "$lib/components/WindowSize.svelte";
+  import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
-  // const getGridDistance = (cols: number) => {
-  //   if (!hasContext("GRID")) return;
-  //   const grid = getContext("GRID");
-  //   const computedStyle = window.getComputedStyle(grid);
-  //   const columnGap = parseFloat(computedStyle.columnGap);
-  //   const columnWidth = parseFloat(
-  //     computedStyle.gridTemplateColumns.split(" ")[1]
-  //   );
-  //   return +columnWidth.toFixed(2) * cols + columnGap * (cols - 1);
-  // };
+  import CTABanner from "$lib/components/CTABanner.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
-  // $effect(() => {
-  //   console.log(WINDOW.width, WINDOW.height);
-  // });
-  // console.log(windowSize);
-  // getGridDistance(1);
 
   onMount(() => {
     grid = GRID();
     window.addEventListener("resize", () => {
       grid = GRID();
     });
-    console.log(window.innerWidth, grid.widthNoPadding);
     return () => {
       window.removeEventListener("resize", () => {});
     };
@@ -51,13 +34,14 @@
   };
 </script>
 
-{#snippet sectionDividers(num: number)}
+{#snippet sectionDividers(num: number, invert = false)}
   {#if num === 1}
     <DividerTrapezoid
       width={setDividerWidth(WINDOW.width)}
       y={isMobile ? 24 : 100}
       w={isMobile ? 24 : 100}
       startEnd={isMobile ? 2 : 3}
+      {invert}
     />
   {:else if num === 2}
     <DividerTrapezoid
@@ -81,8 +65,8 @@
     <article>
       <div>
         <h1>
-          <span>{WINDOW.width}</span>
-          <span>{grid.widthNoPadding}</span>
+          <span>Hello</span>
+          <span>World</span>
         </h1>
       </div>
     </article>
@@ -101,6 +85,28 @@
   {@render sectionDividers(2)}
   <section class="main-content projects"></section>
   {@render sectionDividers(1)}
+  <LandingMidBanner />
+  {@render sectionDividers(1, "invert")}
+  <section class="main-content projects"></section>
+  {@render sectionDividers(2)}
+  <section class="main-content projects"></section>
+  {@render sectionDividers(2)}
+  <section class="main-content stripped-divider"></section>
+  <DividerTrapezoid
+    width={setDividerWidth(WINDOW.width)}
+    y={isMobile ? 16 : 100}
+    w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
+    startEnd={1}
+  />
+  <CTABanner />
+  <DividerTrapezoid
+    width={setDividerWidth(WINDOW.width)}
+    y={isMobile ? 16 : 100}
+    w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
+    startEnd={1}
+    invert
+  />
+  <section class="main-content stripped-divider"></section>
 </main>
 
 <style>
@@ -132,7 +138,7 @@
     background-color: royalblue;
   }
   .stripped-divider {
-    grid-column: 1 / -1;
+    grid-column: 2 / -2;
     width: 100%;
     background: repeating-linear-gradient(
       to right,

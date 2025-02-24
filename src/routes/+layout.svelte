@@ -18,6 +18,6 @@
   });
 </script>
 
-<!-- <Navbar {width} {height} /> -->
+<Navbar window={wnd} />
 {@render children()}
-<!-- <Footer {width} {height} /> -->
+<Footer window={wnd} />
