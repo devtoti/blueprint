@@ -39,7 +39,7 @@
 
 <style>
   ul {
-    grid-column: 2 / -2;
+    grid-column: 1 / -1;
     width: 100%;
     list-style: none;
     margin: 0;
@@ -51,6 +51,7 @@
     width: 100%;
     text-align: center;
     outline: 1px solid gray;
+    background-color: #e9e8e6;
   }
   ul:last-child {
     grid-column-end: -2;

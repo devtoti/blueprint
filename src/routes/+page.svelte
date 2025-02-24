@@ -94,15 +94,15 @@
   <section class="main-content stripped-divider"></section>
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
-    y={isMobile ? 16 : 100}
-    w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
+    y={isMobile ? 16 : 12}
+    w={isMobile ? 16 : 12}
     startEnd={1}
   />
   <CTABanner />
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
-    y={isMobile ? 16 : 100}
-    w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
+    y={isMobile ? 16 : 12}
+    w={isMobile ? 16 : 12}
     startEnd={1}
     invert
   />

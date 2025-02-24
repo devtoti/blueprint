@@ -3,39 +3,53 @@
   let { window } = $props();
 </script>
 
-<HorizontalAxes width={window.width} height={window.height} />
 <nav>
-  <ul class="nav-links">
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <li>
-      <a href="/about">About</a>
-    </li>
-    <li>
-      <a href="/contact">Contact</a>
-    </li>
-  </ul>
+  <HorizontalAxes width={window.width} height={window.height} />
+  <article class="nav-container">
+    <ul class="nav-links">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+  </article>
 </nav>
 
 <style>
   nav {
     padding-bottom: 1rem;
-    height: 28px;
-    display: flex;
+    height: 52px;
     justify-content: space-between;
     flex-direction: column;
-    background-color: #e9e8e6;
+    background-color: #c2c2c2;
     padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-container {
+    height: 28px;
+    grid-column: 1 / -1;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    background-color: #e9e8e6;
     border-bottom: 1px solid #000;
     border-top: 1px solid #000;
   }
   ul.nav-links {
-    grid-column: 2 / -2;
     list-style: none;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
     gap: 1rem;
     margin: auto;
     display: flex;
-    justify-content: space-between;
   }
 </style>
