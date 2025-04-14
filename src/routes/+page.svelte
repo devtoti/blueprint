@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, getContext } from "svelte";
   import "../styles.css";
+  import "../tokens.css";
   import { GRID } from "$lib/utils/gridData";
   import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";

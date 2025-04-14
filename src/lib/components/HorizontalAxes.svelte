@@ -41,17 +41,19 @@
   ul {
     grid-column: 1 / -1;
     width: 100%;
+    height: 12px;
     list-style: none;
     margin: 0;
     padding: 0;
+    background-color: var(--bleu-200);
   }
 
   li {
-    height: 1.5rem;
     width: 100%;
+    font-size: 10px;
     text-align: center;
     outline: 1px solid gray;
-    background-color: #e9e8e6;
+    background-color: var(--bg-tertiary);
   }
   ul:last-child {
     grid-column-end: -2;

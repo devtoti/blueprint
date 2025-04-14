@@ -1,0 +1,396 @@
+{
+  "primitives": {
+    "bleu": {
+      "bleu-50": {
+        "dark": "{Colors.Blue.12}"
+      },
+      "bleu-100": {
+        "dark": "{Colors.Blue.11}"
+      },
+      "bleu-200": {
+        "dark": "{Colors.Blue.10}"
+      },
+      "bleu-300": {
+        "dark": "{Colors.Blue.9}"
+      },
+      "bleu-400": {
+        "dark": "{Colors.Blue.8}"
+      },
+      "bleu-500": {
+        "dark": "{Colors.Blue.7}"
+      },
+      "bleu-600": {
+        "dark": "{Colors.Blue.6}"
+      },
+      "bleu-700": {
+        "dark": "{Colors.Blue.6}"
+      },
+      "bleu-800": {
+        "dark": "{Colors.Blue.5}"
+      },
+      "bleu-900": {
+        "dark": "{Colors.Blue.4}"
+      },
+      "bleu-950": {
+        "dark": "{Colors.Blue.3}"
+      }
+    },
+    "gray": {
+      "gray-100": {
+        "dark": "#e9f1ff"
+      },
+      "gray-50": {
+        "dark": "#f2f7ff"
+      },
+      "gray-200": {
+        "dark": "#e5eefe"
+      },
+      "gray-300": {
+        "dark": "#d4e0f5"
+      },
+      "gray-400": {
+        "dark": "#c2d0ea"
+      },
+      "gray-500": {
+        "dark": "#adbad1"
+      },
+      "gray-600": {
+        "dark": "#a2abc0"
+      },
+      "gray-700": {
+        "dark": "#828eac"
+      },
+      "gray-800": {
+        "dark": "#57637f"
+      },
+      "gray-900": {
+        "dark": "#424b5f"
+      },
+      "gray-950": {
+        "dark": "#2d3341"
+      }
+    },
+    "yellow": {
+      "yellow-50": {
+        "dark": "#f9e1a4"
+      },
+      "yellow-100": {
+        "dark": "#f6d970"
+      },
+      "yellow-300": {
+        "dark": "#e6b04d"
+      },
+      "yellow-500": {
+        "dark": "#f6b501"
+      },
+      "yellow-700": {
+        "dark": "#c68c00"
+      },
+      "yellow-900": {
+        "dark": "#6c4000"
+      },
+      "yellow-950": {
+        "dark": "#4a1d00"
+      }
+    },
+    "gray alpha": {
+      "alpha-05": {
+        "dark": "rgba(39, 45, 57, 0.0500)"
+      },
+      "alpha-10": {
+        "dark": "rgba(39, 45, 57, 0.1000)"
+      },
+      "alpha-20": {
+        "dark": "rgba(39, 45, 57, 0.2000)"
+      },
+      "alpha-30": {
+        "dark": "rgba(39, 45, 57, 0.3000)"
+      },
+      "alpha-50": {
+        "dark": "rgba(39, 45, 57, 0.5000)"
+      },
+      "alpha-70": {
+        "dark": "rgba(39, 45, 57, 0.7000)"
+      },
+      "alpha-90": {
+        "dark": "rgba(39, 45, 57, 0.9000)"
+      }
+    },
+    "white alpha": {
+      "alpha-05": {
+        "dark": "rgba(255, 255, 255, 0.0500)"
+      },
+      "alpha-10": {
+        "dark": "rgba(255, 255, 255, 0.1000)"
+      },
+      "alpha-20": {
+        "dark": "rgba(255, 255, 255, 0.2000)"
+      },
+      "alpha-30": {
+        "dark": "rgba(255, 255, 255, 0.3000)"
+      },
+      "alpha-50": {
+        "dark": "rgba(255, 255, 255, 0.5000)"
+      },
+      "alpha-70": {
+        "dark": "rgba(255, 255, 255, 0.7000)"
+      },
+      "alpha-90": {
+        "dark": "rgba(255, 255, 255, 0.9000)"
+      }
+    },
+    "gold": {
+      "gold-50": {
+        "dark": "#ffeda7"
+      },
+      "gold-100": {
+        "dark": "#ffe169"
+      },
+      "gold-200": {
+        "dark": "#fad642"
+      },
+      "gold-300": {
+        "dark": "#edc530"
+      },
+      "gold-400": {
+        "dark": "#dbb42b"
+      },
+      "gold-500": {
+        "dark": "#caa228"
+      },
+      "gold-600": {
+        "dark": "#b69021"
+      },
+      "gold-700": {
+        "dark": "#a47e1b"
+      },
+      "gold-800": {
+        "dark": "#916c14"
+      },
+      "gold-900": {
+        "dark": "#815b10"
+      },
+      "gold-950": {
+        "dark": "#583c09"
+      }
+    }
+  },
+  "semantic": {
+    "background": {
+      "bg-primary": {
+        "dark": "{Colors.Sand.2}"
+      },
+      "bg-secondary": {
+        "dark": "{Colors.Sand.2}"
+      },
+      "bg-tertiary": {
+        "dark": "{Colors.Sand.3}"
+      },
+      "bg-brand": {
+        "dark": "{brand.brand-primary}"
+      },
+      "bg-brand-light": {
+        "dark": "{brand.brand-light}"
+      },
+      "bg-brand-dark": {
+        "dark": "{brand.brand-dark}"
+      },
+      "bg-light": {
+        "dark": "{bleu.bleu-50}"
+      },
+      "bg-sunken-1": {
+        "dark": "{gray alpha.alpha-10}"
+      },
+      "bg-sunken-2": {
+        "dark": "{gray alpha.alpha-20}"
+      },
+      "bg-sunken-3": {
+        "dark": "{gray alpha.alpha-50}"
+      },
+      "bg-sunken-4": {
+        "dark": "{gray alpha.alpha-70}"
+      },
+      "bg-blueprint": {
+        "dark": "{bleu.bleu-900}"
+      }
+    },
+    "foreground": {
+      "fg-primary": {
+        "dark": "{Colors.Sand.1}"
+      },
+      "fg-secondary": {
+        "dark": "{Colors.Sand.2}"
+      },
+      "fg-tertiary": {
+        "dark": "{Colors.Sand.3}"
+      },
+      "fg-brand": {
+        "dark": "rgba(138, 98, 0, 0.2000)"
+      },
+      "fg-accent": {
+        "dark": "rgba(255, 207, 100, 0.1500)"
+      },
+      "fg-raised-1": {
+        "dark": "{white alpha.alpha-10}"
+      },
+      "fg-raised-2": {
+        "dark": "{white alpha.alpha-30}"
+      },
+      "fg-raised-3": {
+        "dark": "{white alpha.alpha-50}"
+      }
+    },
+    "text": {
+      "text-primary": {
+        "dark": "{Colors.Blue.9}"
+      },
+      "text-secondary": {
+        "dark": "{Colors.Blue.8}"
+      },
+      "text-tertiary": {
+        "dark": "{bleu.bleu-600}"
+      },
+      "text-light": {
+        "dark": "{bleu.bleu-100}"
+      },
+      "text-brand": {
+        "dark": "{brand.brand-light}"
+      },
+      "text-accent": {
+        "dark": "{bleu.bleu-100}"
+      }
+    },
+    "semantic": {
+      "s-background": {
+        "bg-info": {
+          "dark": "#d5efff"
+        },
+        "bg-danger": {
+          "dark": "#ffdbdc"
+        },
+        "bg-success": {
+          "dark": "#d6f1df"
+        },
+        "bg-warning": {
+          "dark": "#fff394"
+        }
+      },
+      "s-icons": {
+        "icons-info": {
+          "dark": "#0090ff"
+        },
+        "icons-warning": {
+          "dark": "#ffc53d"
+        },
+        "icons-danger": {
+          "dark": "#e5484d"
+        },
+        "icons-success": {
+          "dark": "#30a46c"
+        }
+      },
+      "s-text": {
+        "text-info": {
+          "dark": "#0090ff"
+        },
+        "text-warning": {
+          "dark": "#ffc53d"
+        },
+        "text-danger": {
+          "dark": "#e5484d"
+        },
+        "text-success": {
+          "dark": "#30a46c"
+        }
+      },
+      "s-border": {
+        "border-info": {
+          "dark": "#c2e5ff"
+        },
+        "border-warning": {
+          "dark": "#fbe577"
+        },
+        "border-danger": {
+          "dark": "#ffcdce"
+        },
+        "border-success": {
+          "dark": "#c4e8d1"
+        }
+      }
+    },
+    "brand": {
+      "brand-primary": {
+        "dark": "#ffbf49"
+      },
+      "brand-light": {
+        "dark": "#f6d970"
+      },
+      "brand-dark": {
+        "dark": "#f6b501"
+      },
+      "brand-accent": {
+        "dark": "#cb3f42"
+      }
+    },
+    "borders": {
+      "border-brand": {
+        "dark": "{brand.brand-accent}"
+      },
+      "border-primary": {
+        "dark": "{Colors.Blue.8}"
+      },
+      "border-secondary": {
+        "dark": "{Colors.Blue.7}"
+      },
+      "border-tertiary": {
+        "dark": "{Colors.Blue.6}"
+      },
+      "border-light": {
+        "dark": "{bleu.bleu-300}"
+      },
+      "border-dark": {
+        "dark": "{bleu.bleu-800}"
+      }
+    },
+    "radii": {
+      "sm": {
+        "dark": 4
+      },
+      "md": {
+        "dark": 6
+      },
+      "lg": {
+        "dark": 8
+      },
+      "xl": {
+        "dark": 12
+      },
+      "full": {
+        "dark": 9999
+      },
+      "xs": {
+        "dark": 3
+      }
+    },
+    "icons": {
+      "brand": {
+        "dark": "{brand.brand-accent}"
+      },
+      "primary": {
+        "dark": "{Colors.Blue.9}"
+      },
+      "secondary": {
+        "dark": "{Colors.Blue.7}"
+      },
+      "tertiary": {
+        "dark": "{Colors.Blue.6}"
+      },
+      "light": {
+        "dark": "{bleu.bleu-100}"
+      },
+      "dark": {
+        "dark": "{bleu.bleu-700}"
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "primitives": {
+    "blue": {
+      "blue-1": {
+        "light": "#EFF6FF",
+        "dark": "#0F172A"
+      },
+      "blue-2": {
+        "light": "#DBEAFE",
+        "dark": "#1E3A8A"
+      },
+      "blue-3": {
+        "light": "#BFDBFE",
+        "dark": "#1E40AF"
+      },
+      "blue-4": {
+        "light": "#93C5FD",
+        "dark": "#1D4ED8"
+      },
+      "blue-5": {
+        "light": "#60A5FA",
+        "dark": "#2563EB"
+      },
+      "blue-6": {
+        "light": "#3B82F6",
+        "dark": "#3B82F6"
+      },
+      "blue-7": {
+        "light": "#2563EB",
+        "dark": "#60A5FA"
+      },
+      "blue-8": {
+        "light": "#1D4ED8",
+        "dark": "#93C5FD"
+      },
+      "blue-9": {
+        "light": "#1E40AF",
+        "dark": "#BFDBFE"
+      },
+      "blue-10": {
+        "light": "#1E3A8A",
+        "dark": "#DBEAFE"
+      },
+      "blue-11": {
+        "light": "#172554",
+        "dark": "#EFF6FF"
+      },
+      "blue-12": {
+        "light": "#0F172A",
+        "dark": "#F8FAFC"
+      }
+    },
+    "sand": {
+      "sand-1": {
+        "light": "#FAFAF9",
+        "dark": "#000000"
+      },
+      "sand-2": {
+        "light": "#F5F5F4",
+        "dark": "#0C0A09"
+      },
+      "sand-3": {
+        "light": "#E7E5E4",
+        "dark": "#1C1917"
+      },
+      "sand-4": {
+        "light": "#D6D3D1",
+        "dark": "#292524"
+      },
+      "sand-5": {
+        "light": "#A8A29E",
+        "dark": "#44403C"
+      },
+      "sand-6": {
+        "light": "#78716C",
+        "dark": "#57534E"
+      },
+      "sand-7": {
+        "light": "#57534E",
+        "dark": "#78716C"
+      },
+      "sand-8": {
+        "light": "#44403C",
+        "dark": "#A8A29E"
+      },
+      "sand-9": {
+        "light": "#292524",
+        "dark": "#D6D3D1"
+      },
+      "sand-10": {
+        "light": "#1C1917",
+        "dark": "#E7E5E4"
+      },
+      "sand-11": {
+        "light": "#0C0A09",
+        "dark": "#F5F5F4"
+      },
+      "sand-12": {
+        "light": "#000000",
+        "dark": "#FAFAF9"
+      }
+    }
+  }
+}

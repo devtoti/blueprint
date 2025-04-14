@@ -23,7 +23,7 @@
 <style>
   nav {
     padding-bottom: 1rem;
-    height: 52px;
+    height: 64px;
     justify-content: space-between;
     flex-direction: column;
     background-color: #c2c2c2;
@@ -33,15 +33,13 @@
     z-index: 100;
   }
   .nav-container {
-    height: 28px;
+    height: 52px;
     grid-column: 1 / -1;
     width: 100%;
     display: grid;
     place-items: center;
     justify-content: center;
-    background-color: #e9e8e6;
-    border-bottom: 1px solid #000;
-    border-top: 1px solid #000;
+    background-color: var(--bg-secondary);
   }
   ul.nav-links {
     list-style: none;
