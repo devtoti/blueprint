@@ -40,6 +40,7 @@
     place-items: center;
     justify-content: center;
     background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-3);
   }
   ul.nav-links {
     list-style: none;

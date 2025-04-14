@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, getContext } from "svelte";
+  import "@radix-ui/themes/styles.css";
   import "../styles.css";
   import "../tokens.css";
   import { GRID } from "$lib/utils/gridData";

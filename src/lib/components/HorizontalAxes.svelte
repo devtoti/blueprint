@@ -52,7 +52,6 @@
     width: 100%;
     font-size: 10px;
     text-align: center;
-    outline: 1px solid gray;
     background-color: var(--bg-tertiary);
   }
   ul:last-child {

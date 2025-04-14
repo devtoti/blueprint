@@ -154,6 +154,25 @@
   --icon-tertiary: var(--bleu-100);
   --icon-light: #ffffff;
   --icon-dark: var(--bleu-700);
+
+  /* Semantic - Shadows */
+  --shadow-1: inset 0 1.5px 2px 0 var(--white-alpha-10),
+    inset 0 1.5px 2px 0 var(--gray-alpha-20);
+
+  --shadow-2: 0 1px 1px 0 var(--gray-alpha-20),
+    0 2px 1px -1px var(--gray-alpha-10), 0 1px 3px 0 var(--gray-alpha-10);
+
+  --shadow-3: 0 2px 3px -2px var(--gray-alpha-30),
+    0 3px 12px -4px var(--gray-alpha-20), 0 4px 16px -8px var(--gray-alpha-20);
+
+  --shadow-4: 0 8px 40px var(--gray-alpha-10),
+    0 12px 32px -16px var(--gray-alpha-30);
+
+  --shadow-5: 0 12px 60px var(--gray-alpha-30),
+    0 12px 32px -16px var(--gray-alpha-50);
+
+  --shadow-6: 0 12px 60px var(--gray-alpha-30), 0 16px 64px var(--gray-alpha-20),
+    0 16px 36px -20px var(--gray-alpha-70);
 }
 
 [data-theme="dark"] {
@@ -241,4 +260,23 @@
   --icon-tertiary: var(--bleu-600);
   --icon-light: var(--bleu-100);
   --icon-dark: var(--bleu-700);
+
+  /* Semantic - Shadows */
+  --shadow-1: inset 0 -1px 1px 0 var(--gray-alpha-30),
+    inset 0 3px 4px 0 var(--gray-alpha-50);
+
+  --shadow-2: 0 1px 1px 0 var(--gray-alpha-60),
+    0 2px 1px -1px var(--gray-alpha-60), 0 1px 3px 0 var(--gray-alpha-50);
+
+  --shadow-3: 0 2px 3px -2px var(--gray-alpha-30),
+    0 3px 8px -2px var(--gray-alpha-60), 0 4px 12px -4px var(--gray-alpha-70);
+
+  --shadow-4: 0 8px 40px var(--gray-alpha-30),
+    0 12px 32px -16px var(--gray-alpha-50);
+
+  --shadow-5: 0 12px 60px var(--gray-alpha-50),
+    0 12px 32px -16px var(--gray-alpha-70);
+
+  --shadow-6: 0 12px 60px var(--gray-alpha-40), 0 16px 64px var(--gray-alpha-60),
+    0 16px 36px -20px var(--gray-alpha-90);
 }
