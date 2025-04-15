@@ -94,9 +94,9 @@
   --gold-950: #583c09;
 
   /* Semantic - Background */
-  --bg-primary: var(--sand-radix-300);
-  --bg-secondary: var(--sand-radix-400);
-  --bg-tertiary: var(--sand-radix-500);
+  --bg-primary: var(--sand-radix-200);
+  --bg-secondary: var(--sand-radix-300);
+  --bg-tertiary: var(--sand-radix-400);
   --bg-brand: var(--brand-primary);
   --bg-brand-light: var(--brand-light);
   --bg-brand-dark: var(--brand-dark);
