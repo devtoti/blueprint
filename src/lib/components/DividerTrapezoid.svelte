@@ -4,6 +4,7 @@
 
 <svg
   class:invert
+  class="grainy"
   viewBox="0 0 {width} {y}"
   height={y}
   preserveAspectRatio="none"

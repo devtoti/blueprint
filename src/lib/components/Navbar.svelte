@@ -5,7 +5,7 @@
   import IconSidebar from '~icons/solar/siderbar-outline'
 </script>
 
-<nav>
+<nav class="grainy">
   <HorizontalAxes width={window.width} height={window.height} />
   <article class="nav-container">
     <ul class="nav-links desktop-only">
@@ -74,19 +74,7 @@
     text-transform: uppercase;
     color: var(--text-secondary);
   }
-  nav::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("src/lib/images/grainy-texture.png") center center;
-    background-size: 64px 64px;
-    filter: invert(0.15);
-    mix-blend-mode: multiply;
-    pointer-events: none;
-  }
+
   /* .mobile-nav {
     grid-column: 1 / -1;
     display: flex;

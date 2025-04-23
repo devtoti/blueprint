@@ -12,8 +12,8 @@ const initialGrid = {
     widthNoPadding: 0
 }
 const GRID = () => {
-   if (typeof document === 'undefined') return initialGrid  ;
-    const grid = document.querySelector("main");
+   if (typeof document === 'undefined') return initialGrid;
+    const grid = document.querySelector("main")
     if (!grid) return initialGrid;
     const computedStyle = window.getComputedStyle(grid);
     const columnGap = parseFloat(computedStyle.columnGap);
@@ -34,6 +34,7 @@ const GRID = () => {
         },
         sidePadding: padding
     };
+    console.log(columns)
     return gridData;
 };
 

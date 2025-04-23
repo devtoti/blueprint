@@ -1,4 +1,6 @@
 :root {
+  --white: #ffffff;
+  --black: #000000;
   /* Primitives - Bleu */
   --bleu-50: #e7edff;
   --bleu-100: #c7d1eb;

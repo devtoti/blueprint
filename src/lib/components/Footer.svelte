@@ -4,7 +4,7 @@
   let { window } = $props();
 </script>
 
-<footer class="footer">
+<footer class="footer grainy">
   <article class="footer-container">
     <p>Footer</p>
   </article>
@@ -17,7 +17,9 @@
     padding: 0;
     box-sizing: border-box;
   }
+
   .footer {
+    position: relative;
     padding-bottom: 1rem;
     height: 28px;
     display: flex;
