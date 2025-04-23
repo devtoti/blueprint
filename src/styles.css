@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --col-gap: 8px;
   --side-padding-mobile: calc(16px - var(--col-gap));
@@ -8,10 +10,21 @@
   padding: 0;
   box-sizing: border-box;
   max-width: 100svw;
+  font-family: 'Roboto', sans-serif;
 }
 body {
   margin: 0 !important;
 }
+
+/* .desktop-only {
+  z-index: -100;
+  opacity: 0;
+}
+
+.mobile-only {
+  z-index: 1;
+  opacity: 1;
+} */
 
 main,
 nav,
@@ -25,6 +38,7 @@ ul.axes {
   justify-items: center;
   column-gap: var(--col-gap);
 }
+
 @media (min-width: 480px) {
   main,
   nav,
@@ -35,6 +49,15 @@ ul.axes {
       );
   }
 }
+/* .desktop-only {
+  z-index: 1;
+  opacity: 1;
+}
+
+.mobile-only {
+  z-index: -100;
+  opacity: 0;
+} */
 
 @media (min-width: 1029px) {
   main,
@@ -45,4 +68,5 @@ ul.axes {
         --side-padding-desktop
       );
   }
+  
 }

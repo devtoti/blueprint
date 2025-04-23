@@ -2,9 +2,12 @@
   let { width, height } = $props();
   let highlightDims = $state({ widthLeft: 0, widthRight: 0 });
   const axes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
-  const highlightAxis = (axis: MouseEvent & { currentTarget: HTMLLIElement }) => {
+  const highlightAxis = (
+    axis: MouseEvent & { currentTarget: HTMLLIElement }
+  ) => {
     const elem = axis.currentTarget.getBoundingClientRect();
-    const rightHighlight = document.documentElement.clientWidth - elem.x - elem.width;
+    const rightHighlight =
+      document.documentElement.clientWidth - elem.x - elem.width;
     highlightDims.widthLeft = elem.x;
     highlightDims.widthRight = rightHighlight;
   };
@@ -15,39 +18,51 @@
 </script>
 
 {#if width <= 464}
-<span
-  class="highlight-before"
-  style="left: 0; width: {highlightDims.widthLeft}px;"
-></span>
-<span class="highlight-after" style="right: 0; width: {highlightDims.widthRight}px;"
-></span>
+  <span
+    class="highlight-before"
+    style="left: 0; width: {highlightDims.widthLeft}px;"
+  ></span>
+  <span
+    class="highlight-after"
+    style="right: 0; width: {highlightDims.widthRight}px;"
+  ></span>
   <ul class="axes axes-x">
-    {#each axes.slice(0,4) as axis}
-      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>{axis}</li>
+    {#each axes.slice(0, 4) as axis}
+      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
+        {axis}
+      </li>
     {/each}
   </ul>
 {:else if width > 464 && width <= 1012}
-<span
-  class="highlight-before"
-  style="left: 0; width: {highlightDims.widthLeft}px;"
-></span>
-<span class="highlight-after" style="right: 0; width: {highlightDims.widthRight}px;"
-></span>
+  <span
+    class="highlight-before"
+    style="left: 0; width: {highlightDims.widthLeft}px;"
+  ></span>
+  <span
+    class="highlight-after"
+    style="right: 0; width: {highlightDims.widthRight}px;"
+  ></span>
   <ul class="axes axes-x">
-    {#each axes.slice(0,8) as axis}
-      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>{axis}</li>
+    {#each axes.slice(0, 8) as axis}
+      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
+        {axis}
+      </li>
     {/each}
   </ul>
 {:else if width > 1012}
-<span
-  class="highlight-before"
-  style="left: 0; width: {highlightDims.widthLeft}px;"
-></span>
-<span class="highlight-after" style="right: 0; width: {highlightDims.widthRight}px;"
-></span>
+  <span
+    class="highlight-before"
+    style="left: 0; width: {highlightDims.widthLeft}px;"
+  ></span>
+  <span
+    class="highlight-after"
+    style="right: 0; width: {highlightDims.widthRight}px;"
+  ></span>
   <ul class="axes axes-x">
     {#each axes as axis}
-      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>{axis}</li>
+      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
+        {axis}
+      </li>
     {/each}
   </ul>
 {/if}
@@ -62,12 +77,14 @@
     padding: 0;
     background-color: var(--bleu-200);
     position: relative;
+    font-weight: 500;
+    font-size: 10px;
+    color: var(--text-secondary);
   }
 
   li {
     position: relative;
     width: 100%;
-    font-size: 10px;
     text-align: center;
     background-color: var(--bg-tertiary);
   }
@@ -81,7 +98,7 @@
     opacity: 0.1;
     pointer-events: none;
     height: 100svh;
-    z-index: 100; 
+    z-index: 100;
   }
   /* li:hover::after {
     content: "";
