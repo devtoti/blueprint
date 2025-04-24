@@ -7,6 +7,7 @@
   import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import CTABanner from "$lib/components/CTABanner.svelte";
+  import Heading from "$lib/components/Heading.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
 
@@ -88,34 +89,38 @@
     startEnd={1}
   />
   <section class="main-content projects grainy">
-    <article class="section-content">
-      <h2>Projects</h2>
-    </article>
+    <Heading
+      heading="Experiencia Laboral"
+      subheading="Durante los últimos +5 años he desarrollado un interés particular por el diseño UI/UX y el desarrollo frontend de manera integral. He trabajado en diversos startups de Estados Unidos y Canadá, desempeñándome primordialmente como frontend designer."
+    />
   </section>
   {@render sectionDividers(2)}
   <section class="main-content projects grainy">
-    <h1>{WINDOW.width}</h1>
+    <Heading
+      heading="Proyectos Destacados"
+      subheading="Cuatro proyectos de contratación directa han sido seleccionados, siendo éstos principalmente páginas web con un tratamiento único de brand design e implementación con código. Los proyectos de diseño han sido realizados con Figma, Illustrator y Photoshop, mientras que la traducción a código ha sido con React y Svelte."
+      alignRight
+    />
   </section>
   {@render sectionDividers(2)}
   <section class="main-content projects grainy">
-    <article class="section-content">
-      <h2>Projects</h2>
-    </article>
+    <Heading
+      heading="Enfoque Dual Diseño-Código"
+      subheading="Los sitios web exitosos requieren comprensión de diseño y desarrollo de manera integral. Por ello, la colaboración entre diseñadores y programadores para cerrar brechas resulta esencial."
+    />
   </section>
   {@render sectionDividers(1)}
-  <LandingMidBanner />
+  <LandingMidBanner offset={grid.columnWidth} />
   {@render sectionDividers(1, "invert")}
   <section class="main-content projects grainy">
-    <article class="section-content">
-      <h2>Projects</h2>
-    </article>
+    <Heading
+      heading="Servicios Disponibles"
+      subheading="Ofrezco una amplia gama de servicios afines al diseño y el desarrollo de aplicaciones web."
+      alignRight
+    />
   </section>
   {@render sectionDividers(2)}
-  <section class="main-content projects grainy">
-    <article class="section-content">
-      <h2>Projects</h2>
-    </article>
-  </section>
+  <section class="main-content projects grainy"></section>
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
     y={isMobile ? 16 : 12}
@@ -147,16 +152,14 @@
     height: 40svh;
     grid-column: 2 / -2;
   }
-  /* .hero {
-    height: calc(100svh - 1.5rem);
-    background-color: var(--bg-secondary);
-    border: 0;
-  } */
+
   .hero {
     position: relative;
     height: 100svh;
     place-items: center;
-    /* place-content: center; */
+    background-image: url("src/lib/images/iso-grid.svg");
+    background-size: cover;
+    background-position: center;
   }
   .section-content {
     grid-column: 2 / -2;
@@ -170,7 +173,6 @@
     grid-column: 1 / -1;
     background-color: var(--bg-primary);
     width: -webkit-fill-available;
-    /* padding: 0 calc(var(--side-padding-mobile) + var(--col-gap)); */
   }
   .hero-content {
     place-items: center;
@@ -223,15 +225,6 @@
         border-radius: 0.5rem;
       }
     }
-  }
-  .cta-banner {
-    background-color: #d8d3c8;
-    grid-column: 1 / -1;
-    width: 100%;
-    height: 20svh;
-  }
-  main .cta-banner:last-of-type {
-    background-color: royalblue;
   }
   .stripped-divider {
     grid-column: 2 / -2;

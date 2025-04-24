@@ -18,8 +18,8 @@ body {
   background-color: var(--bg-secondary);
   background-size: 16px 16px;
   background-image:
-    linear-gradient(to right, var(--bleu-200) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--bleu-200) 1px, transparent 1px);
+    linear-gradient(to right, var(--bleu-100) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bleu-100) 1px, transparent 1px);
 }
 .bg-texture::before {
     content: "";

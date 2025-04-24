@@ -91,23 +91,6 @@
     margin-bottom: -1px;
     z-index: 3;
   }
-  /* .invert .divider-wrapper {
-    border-top: 1px solid green;
-    border-bottom: none;
-    margin: 0 auto;
-    margin-top: -1px;
-    z-index: 999;
-  } */
-  /* .divider-wrapper {
-    grid-column: var(--start) / var(--end);
-    width: 100%;
-    display: block;
-    position: absolute;
-    height: 10px;
-    background-color: var(--bg-primary);
-    border-bottom: 1px solid var(--border-secondary);
-    margin-bottom: -1px;
-  } */
   .invert svg {
     transform-box: fill-box;
     transform-origin: center;
