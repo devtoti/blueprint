@@ -62,8 +62,8 @@
   {/if}
 {/snippet}
 
-<main class="grainy">
-  <section class="hero">
+<main>
+  <section class="hero grainy">
     <article class="section-content hero-content">
       <div class="title">
         <h1 class="barlow-extrabold">Blueprint.dev</h1>
@@ -146,6 +146,7 @@
     border: 0;
   } */
    .hero {
+    position: relative;
     height: 100svh;
     place-items: center;
     /* place-content: center; */
@@ -155,7 +156,7 @@
     grid-column: 2 / -2;
   }
   section {
-    border: 1.5px solid var(--border-primary);
+    border: 1.5px solid var(--border-secondary);
     min-height: 100%;
     border-top: 0;
     border-bottom: 0;

@@ -15,13 +15,26 @@
 body {
   margin: 0 !important;
 }
-.grainy::after {
+.grainy:not(.hero)::after{
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: min(100%, 100svh);
+    background: url("src/lib/images/grainy-texture.png") center center;
+    background-size: 64px 64px;
+    filter: invert(0.15);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+.hero.grainy::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
     background: url("src/lib/images/grainy-texture.png") center center;
     background-size: 64px 64px;
     filter: invert(0.15);

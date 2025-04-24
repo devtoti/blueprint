@@ -10,41 +10,46 @@
   preserveAspectRatio="none"
   style={`--start: ${startEnd}; --end: -${startEnd}; --width: ${width}px`}
 >
-  <polygon points="0,0 {w},{y} {width - w},{y} {width},0" fill="#E9E8E6" />
-  <polyline points="0,0 {w},{y}" fill="none" stroke="blue" />
+  <defs>
+    <pattern id="grain" patternUnits="userSpaceOnUse" width="64" height="64">
+      <image
+        href="src/lib/images/grainy-texture.png"
+        x="0"
+        y="0"
+        width="64"
+        height="64"
+        style="filter: invert(0.15); mix-blend-mode: multiply;"
+      />
+    </pattern>
+  </defs>
+  <polygon
+    points="0,0 {w},{y} {width - w},{y} {width},0"
+    fill="var(--bg-primary)"
+  />
+  <polygon
+    points="0,0 {w},{y} {width - w},{y} {width},0"
+    fill="url(#grain)"
+    style="mix-blend-mode: multiply;"
+  />
+  <polyline points="0,0 {w},{y}" fill="none" stroke="var(--border-secondary)" />
   <polyline
     points="{w},{y} {width - w}, {y}"
     fill="none"
     stroke-dasharray="8"
     stroke-width="1.5"
-    stroke="blue"
+    stroke="var(--border-secondary)"
   />
-  <polyline points="{width - w},{y} {width},0" fill="none" stroke="blue" />
+  <polyline points="{width - w},{y} {width},0" fill="none" stroke="var(--border-secondary)" />
 </svg>
 
 <style>
   svg {
     position: relative;
     grid-column: var(--start) / var(--end);
-    /* width: var(--width); */
   }
   svg.invert {
     transform-box: fill-box;
     transform-origin: center;
     transform: rotate(180deg);
   }
-  /* svg .invert:first-child {
-    transform: rotate(90deg);
-    fill: red;
-  }
-
-  svg .invert:nth-child(3) {
-    transform: rotate(270deg);
-    fill: red;
-  }
-
-  svg .invert:last-child {
-    transform: rotate(180deg);
-    stroke-width: 1.5;
-  } */
 </style>
