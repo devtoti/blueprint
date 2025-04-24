@@ -104,7 +104,7 @@
   </section>
   {@render sectionDividers(1)}
   <LandingMidBanner />
-  {@render sectionDividers(1,"invert")}
+  {@render sectionDividers(1, "invert")}
   <section class="main-content projects grainy">
     <article class="section-content">
       <h2>Projects</h2>
@@ -120,17 +120,24 @@
     width={setDividerWidth(WINDOW.width)}
     y={isMobile ? 16 : 12}
     w={isMobile ? 16 : 12}
-    startEnd={1}
+    startEnd={isMobile ? 2 : 3}
   />
   <CTABanner />
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
     y={isMobile ? 16 : 12}
     w={isMobile ? 16 : 12}
-    startEnd={1}
+    startEnd={isMobile ? 2 : 3}
     invert
   />
   <section class="main-content stripped-divider"></section>
+  <DividerTrapezoid
+    width={WINDOW.width}
+    y={isMobile ? 16 : 100}
+    w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
+    startEnd={1}
+    invert
+  />
 </main>
 
 <style>
@@ -145,14 +152,13 @@
     background-color: var(--bg-secondary);
     border: 0;
   } */
-   .hero {
+  .hero {
     position: relative;
     height: 100svh;
     place-items: center;
     /* place-content: center; */
-   }
+  }
   .section-content {
-
     grid-column: 2 / -2;
   }
   section {
@@ -185,7 +191,11 @@
       text-transform: uppercase;
       font-weight: 900;
       h1 {
-        background: -webkit-linear-gradient(left, var(--bleu-400), var(--bleu-600));
+        background: -webkit-linear-gradient(
+          left,
+          var(--bleu-400),
+          var(--bleu-600)
+        );
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
