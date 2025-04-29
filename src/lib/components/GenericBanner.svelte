@@ -19,8 +19,8 @@
     );
     color: var(--white);
     height: 20svh;
-    width: 100%;
     width: calc(100% - var(--side-padding-mobile) * 6);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,8 +50,8 @@
     .mid-banner {
       grid-column: 3 / -3;
       width: calc(100% - var(--offset) * 2);
-      width: 100%;
       width: calc(100% - 100px * 2);
+      width: 100%;
     }
   }
   @media (min-width: 1029px) {

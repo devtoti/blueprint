@@ -5,6 +5,7 @@
   --side-padding-mobile: calc(16px - var(--col-gap));
   --side-padding-desktop: calc(12px - var(--col-gap));
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -12,57 +13,86 @@
   max-width: 100svw;
   font-family: 'Roboto', sans-serif;
 }
+
 body {
   position: relative;
   margin: 0 !important;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-tertiary);
   background-size: 16px 16px;
   background-image:
-    linear-gradient(to right, var(--bleu-100) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--bleu-100) 1px, transparent 1px);
+    linear-gradient(to right, var(--gray-alpha-10) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--gray-alpha-10) 1px, transparent 1px);
 }
+
+.text-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  background: -webkit-linear-gradient(left,
+      var(--bleu-400),
+      var(--bleu-600));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.text-caption {
+  font-size: 1rem;
+  background: none;
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+
+.text-subheader {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
 .bg-texture::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("src/lib/images/grainy-texture.png") center center;
-    background-size: 40px 40px;
-    filter: invert(0.15);
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    /* background-image:
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("src/lib/images/grainy-texture.png") center center;
+  background-size: 40px 40px;
+  filter: invert(0.15);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  /* background-image:
     linear-gradient(to right, var(--bleu-200) 1px, transparent 1px),
     linear-gradient(to bottom, var(--bleu-200) 1px, transparent 1px); */
 }
-.grainy:not(.hero)::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: min(100%, 100svh);
-    background: url("src/lib/images/grainy-texture.png") center center;
-    background-size: 64px 64px;
-    filter: invert(0.15);
-    mix-blend-mode: multiply;
-    pointer-events: none;
-  }
+
+.grainy:not(.hero)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: min(100%, 100svh);
+  background: url("src/lib/images/grainy-texture.png") center center;
+  background-size: 64px 64px;
+  filter: invert(0.15);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
 .hero.grainy::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100svh;
-    background: url("src/lib/images/grainy-texture.png") center center;
-    background-size: 64px 64px;
-    filter: invert(0.15);
-    mix-blend-mode: multiply;
-    pointer-events: none;
-  }
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  background: url("src/lib/images/grainy-texture.png") center center;
+  background-size: 64px 64px;
+  filter: invert(0.15);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
 /* .desktop-only {
   z-index: -100;
   opacity: 0;
@@ -79,24 +109,22 @@ footer,
 section,
 ul.axes {
   display: grid;
-  grid-template-columns: var(--side-padding-mobile) repeat(4, 1fr) var(
-      --side-padding-mobile
-    );
+  grid-template-columns: var(--side-padding-mobile) repeat(4, 1fr) var(--side-padding-mobile);
   justify-items: center;
   column-gap: var(--col-gap);
 }
 
 @media (min-width: 480px) {
+
   main,
   nav,
   footer,
   section,
   ul.axes {
-    grid-template-columns: var(--side-padding-desktop) repeat(8, 1fr) var(
-        --side-padding-desktop
-      );
+    grid-template-columns: var(--side-padding-desktop) repeat(8, 1fr) var(--side-padding-desktop);
   }
 }
+
 /* .desktop-only {
   z-index: 1;
   opacity: 1;
@@ -108,17 +136,17 @@ ul.axes {
 } */
 
 @media (min-width: 1029px) {
+
   main,
   nav,
   footer,
   section,
   ul.axes {
-    grid-template-columns: var(--side-padding-desktop) repeat(12, 1fr) var(
-        --side-padding-desktop
-      );
+    grid-template-columns: var(--side-padding-desktop) repeat(12, 1fr) var(--side-padding-desktop);
   }
-  
+
 }
+
 .barlow-thin {
   font-family: "Barlow", sans-serif;
   font-weight: 100;

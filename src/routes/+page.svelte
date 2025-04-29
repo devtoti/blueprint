@@ -67,11 +67,11 @@
   <section class="hero grainy">
     <article class="section-content hero-content">
       <div class="title">
-        <h1 class="barlow-extrabold">Blueprint.dev</h1>
-        <h4 class="caption">Frontend development & design portfolio</h4>
+        <h1 class="text-title barlow-extrabold">Blueprint.dev</h1>
+        <h4 class="text-caption">Frontend development & design portfolio</h4>
       </div>
       <div class="subheader">
-        <p>
+        <p class="text-subheader">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
           quos.
         </p>
@@ -187,29 +187,6 @@
     div > * {
       display: inline-block;
       text-align: center;
-    }
-    div.title {
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      font-weight: 900;
-      h1 {
-        background: -webkit-linear-gradient(
-          left,
-          var(--bleu-400),
-          var(--bleu-600)
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      h4 {
-        font-size: 1rem;
-        background: none;
-        color: var(--text-accent);
-      }
-    }
-    div.subheader {
-      font-size: 1.2rem;
     }
     div.buttons {
       flex-direction: row;

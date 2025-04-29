@@ -21,7 +21,7 @@
   <section class="contact-page grainy">
     <article class="section-content hero-content">
       <div class="title">
-        <h1 class="text-title barlow-extrabold">Contact</h1>
+        <h1 class="text-title barlow-extrabold">Concept</h1>
         <h4 class="text-caption caption">
           Frontend development & design portfolio
         </h4>
