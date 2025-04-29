@@ -8,6 +8,7 @@
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import CTABanner from "$lib/components/CTABanner.svelte";
   import Heading from "$lib/components/Heading.svelte";
+  import WorkExperience from "$lib/sections/WorkExperience.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
 
@@ -88,11 +89,9 @@
     w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
   />
+
   <section class="main-content projects grainy">
-    <Heading
-      heading="Experiencia Laboral"
-      subheading="Durante los últimos +5 años he desarrollado un interés particular por el diseño UI/UX y el desarrollo frontend de manera integral. He trabajado en diversos startups de Estados Unidos y Canadá, desempeñándome primordialmente como frontend designer."
-    />
+    <WorkExperience />
   </section>
   {@render sectionDividers(2)}
   <section class="main-content projects grainy">
@@ -151,6 +150,9 @@
     background-color: var(--bg-primary);
     height: 40svh;
     grid-column: 2 / -2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .hero {

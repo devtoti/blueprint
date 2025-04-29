@@ -13,6 +13,7 @@
   .heading {
     grid-column: 2 / -2;
     text-align: center;
+    display: block;
     h2 {
       font-size: 1rem;
       margin-top: 1rem;
@@ -28,7 +29,7 @@
       color: var(--text-secondary);
     }
   }
-  @media (min-width: 480px) {
+  /* @media (min-width: 480px) {
     .heading {
       grid-column: 3 / -3;
     }
@@ -42,5 +43,5 @@
       grid-column: 8 / -2;
       text-align: right;
     }
-  }
+  } */
 </style>

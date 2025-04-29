@@ -1,8 +1,8 @@
 <script lang="ts">
   import HorizontalAxes from "./HorizontalAxes.svelte";
   let { window } = $props();
-  import IconSettings from '~icons/solar/settings-outline'
-  import IconSidebar from '~icons/solar/siderbar-outline'
+  import IconSettings from "~icons/solar/settings-outline";
+  import IconSidebar from "~icons/solar/siderbar-outline";
 </script>
 
 <nav class="grainy">
@@ -120,15 +120,15 @@
       display: flex !important;
     }
     .nav-container {
-    height: 52px;
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr;
-    place-items: center;
-    justify-content: center;
-    background-color: var(--bg-secondary);
-    box-shadow: var(--shadow-3);
-    width: -webkit-fill-available;
-  }
+      height: 52px;
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      place-items: center;
+      justify-content: center;
+      background-color: var(--bg-secondary);
+      box-shadow: var(--shadow-3);
+      width: -webkit-fill-available;
+    }
   }
 </style>
