@@ -95,7 +95,7 @@
     <WorkExperience />
   </section>
   {@render sectionDividers(2)}
-  <section class="main-content projects grainy">
+  <section class="main-content projects grainy" id="projects">
     <Projects />
   </section>
   {@render sectionDividers(2)}

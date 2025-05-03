@@ -1,6 +1,10 @@
 <script lang="ts">
   import Heading from "../components/Heading.svelte";
   import ProjectCard from "../components/ProjectCard.svelte";
+  import ActiveProject from "../components/ActiveProject.svelte";
+  import { projects as projectData } from "../utils/projects";
+  let activeProject = $state(projectData[0]);
+  const projects = $state(projectData.toSpliced(0, -1));
 </script>
 
 <div class="main-content">
@@ -9,40 +13,24 @@
     subheading="Durante los últimos +5 años he desarrollado un interés particular por el diseño UI/UX y el desarrollo frontend de manera integral. He trabajado en diversos startups de Estados Unidos y Canadá, desempeñándome primordialmente como frontend designer."
   />
   <div class="projects-container">
-    <section class="preview"></section>
+    <section class="preview-container" id="projects-container">
+      <ActiveProject project={activeProject} />
+      <div class="preview"></div>
+    </section>
     <section class="cards">
-      <ProjectCard
-        project={{
-          number: "01",
-          title: "Proyecto 1",
-          description:
-            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        }}
-      />
-      <ProjectCard
-        project={{
-          number: "02",
-          title: "Proyecto 2",
-          description:
-            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        }}
-      />
-      <ProjectCard
-        project={{
-          number: "03",
-          title: "Proyecto 3",
-          description:
-            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        }}
-      />
-      <ProjectCard
-        project={{
-          number: "04",
-          title: "Proyecto 4",
-          description:
-            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        }}
-      />
+      {#each projects as project, index}
+        <ProjectCard
+          bind:activeProject
+          isActive={activeProject.id === index + 1}
+          project={{
+            id: project.id,
+            number: project.number,
+            title: project.title,
+            description: project.description,
+            tags: project.tags,
+          }}
+        />
+      {/each}
     </section>
   </div>
 </div>
@@ -51,14 +39,27 @@
   .main-content {
     display: contents;
   }
+
   .projects-container {
     display: contents;
+    grid-column: 1 / -1;
     width: 100%;
-    .preview {
-      grid-column: 1 / -1;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background-color: var(--bg-tertiary);
+    background-color: var(--bleu-50);
+    .preview-container {
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .preview {
+        margin: 1rem 0;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-color: var(--bleu-200);
+      }
+    }
+    .preview-container {
+      display: contents;
     }
     .cards {
       grid-column: 1 / -1;
@@ -70,20 +71,7 @@
       padding: 0 1rem;
     }
   }
-  .projects {
-    width: 100%;
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
   @media (min-width: 480px) {
-    .projects-container {
-      grid-column: 2 / -2;
-      align-items: flex-end;
-    }
     .cards {
       display: grid !important;
       grid-template-columns: repeat(2, 1fr);
@@ -94,15 +82,25 @@
         display: flex !important;
         align-items: flex-end !important;
         gap: 1rem;
+        grid-row: 2 / span 1;
         grid-column: span 4 / -1 !important;
         padding-left: 0 !important;
       }
-      .preview {
+      .preview-container {
+        display: flex !important;
+        grid-column: 1 / span 6 !important;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+      }
+
+      /* .preview {
         background-clip: content-box;
         grid-column: 1 / span 6 !important;
         padding-left: 1rem !important;
         height: 100% !important;
-      }
+      } */
     }
   }
 </style>
