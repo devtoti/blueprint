@@ -9,6 +9,7 @@
   import CTABanner from "$lib/components/CTABanner.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import WorkExperience from "$lib/sections/WorkExperience.svelte";
+  import Projects from "$lib/sections/Projects.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
 
@@ -95,11 +96,7 @@
   </section>
   {@render sectionDividers(2)}
   <section class="main-content projects grainy">
-    <Heading
-      heading="Proyectos Destacados"
-      subheading="Cuatro proyectos de contratación directa han sido seleccionados, siendo éstos principalmente páginas web con un tratamiento único de brand design e implementación con código. Los proyectos de diseño han sido realizados con Figma, Illustrator y Photoshop, mientras que la traducción a código ha sido con React y Svelte."
-      alignRight
-    />
+    <Projects />
   </section>
   {@render sectionDividers(2)}
   <section class="main-content projects grainy">
@@ -148,11 +145,10 @@
   .main-content {
     position: relative;
     background-color: var(--bg-primary);
-    height: 40svh;
+    min-height: 40svh;
+    padding-bottom: 1rem;
     grid-column: 2 / -2;
-    display: flex;
     flex-direction: column;
-    gap: 1rem;
   }
 
   .hero {

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "$lib/fonts/fonts.css";
   import { onMount, setContext } from "svelte";
   let { children } = $props();
   import Navbar from "$lib/components/Navbar.svelte";
@@ -18,6 +19,6 @@
   });
 </script>
 
-  <Navbar window={wnd} />
-  {@render children()}
-  <Footer window={wnd} />
+<Navbar window={wnd} />
+{@render children()}
+<Footer window={wnd} />

@@ -97,7 +97,7 @@
     background-color: var(--bg-blueprint);
     opacity: 0.1;
     pointer-events: none;
-    height: 100svh;
+    height: 300svh;
     z-index: 100;
   }
   /* li:hover::after {

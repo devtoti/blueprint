@@ -5,43 +5,31 @@
 </script>
 
 <article class="heading" class:alignRight>
-  <h2>{heading}</h2>
-  <h5>{subheading}</h5>
+  <h2 class="arc-h2">{heading}</h2>
+  <h5 class="arc-body-1">{subheading}</h5>
 </article>
 
 <style>
   .heading {
-    grid-column: 2 / -2;
+    grid-column: 1 / -1;
+    padding: 0 1rem;
     text-align: center;
     display: block;
-    h2 {
-      font-size: 1rem;
-      margin-top: 1rem;
-      font-family: "Barlow", sans-serif;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    h5 {
-      padding-top: 0.5rem;
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text-secondary);
-    }
+    margin: 1rem 0;
   }
-  /* @media (min-width: 480px) {
+  @media (min-width: 480px) {
     .heading {
-      grid-column: 3 / -3;
+      grid-column: 2 / -2;
     }
   }
   @media (min-width: 1029px) {
     .heading {
-      grid-column: 2 / span 6;
+      grid-column: 1 / span 5;
       text-align: left;
     }
     .alignRight {
-      grid-column: 8 / -2;
+      grid-column: span 5 / -1;
       text-align: right;
     }
-  } */
+  }
 </style>

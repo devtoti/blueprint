@@ -6,6 +6,7 @@
 <Heading
   heading="Experiencia Laboral"
   subheading="Durante los últimos +5 años he desarrollado un interés particular por el diseño UI/UX y el desarrollo frontend de manera integral. He trabajado en diversos startups de Estados Unidos y Canadá, desempeñándome primordialmente como frontend designer."
+  alignRight
 />
 <div class="experience-cards">
   <ExperienceCard
@@ -25,10 +26,11 @@
 <style>
   .experience-cards {
     width: 100%;
+    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
   }
 </style>

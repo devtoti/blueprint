@@ -1,7 +1,12 @@
 <script lang="ts">
+  import LeftHand from "./LeftHand.svelte";
+  import RightHand from "./RightHand.svelte";
 </script>
 
-<article class="cta-banner"></article>
+<article class="cta-banner">
+  <LeftHand />
+  <RightHand />
+</article>
 
 <style>
   .cta-banner {
