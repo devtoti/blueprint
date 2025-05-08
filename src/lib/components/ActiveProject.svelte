@@ -30,6 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: center;
   }
   .tag {
     background-color: var(--bleu-50);
@@ -39,6 +40,8 @@
   @media (min-width: 1024px) {
     .active-project {
       grid-column: 1 / span 6;
+      align-items: flex-start;
+      text-align: left;
     }
   }
 </style>

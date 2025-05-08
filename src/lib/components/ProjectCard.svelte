@@ -40,13 +40,13 @@
     position: relative;
     background-color: var(--bg-primary);
     width: 100%;
-    min-height: 80px;
-    max-height: 100%;
+    height: 100%;
     border: 1px solid var(--border-tertiary);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    text-align: left;
     gap: 0.2rem;
     padding: 0.5rem;
     background-image: radial-gradient(var(--bleu-100) 1px, transparent 0);
