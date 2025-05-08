@@ -91,7 +91,7 @@
     startEnd={1}
   />
 
-  <section class="main-content projects grainy">
+  <section class="main-content work-experience grainy">
     <WorkExperience />
   </section>
   {@render sectionDividers(2)}
@@ -145,7 +145,7 @@
   .main-content {
     position: relative;
     background-color: var(--bg-primary);
-    min-height: 40svh;
+    min-height: 50svh;
     padding-bottom: 1rem;
     grid-column: 2 / -2;
     flex-direction: column;

@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: all 2s ease-in-out;
     gap: 0.2rem;
     padding: 0.5rem;
     padding-top: 1rem;
@@ -86,5 +87,9 @@
   }
   .experience-card:nth-child(odd) {
     align-items: flex-end;
+  }
+  .experience-card:hover {
+    height: 480px;
+    transition: all 2s ease-in-out;
   }
 </style>

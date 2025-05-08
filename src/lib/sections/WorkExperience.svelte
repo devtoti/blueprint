@@ -1,6 +1,8 @@
 <script lang="ts">
   import Heading from "../components/Heading.svelte";
   import ExperienceCard from "../components/ExperienceCard.svelte";
+  import type { SvelteHTMLElements } from "svelte/elements";
+  type Props = SvelteHTMLElements["ExperienceCard"];
 </script>
 
 <Heading
@@ -9,7 +11,15 @@
   alignRight
 />
 
-<div class="experience-cards">
+{#snippet card(
+  ExperienceCard: Props,
+  data: {
+    experience: {
+      role: string;
+      description: string;
+    };
+  }
+)}
   <article class="floor-plan-1">
     <div class="north-facade">
       <div class="wall-corner" style="transform: rotate(270deg);"></div>
@@ -28,7 +38,11 @@
         <div class="wall-end vertical flip"></div>
         <div class="wall-middle vertical"></div>
       </div>
-      <div class="space" style="grid-row: 1 / 2;"></div>
+      <div class="space" id="space-container" style="grid-row: 1 / 2;">
+        <div class="experience-card-container">
+          <ExperienceCard experience={data.experience} />
+        </div>
+      </div>
       <div class="east-facade" style="grid-row: 1 / 2;">
         <div class="wall-middle vertical"></div>
         <div class="wall-end vertical"></div>
@@ -47,18 +61,21 @@
       <div class="wall-corner" style="transform: rotate(90deg);"></div>
     </div>
   </article>
-  <ExperienceCard
-    experience={{
+{/snippet}
+
+<div class="experience-cards">
+  {@render card(ExperienceCard, {
+    experience: {
       role: "Frontend Developer",
       description: "React / Svelte / Node / CSS",
-    }}
-  />
-  <ExperienceCard
-    experience={{
+    },
+  })}
+  {@render card(ExperienceCard, {
+    experience: {
       role: "UI/UX Designer",
       description: "Figma / Illustrator / Photoshop / CAD",
-    }}
-  />
+    },
+  })}
 </div>
 
 <style>
@@ -111,7 +128,6 @@
   .floor-plan-1 {
     display: grid;
     grid-template-rows: 18px 1fr 18px;
-    max-height: 240px;
   }
   .wall-end {
     position: relative;
@@ -216,6 +232,7 @@
     grid-template-columns: 18px 1fr 18px;
     grid-template-rows: 1fr;
     gap: 0px;
+    min-height: 0;
   }
   .west-facade,
   .east-facade {
@@ -234,18 +251,37 @@
       width: 100% !important;
     }
   }
+  #space-container {
+    position: relative;
+    transform-origin: center;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    min-height: 0;
+    overflow: visible;
+    & :first-child {
+      width: 100%;
+      height: auto;
+      min-height: 0;
+    }
+  }
   .experience-cards {
     width: 100%;
+    height: 640px;
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;
   }
   .floor-plan-1 {
-    width: 240px;
-    height: 240px;
+    height: fit-content;
+    width: auto;
     background-color: var(--bleu-50);
+    transition: height 2s ease-in-out;
   }
 </style>
