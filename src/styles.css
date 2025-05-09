@@ -39,6 +39,7 @@ body {
   background-image:
     linear-gradient(to right, var(--gray-alpha-10) 1px, transparent 1px),
     linear-gradient(to bottom, var(--gray-alpha-10) 1px, transparent 1px);
+    max-width: 100svw;
 }
 
 .text-title {
@@ -387,3 +388,6 @@ ul.axes {
   text-transform: uppercase;
   color: var(--text-primary);
 } 
+.color-invert {
+  color: var(--white);
+}

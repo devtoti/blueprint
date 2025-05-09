@@ -98,15 +98,15 @@
   <section class="main-content projects grainy" id="projects">
     <Projects />
   </section>
-  {@render sectionDividers(2)}
+  {@render sectionDividers(1)}
+  <LandingMidBanner offset={grid.columnWidth} />
+  {@render sectionDividers(1, "invert")}
   <section class="main-content projects grainy">
     <Heading
       heading="Enfoque Dual Diseño-Código"
       subheading="Los sitios web exitosos requieren comprensión de diseño y desarrollo de manera integral. Por ello, la colaboración entre diseñadores y programadores para cerrar brechas resulta esencial."
     />
   </section>
-  {@render sectionDividers(1)}
-  <LandingMidBanner offset={grid.columnWidth} />
   {@render sectionDividers(1, "invert")}
   <section class="main-content projects grainy">
     <Heading

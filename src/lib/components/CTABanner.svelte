@@ -4,8 +4,8 @@
 </script>
 
 <article class="cta-banner">
-  <LeftHand />
-  <RightHand />
+  <!-- <LeftHand />
+  <RightHand /> -->
 </article>
 
 <style>
