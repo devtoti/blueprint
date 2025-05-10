@@ -1,10 +1,12 @@
 <script lang="ts">
-  let { offset = 0 } = $props();
+  let { offset = 0, winWidth = 360 } = $props();
 </script>
 
 <article style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
   <span>
-    <h2 class="arc-h2 color-invert">Ponte en contacto conmigo</h2>
+    <h3 class={winWidth <= 360 ? "arc-h3 color-invert" : "arc-h2 color-invert"}>
+      Ponte en contacto conmigo
+    </h3>
     <p class="arc-body-1 color-invert">
       Estoy aquí para ayudarte a crear soluciones web excepcionales.
     </p>
@@ -53,7 +55,7 @@
   }
   .button-wrapper {
     position: relative;
-    height: 40px;
+    height: 32px;
   }
   .button-container {
     display: flex;
@@ -102,7 +104,7 @@
       ),
       linear-gradient(to bottom, var(--bg-blueprint), var(--bleu-600));
     color: var(--white);
-    height: 25svh;
+    min-height: 25svh;
     width: 100%;
     width: calc(100% - var(--side-padding-mobile) * 6);
     display: flex;
@@ -111,6 +113,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 1rem;
   }
   span {
     z-index: 3;
@@ -152,10 +155,19 @@
     opacity: 0.9;
   }
 
-  @media (min-width: 480px) {
+  @media (min-width: 480px) and (max-width: 1028px) {
+    .button-wrapper {
+      height: 40px;
+    }
     .mid-banner {
       grid-column: 1 / -1;
       width: 100%;
+    }
+    .mid-banner::after {
+      display: none;
+    }
+    .button-container {
+      flex-direction: row-reverse;
     }
   }
   @media (min-width: 1029px) {
@@ -164,6 +176,9 @@
       width: calc(100% - var(--offset) * 2);
       width: 100%;
       width: calc(100% - 100px * 2);
+    }
+    .button-container {
+      flex-direction: row-reverse;
     }
   }
 </style>

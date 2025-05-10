@@ -99,7 +99,7 @@
     <Projects />
   </section>
   {@render sectionDividers(1)}
-  <LandingMidBanner offset={grid.columnWidth} />
+  <LandingMidBanner winWidth={WINDOW.width} offset={grid.columnWidth} />
   {@render sectionDividers(1, "invert")}
   <section class="main-content projects grainy">
     <Heading
@@ -107,7 +107,7 @@
       subheading="Los sitios web exitosos requieren comprensión de diseño y desarrollo de manera integral. Por ello, la colaboración entre diseñadores y programadores para cerrar brechas resulta esencial."
     />
   </section>
-  {@render sectionDividers(1, "invert")}
+  {@render sectionDividers(2, "invert")}
   <section class="main-content projects grainy">
     <Heading
       heading="Servicios Disponibles"
