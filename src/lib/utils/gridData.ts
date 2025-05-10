@@ -34,7 +34,7 @@ const GRID = () => {
         },
         sidePadding: padding
     };
-    console.log(columns)
+    // console.log(columns)
     return gridData;
 };
 

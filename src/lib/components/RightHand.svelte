@@ -1,7 +1,5 @@
 <svg
-  width="592"
-  height="324"
-  viewBox="0 0 592 324"
+  viewBox="0 0 600 360"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
