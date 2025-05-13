@@ -10,6 +10,7 @@
   import Heading from "$lib/components/Heading.svelte";
   import WorkExperience from "$lib/sections/WorkExperience.svelte";
   import Projects from "$lib/sections/Projects.svelte";
+  import RadialDeco from "$lib/images/radial-deco.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
 
@@ -138,14 +139,18 @@
     w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
     invert
-  />
+  >
+    <div class="radial-deco-wrapper">
+      <RadialDeco />
+    </div>
+  </DividerTrapezoid>
 </main>
 
 <style>
   .main-content {
     position: relative;
     background-color: var(--bg-primary);
-    min-height: 50svh;
+    min-height: 10svh;
     padding-bottom: 1rem;
     grid-column: 2 / -2;
     flex-direction: column;
@@ -213,6 +218,13 @@
     );
     height: 100px;
     background-color: #e9e8e6;
+  }
+  .radial-deco-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
   }
   @media (min-width: 480px) {
     .main-content {

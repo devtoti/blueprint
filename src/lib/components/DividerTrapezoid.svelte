@@ -1,12 +1,18 @@
 <script>
-  let { width, y, w, startEnd = 2, invert = false } = $props();
+  let { width, y, w, startEnd = 2, invert = false, children } = $props();
+  let clientWidth = $state(0);
+  $inspect(clientWidth);
 </script>
 
 <div
   class="trapezoid-wrapper"
   class:invert
+  bind:clientWidth
   style={`--start: ${startEnd}; --end: -${startEnd}; --width: ${width}px`}
 >
+  {#if clientWidth >= 540}
+    {@render children?.()}
+  {/if}
   <svg
     viewBox="0 0 {width} {y}"
     height={y}
