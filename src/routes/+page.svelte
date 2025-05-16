@@ -13,6 +13,7 @@
   import RadialDeco from "$lib/images/radial-deco.svelte";
   import Hero from "$lib/sections/Hero.svelte";
   import Services from "$lib/sections/+Services.svelte";
+  import Skills from "$lib/sections/+Skills.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
 
@@ -87,11 +88,8 @@
   {@render sectionDividers(1)}
   <LandingMidBanner winWidth={WINDOW.width} offset={grid.columnWidth} />
   {@render sectionDividers(1, "invert")}
-  <section class="main-content projects grainy">
-    <Heading
-      heading="Enfoque Dual Diseño-Código"
-      subheading="Los sitios web exitosos requieren comprensión de diseño y desarrollo de manera integral. Por ello, la colaboración entre diseñadores y programadores para cerrar brechas resulta esencial."
-    />
+  <section class="main-content skills grainy">
+    <Skills />
   </section>
   {@render sectionDividers(2, "invert")}
   <section class="main-content services grainy">
@@ -103,7 +101,7 @@
     w={isMobile ? 16 : 12}
     startEnd={isMobile ? 2 : 3}
   />
-  <CTABanner />
+  <!-- <CTABanner /> -->
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
     y={isMobile ? 16 : 12}

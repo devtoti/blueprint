@@ -1,8 +1,13 @@
 <script lang="ts">
   let { offset = 0, winWidth = 360 } = $props();
+  let innerWidth = $state(0);
 </script>
 
-<article style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
+<svelte:window bind:innerWidth />
+<article
+  class="mid-banner stripped-divider"
+  style={`--innerWidth: ${innerWidth}px; --offset: ${offset}px`}
+>
   <span>
     <h3 class={winWidth <= 360 ? "arc-h3 color-invert" : "arc-h2 color-invert"}>
       Ponte en contacto conmigo
@@ -28,6 +33,7 @@
     </div>
   </span>
 </article>
+<div class="mid-banner-background"></div>
 
 <style>
   .mid-banner {
@@ -56,30 +62,9 @@
   span {
     z-index: 3;
   }
-  /* .mid-banner::after {
-    content: "";
-    position: absolute;
-    top: 25%;
-    left: 0;
+  .mid-banner-background {
     width: 100svw;
-    height: 100%;
-    background: repeating-linear-gradient(
-        to left,
-        var(--bleu-400),
-        var(--bleu-400) 10px,
-        transparent 10px,
-        transparent 20px
-      ),
-      linear-gradient(to bottom, var(--bg-blueprint), var(--bleu-400));
-    z-index: -1;
-    opacity: 0.9;
-  } */
-  .mid-banner::before {
-    content: "";
-    position: absolute;
-    top: 25%;
-    left: -100%;
-    width: 100%;
+    transform: translateX(-50%) translateY(20%);
     height: 100%;
     background: repeating-linear-gradient(
         to left,
@@ -100,9 +85,6 @@
     .mid-banner {
       grid-column: 1 / -1;
       width: 100%;
-    }
-    .mid-banner::after {
-      display: none;
     }
     .button-container {
       flex-direction: row-reverse;

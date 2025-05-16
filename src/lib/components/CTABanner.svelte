@@ -64,7 +64,7 @@
     background-color: #adb2de;
     height: 70svh;
     grid-column: 1 / -1;
-    width: 100%;
+    width: 100svw;
     overflow: hidden;
     &::after {
       content: "";

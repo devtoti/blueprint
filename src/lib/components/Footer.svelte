@@ -9,7 +9,7 @@
   let { window } = $props();
 </script>
 
-<footer class="footer grainy">
+<footer class="footer grainy" id="footer">
   {#if window.width <= 540}
     <div class="radial-deco-wrapper">
       <RadialDeco />
@@ -81,8 +81,8 @@
       <h4 class="arc-h0">A1</h4>
     </article>
   </div>
+  <HorizontalAxes width={window.width} height={window.height} />
 </footer>
-<HorizontalAxes width={window.width} height={window.height} />
 
 <style>
   .footer-title {
@@ -127,12 +127,13 @@
     position: relative;
     padding-bottom: 1rem;
     padding: 0;
-    height: 20svh;
-    max-width: 100svw;
     height: fit-content;
+    max-width: 100svw;
     grid-column: 2 / -2;
     background-color: var(--bg-primary);
+    padding-bottom: 1rem;
   }
+
   .footer-container {
     height: fit-content;
     grid-column: 2 / -2;
