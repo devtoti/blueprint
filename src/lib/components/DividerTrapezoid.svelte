@@ -20,15 +20,20 @@
     style={`--start: ${startEnd}; --end: -${startEnd}; --width: ${width}px`}
   >
     <defs>
-      <pattern id="grain" patternUnits="userSpaceOnUse" width="64" height="64">
-        <image
-          href="src/lib/images/grainy-texture.png"
-          x="0"
-          y="0"
-          width="64"
-          height="64"
-          style="filter: invert(0.15); mix-blend-mode: multiply;"
+      <filter id="noise">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.8"
+          numOctaves="3"
+          stitchTiles="stitch"
         />
+        <feColorMatrix
+          type="matrix"
+          values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.35 0"
+        />
+      </filter>
+      <pattern id="grain" patternUnits="userSpaceOnUse" width="64" height="64">
+        <rect width="64" height="64" filter="url(#noise)" />
       </pattern>
     </defs>
     <polygon

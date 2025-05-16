@@ -106,7 +106,7 @@
       grid-column: 3 / -3;
     }
   }
-  @media (min-width: 1024px) {
+  /* @media (min-width: 1024px) {
     .section-content {
       grid-column: 3 / span 5;
       grid-row: 1 / 2;
@@ -128,5 +128,5 @@
       place-self: start;
       margin-top: 0rem;
     }
-  }
+  } */
 </style>

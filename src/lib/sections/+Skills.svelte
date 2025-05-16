@@ -40,12 +40,6 @@
   alignRight
 />
 <article class="skills-container">
-  <!-- <div class="services-illustration-1">
-    <BoxIllustration />
-  </div>
-  <div class="services-illustration-2">
-    <BoxIllustration />
-  </div> -->
   {#each skills as name, ix}
     {@render skill(name)}
   {/each}
@@ -56,7 +50,11 @@
     width: 100%;
     grid-column: 1 / -1;
     background-color: var(--bg-primary);
-    gap: 1rem;
+    gap: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
   .skill {
     display: inline-flex;

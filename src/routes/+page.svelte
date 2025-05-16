@@ -70,7 +70,7 @@
 {/snippet}
 
 <main>
-  <Hero />
+  <!-- <Hero /> -->
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}

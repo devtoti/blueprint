@@ -13,11 +13,6 @@
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
     },
     {
-      title: "Sistemas de Diseño",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
-    },
-    {
       title: "Ilustraciones",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
@@ -31,11 +26,6 @@
     },
     {
       title: "Landing Pages",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
-    },
-    {
-      title: "Animaciones Interactivas",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
     },
@@ -59,7 +49,7 @@
   subheading="Ofrezco una amplia gama de servicios afines al diseño y el desarrollo de aplicaciones web."
   alignRight
 />
-<section class="services-container">
+<article class="services-container">
   <div class="services-list-left">
     {#each UXservices as UXservice, ix}
       {@render item(UXservice.title, UXservice.description)}
@@ -81,7 +71,7 @@
       {@render item(FrontendService.title, FrontendService.description)}
     {/each}
   </div>
-</section>
+</article>
 
 <style>
   .services-container {
@@ -89,31 +79,54 @@
     grid-column: 1 / -1;
     background-color: var(--bg-primary);
     gap: 1rem;
+    padding: 0rem 1rem;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
   }
   [class*="services-list"] {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 0rem 1rem;
   }
   .services-list-left {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
+    grid-column: 1 / span 2;
+    grid-row: 1 / 2;
   }
   .services-list-right {
-    grid-column: 4 / -2;
-    grid-row: 3 / 4;
+    grid-column: span 2 / -1;
+    grid-row: 2 / 3;
     align-self: center;
   }
   [class*="services-illustration"] {
-    max-height: 15rem;
     align-self: center;
+    padding: 0 1rem;
+    height: 100%;
   }
   .services-illustration-1 {
-    grid-column: 4 / -2;
-    grid-row: 2 / 3;
+    grid-column: span 2 / -1;
+    grid-row: 1 / 2;
   }
   .services-illustration-2 {
-    grid-column: 2 / 4;
-    grid-row: 3 / 4;
+    grid-column: 1 / span 2;
+    grid-row: 2 / 3;
+  }
+  @media (min-width: 480px) {
+    .services-list-left {
+      grid-column: 1 / span 3;
+    }
+    .services-list-right {
+      grid-column: span 3 / -1;
+      grid-row: 3 / 4;
+    }
+    .services-illustration-1 {
+      grid-column: span 3 / -1;
+      align-self: start;
+    }
+    .services-illustration-2 {
+      grid-column: 2 / span 2;
+      align-self: start;
+      grid-row: 3 / 4;
+    }
   }
 </style>
