@@ -40,7 +40,7 @@
     </div>
     <div class="button-wrapper">
       <a href="/about" class="arc-button-primary arc-h3 invert"
-        >Acerca de Blueprint</a
+        >Agenda una reunión</a
       >
       <span class="square top-left"></span>
       <span class="square top-right"></span>
@@ -116,6 +116,7 @@
   .left-hand,
   .right-hand {
     transition: all 2s ease-in-out;
+    opacity: 0.5;
   }
   .left-hand:first-child {
     width: 100%;
@@ -129,9 +130,11 @@
   }
   .left-hand.active {
     transform: translateX(0%);
+    opacity: 1;
   }
   .right-hand.active {
     transform: translateX(0%);
+    opacity: 1;
   }
   @media (min-width: 720px) {
     .illustrations-container {

@@ -11,8 +11,8 @@
   import WorkExperience from "$lib/sections/WorkExperience.svelte";
   import Projects from "$lib/sections/Projects.svelte";
   import RadialDeco from "$lib/images/radial-deco.svelte";
-  import MainIllustration from "$lib/images/main-illustration.svelte";
   import Hero from "$lib/sections/Hero.svelte";
+  import Services from "$lib/sections/+Services.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
 
@@ -94,15 +94,9 @@
     />
   </section>
   {@render sectionDividers(2, "invert")}
-  <section class="main-content projects grainy">
-    <Heading
-      heading="Servicios Disponibles"
-      subheading="Ofrezco una amplia gama de servicios afines al diseño y el desarrollo de aplicaciones web."
-      alignRight
-    />
+  <section class="main-content services grainy">
+    <Services />
   </section>
-  {@render sectionDividers(2)}
-  <section class="main-content projects grainy"></section>
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
     y={isMobile ? 16 : 12}
@@ -150,10 +144,6 @@
     background-color: var(--bg-primary);
     width: -webkit-fill-available;
   }
-  /* :global(section.main-content) {
-    border: 1.5px solid var(--border-secondary);
-  } */
-
   .stripped-divider {
     grid-column: 2 / -2;
     width: 100%;
