@@ -81,84 +81,90 @@
       <h4 class="arc-h0">A1</h4>
     </article>
   </div>
-  <HorizontalAxes width={window.width} height={window.height} />
 </footer>
+<HorizontalAxes width={window.width} height={window.height} />
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
   .footer-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     grid-column: 2 / -2;
+    grid-row: 2 / 3;
     padding-top: 1rem;
     .icons {
       padding-top: 0.5rem;
+      padding-bottom: 1rem;
       display: flex;
       gap: 1rem;
       opacity: 0.75;
     }
   }
+
   .radial-deco-wrapper {
     width: 92px;
     height: 92px;
     grid-column: 1 / -1;
+    grid-row: 1 / 2;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .plan-info {
     outline: 1px solid var(--border-primary);
-    padding: 0.25rem 0.5rem;
+    padding-left: 0.25rem;
+    width: 100%;
     h4 {
       font-weight: 700;
+      padding-top: 0.25rem;
+    }
+    p {
+      padding-bottom: 0.25rem;
     }
   }
-
   .footer {
     position: relative;
     padding-bottom: 1rem;
     padding: 0;
     height: 20svh;
+    max-width: 100svw;
     height: fit-content;
     grid-column: 2 / -2;
     background-color: var(--bg-primary);
   }
   .footer-container {
     height: fit-content;
-    grid-column: 1 / -1;
+    grid-column: 2 / -2;
     width: 100%;
+    grid-row: 3 / 4;
     background-color: var(--bg-primary);
     display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, auto);
     grid-template-areas:
       "nav nav nav navR navR navR"
       "nav nav nav navR navR navR"
       "proj proj proj proj proj proj"
       "author author author author author author"
-      "id id techs techs rev rev"
-      "id id loc collab collab collab"
-      "scale scale scale scale scale v";
+      "techs techs techs techs techs techs"
+      "id id id scale scale scale"
+      "id id id loc loc loc"
+      "id id id v v v"
+      "rev rev rev collab collab collab";
     gap: 0;
-    padding: 2rem;
-  }
-  .plan-info {
-    height: 100%;
+    padding-bottom: 1rem;
   }
   .proj {
     grid-area: proj;
   }
   .author {
     grid-area: author;
-    max-height: 8rem;
-    min-height: 4rem;
   }
-  #clave h4 {
-    padding: 0 !important;
+  #clave {
+    h4 {
+      padding: 0 !important;
+    }
   }
   .id {
     grid-area: id;
@@ -183,68 +189,56 @@
   .v {
     grid-area: v;
   }
-  .navigation-left,
-  .navigation-right {
-  }
   .navigation-left {
     grid-area: nav;
   }
   .navigation-right {
     grid-area: navR;
   }
+  .navigation-left,
+  .navigation-right {
+    width: 100%;
+  }
   ul {
     list-style: none;
-    width: 100%;
     margin-bottom: 1rem;
     outline: 1px solid var(--border-primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    width: 100%;
     li {
       padding-left: 0.5rem;
     }
   }
   @media (min-width: 480px) {
     .footer-container {
-      grid-column: 2 / -2;
+      grid-column: 3 / -3;
       padding: 1rem 0;
       grid-template-areas:
         "nav nav nav navR navR navR"
         "nav nav nav navR navR navR"
-        "id id proj proj author author"
-        "id id techs techs rev rev"
-        "id id loc collab scale v";
-    }
-  }
-  @media (min-width: 768px) {
-    .footer-container {
-      grid-column: 3 / -3;
+        "proj proj proj author author author"
+        "techs techs techs collab collab collab"
+        "id id id loc loc rev"
+        "id id id scale scale v";
     }
   }
   @media (min-width: 1029px) {
     .footer-container {
       padding: 1rem 0;
       grid-template-areas:
-        "id nav nav nav navR navR navR proj author author scale scale loc loc"
-        "id nav nav nav navR navR navR techs rev rev collab collab v v";
+        "nav nav nav navR navR navR"
+        "nav nav nav navR navR navR"
+        "id proj author author techs techs"
+        "id loc loc collab rev rev"
+        "id scale scale scale scale v";
     }
-    .navigation-left,
-    .navigation-right {
-      width: 100%;
-    }
-    ul {
-      height: 100%;
-      /* width: 100%; */
-      /* min-width: 10rem; */
-    }
-    .author {
-      height: 100%;
-    }
-    #clave {
-      /* aspect-ratio: 1 / 1; */
-      max-width: 8rem;
+    .navigation-left {
+      text-align: right;
+      ul {
+        padding-right: 0.5rem;
+      }
     }
   }
 </style>

@@ -56,7 +56,7 @@
   span {
     z-index: 3;
   }
-  .mid-banner::after {
+  /* .mid-banner::after {
     content: "";
     position: absolute;
     top: 25%;
@@ -73,7 +73,7 @@
       linear-gradient(to bottom, var(--bg-blueprint), var(--bleu-400));
     z-index: -1;
     opacity: 0.9;
-  }
+  } */
   .mid-banner::before {
     content: "";
     position: absolute;

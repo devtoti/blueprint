@@ -28,10 +28,10 @@
 
 <article class="cta-banner">
   <div class="cta-banner-info">
-    <h1 class="arc-h0 cta-text color-invert">Get in touch</h1>
+    <h1 class="arc-h0 cta-text color-invert">Ponte en contacto</h1>
     <p class="arc-body-1 color-invert">
-      If you would like me to lend you a hand in one of your projects, or if you
-      are looking for a 1-on-1 meeting with me, feel free to reach out.
+      Si quieres que te eche la mano en uno de tus proyectos, o si buscas una
+      asesoría personalizada, no dudes en contactarme.
     </p>
     <div class="button-wrapper">
       <a href="/contact" class="arc-button-secondary arc-h3 invert"
@@ -80,12 +80,14 @@
   .cta-banner-info {
     width: 100%;
     height: 100%;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 1rem;
+    z-index: 10;
     .cta-text {
       margin-bottom: 0 !important;
       padding-bottom: 0 !important;
@@ -103,6 +105,8 @@
     place-items: center;
     transform: translate(-50%, -50%) scale(2) rotate(60deg);
     pointer-events: none;
+    mix-blend-mode: multiply;
+    z-index: 1;
   }
   .container {
     position: relative;
@@ -132,6 +136,13 @@
   @media (min-width: 720px) {
     .illustrations-container {
       transform: translate(-50%, -50%) scale(1) rotate(10deg) !important;
+      align-items: flex-end;
+      padding-bottom: 2rem;
+    }
+    .cta-banner-info {
+      justify-content: flex-start;
+      max-width: 70ch;
+      margin: 10rem auto 0;
     }
   }
 </style>

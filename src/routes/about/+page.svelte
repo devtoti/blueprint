@@ -44,7 +44,7 @@
 
 <style>
   section {
-    border: 1.5px solid blue;
+    border: 1.5px solid var(--border-secondary);
     background-color: #e9e8e6;
     border-top: 0;
     border-bottom: 0;

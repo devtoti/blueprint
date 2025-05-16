@@ -11,6 +11,8 @@
   import WorkExperience from "$lib/sections/WorkExperience.svelte";
   import Projects from "$lib/sections/Projects.svelte";
   import RadialDeco from "$lib/images/radial-deco.svelte";
+  import MainIllustration from "$lib/images/main-illustration.svelte";
+  import Hero from "$lib/sections/Hero.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
 
@@ -67,24 +69,7 @@
 {/snippet}
 
 <main>
-  <section class="hero grainy">
-    <article class="section-content hero-content">
-      <div class="title">
-        <h1 class="text-title barlow-extrabold">Blueprint.dev</h1>
-        <h4 class="text-caption">Frontend development & design portfolio</h4>
-      </div>
-      <div class="subheader">
-        <p class="text-subheader">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-          quos.
-        </p>
-      </div>
-      <div class="buttons">
-        <button>Get in touch</button>
-        <button>Get in touch</button>
-      </div>
-    </article>
-  </section>
+  <Hero />
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
@@ -156,20 +141,8 @@
     flex-direction: column;
   }
 
-  .hero {
-    position: relative;
-    height: 100svh;
-    place-items: center;
-    background-image: url("src/lib/images/iso-grid.svg");
-    background-size: cover;
-    background-position: center;
-  }
-  .section-content {
-    grid-column: 2 / -2;
-  }
   section {
     border: 1.5px solid var(--border-secondary);
-    min-height: 100%;
     border-top: 0;
     border-bottom: 0;
     height: inherit;
@@ -177,35 +150,10 @@
     background-color: var(--bg-primary);
     width: -webkit-fill-available;
   }
-  .hero-content {
-    place-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    color: var(--text-primary);
-    div {
-      display: flex;
-      flex-direction: column;
-    }
-    div > * {
-      display: inline-block;
-      text-align: center;
-    }
-    div.buttons {
-      flex-direction: row;
-      gap: 1rem;
-      button {
-        background-color: var(--blue-radix-800);
-        border: 0;
-        height: 3rem;
-        text-transform: uppercase;
-        color: var(--white);
-        font-weight: 600;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-      }
-    }
-  }
+  /* :global(section.main-content) {
+    border: 1.5px solid var(--border-secondary);
+  } */
+
   .stripped-divider {
     grid-column: 2 / -2;
     width: 100%;
