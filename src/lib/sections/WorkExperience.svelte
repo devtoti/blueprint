@@ -18,6 +18,7 @@
       role: string;
       description: string;
     };
+    design: boolean;
   }
 )}
   <article class="floor-plan-1">
@@ -40,7 +41,7 @@
       </div>
       <div class="space" id="space-container" style="grid-row: 1 / 2;">
         <div class="experience-card-container">
-          <ExperienceCard experience={data.experience} />
+          <ExperienceCard experience={data.experience} design={data.design} />
         </div>
       </div>
       <div class="east-facade" style="grid-row: 1 / 2;">
@@ -69,12 +70,14 @@
       role: "Frontend Developer",
       description: "React / Svelte / Node / CSS",
     },
+    design: false,
   })}
   {@render card(ExperienceCard, {
     experience: {
       role: "UI/UX Designer",
       description: "Figma / Illustrator / Photoshop / CAD",
     },
+    design: true,
   })}
 </div>
 
@@ -269,7 +272,7 @@
   }
   .experience-cards {
     width: 100%;
-    height: 640px;
+    height: auto;
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
