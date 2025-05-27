@@ -4,9 +4,11 @@
 </script>
 
 <article style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
-  <h2 class="arc-h2 color-invert">{heading}</h2>
-  <p class="arc-body-1 color-invert">{description}</p>
-  <Button {href} {text} primary />
+  <article class="floating-container">
+    <h2 class="arc-h1 color-invert">{heading}</h2>
+    <p class="arc-body-1 color-invert">{description}</p>
+    <Button {href} {text} primary />
+  </article>
 </article>
 
 <style>
@@ -28,6 +30,17 @@
     text-align: center;
     gap: 1rem;
     justify-content: center;
+  }
+  .floating-container {
+    max-width: 60ch;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
   }
   .mid-banner::after {
     content: "";

@@ -7,35 +7,49 @@
     buttonOneHref,
     buttonTwoText,
     buttonTwoHref,
+    bgPattern = "iso-grid",
   } = $props();
   import PaperBox from "$lib/images/paper-box.svelte";
   import Button from "$lib/components/Button.svelte";
 </script>
 
-<section class="contact-page grainy hero-section">
-  <article class="section-content hero-content">
-    <div class="title">
-      <h1 class="text-title barlow-extrabold">{title}</h1>
-      <h4 class="text-caption caption">{subheading}</h4>
-    </div>
-    <div class="subheader">
-      <p class="text-subheader">{description}</p>
-    </div>
-  </article>
-  <article class="hero-img">
-    <PaperBox />
-  </article>
-  <article class="button-container">
-    <Button text={buttonOneText} href={buttonOneHref} primary />
-    <Button text={buttonTwoText} href={buttonTwoHref} secondary invert />
-  </article>
+<section
+  class="hero-container"
+  style="background: #f9f9f8 url('src/lib/images/{bgPattern}.svg');"
+>
+  <section class="contact-page grainy hero-section">
+    <article class="section-content hero-content">
+      <div class="title">
+        <h1 class="text-title barlow-extrabold">{title}</h1>
+        <h4 class="text-caption caption">{subheading}</h4>
+      </div>
+      <div class="subheader">
+        <p class="text-subheader">{description}</p>
+      </div>
+    </article>
+    <article class="hero-img">
+      <PaperBox />
+    </article>
+    <article class="button-container">
+      <Button text={buttonOneText} href={buttonOneHref} primary />
+      <Button text={buttonTwoText} href={buttonTwoHref} secondary invert />
+    </article>
+  </section>
 </section>
 
 <style>
   .hero-img {
     max-height: 25rem;
   }
-  section {
+  .hero-container {
+    width: 100%;
+    grid-column: 1 / -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  .hero-section {
     border-top: 0;
     border-bottom: 0;
     grid-column: 2 / -2;
@@ -46,10 +60,6 @@
     gap: 2rem;
     align-items: center;
     justify-content: center;
-    &:last-child {
-      border-bottom: 0;
-      outline: 1px solid red !important;
-    }
   }
   .title {
     h1 {

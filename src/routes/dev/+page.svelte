@@ -56,12 +56,3 @@
     children={() => null}
   />
 </main>
-
-<style>
-  main {
-    background-color: var(--bg-primary);
-    background-image: url("src/lib/images/iso-grid.svg");
-    background-size: cover;
-    background-position: center;
-  }
-</style>
