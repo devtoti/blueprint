@@ -82,7 +82,7 @@
     <p>{experience.description}</p>
   </button>
 {:else}
-  <div class="experience-card-active" class:design>
+  <div class="experience-card active" class:design>
     <button
       onclick={() => (isActive = !isActive)}
       aria-label="Close experience card"
@@ -157,12 +157,13 @@
 <style>
   .experience-card {
     cursor: pointer;
+    transition: height 2s ease-in-out;
   }
   .experience-card:hover {
     background-color: var(--bg-tertiary);
   }
   .experience-card,
-  .experience-card-active {
+  .experience-card.active {
     background-color: var(--bg-primary);
     width: 260px;
     min-height: 80px;
@@ -251,7 +252,7 @@
     background-color: var(--bleu-50);
     margin: 1rem 0;
   }
-  .experience-card-active {
+  .experience-card.active {
     background-color: var(--white);
     background-image: radial-gradient(
       var(--bleu-50) 1px,
@@ -295,7 +296,7 @@
     background-color: var(--border-tertiary);
     color: var(--border-tertiary);
   }
-  .experience-card-active .experience-list-item:last-child .col-wrapper:after {
+  .experience-card.active .experience-list-item:last-child .col-wrapper:after {
     display: none;
   }
   .icons {
@@ -306,7 +307,7 @@
       background-color: var(--bg-primary);
     }
   }
-  .experience-card-active.design {
+  .experience-card.active.design {
     text-align: right;
     .close-button {
       margin-left: auto;

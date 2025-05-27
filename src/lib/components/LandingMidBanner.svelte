@@ -2,7 +2,7 @@
   let { offset = 0, winWidth = 360 } = $props();
   let innerWidth = $state(0);
   let clientHeight = $state(0);
-  $inspect(clientHeight);
+  // $inspect(clientHeight);
 </script>
 
 <svelte:window bind:innerWidth />

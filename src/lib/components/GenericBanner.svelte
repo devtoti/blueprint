@@ -1,11 +1,12 @@
 <script lang="ts">
-  let { offset = 0 } = $props();
+  let { offset = 0, heading, description, href, text } = $props();
+  import Button from "$lib/components/Button.svelte";
 </script>
 
 <article style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
-  <span>
-    <h2>mid banner</h2>
-  </span>
+  <h2 class="arc-h2 color-invert">{heading}</h2>
+  <p class="arc-body-1 color-invert">{description}</p>
+  <Button {href} {text} />
 </article>
 
 <style>
@@ -18,17 +19,17 @@
       var(--bg-blueprint)
     );
     color: var(--white);
-    height: 20svh;
+    height: 25svh;
     width: calc(100% - var(--side-padding-mobile) * 6);
     width: 100%;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
     justify-content: center;
   }
-  span {
-    z-index: 3;
-  }
-  .mid-banner::before {
+  .mid-banner::after {
     content: "";
     position: absolute;
     top: 0;
@@ -43,6 +44,7 @@
       transparent 20px
     );
     z-index: 2;
+    pointer-events: none;
     opacity: 0.2;
     transform: rotate(180deg);
   }

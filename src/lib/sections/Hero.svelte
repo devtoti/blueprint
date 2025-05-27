@@ -35,7 +35,6 @@
 <style>
   .hero {
     position: relative;
-    height: calc(100svh - 64px);
     width: 100%;
     grid-column: 1 / -1;
     background-color: var(--bg-primary);

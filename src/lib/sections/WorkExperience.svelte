@@ -85,6 +85,7 @@
   .floor-plan-1 {
     display: flex;
     flex-direction: column;
+    transition: all 0.5s ease-in-out;
   }
   .void {
     flex-grow: 1;
