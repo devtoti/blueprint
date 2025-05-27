@@ -6,7 +6,7 @@
 <article style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
   <h2 class="arc-h2 color-invert">{heading}</h2>
   <p class="arc-body-1 color-invert">{description}</p>
-  <Button {href} {text} />
+  <Button {href} {text} primary />
 </article>
 
 <style>
