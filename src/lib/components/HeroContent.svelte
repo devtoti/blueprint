@@ -8,6 +8,7 @@
     buttonTwoText,
     buttonTwoHref,
     bgPattern = "iso-grid",
+    HeroImage,
   } = $props();
   import PaperBox from "$lib/images/paper-box.svelte";
   import Button from "$lib/components/Button.svelte";
@@ -24,11 +25,11 @@
         <h4 class="text-caption caption">{subheading}</h4>
       </div>
       <div class="subheader">
-        <p class="text-subheader">{description}</p>
+        <p class="text-subheader arc-body-1">{description}</p>
       </div>
     </article>
     <article class="hero-img">
-      <PaperBox />
+      <HeroImage />
     </article>
     <article class="button-container">
       <Button text={buttonOneText} href={buttonOneHref} primary />
@@ -76,7 +77,8 @@
     justify-content: center;
   }
   .contact-page {
-    height: 75svh;
+    min-height: 75svh;
+    padding: 2rem 0;
   }
   .text-subheader {
     margin-top: 0.5rem;

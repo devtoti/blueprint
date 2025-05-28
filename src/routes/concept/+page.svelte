@@ -1,8 +1,12 @@
 <script lang="ts">
+  import "../../styles.css";
+  import "../../tokens.css";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
+  import HeroContent from "$lib/components/HeroContent.svelte";
+  import IsoCube from "$lib/images/iso-cube.svelte";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
@@ -18,63 +22,35 @@
 </script>
 
 <main>
-  <section class="contact-page grainy">
-    <article class="section-content hero-content">
-      <div class="title">
-        <h1 class="text-title barlow-extrabold">Concept</h1>
-        <h4 class="text-caption caption">
-          Frontend development & design portfolio
-        </h4>
-      </div>
-      <div class="subheader">
-        <p class="text-subheader">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-          quos.
-        </p>
-      </div>
-      <div class="buttons">
-        <button>Get in touch</button>
-      </div>
-    </article>
-  </section>
+  <HeroContent
+    title="Concepto"
+    subheading="Detrás de mi proceso de diseño y desarrollo"
+    description="Blueprint.dev es un proyecto personal en donde el diseño y el desarrollo se fusionan para crear una experiencia de usuario excepcional, desafiando al mismo tiempo un par de paradigmas de la industria del desarrollo web."
+    buttonOneText="Sistema de Diseño"
+    buttonOneHref="/design-system"
+    buttonTwoText="Acerca de BP.dev"
+    buttonTwoHref="/about"
+    HeroImage={IsoCube}
+  />
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
     w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
+    children={() => null}
   />
-  <GenericBanner />
+  <GenericBanner
+    heading="¿Quieres saber más acerca de Blueprint.dev?"
+    description="Explora la sección que he preparado para ti, en donde encontrarás más información acerca del proceso de diseño y los retos que he enfrentado durante la ejecución de este proyecto."
+    href="/contact"
+    text="Contact Me"
+  />
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
     w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
     invert
+    children={() => null}
   />
 </main>
-
-<style>
-  section {
-    background-color: var(--bg-primary);
-    border-top: 0;
-    border-bottom: 0;
-    grid-column: 1 / -1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-  }
-  .contact-page {
-    min-height: 100svh;
-  }
-  .mid-banner-container {
-    grid-column: 1 / -1;
-  }
-  @media (min-width: 464px) {
-    .mid-banner-container {
-      grid-column: 3 / -3;
-    }
-  }
-</style>

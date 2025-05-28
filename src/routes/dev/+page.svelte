@@ -2,11 +2,11 @@
   import "../../styles.css";
   import "../../tokens.css";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
+  import PaperBox from "$lib/images/paper-box-new.svelte";
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
   import PrimaryButton from "$lib/components/PrimaryButton.svelte";
-  import PaperBox from "$lib/images/paper-box.svelte";
   import Button from "$lib/components/Button.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
@@ -26,13 +26,14 @@
 
 <main>
   <HeroContent
-    title="Frontend Development"
-    subheading="Traducción de UI a código dinámico y funcional"
-    description="Transformo diseños de interfaces en código dinámico y funcional, utilizando tecnologías como React, TypeScript, Svelte y Tailwind CSS."
+    title="Development"
+    subheading="Programación de páginas y aplicaciones web"
+    description="Me especializo en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona utilizar tecnologías de vanguardia como React, Svelte, TypeScript y Tailwind CSS para facilitar los procesos de desarrollo."
     buttonOneText="Explorar Proyectos"
     buttonOneHref="/projects"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
+    HeroImage={PaperBox}
   />
   <DividerTrapezoid
     width={WINDOW.width}

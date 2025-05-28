@@ -19,13 +19,13 @@
         <a href="/design">Design</a>
       </li>
       <li>
-        <a href="/tools">Tools</a>
-      </li>
-      <li>
         <a href="/concept">Concept</a>
       </li>
       <li>
         <a href="/contact">Contact</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
       </li>
     </ul>
     <section class="mobile-only mobile-nav">

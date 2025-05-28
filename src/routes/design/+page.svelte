@@ -6,6 +6,8 @@
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import { GRID } from "$lib/utils/gridData";
+  import PaperBox from "$lib/images/box-illustration.svelte";
+  import PortalDorico from "$lib/images/portal-dorico.svelte";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
@@ -23,13 +25,14 @@
 <main>
   <HeroContent
     title="UI/UX Design"
-    subheading="Diseño personalizado de interfaces de usuario"
-    description="Creo interfaces de usuario atractivas y funcionales que mejoran la experiencia del usuario."
+    subheading="Investigación, requisitos, diseño y evaluación"
+    description="Me especializo en crear interfaces de usuario únicas y atractivas que mejoran la experiencia del usuario, sustentadas en la framework UCD User Centered Design. Utilizo herramientas como Figma, Photoshop, Illustrator y AutoCAD para crear diseños de alta calidad."
     buttonOneText="Ver Diseños"
     buttonOneHref="/projects"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
-    bgPattern="levels-pattern-cdmx"
+    bgPattern="levels-pattern-cdmx-gray"
+    HeroImage={PortalDorico}
   />
   <DividerTrapezoid
     width={WINDOW.width}

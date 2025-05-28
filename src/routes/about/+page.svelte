@@ -1,7 +1,12 @@
 <script lang="ts">
+  import "../../styles.css";
+  import "../../tokens.css";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount } from "svelte";
   import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
+  import HeroContent from "$lib/components/HeroContent.svelte";
+  import PortalDorico from "$lib/images/portal-dorico.svelte";
+  import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
@@ -18,53 +23,36 @@
 </script>
 
 <main>
-  <section class="about-page">
-    <h1>About</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-    </p>
-  </section>
+  <HeroContent
+    title="Acerca de bp.dev"
+    subheading="Agenda una llamada o escríbeme directamente"
+    description="Originalmente pensado como un proyecto aislado para crear un nuevo sistema de diseño y una librería de componentes de React, Blueprint.dev se convirtió en un prototipo experimental a manera de sandbox para plasmar nuevas ideas y ejecutarlas simultáneamente."
+    buttonOneText="Inspiración"
+    buttonOneHref="/inspiration"
+    buttonTwoText="Timeline"
+    buttonTwoHref="/timeline"
+    bgPattern="broken-paper-pattern"
+    HeroImage={PortalDorico}
+  />
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
     w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
+    children={() => null}
   />
-  <section class="mid-banner-container">
-    <LandingMidBanner />
-  </section>
+  <GenericBanner
+    heading="¿Quieres saber más acerca de Blueprint.dev?"
+    description="Explora la sección que he preparado para ti, en donde encontrarás más información acerca del proceso de diseño y los retos que he enfrentado durante la ejecución de este proyecto."
+    href="/contact"
+    text="Contact Me"
+  />
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
     w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
     invert
+    children={() => null}
   />
 </main>
-
-<style>
-  section {
-    border: 1.5px solid var(--border-secondary);
-    background-color: #e9e8e6;
-    border-top: 0;
-    border-bottom: 0;
-    grid-column: 1 / -1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-  }
-  .about-page {
-    min-height: 100svh;
-  }
-  .mid-banner-container {
-    grid-column: 2 / -2;
-  }
-  @media (min-width: 464px) {
-    .mid-banner-container {
-      grid-column: 3 / -3;
-    }
-  }
-</style>

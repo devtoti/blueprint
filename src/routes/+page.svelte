@@ -6,9 +6,11 @@
   import { GRID } from "$lib/utils/gridData";
   import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
+  import HeroContent from "$lib/components/HeroContent.svelte";
   import CTABanner from "$lib/components/CTABanner.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import WorkExperience from "$lib/sections/WorkExperience.svelte";
+  import MainIllustration from "$lib/images/main-illustration.svelte";
   import Projects from "$lib/sections/Projects.svelte";
   import RadialDeco from "$lib/images/radial-deco.svelte";
   import Hero from "$lib/sections/Hero.svelte";
@@ -51,6 +53,7 @@
       w={isMobile ? 24 : 100}
       startEnd={isMobile ? 2 : 3}
       {invert}
+      children={() => null}
     />
   {:else if num === 2}
     <DividerTrapezoid
@@ -58,6 +61,7 @@
       y={16}
       w={isMobile ? 16 : 12}
       startEnd={isMobile ? 2 : 3}
+      children={() => null}
     />
     <DividerTrapezoid
       width={setDividerWidth(WINDOW.width)}
@@ -65,17 +69,28 @@
       w={isMobile ? 16 : 12}
       startEnd={isMobile ? 2 : 3}
       invert
+      children={() => null}
     />
   {/if}
 {/snippet}
 
 <main>
-  <Hero />
+  <HeroContent
+    title="Blueprint.dev"
+    subheading="UX Research • UI Design • Development"
+    description="Páginas y aplicaciones web de vanguardia altamente personalizables. Diseño paramétrico responsive. Código escalable y accesible."
+    buttonOneText="Get in touch"
+    buttonOneHref="/contact"
+    buttonTwoText="Curriculum"
+    buttonTwoHref="/contact"
+    HeroImage={MainIllustration}
+  />
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
     w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
+    children={() => null}
   />
 
   <section class="main-content work-experience grainy">
@@ -100,14 +115,16 @@
     y={isMobile ? 16 : 12}
     w={isMobile ? 16 : 12}
     startEnd={isMobile ? 2 : 3}
+    children={() => null}
   />
-  <!-- <CTABanner /> -->
+  <CTABanner />
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
     y={isMobile ? 16 : 12}
     w={isMobile ? 16 : 12}
     startEnd={isMobile ? 2 : 3}
     invert
+    children={() => null}
   />
   <section class="main-content stripped-divider"></section>
   <DividerTrapezoid

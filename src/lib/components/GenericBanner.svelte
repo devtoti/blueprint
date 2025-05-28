@@ -21,7 +21,7 @@
       var(--bg-blueprint)
     );
     color: var(--white);
-    height: 25svh;
+    min-height: 35svh;
     width: calc(100% - var(--side-padding-mobile) * 6);
     width: 100%;
     display: flex;
@@ -29,6 +29,7 @@
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+    padding: 0 2rem;
     justify-content: center;
   }
   .floating-container {
