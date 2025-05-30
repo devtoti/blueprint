@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import LeftHand from "./LeftHand.svelte";
   import RightHand from "./RightHand.svelte";
-  import DividerTrapezoid from "./DividerTrapezoid.svelte";
   let active = false;
   onMount(() => {
     window.addEventListener("scroll", () => {
@@ -61,10 +60,10 @@
 <style>
   .cta-banner {
     position: relative;
-    background-color: #adb2de;
-    height: 70svh;
+    background: radial-gradient(#adb2de, #aeb2d9 50%, #878cbe 100%);
+    height: 80svh;
     grid-column: 1 / -1;
-    width: 100svw;
+    width: 100%;
     overflow: hidden;
     &::after {
       content: "";
@@ -84,8 +83,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    padding-top: 2rem;
     text-align: center;
+    inset: auto;
     gap: 1rem;
     z-index: 10;
     .cta-text {
@@ -103,7 +104,7 @@
     display: grid;
     grid-template-columns: repeat(2, 50%);
     place-items: center;
-    transform: translate(-50%, -50%) scale(2) rotate(60deg);
+    transform: translate(-50%, -20%) scale(1.75) rotate(20deg);
     pointer-events: none;
     mix-blend-mode: multiply;
     z-index: 1;
@@ -131,21 +132,50 @@
   .left-hand.active {
     transform: translateX(0%);
     opacity: 1;
+    /* animation: epicRotation 10s ease-in-out infinite;
+    animation-delay: 4s; */
   }
   .right-hand.active {
     transform: translateX(0%);
     opacity: 1;
+    /* animation: epicRotation 10s ease-in-out infinite;
+    animation-delay: 4s; */
   }
+  /* @keyframes epicRotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  } */
   @media (min-width: 720px) {
     .illustrations-container {
-      transform: translate(-50%, -50%) scale(1) rotate(10deg) !important;
+      transform: translate(-45%, -60%) scale(1.2) rotate(10deg) !important;
       align-items: flex-end;
       padding-bottom: 2rem;
     }
     .cta-banner-info {
       justify-content: flex-start;
-      max-width: 70ch;
-      margin: 10rem auto 0;
+      margin: 2rem auto 0;
+      height: fit-content;
+    }
+    .cta-banner-info > * {
+      display: inline-block;
+      width: 50%;
+    }
+    .button-wrapper {
+      max-width: 40ch;
+    }
+    @media (min-width: 1024px) {
+      .illustrations-container {
+        transform: translate(-50%, -45%) scale(1) rotate(10deg) !important;
+        align-items: flex-end;
+        padding-bottom: 2rem;
+      }
     }
   }
 </style>

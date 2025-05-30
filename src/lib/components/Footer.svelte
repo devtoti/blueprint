@@ -1,5 +1,4 @@
 <script lang="ts">
-  import HorizontalAxes from "./HorizontalAxes.svelte";
   import RadialDeco from "$lib/images/radial-deco.svelte";
   import IconCode from "~icons/solar/code-bold-duotone";
   import Github from "$lib/icons/github.svelte";
@@ -81,7 +80,6 @@
       <h4 class="arc-h0">A1</h4>
     </article>
   </div>
-  <HorizontalAxes width={window.width} height={window.height} />
 </footer>
 
 <style>
@@ -100,6 +98,13 @@
       gap: 1rem;
       opacity: 0.75;
     }
+  }
+  .footer-padding {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    height: 0.5rem;
+    width: 100%;
+    background-color: var(--bleu-100);
   }
 
   .radial-deco-wrapper {

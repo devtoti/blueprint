@@ -1,31 +1,36 @@
 <script lang="ts">
-  import HorizontalAxes from "./HorizontalAxes.svelte";
-  let { window } = $props();
+  import { page } from "$app/state";
+
   import IconSettings from "~icons/solar/settings-outline";
   import IconSidebar from "~icons/solar/siderbar-outline";
 </script>
 
 <nav class="grainy">
-  <HorizontalAxes width={window.width} height={window.height} />
   <article class="nav-container">
     <ul class="nav-links desktop-only">
       <li>
-        <a href="/">Blueprint</a>
+        <a href="/" class:active={page.url.pathname === "/"}>Blueprint</a>
       </li>
       <li>
-        <a href="/dev">Dev</a>
+        <a href="/dev" class:active={page.url.pathname === "/dev"}>Dev</a>
       </li>
       <li>
-        <a href="/design">Design</a>
+        <a href="/design" class:active={page.url.pathname === "/design"}
+          >Design</a
+        >
       </li>
       <li>
-        <a href="/concept">Concept</a>
+        <a href="/concept" class:active={page.url.pathname === "/concept"}
+          >Concept</a
+        >
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <a href="/contact" class:active={page.url.pathname === "/contact"}
+          >Contact</a
+        >
       </li>
       <li>
-        <a href="/about">About</a>
+        <a href="/about" class:active={page.url.pathname === "/about"}>About</a>
       </li>
     </ul>
     <section class="mobile-only mobile-nav">
@@ -61,13 +66,12 @@
   nav {
     position: sticky;
     padding-bottom: 1rem;
-    height: 64px;
+    height: 52px;
     justify-content: space-between;
     flex-direction: column;
     background-color: #c2c2c2;
     padding: 0;
-    position: sticky;
-    top: 0;
+    top: 12px;
     z-index: 100;
     font-size: 1rem;
     font-weight: 400;
@@ -75,7 +79,7 @@
     color: var(--text-secondary);
   }
   .nav-container {
-    display: sticky;
+    display: relative;
     height: 52px;
     grid-column: 1 / -1;
     box-shadow: var(--shadow-3);
@@ -90,6 +94,11 @@
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 400;
     color: var(--text-secondary);
+    transition: color 0.5s ease-in-out;
+    &.active {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
   }
   @media (min-width: 480px) {
     .mobile-nav {

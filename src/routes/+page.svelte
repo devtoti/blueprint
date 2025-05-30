@@ -18,7 +18,6 @@
   import Skills from "$lib/sections/+Skills.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
-
   onMount(() => {
     grid = GRID();
     window.addEventListener("resize", () => {

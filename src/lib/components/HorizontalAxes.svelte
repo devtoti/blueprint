@@ -76,14 +76,15 @@
     margin: 0;
     padding: 0;
     background-color: var(--bleu-200);
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 99;
     font-weight: 500;
     font-size: 10px;
     color: var(--text-secondary);
   }
 
   li {
-    position: relative;
     width: 100%;
     text-align: center;
     background-color: var(--bg-tertiary);
@@ -94,24 +95,15 @@
   .highlight-before,
   .highlight-after {
     position: absolute;
-    background-color: var(--bg-blueprint);
-    opacity: 0.1;
+    background: center center url("$lib/images/stripes-strong-2.png") repeat;
+    opacity: 0.75;
+    background-size: 100px 100px;
     pointer-events: none;
-    height: 300svh;
-    z-index: 100;
-  }
-  /* li:hover::after {
-    content: "";
-    position: absolute;
+    z-index: 999;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100svh;
-    background-color: var(--bg-blueprint);
-  } */
-  ul:last-child {
-    grid-column-end: -2;
+    bottom: 0;
   }
+
   li:first-child {
     grid-column-start: 2;
   }
