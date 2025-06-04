@@ -42,14 +42,21 @@
     y={isMobile ? 16 : 100}
     w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
+    children={() => null}
   />
-  <GenericBanner />
+  <GenericBanner
+    heading="Tools"
+    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+    href="/contact"
+    text="Get in touch"
+  />
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
     w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
     startEnd={1}
     invert
+    children={() => null}
   />
 </main>
 

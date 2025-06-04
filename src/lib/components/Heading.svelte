@@ -2,11 +2,15 @@
   export let heading: string;
   export let subheading: string;
   export let alignRight: boolean = false;
+  export let isCentered: boolean = false;
+  import { getContext } from "svelte";
+  const WINDOW = getContext<{ width: number; height: number }>("WINDOW");
+  const isMobile = WINDOW.width < 480;
 </script>
 
-<article class="heading" class:alignRight>
+<article class="heading" class:alignRight class:isCentered>
   <h2 class="arc-h2">{heading}</h2>
-  <h5 class="arc-body-1">{subheading}</h5>
+  <h5 class="arc-body-{isMobile ? '2' : '1'}">{subheading}</h5>
 </article>
 
 <style>
@@ -17,19 +21,28 @@
     display: block;
     margin: 1rem 0;
   }
+  .isCentered {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+  }
   @media (min-width: 480px) {
     .heading {
-      grid-column: 2 / -2;
-    }
-  }
-  @media (min-width: 1029px) {
-    .heading {
-      grid-column: 1 / span 5;
       text-align: left;
+      grid-column: 1 / span 4;
     }
     .alignRight {
-      grid-column: span 5 / -1;
+      grid-column: span 4 / -1;
       text-align: right;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1920px) {
+    .heading {
+      grid-column: 2 / span 4;
+      padding: 0;
+    }
+    .alignRight {
+      grid-column: span 4 / -2;
     }
   }
 </style>

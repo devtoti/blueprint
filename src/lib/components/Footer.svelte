@@ -233,6 +233,7 @@
   @media (min-width: 1029px) {
     .footer-container {
       padding: 1rem 0;
+      grid-column: 5 / span 6;
       grid-template-areas:
         "nav nav nav navR navR navR"
         "nav nav nav navR navR navR"

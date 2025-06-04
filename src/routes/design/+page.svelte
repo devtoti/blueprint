@@ -26,7 +26,7 @@
   <HeroContent
     title="UI/UX Design"
     subheading="Investigación, requisitos, diseño y evaluación"
-    description="Me especializo en crear interfaces de usuario únicas y atractivas que mejoran la experiencia del usuario, sustentadas en la framework UCD User Centered Design. Utilizo herramientas como Figma, Photoshop, Illustrator y AutoCAD para crear diseños de alta calidad."
+    description="Me especializo en crear interfaces de usuario únicas y atractivas que mejoran la experiencia del usuario, sustentadas en la framework UCD User Centered Design."
     buttonOneText="Ver Diseños"
     buttonOneHref="/projects"
     buttonTwoText="Contáctame"

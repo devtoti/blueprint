@@ -23,7 +23,7 @@
 <HorizontalAxes width={innerWidth} height={innerHeight} />
 <Navbar />
 {@render children()}
-<p>{innerHeight}, {innerWidth}</p>
+<p>{innerWidth}, {innerHeight}</p>
 <Footer window={wnd} />
 <HorizontalAxes width={innerWidth} height={innerHeight} />
 

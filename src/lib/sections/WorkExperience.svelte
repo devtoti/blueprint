@@ -1,18 +1,15 @@
 <script lang="ts">
   import Heading from "../components/Heading.svelte";
   import ExperienceCard from "../components/ExperienceCard.svelte";
-  import type { SvelteHTMLElements } from "svelte/elements";
-  type Props = SvelteHTMLElements["ExperienceCard"];
 </script>
 
 <Heading
   heading="Experiencia Laboral"
-  subheading="Durante los últimos +5 años he desarrollado un interés particular por el diseño UI/UX y el desarrollo frontend de manera integral. He trabajado en diversos startups de Estados Unidos y Canadá, desempeñándome primordialmente como frontend designer."
-  alignRight
+  subheading="Durante los últimos +5 años he desarrollado un interés particular por el diseño UI/UX y el desarrollo frontend de manera conjunta:"
 />
 
 {#snippet card(
-  ExperienceCard: Props,
+  ExperienceCard: any,
   data: {
     experience: {
       role: string;
@@ -85,7 +82,6 @@
   .floor-plan-1 {
     display: flex;
     flex-direction: column;
-    transition: all 0.5s ease-in-out;
   }
   .void {
     flex-grow: 1;

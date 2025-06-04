@@ -12,7 +12,7 @@ export const projects = [
         number: "02",
         title: "Junkhaul Moving Services",
         description:
-          "Built a checkout user flow with React, Supabase, and Stripe for hiring household-related services",
+          "Checkout y dashboard de administración para la empresa Junkhaul Moving Services. Desarrollado con React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
         tags: ["React", "Nextjs", "TailwindCSS", "Typescript", "Figma", "Stripe", "Supabase"],
       },
       {

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import BoxIllustration from "$lib/images/box-illustration.svelte";
+  import BoxIllustration from "$lib/images/paper-box.svelte";
   import Heading from "$lib/components/Heading.svelte";
-  const UXservices = [
+  const uxServices = [
     {
       title: "Prototipos",
       description:
@@ -18,7 +18,7 @@
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
     },
   ];
-  const FrontendServices = [
+  const frontendServices = [
     {
       title: "Desarrollo de Aplicaciones",
       description:
@@ -35,6 +35,8 @@
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
     },
   ];
+  const uxServicesShort = uxServices.slice(0, 2);
+  const frontendServicesShort = frontendServices.slice(0, 2);
 </script>
 
 {#snippet item(title: string, description: string)}
@@ -51,12 +53,12 @@
 />
 <article class="services-container">
   <div class="services-list-left">
-    {#each UXservices as UXservice, ix}
+    {#each uxServicesShort as UXservice, ix}
       {@render item(UXservice.title, UXservice.description)}
     {/each}
   </div>
   <div class="services-list-right">
-    {#each FrontendServices as FrontendService, ix}
+    {#each frontendServicesShort as FrontendService, ix}
       {@render item(FrontendService.title, FrontendService.description)}
     {/each}
   </div>
@@ -67,7 +69,7 @@
     <BoxIllustration />
   </div>
   <div class="services-list-right">
-    {#each FrontendServices as FrontendService, ix}
+    {#each frontendServicesShort as FrontendService, ix}
       {@render item(FrontendService.title, FrontendService.description)}
     {/each}
   </div>
@@ -79,9 +81,10 @@
     grid-column: 1 / -1;
     background-color: var(--bg-primary);
     gap: 1rem;
-    padding: 0rem 1rem;
+    /* padding: 0rem 1rem; */
     display: grid;
     grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
   [class*="services-list"] {
     display: flex;
@@ -96,20 +99,21 @@
   .services-list-right {
     grid-column: span 2 / -1;
     grid-row: 2 / 3;
+    text-align: right;
     align-self: center;
   }
   [class*="services-illustration"] {
-    align-self: center;
-    padding: 0 1rem;
-    height: 100%;
+    align-self: start;
+    /* padding: 0 1rem; */
   }
   .services-illustration-1 {
-    grid-column: span 2 / -1;
+    grid-column: span 3 / -1;
     grid-row: 1 / 2;
   }
   .services-illustration-2 {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 3;
     grid-row: 2 / 3;
+    transform: scaleX(-1);
   }
   @media (min-width: 480px) {
     .services-list-left {
@@ -117,16 +121,33 @@
     }
     .services-list-right {
       grid-column: span 3 / -1;
-      grid-row: 3 / 4;
+      grid-row: 2 / 3;
     }
     .services-illustration-1 {
       grid-column: span 3 / -1;
       align-self: start;
     }
     .services-illustration-2 {
-      grid-column: 2 / span 2;
+      grid-column: 1 / span 3;
       align-self: start;
-      grid-row: 3 / 4;
+      grid-row: 2 / 3;
+    }
+  }
+  @media (min-width: 720px) {
+    .services-illustration-1 {
+      grid-column: span 2 / -1;
+      padding-right: 1rem;
+      grid-row: 1 / 2;
+    }
+    .services-illustration-2 {
+      grid-column: 1 / span 2;
+      padding-right: 1rem;
+      grid-row: 2 / 3;
+    }
+  }
+  @media (min-width: 1024px) {
+    .services-container {
+      grid-column: 2 / -2;
     }
   }
 </style>

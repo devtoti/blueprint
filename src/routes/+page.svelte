@@ -75,14 +75,13 @@
 
 <main>
   <HeroContent
-    title="Blueprint.dev"
+    title="Blueprint.dev()"
     subheading="UX Research • UI Design • Development"
-    description="Páginas y aplicaciones web de vanguardia altamente personalizables. Diseño paramétrico responsive. Código escalable y accesible."
-    buttonOneText="Get in touch"
+    description="Producción de páginas y aplicaciones web de vanguardia altamente personalizables y accesibles. Diseño paramétrico adaptativo apegado a los principios de usabilidad y de diseño."
+    buttonOneText="Contáctame"
     buttonOneHref="/contact"
-    buttonTwoText="Curriculum"
+    buttonTwoText="Resumé"
     buttonTwoHref="/contact"
-    HeroImage={MainIllustration}
   />
   <DividerTrapezoid
     width={WINDOW.width}
@@ -148,7 +147,12 @@
     grid-column: 2 / -2;
     flex-direction: column;
   }
-
+  .work-experience {
+    background-image: url("src/lib/images/levels-pattern-cdmx-gray.svg");
+    background-size: 100% 2000px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   section {
     border: 1.5px solid var(--border-secondary);
     border-top: 0;

@@ -3,7 +3,8 @@
 </script>
 
 <div class="active-project">
-  <h3 class="arc-h2">{project.title}</h3>
+  <h2 class="arc-h0">{project.number}</h2>
+  <h3 class="arc-h1">{project.title}</h3>
   <p class="arc-body-1">{project.description}</p>
   <div class="tags">
     {#each project.tags as tag}
@@ -21,8 +22,10 @@
     width: 100%;
     height: min-content;
     h3 {
-      font-weight: 600;
       color: var(--text-primary);
+    }
+    h2 {
+      padding-bottom: 0rem !important;
     }
   }
   .tags {
@@ -30,7 +33,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .tag {
     background-color: var(--bleu-50);

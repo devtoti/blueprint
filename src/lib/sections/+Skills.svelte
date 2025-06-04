@@ -37,7 +37,7 @@
 <Heading
   heading="Enfoque dual diseño y desarrollo"
   subheading="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?"
-  alignRight
+  isCentered
 />
 <article class="skills-container">
   {#each skills as name, ix}
@@ -90,5 +90,15 @@
   .services-illustration-2 {
     grid-column: 2 / 4;
     grid-row: 3 / 4;
+  }
+  @media (min-width: 480px) {
+    .skills-container {
+      grid-column: 2 / -2;
+    }
+  }
+  @media (min-width: 1280px) {
+    .skills-container {
+      grid-column: 3 / -3;
+    }
   }
 </style>

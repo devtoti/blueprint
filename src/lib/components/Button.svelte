@@ -29,7 +29,7 @@
 
 <style>
   .button-wrapper {
-    width: fit-content;
+    width: 100%;
     min-width: 10rem;
     height: fit-content;
   }
