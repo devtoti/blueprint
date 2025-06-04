@@ -1,5 +1,6 @@
 <script lang="ts">
   let { project, isActive, activeProject = $bindable() } = $props();
+  import SolarGlobalOutline from "~icons/solar/global-outline";
   import IconCode from "~icons/solar/code-bold-duotone";
   import PenNib from "$lib/icons/pen-nib.svg";
   import IconWrapper from "$lib/components/IconWrapper.svelte";
@@ -23,11 +24,19 @@
   class:active={isActive}
 >
   <h3 class="project-number arc-h3">{project.number}</h3>
-  <h3 class="arc-h3">{project.title}</h3>
-  <p class="arc-body-1">{project.description}</p>
+  <h3 class="arc-h4 project-title">{project.title}</h3>
+  <p class="arc-body-1 project-description">{project.description}</p>
   <div class="project-card-icons">
-    <IconWrapper Icon={IconCode} />
-    <IconWrapper Icon={PenNib} />
+    {#if project.url || project.figmaUrl}
+      <div class="icons-wrapper">
+        <a href={project.url} target="_blank">
+          <IconWrapper Icon={SolarGlobalOutline} />
+        </a>
+        <a href={project.figmaUrl} target="_blank">
+          <IconWrapper Icon={PenNib} />
+        </a>
+      </div>
+    {/if}
   </div>
   <span class="bracket top-left"></span>
   <span class="bracket top-right"></span>
@@ -37,6 +46,7 @@
 
 <style>
   .project-card {
+    grid-column: 1 / -1;
     position: relative;
     background-color: var(--bg-primary);
     width: 100%;
@@ -53,6 +63,12 @@
     background-size: 10px 10px;
     background-position: -5px -5px;
     transition: transform 0.3s ease-in-out;
+    .project-title {
+      color: var(--text-secondary);
+    }
+    .project-description {
+      color: var(--text-secondary);
+    }
     .bracket {
       position: absolute;
       box-sizing: border-box;
@@ -99,8 +115,49 @@
       }
     }
   }
+  .icons-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    a {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .project-card,
   .project-card.active {
-    background-color: var(--bleu-50);
+    transition: all 0.6s ease-in-out;
+  }
+  .project-card.active {
+    .bracket {
+      position: absolute;
+      box-sizing: border-box;
+      height: 16px;
+      width: 16px;
+    }
+    .bracket.top-right {
+      top: -6px;
+      right: -6px;
+      border-top: 2px solid var(--border-primary);
+      border-right: 2px solid var(--border-primary);
+    }
+    .bracket.top-left {
+      top: -6px;
+      left: -6px;
+      border-top: 2px solid var(--border-primary);
+      border-left: 2px solid var(--border-primary);
+    }
+    .bracket.bottom-left {
+      bottom: -6px;
+      left: -6px;
+      border-bottom: 2px solid var(--border-primary);
+      border-left: 2px solid var(--border-primary);
+    }
+    .bracket.bottom-right {
+      bottom: -6px;
+      right: -6px;
+      border-bottom: 2px solid var(--border-primary);
+      border-right: 2px solid var(--border-primary);
+    }
   }
   .project-card-icons {
     width: 100%;
@@ -112,12 +169,30 @@
   }
   .project-number {
     width: 100%;
-    text-align: end;
+    text-align: left;
     color: var(--text-secondary);
+  }
+  .project-card.active {
+    .project-title {
+      color: var(--text-primary);
+    }
+    .project-number {
+      color: var(--text-primary);
+    }
   }
 
   :global(.projects-container:has(.project-card:hover))
     .project-card:not(:hover) {
     opacity: 0.8;
+  }
+  @media (min-width: 1024px) {
+    .project-card {
+      grid-column: span 4 / -1;
+    }
+  }
+  @media (min-width: 1920px) {
+    .project-card {
+      grid-column: span 3 / -2;
+    }
   }
 </style>

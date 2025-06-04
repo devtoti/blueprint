@@ -161,7 +161,7 @@
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
             >
-              <p class="arc-body-2">{role.overview}</p>
+              <p class="arc-body-1">{role.overview}</p>
               <div class="link-wrapper">
                 {#if role.figmaLink}
                   <a
@@ -207,7 +207,7 @@
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
             >
-              <p class="arc-body-2">{role.overview}</p>
+              <p class="arc-body-1">{role.overview}</p>
               <div class="link-wrapper">
                 {#if role.figmaLink}
                   <a

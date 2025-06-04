@@ -9,7 +9,7 @@
 </script>
 
 <article class="heading" class:alignRight class:isCentered>
-  <h2 class="arc-h2">{heading}</h2>
+  <h2 class="arc-h3">{heading}</h2>
   <h5 class="arc-body-{isMobile ? '2' : '1'}">{subheading}</h5>
 </article>
 

@@ -3,16 +3,11 @@
   import ProjectCard from "../components/ProjectCard.svelte";
   import ActiveProject from "../components/ActiveProject.svelte";
   import { projects as projectData } from "../utils/projects";
-  let activeProject = $state(projectData[1]);
+  let activeProject = $state(projectData[0]);
   const projects = $state(projectData.slice(0, -1));
+  $inspect(activeProject);
 </script>
 
-{#snippet bullet(info: { title: string; description: string })}
-  <div class="bullet">
-    <h3 class="arc-h4">{info.title}</h3>
-    <p class="arc-body-1">{info.description}</p>
-  </div>
-{/snippet}
 <article class="projects-banner">
   <h3 class="arc-h4 color-invert">Proyectos Destacados</h3>
 </article>
@@ -23,42 +18,23 @@
     alignRight
   /> -->
   <div class="projects-container">
-    <section class="preview-container" id="preview-container">
-      <ActiveProject project={activeProject} />
-      <div class="preview" id="preview"></div>
-      <article class="bullets">
-        {@render bullet({
-          title: "Lorem ipsum",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, ipsa! Aut vero temporibus impedit itaque? Magni",
-        })}
-        {@render bullet({
-          title: "Lorem ipsum",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, ipsa! Aut vero temporibus impedit itaque? Magni",
-        })}
-        {@render bullet({
-          title: "Lorem ipsum",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, ipsa! Aut vero temporibus impedit itaque? Magni",
-        })}
-      </article>
-    </section>
-    <section class="cards">
-      {#each projects as project, index}
-        <ProjectCard
-          bind:activeProject
-          isActive={activeProject.id === index + 1}
-          project={{
-            id: project.id,
-            number: project.number,
-            title: project.title,
-            description: project.description,
-            tags: project.tags,
-          }}
-        />
-      {/each}
-    </section>
+    <ActiveProject project={activeProject} />
+    {#each projects as project, index}
+      <ProjectCard
+        bind:activeProject
+        isActive={activeProject.id === index + 1}
+        project={{
+          id: project.id,
+          number: project.number,
+          title: project.title,
+          description: project.description,
+          tags: project.tags,
+          bullets: project.bullets,
+          url: project.url,
+          figmaUrl: project.figmaUrl,
+        }}
+      />
+    {/each}
   </div>
 </div>
 
@@ -69,6 +45,7 @@
   .projects-banner {
     position: relative;
     grid-column: 1 / -1;
+    grid-row: 1 / 2;
     width: 100%;
     text-align: center;
     height: 2.5rem;
@@ -83,12 +60,14 @@
   .projects-container {
     grid-column: 1 / -1;
     width: 100%;
+    display: contents;
     .preview-container {
       padding: 0 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      display: contents;
       .preview {
         margin: 1rem 0;
         width: 100%;
@@ -104,10 +83,15 @@
       align-items: center;
       gap: 1rem;
       padding: 0 1rem;
+      display: contents;
     }
   }
+
   .bullets {
     display: none;
+  }
+  .project-card:first-of-type {
+    grid-row: 4 / 5;
   }
   @media (min-width: 480px) {
     .cards {
@@ -149,6 +133,13 @@
       gap: 1rem;
       padding: 0 1rem;
       margin-top: auto;
+    }
+  }
+  .bullet {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    h3 {
+      align-self: end;
     }
   }
 </style>

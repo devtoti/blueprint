@@ -143,9 +143,13 @@
     position: relative;
     background-color: var(--bg-primary);
     min-height: 10svh;
-    padding-bottom: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    row-gap: 8px;
     grid-column: 2 / -2;
     flex-direction: column;
+  }
+  .projects {
+    grid-template-rows: 3rem repeat(4, 1fr);
   }
   .work-experience {
     background-image: url("src/lib/images/levels-pattern-cdmx-gray.svg");
@@ -190,6 +194,7 @@
   @media (min-width: 1029px) {
     .main-content {
       grid-column: 3 / -3;
+      /* padding: 0; */
     }
   }
 </style>

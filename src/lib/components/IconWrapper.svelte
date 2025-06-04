@@ -33,6 +33,7 @@
       height: 1px;
       border-top: 1px solid var(--border-tertiary);
     }
+
     span:nth-of-type(2) {
       position: absolute;
       inset: auto 0 auto auto;
@@ -53,6 +54,26 @@
       width: 1px;
       height: 28px;
       border-left: 1px solid var(--border-tertiary);
+    }
+  }
+  .icon-wrapper:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--icon-dark);
+    span {
+      border-color: var(--icon-secondary);
+    }
+    span:first-of-type {
+      width: 32px;
+    }
+
+    span:nth-of-type(2) {
+      height: 32px;
+    }
+    span:nth-of-type(3) {
+      width: 32px;
+    }
+    span:last-of-type {
+      height: 32px;
     }
   }
 </style>
