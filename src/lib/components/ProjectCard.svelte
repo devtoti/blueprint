@@ -4,19 +4,23 @@
   import IconCode from "~icons/solar/code-bold-duotone";
   import PenNib from "$lib/icons/pen-nib.svg";
   import IconWrapper from "$lib/components/IconWrapper.svelte";
+  let innerWidth = $state(0);
   function handleClick() {
     activeProject = project;
-    const element = document.getElementById("projects");
-    const offset = 64;
-    const elementPosition = element?.getBoundingClientRect().top ?? 0;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    if (innerWidth <= 1024) {
+      const element = document.getElementById("projects");
+      const offset = 64;
+      const elementPosition = element?.getBoundingClientRect().top ?? 0;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
   }
 </script>
 
+<svelte:window bind:innerWidth />
 <button
   class="project-card"
   onclick={handleClick}
@@ -128,6 +132,7 @@
     transition: all 0.6s ease-in-out;
   }
   .project-card.active {
+    background-color: var(--bg-secondary);
     .bracket {
       position: absolute;
       box-sizing: border-box;
@@ -185,9 +190,23 @@
     .project-card:not(:hover) {
     opacity: 0.8;
   }
+  @media (min-width: 480px) {
+    .project-card:first-of-type {
+      grid-column: 1 / span 3;
+    }
+    .project-card:nth-of-type(2) {
+      grid-column: 4 / span 3;
+    }
+    .project-card:nth-of-type(3) {
+      grid-column: 1 / span 3;
+    }
+    .project-card:nth-of-type(4) {
+      grid-column: 4 / span 3;
+    }
+  }
   @media (min-width: 1024px) {
     .project-card {
-      grid-column: span 4 / -1;
+      grid-column: span 4 / -1 !important;
     }
   }
   @media (min-width: 1920px) {

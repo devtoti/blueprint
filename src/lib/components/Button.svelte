@@ -10,7 +10,7 @@
 
 {#if primary}
   <div class="button-wrapper">
-    <a {href} class="arc-button-primary arc-h3 button-text" class:invert>
+    <a {href} class="arc-button-primary arc-h4 button-text" class:invert>
       {text}
     </a>
     <span class="square top-left"></span>
@@ -21,7 +21,7 @@
 {/if}
 {#if secondary}
   <div class="button-wrapper">
-    <a {href} class="arc-button-secondary arc-h3" class:invert>
+    <a {href} class="arc-button-secondary arc-h4" class:invert>
       {text}
     </a>
   </div>
@@ -32,5 +32,9 @@
     width: 100%;
     min-width: 10rem;
     height: fit-content;
+  }
+  .arc-h4 {
+    font-weight: 600;
+    padding: 0.25rem 0 !important;
   }
 </style>

@@ -9,8 +9,8 @@
 </script>
 
 <article class="heading" class:alignRight class:isCentered>
-  <h2 class="arc-h3">{heading}</h2>
-  <h5 class="arc-body-{isMobile ? '2' : '1'}">{subheading}</h5>
+  <h2 class="arc-h4">{heading}</h2>
+  <h5 class="subheading arc-body-{isMobile ? '2' : '1'}">{subheading}</h5>
 </article>
 
 <style>
@@ -24,6 +24,9 @@
   .isCentered {
     grid-column: 1 / -1 !important;
     text-align: center !important;
+  }
+  .subheading {
+    max-width: 70ch;
   }
   @media (min-width: 480px) {
     .heading {

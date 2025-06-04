@@ -108,6 +108,8 @@
   <section class="main-content services grainy">
     <Services />
   </section>
+  {@render sectionDividers(2, "invert")}
+  <section class="main-content stripped-divider"></section>
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
     y={isMobile ? 16 : 12}
@@ -153,9 +155,10 @@
   }
   .work-experience {
     background-image: url("src/lib/images/levels-pattern-cdmx-gray.svg");
-    background-size: 100% 2000px;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   section {
     border: 1.5px solid var(--border-secondary);
@@ -194,7 +197,6 @@
   @media (min-width: 1029px) {
     .main-content {
       grid-column: 3 / -3;
-      /* padding: 0; */
     }
   }
 </style>

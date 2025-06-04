@@ -2,7 +2,7 @@
   let { offset = 0, winWidth = 360 } = $props();
   let innerWidth = $state(0);
   let clientHeight = $state(0);
-  // $inspect(clientHeight);
+  import Button from "$lib/components/Button.svelte";
 </script>
 
 <svelte:window bind:innerWidth />
@@ -14,32 +14,27 @@
   >
     <span>
       <h3
-        class={winWidth <= 360 ? "arc-h3 color-invert" : "arc-h2 color-invert"}
+        class={winWidth <= 360
+          ? "arc-h4 title color-invert"
+          : "arc-h3 title color-invert"}
       >
-        Ponte en contacto conmigo
+        Añade Blueprint a tu proyecto
       </h3>
       <p class="arc-body-1 color-invert">
-        Estoy aquí para ayudarte a crear soluciones web excepcionales.
+        ¿Te interesaría implementar la filosofía de diseño de Blueprint.dev en
+        tu proyecto, o simplemente te gustaría contar con alguna opinión
+        técnica-proyectual?
       </p>
     </span>
     <span class="button-container">
-      <div class="button-wrapper">
-        <a href="/contact" class="arc-button-secondary arc-h3 invert"
-          >Envíame un mensaje</a
-        >
-      </div>
-      <div class="button-wrapper">
-        <a href="/about" class="arc-button-primary arc-h3 invert"
-          >Acerca de Blueprint</a
-        >
-        <span class="square top-left"></span>
-        <span class="square top-right"></span>
-        <span class="square bottom-left"></span>
-        <span class="square bottom-right"></span>
-      </div>
+      <Button href="/about" text="Leer más" secondary invert />
+      <Button href="/contact" text="Contactar" primary invert />
     </span>
   </article>
   <div class="mid-banner-background" style="height: {clientHeight}px"></div>
+  <!-- </span>
+  </article>
+  <div class="mid-banner-background" style="height: {clientHeight}px"></div> -->
 </section>
 
 <style>
@@ -72,6 +67,10 @@
   }
   span {
     z-index: 3;
+    max-width: 70ch;
+  }
+  .title {
+    margin-bottom: 0.5rem;
   }
   .mid-banner-background {
     width: 100svw;

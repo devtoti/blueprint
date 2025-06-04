@@ -26,7 +26,7 @@
     class="highlight-after"
     style="right: 0; width: {highlightDims.widthRight}px;"
   ></span>
-  <ul class="axes axes-x">
+  <ul class="axes axes-x grainy">
     {#each axes.slice(0, 4) as axis}
       <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
         {axis}
@@ -42,7 +42,7 @@
     class="highlight-after"
     style="right: 0; width: {highlightDims.widthRight}px;"
   ></span>
-  <ul class="axes axes-x">
+  <ul class="axes axes-x grainy">
     {#each axes.slice(0, 8) as axis}
       <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
         {axis}
@@ -58,7 +58,7 @@
     class="highlight-after"
     style="right: 0; width: {highlightDims.widthRight}px;"
   ></span>
-  <ul class="axes axes-x">
+  <ul class="axes axes-x grainy">
     {#each axes as axis}
       <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
         {axis}

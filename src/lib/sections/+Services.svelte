@@ -5,43 +5,41 @@
     {
       title: "Prototipos",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
+        "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
     },
     {
       title: "Diseño de Interfaces",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
+        "Creación de componentes personalizados apegados a los principios de accesibilidad y usabilidad",
     },
     {
       title: "Ilustraciones",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
+        "Realizadas a mano o con herramientas de dibujo vectorial, con separación de capas para ser animadas",
     },
   ];
   const frontendServices = [
     {
       title: "Desarrollo de Aplicaciones",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
+        "Traducción de diseño a código, estableciendo primeramente las tecnologías y el sistema de diseño a utilizar",
     },
     {
       title: "Landing Pages",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
+        "Enfocadas en la conversión de usuarios y sujetas a A/B testing",
     },
     {
       title: "Integración de APIs",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?",
+        "Integración de APIs para interactuar con el backend y desplegar visualizaciones de datos",
     },
   ];
-  const uxServicesShort = uxServices.slice(0, 2);
-  const frontendServicesShort = frontendServices.slice(0, 2);
 </script>
 
 {#snippet item(title: string, description: string)}
   <div class="service">
-    <h5 class="arc-h4">{title}</h5>
+    <h5 class="arc-h5">{title}</h5>
     <p class="arc-body-2">{description}</p>
   </div>
 {/snippet}
@@ -53,12 +51,12 @@
 />
 <article class="services-container">
   <div class="services-list-left">
-    {#each uxServicesShort as UXservice, ix}
+    {#each uxServices as UXservice, ix}
       {@render item(UXservice.title, UXservice.description)}
     {/each}
   </div>
   <div class="services-list-right">
-    {#each frontendServicesShort as FrontendService, ix}
+    {#each frontendServices as FrontendService, ix}
       {@render item(FrontendService.title, FrontendService.description)}
     {/each}
   </div>
@@ -69,7 +67,7 @@
     <BoxIllustration />
   </div>
   <div class="services-list-right">
-    {#each frontendServicesShort as FrontendService, ix}
+    {#each frontendServices as FrontendService, ix}
       {@render item(FrontendService.title, FrontendService.description)}
     {/each}
   </div>
@@ -81,30 +79,34 @@
     grid-column: 1 / -1;
     background-color: var(--bg-primary);
     gap: 1rem;
-    /* padding: 0rem 1rem; */
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 2rem;
+  }
+  .service {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    &:hover {
+      background-color: var(--bg-tertiary);
+    }
   }
   [class*="services-list"] {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 0rem 1rem;
   }
   .services-list-left {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 3;
     grid-row: 1 / 2;
   }
   .services-list-right {
-    grid-column: span 2 / -1;
+    grid-column: span 3 / -1;
     grid-row: 2 / 3;
-    text-align: right;
-    align-self: center;
+    align-self: start;
   }
   [class*="services-illustration"] {
-    align-self: start;
-    /* padding: 0 1rem; */
+    align-self: center;
   }
   .services-illustration-1 {
     grid-column: span 3 / -1;
@@ -135,12 +137,17 @@
   }
   @media (min-width: 720px) {
     .services-illustration-1 {
-      grid-column: span 2 / -1;
+      grid-column: span 3 / -1;
       padding-right: 1rem;
       grid-row: 1 / 2;
     }
+    .services-list-right,
+    .services-list-left {
+      height: 100%;
+      justify-content: space-evenly;
+    }
     .services-illustration-2 {
-      grid-column: 1 / span 2;
+      grid-column: 1 / span 3;
       padding-right: 1rem;
       grid-row: 2 / 3;
     }

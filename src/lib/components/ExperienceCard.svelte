@@ -463,13 +463,15 @@
     background-color: var(--bg-secondary);
     color: var(--text-primary);
     display: block;
-    z-index: 100;
+    z-index: 30;
     text-align: left;
     padding: 0.5rem;
     grid-column: 1 / -1;
     border: none;
     outline: none;
     cursor: pointer;
+    border: 1px solid var(--border-tertiary);
+    border-top: none;
     &:hover {
       background-color: var(--bg-tertiary);
     }

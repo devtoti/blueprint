@@ -20,7 +20,9 @@
     {/each}
   </div>
 </div>
-<div class="preview" id="preview"></div>
+<div class="preview" id="preview">
+  <img src={project.image} alt={project.title} />
+</div>
 {#if project.bullets}
   <article class="bullets">
     {#each project.bullets as entry}
@@ -47,6 +49,12 @@
     width: 100%;
     height: 100%;
     background-color: var(--bleu-200);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
   }
 
   .preview {
@@ -103,6 +111,9 @@
           align-self: start;
         }
       }
+    }
+    .bullet {
+      flex: 1;
     }
   }
   @media (min-width: 1920px) {

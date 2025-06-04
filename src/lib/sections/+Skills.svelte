@@ -36,7 +36,7 @@
 {/snippet}
 <Heading
   heading="Enfoque dual diseño y desarrollo"
-  subheading="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam?"
+  subheading="Este es un listado de las tecnologías y herramientas que utilizo constantemente para llevar a cabo mis proyectos de diseño y desarrollo web."
   isCentered
 />
 <article class="skills-container">
@@ -63,33 +63,9 @@
     margin: 0.25rem;
     background-color: var(--bg-tertiary);
     padding: 0.5rem 1rem;
-    /* grid-column-start: 2; */
-  }
-  [class*="skills-list"] {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .services-list-left {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
-  }
-  .services-list-right {
-    grid-column: 4 / -2;
-    grid-row: 3 / 4;
-    align-self: center;
-  }
-  [class*="services-illustration"] {
-    max-height: 15rem;
-    align-self: center;
-  }
-  .services-illustration-1 {
-    grid-column: 4 / -2;
-    grid-row: 2 / 3;
-  }
-  .services-illustration-2 {
-    grid-column: 2 / 4;
-    grid-row: 3 / 4;
+    &:hover {
+      background-color: var(--bg-darksand);
+    }
   }
   @media (min-width: 480px) {
     .skills-container {

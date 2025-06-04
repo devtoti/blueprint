@@ -1,34 +1,11 @@
 export const projects = [
-    {
+      {
         id: 1,
         number: "01",
-        title: "ClassicUI Library",
-        url: null,
-        figmaUrl: null,
-        description:
-          "Proyecto en curso de una librería de componentes de UI para React inspirada el diseño blueprint de esta página web.",
-        tags: ["Nodejs", "React", "npm", "TailwindCSS"],
-        bullets: [
-            {
-                title: "Componentes de UI",
-                description: "Diseños de componentes inspirados en los tres ordenes clásicos arquitectónicos más relevantes: dórico, jónico, corintio",
-            },
-            {
-                title: "Blueprint",
-                description: "Cada componente es diseñado primeramente mediante wireframes, y luego prototipado utilizando tokens de diseño.",
-            },
-            {
-                title: "Tokens",
-                description: "Parámetros de diseño consistentes para mantener la coherencia visual y estética de la librería.",
-            }
-        ]
-      },
-      {
-        id: 2,
-        number: "02",
         title: "Junkhaul Moving Services",
         url: "https://365junkhaul.com",
         figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
+        image: "src/lib/images/365junkhaul-preview.png",
         description:
           "Checkout con sistema de pagos y dashboard de administración para la empresa Junkhaul Moving Services. Desarrollado con React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
         tags: ["React", "Nextjs", "TailwindCSS", "Typescript", "Figma", "Stripe", "Supabase"],
@@ -48,11 +25,12 @@ export const projects = [
         ]
       },
       {
-        id: 3,
-        number: "03",
+        id: 2,
+        number: "02",
         title: "MobileKangaroo",
         url: "https://mobilekangaroo.com",
         figmaUrl: "https://www.figma.com/design/dF4RjnxjxV0xF2gi8iMfXU/MobileKangaroo-Website-Revamp?node-id=0-1&t=U2HbEfk7Y2UhRWo1-1",
+        image: "src/lib/images/mobilekangaroo-preview.png",
         description:
           "Rediseño de la landing page de MobileKangaroo, una empresa certificada por la Apple especializada en la reparación de dispositivos electrónicos con 30+ tiendas en los Estados Unidos.",
         tags: ["Animations", "Nextjs", "TailwindCSS", "Typescript", "Figma", "Illustrations"],
@@ -72,11 +50,12 @@ export const projects = [
         ]
       },
       {
-        id: 4,
-        number: "04",
+        id: 3,
+        number: "03",
         title: "BB4MD Website",
         url: "https://bb4md.com",
         figmaUrl: "https://www.figma.com/design/zG985mX5ZGboL0GvxWbVMU/BB4MD-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
+        image: "src/lib/images/bb4md-preview.png",
         description:
           "Rediseño de la landing page de BB4MD, una pequeña empresa canadiense dedicada a la venta de libros ilustrados enfocados en motivar y enseñar a nuevos padres de familia a cuidar de sus bebés por medio de la ciencia del parenting.",
         tags: ["UI/UX", "Frontend", "Figma", "Illustrations", "Wix", "Custom UI"],
@@ -96,13 +75,52 @@ export const projects = [
         ]
       },
       {
-        id: 5,
-        number: "05",
+        id: 4,
+        number: "04",
         title: "IKOL Web 3.0",
         url: "https://ikolcoin.com",
         figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
+        image: "src/lib/images/ikol-preview.png",
         description:
-    "Built a checkout user flow with React, Supabase, and Stripe for hiring household-related services",
+    "Revamp de la landing page de IKOL Coin, un ecosistema de criptomonedas enfocado a la contratación de influencers mediante un sistema de pago descentralizado.",
     tags: ["UI/UX", "Design System", "Figma", "Illustrations", "GSAP", "Landing Page"],
+    bullets: [
+      {
+        title: "Paleta única",
+        description: "Se optó por una paleta de colores grisácea-azulada, contrastado con acentuaciones amarillentas, con efectos de glassmorphism para jugar con los niveles de profundidad de la página web.",
+      },
+      {
+        title: "Modularidad",
+        description: "El diseño se adapta a distintas pantallas, asegurando la adaptabilidad de todos los componentes personaliazados.",
+      },
+      {
+        title: "Ilustraciones",
+        description: "Se crearon ilustraciones isométricas de trazos geométricos para darle un aspecto moderno e innovador a cada sección de la landing page.",
+      },
+    ],
+  }, {
+    id: 5,
+    number: "05",
+    title: "ClassicUI Library",
+    url: null,
+    figmaUrl: null,
+    image: "src/lib/images/classic-preview.png",
+    description:
+      "Proyecto en curso de una librería de componentes de UI para React inspirada el diseño blueprint de esta página web.",
+    tags: ["Nodejs", "React", "npm", "TailwindCSS"],
+    bullets: [
+        {
+            title: "Componentes de UI",
+            description: "Diseños de componentes inspirados en los tres ordenes clásicos arquitectónicos más relevantes: dórico, jónico, corintio",
+        },
+        {
+            title: "Blueprint",
+            description: "Cada componente es diseñado primeramente mediante wireframes, y luego prototipado utilizando tokens de diseño.",
+        },
+        {
+            title: "Tokens",
+            description: "Parámetros de diseño consistentes para mantener la coherencia visual y estética de la librería.",
+        }
+    ]
   },
 ];

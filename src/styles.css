@@ -40,6 +40,7 @@ body {
     linear-gradient(to right, var(--gray-alpha-10) 1px, transparent 1px),
     linear-gradient(to bottom, var(--gray-alpha-10) 1px, transparent 1px);
     max-width: 100svw;
+    background-attachment: fixed;
 }
 
 .text-title {
@@ -171,6 +172,9 @@ ul.axes {
   ul.axes,
   .nav-container {
     grid-template-columns: var(--side-padding-desktop) repeat(12, 1fr) var(--side-padding-desktop);
+  }
+  ul.axes:first-of-type {
+    box-shadow: var(--shadow-3);
   }
 
   .main-content {

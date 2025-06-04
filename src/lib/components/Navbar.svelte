@@ -1,11 +1,25 @@
 <script lang="ts">
   import { page } from "$app/state";
-
   import IconSettings from "~icons/solar/settings-outline";
   import IconSidebar from "~icons/solar/siderbar-outline";
+  let showNav = $state(true);
+  let currScrollPos = $state(0);
+  function handleScroll() {
+    const newPosition = window.pageYOffset;
+    if (newPosition > currScrollPos) {
+      console.log({ hideNav: newPosition });
+      showNav = false;
+      currScrollPos = newPosition;
+    } else if (currScrollPos - newPosition >= 120) {
+      console.log("showing nav");
+      showNav = true;
+      currScrollPos = newPosition;
+    }
+  }
 </script>
 
-<nav class="grainy">
+<svelte:window onscroll={handleScroll} />
+<nav class="grainy" class:active={showNav}>
   <article class="nav-container">
     <ul class="nav-links desktop-only">
       <li>
@@ -72,15 +86,21 @@
     background-color: #c2c2c2;
     padding: 0;
     top: 12px;
-    z-index: 100;
+    z-index: 80;
     font-size: 1rem;
     font-weight: 400;
     text-transform: uppercase;
     color: var(--text-secondary);
+    transition: top 0.5s ease-in-out;
+  }
+  nav.active {
+    top: 12px;
+  }
+  nav:not(.active) {
+    top: -28px;
   }
   .nav-container {
     display: relative;
-    height: 52px;
     grid-column: 1 / -1;
     box-shadow: var(--shadow-3);
     background-color: var(--bg-secondary);
