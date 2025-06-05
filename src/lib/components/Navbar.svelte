@@ -7,11 +7,9 @@
   function handleScroll() {
     const newPosition = window.pageYOffset;
     if (newPosition > currScrollPos) {
-      console.log({ hideNav: newPosition });
       showNav = false;
       currScrollPos = newPosition;
     } else if (currScrollPos - newPosition >= 120) {
-      console.log("showing nav");
       showNav = true;
       currScrollPos = newPosition;
     }

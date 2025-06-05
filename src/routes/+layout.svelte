@@ -15,7 +15,6 @@
   setContext("WINDOW", wnd);
   onMount(() => {
     const parsedUrl = new URL(window.location.href);
-    console.log(parsedUrl.pathname);
   });
 </script>
 

@@ -1,7 +1,6 @@
 <script>
   let { width = 100, y, w, startEnd = 2, invert = false, children } = $props();
   let clientWidth = $state(0);
-  // $inspect(clientWidth);
 </script>
 
 <div

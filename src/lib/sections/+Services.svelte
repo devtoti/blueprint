@@ -1,47 +1,77 @@
 <script lang="ts">
-  import BoxIllustration from "$lib/images/paper-box.svelte";
   import Heading from "$lib/components/Heading.svelte";
-  const uxServices = [
+  const uxServices = $state([
     {
       title: "Prototipos",
+      active: true,
+      img: "src/lib/images/365junkhaul-preview.png",
       description:
         "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
     },
     {
       title: "Diseño de Interfaces",
+      active: false,
+      img: "src/lib/images/bb4md-preview.png",
       description:
         "Creación de componentes personalizados apegados a los principios de accesibilidad y usabilidad",
     },
     {
       title: "Ilustraciones",
+      active: false,
+      img: "src/lib/images/ikol-preview.png",
       description:
         "Realizadas a mano o con herramientas de dibujo vectorial, con separación de capas para ser animadas",
     },
-  ];
-  const frontendServices = [
+  ]);
+  const frontendServices = $state([
     {
       title: "Desarrollo de Aplicaciones",
+      active: true,
+      img: "src/lib/images/365junkhaul-preview.png",
       description:
         "Traducción de diseño a código, estableciendo primeramente las tecnologías y el sistema de diseño a utilizar",
     },
     {
       title: "Landing Pages",
+      active: false,
+      img: "src/lib/images/bb4md-preview.png",
       description:
         "Enfocadas en la conversión de usuarios y sujetas a A/B testing",
     },
     {
       title: "Integración de APIs",
+      active: false,
+      img: "src/lib/images/ikol-preview.png",
       description:
         "Integración de APIs para interactuar con el backend y desplegar visualizaciones de datos",
     },
-  ];
+  ]);
+  function handleHover(array: any[], item: any) {
+    array.forEach((service) => {
+      if (service.title === item.title) {
+        service.active = true;
+      } else {
+        service.active = false;
+      }
+    });
+  }
+  let highlightedServiceDesign = $derived(
+    uxServices.find((service) => service.active)?.img
+  );
+  let highlightedServiceDevelopment = $derived(
+    frontendServices.find((service) => service.active)?.img
+  );
 </script>
 
-{#snippet item(title: string, description: string)}
-  <div class="service">
-    <h5 class="arc-h5">{title}</h5>
-    <p class="arc-body-2">{description}</p>
-  </div>
+{#snippet item(array: any[], item: any)}
+  <button
+    class="service"
+    class:active={item.active}
+    onmouseenter={() => handleHover(array, item)}
+  >
+    <h5 class="arc-h5">{item.title}</h5>
+    <p class="arc-body-2">{item.description}</p>
+  </button>
 {/snippet}
 
 <Heading
@@ -52,24 +82,19 @@
 <article class="services-container">
   <div class="services-list-left">
     {#each uxServices as UXservice, ix}
-      {@render item(UXservice.title, UXservice.description)}
+      {@render item(uxServices, UXservice)}
     {/each}
   </div>
   <div class="services-list-right">
-    {#each frontendServices as FrontendService, ix}
-      {@render item(FrontendService.title, FrontendService.description)}
+    {#each frontendServices as feService, ix}
+      {@render item(frontendServices, feService)}
     {/each}
   </div>
-  <div class="services-illustration-1">
-    <BoxIllustration />
+  <div class="services-illustration-1 design">
+    <img src={highlightedServiceDesign} alt="Design" />
   </div>
-  <div class="services-illustration-2">
-    <BoxIllustration />
-  </div>
-  <div class="services-list-right">
-    {#each frontendServices as FrontendService, ix}
-      {@render item(FrontendService.title, FrontendService.description)}
-    {/each}
+  <div class="services-illustration-2 development">
+    <img src={highlightedServiceDevelopment} alt="Development" />
   </div>
 </article>
 
@@ -85,11 +110,15 @@
     row-gap: 2rem;
   }
   .service {
+    all: unset;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     &:hover {
       background-color: var(--bg-tertiary);
     }
+  }
+  .service.active {
+    background-color: var(--bg-tertiary);
   }
   [class*="services-list"] {
     display: flex;
@@ -107,6 +136,12 @@
   }
   [class*="services-illustration"] {
     align-self: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
   }
   .services-illustration-1 {
     grid-column: span 3 / -1;
