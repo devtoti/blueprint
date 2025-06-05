@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import LeftHand from "./LeftHand.svelte";
   import RightHand from "./RightHand.svelte";
+  import Button from "./Button.svelte";
   let active = false;
   onMount(() => {
     window.addEventListener("scroll", () => {
@@ -33,18 +34,10 @@
       asesoría personalizada, no dudes en contactarme.
     </p>
     <div class="button-wrapper">
-      <a href="/contact" class="arc-button-secondary arc-h3 invert"
-        >Envíame un mensaje</a
-      >
+      <Button text="Envíame un mensaje" href="/contact" secondary invert />
     </div>
     <div class="button-wrapper">
-      <a href="/about" class="arc-button-primary arc-h3 invert"
-        >Agenda una reunión</a
-      >
-      <span class="square top-left"></span>
-      <span class="square top-right"></span>
-      <span class="square bottom-left"></span>
-      <span class="square bottom-right"></span>
+      <Button text="Agenda una reunión" href="/about" primary invert />
     </div>
   </div>
   <div class="illustrations-container">
@@ -65,6 +58,7 @@
     grid-column: 1 / -1;
     width: 100%;
     overflow: hidden;
+    /* overflow: hidden;
     &::after {
       content: "";
       position: absolute;
@@ -74,7 +68,7 @@
       height: 8px;
       background-color: var(--bleu-200);
       transform: translate(-50%, -50%);
-    }
+    } */
   }
   .cta-banner-info {
     width: 100%;
@@ -130,28 +124,13 @@
     transform: translateX(20%);
   }
   .left-hand.active {
-    transform: translateX(0%);
+    transform: translateX(3%);
     opacity: 1;
-    /* animation: epicRotation 10s ease-in-out infinite;
-    animation-delay: 4s; */
   }
   .right-hand.active {
     transform: translateX(0%);
     opacity: 1;
-    /* animation: epicRotation 10s ease-in-out infinite;
-    animation-delay: 4s; */
   }
-  /* @keyframes epicRotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    50% {
-      transform: rotate(2deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  } */
   @media (min-width: 720px) {
     .illustrations-container {
       transform: translate(-45%, -60%) scale(1.2) rotate(10deg) !important;

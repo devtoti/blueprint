@@ -81,7 +81,8 @@
     buttonOneText="Contáctame"
     buttonOneHref="/contact"
     buttonTwoText="Resumé"
-    buttonTwoHref="/contact"
+    buttonTwoHref="src/lib/docs/antonio-ruiz-frontend-design-resume-jun-2025.pdf"
+    isHome
   />
   <DividerTrapezoid
     width={WINDOW.width}

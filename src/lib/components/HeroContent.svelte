@@ -10,6 +10,7 @@
     buttonTwoHref,
     bgPattern = "iso-grid",
     HeroImage = null,
+    isHome = false,
   } = $props();
   import IsoCube from "$lib/images/iso-cube.svelte";
   import Button from "$lib/components/Button.svelte";
@@ -25,7 +26,7 @@
 >
   <article class="hero-text section-content">
     <div class="title">
-      <h1 class="text-title barlow-extrabold">{title}</h1>
+      <h1 class="text-title barlow-extrabold" class:isHome>{title}</h1>
       <h4 class="text-caption caption">{subheading}</h4>
     </div>
     <div class="subheader">
@@ -49,7 +50,7 @@
 
 <style>
   .hero-img {
-    max-height: 15rem;
+    max-height: 70vw;
   }
   .hero-main {
     width: 100%;
@@ -59,7 +60,10 @@
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    grid-template-rows: 1fr 2fr 100px;
+    row-gap: 2rem;
   }
+
   .hero-text {
     border-top: 0;
     border-bottom: 0;
@@ -69,7 +73,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    .isHome {
+      font-size: clamp(2rem, 4vw, 3.5rem) !important;
+    }
   }
   .title {
     h1 {
@@ -87,6 +94,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: center;
   }
   .button-container {
     grid-column: 2 / -2;
@@ -108,13 +116,14 @@
   @media (min-width: 720px) {
     .hero-text {
       grid-column: 3 / span 3;
-      /* grid-row: 1 / 2; */
       display: flex;
-      /* height: fit-content; */
-      flex-direction: column;
       text-align: left;
       gap: 0rem;
       align-items: flex-start;
+    }
+    .hero-main {
+      grid-template-rows: 3fr 2fr;
+      min-height: 65svh !important;
     }
 
     .hero-img {
@@ -139,7 +148,7 @@
     }
 
     .hero-img {
-      grid-column: 9 / span 3;
+      grid-column: 9 / span 4;
       max-height: 80%;
     }
     .button-container {

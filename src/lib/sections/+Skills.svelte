@@ -84,6 +84,7 @@
     grid-column: 1 / -1;
     background-color: var(--bg-primary);
     gap: 0.25rem;
+    gap: 0.1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -98,6 +99,7 @@
     margin: 0.25rem;
     background-color: var(--bg-tertiary);
     padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     transition: background-color 0.5s ease-in-out;
     &:hover {
       background-color: var(--sand-radix-700);
@@ -153,6 +155,12 @@
   @media (min-width: 480px) {
     .skills-container {
       grid-column: 2 / -2;
+    }
+    .skill {
+      padding: 0.5rem 1rem;
+    }
+    .skills-container {
+      gap: 0.5rem;
     }
   }
   @media (min-width: 1280px) {

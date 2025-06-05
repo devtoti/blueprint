@@ -116,7 +116,7 @@
       {/if}
       <span></span><span></span><span></span><span></span>
     </div>
-    <h2 class="arc-h3">{experience.role}</h2>
+    <h2 class="arc-h4">{experience.role}</h2>
     <p>{experience.description}</p>
   </button>
 {:else}
@@ -150,7 +150,7 @@
             onclick={() => (role.active = !role.active)}
             class:active={role.active}
           >
-            <h4 class="arc-h4">{role.company}</h4>
+            <h4 class="arc-h5">{role.company}</h4>
             <p class="arc-txt-li">{role.date}</p>
             <div class="col-wrapper">
               <WallsThickCol />
@@ -161,7 +161,7 @@
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
             >
-              <p class="arc-body-1">{role.overview}</p>
+              <p class="arc-body-2">{role.overview}</p>
               <div class="link-wrapper">
                 {#if role.figmaLink}
                   <a
@@ -195,7 +195,7 @@
             class:active={role.active}
           >
             <span>
-              <h4 class="arc-h4">{role.company}</h4>
+              <h4 class="arc-h5">{role.company}</h4>
             </span>
             <p class="arc-txt-li">{role.date}</p>
             <div class="col-wrapper">
@@ -207,7 +207,7 @@
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
             >
-              <p class="arc-body-1">{role.overview}</p>
+              <p class="arc-body-2">{role.overview}</p>
               <div class="link-wrapper">
                 {#if role.figmaLink}
                   <a

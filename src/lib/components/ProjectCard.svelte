@@ -211,7 +211,7 @@
   }
   @media (min-width: 1920px) {
     .project-card {
-      grid-column: span 3 / -2;
+      grid-column: span 3 / -2 !important;
     }
   }
 </style>

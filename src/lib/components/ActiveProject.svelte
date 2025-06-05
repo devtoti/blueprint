@@ -79,7 +79,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .tag {
     background-color: var(--bleu-50);
@@ -114,6 +114,9 @@
     }
     .bullet {
       flex: 1;
+    }
+    .tags {
+      justify-content: flex-start;
     }
   }
   @media (min-width: 1920px) {
