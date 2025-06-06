@@ -15,6 +15,10 @@
   setContext("WINDOW", wnd);
   onMount(() => {
     const parsedUrl = new URL(window.location.href);
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.head.appendChild(script);
   });
 </script>
 

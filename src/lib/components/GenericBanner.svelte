@@ -7,11 +7,16 @@
   <article class="floating-container">
     <h2 class="arc-h1 color-invert">{heading}</h2>
     <p class="arc-body-1 color-invert">{description}</p>
-    <Button {href} {text} primary />
+    <div class="button-container">
+      <Button {href} {text} primary invert />
+    </div>
   </article>
 </article>
 
 <style>
+  .button-container {
+    width: clamp(120px, 10vw, 25rem);
+  }
   .mid-banner {
     position: relative;
     grid-column: 2 / -2;
@@ -29,7 +34,7 @@
     flex-direction: column;
     text-align: center;
     gap: 1rem;
-    padding: 0 2rem;
+    padding: 2rem;
     justify-content: center;
   }
   .floating-container {

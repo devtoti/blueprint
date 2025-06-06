@@ -129,7 +129,7 @@
     .hero-img {
       grid-column: 6 / -1;
       grid-row: 1 / 3;
-      max-height: 80%;
+      max-height: 50svh !important;
       height: 100%;
       width: 100%;
     }

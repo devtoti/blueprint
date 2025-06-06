@@ -112,7 +112,7 @@
       {#if experience.role === "Frontend Developer"}
         <IconCode />
       {:else}
-        <img src="src/lib/icons/pen-nib.svg" alt="Pen Nib" />
+        <img src="/src/lib/icons/pen-nib.svg" alt="Pen Nib" />
       {/if}
       <span></span><span></span><span></span><span></span>
     </div>

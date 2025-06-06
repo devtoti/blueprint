@@ -34,10 +34,10 @@
       asesoría personalizada, no dudes en contactarme.
     </p>
     <div class="button-wrapper">
-      <Button text="Envíame un mensaje" href="/contact" secondary invert />
+      <Button text="Contáctame" href="/contact" secondary invert />
     </div>
     <div class="button-wrapper">
-      <Button text="Agenda una reunión" href="/about" primary invert />
+      <Button text="Explorar Blueprint" href="/about" primary invert />
     </div>
   </div>
   <div class="illustrations-container">
@@ -78,7 +78,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding-top: 2rem;
+    padding: 2rem 1rem;
     text-align: center;
     inset: auto;
     gap: 1rem;

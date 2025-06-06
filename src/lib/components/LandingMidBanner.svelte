@@ -15,26 +15,23 @@
     <span>
       <h3
         class={winWidth <= 360
-          ? "arc-h4 title color-invert"
+          ? "arc-h1 title color-invert"
           : "arc-h3 title color-invert"}
       >
         Añade Blueprint a tu proyecto
       </h3>
-      <p class="arc-body-1 color-invert">
+      <p class="arc-body-2 color-invert">
         ¿Te interesaría implementar la filosofía de diseño de Blueprint.dev en
         tu proyecto, o simplemente te gustaría contar con alguna opinión
         técnica-proyectual?
       </p>
     </span>
     <span class="button-container">
-      <Button href="/about" text="Leer más" secondary invert />
-      <Button href="/contact" text="Contactar" primary invert />
+      <Button href="/about" text="Explorar Blueprint" secondary invert />
+      <Button href="/contact" text="Contáctame" primary invert />
     </span>
   </article>
   <div class="mid-banner-background" style="height: {clientHeight}px"></div>
-  <!-- </span>
-  </article>
-  <div class="mid-banner-background" style="height: {clientHeight}px"></div> -->
 </section>
 
 <style>

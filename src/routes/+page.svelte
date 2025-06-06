@@ -183,13 +183,6 @@
     height: 100px;
     background-color: #e9e8e6;
   }
-  .radial-deco-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-  }
   @media (min-width: 480px) {
     .main-content {
       grid-column: 3 / -3;

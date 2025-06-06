@@ -6,8 +6,6 @@
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
-  import PrimaryButton from "$lib/components/PrimaryButton.svelte";
-  import Button from "$lib/components/Button.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
@@ -30,7 +28,7 @@
     subheading="Programación de páginas y aplicaciones web"
     description="Me especializo en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona utilizar tecnologías de vanguardia como React, Svelte, TypeScript y Tailwind CSS para facilitar los procesos de desarrollo."
     buttonOneText="Explorar Proyectos"
-    buttonOneHref="/projects"
+    buttonOneHref="/#projects"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
     HeroImage={PaperBox}
@@ -43,10 +41,10 @@
     children={() => null}
   />
   <GenericBanner
-    heading="Desarrollo de interfaces"
-    description="Desarrollo de interfaces de usuario dinámicas y funcionales"
+    heading="¿Quieres saber más acerca de Blueprint.dev?"
+    description="Explora la sección que he preparado para ti, en donde encontrarás más información acerca del proceso de diseño y los retos que he enfrentado durante la ejecución de este proyecto."
     href="/about"
-    text="Leer más"
+    text="Explorar Blueprint"
   />
   <DividerTrapezoid
     width={WINDOW.width}
