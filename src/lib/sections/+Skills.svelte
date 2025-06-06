@@ -61,7 +61,7 @@
     class:isActive={activeTag === type.name.toLowerCase()}
     class:isMain={skills.some((s) => s.name.toLowerCase() == type.name)}
   >
-    <h5 class="arc-h5 skill-name">{type.name}</h5>
+    <h5 class="arc-h4 skill-name">{type.name}</h5>
     {#if isMainSkill(type.name)}
       <span></span><span></span><span></span><span></span>
     {/if}

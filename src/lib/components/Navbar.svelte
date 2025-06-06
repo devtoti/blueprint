@@ -2,6 +2,7 @@
   import { page } from "$app/state";
   import IconSettings from "~icons/solar/settings-outline";
   import IconSidebar from "~icons/solar/siderbar-outline";
+  import IconHamburger from "$lib/icons/hamburger.svg";
   let showNav = $state(true);
   let currScrollPos = $state(0);
   function handleScroll() {
@@ -46,7 +47,7 @@
       </li>
     </ul>
     <section class="mobile-only mobile-nav">
-      <img src="src/lib/icons/hamburger.svg" alt="Hamburger Menu" />
+      <img src={IconHamburger} alt="Hamburger Menu" />
       <button>
         <a href="/">Get In Touch</a>
       </button>

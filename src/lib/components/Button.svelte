@@ -31,10 +31,15 @@
   .button-wrapper {
     width: 100%;
     min-width: 10rem;
-    height: fit-content;
+    height: 2rem;
   }
   .arc-h4 {
     font-weight: 600;
     padding: 0.25rem 0 !important;
+  }
+  @media (min-width: 480px) {
+    .button-wrapper {
+      height: 2.5rem;
+    }
   }
 </style>

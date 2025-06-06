@@ -16,7 +16,7 @@
   {/if}
   <span class="footer-title">
     <h2 class="arc-h2">Blueprint.dev</h2>
-    <p class="arc-body-3">Architectural design & development</p>
+    <p class="arc-body-2">Architectural design & development</p>
     <div class="icons">
       <a href="https://github.com/devtoti" target="_blank">
         <Github />
@@ -39,36 +39,36 @@
     <article class="nav-links">
       <article class="navigation-left">
         <ul>
-          <a href="/" class="arc-body-3">Home</a>
-          <a href="/#work-experience" class="arc-body-3">Experiencia</a>
-          <a href="/#projects" class="arc-body-3">Proyectos</a>
-          <a href="/#skills" class="arc-body-3">Habilidades</a>
-          <a href="/#services" class="arc-body-3">Servicios</a>
-          <a href="/mystery" class="arc-body-3">Mystery Box</a>
+          <a href="/" class="arc-body-2">Home</a>
+          <a href="/#work-experience" class="arc-body-2">Experiencia</a>
+          <a href="/#projects" class="arc-body-2">Proyectos</a>
+          <a href="/#skills" class="arc-body-2">Habilidades</a>
+          <a href="/#services" class="arc-body-2">Servicios</a>
+          <a href="/mystery" class="arc-body-2">Mystery Box</a>
         </ul>
       </article>
       <article class="navigation-right">
         <ul>
-          <a href="/about" class="arc-body-3">Blueprint</a>
-          <a href="/dev" class="arc-body-3">Development</a>
-          <a href="/design" class="arc-body-3">Design</a>
-          <a href="/concept" class="arc-body-3">Concepto</a>
-          <a href="/contact" class="arc-body-3">Contacto</a>
-          <a href="/about" class="arc-body-3">Acerca</a>
+          <a href="/about" class="arc-body-2">Blueprint</a>
+          <a href="/dev" class="arc-body-2">Development</a>
+          <a href="/design" class="arc-body-2">Design</a>
+          <a href="/concept" class="arc-body-2">Concepto</a>
+          <a href="/contact" class="arc-body-2">Contacto</a>
+          <a href="/about" class="arc-body-2">Acerca</a>
         </ul>
       </article>
     </article>
     <article class="plan-info techs">
       <h4 class="arc-h5">Hecho con</h4>
-      <p class="arc-body-3">Svelte, TypeScript, Figma</p>
+      <p class="arc-body-2">Svelte, TypeScript, Figma</p>
     </article>
     <article class="plan-info proj">
       <h4 class="arc-h5">Proyecto</h4>
-      <p class="arc-body-3">Frontend & Design Portfolio</p>
+      <p class="arc-body-2">Frontend & Design Portfolio</p>
     </article>
     <article class="plan-info loc">
       <h4 class="arc-h5">Ubicación</h4>
-      <p class="arc-body-3">CDMX, México</p>
+      <p class="arc-body-2">CDMX, México</p>
     </article>
     <article class="plan-info scale">
       <h4 class="arc-h5">Escala</h4>
@@ -98,15 +98,15 @@
     </article>
     <article class="plan-info rev">
       <h4 class="arc-h5">Última revisión</h4>
-      <p class="arc-body-3">2025-05-10</p>
+      <p class="arc-body-2">2025-05-10</p>
     </article>
     <article class="plan-info collab">
       <h4 class="arc-h5">Colaboradores</h4>
-      <p class="arc-body-3">@devtoti</p>
+      <p class="arc-body-2">@devtoti</p>
     </article>
     <article class="plan-info author">
       <h4 class="arc-h5">Head Architect</h4>
-      <p class="arc-body-3">Antonio Ruiz</p>
+      <p class="arc-body-2">Antonio Ruiz</p>
     </article>
     <article class="plan-info v">
       <h4 class="arc-h1">V1.0</h4>
@@ -332,7 +332,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 5rem;
+    margin: 1rem 0;
     width: 100%;
     grid-column: 1 / -1;
   }

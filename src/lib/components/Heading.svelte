@@ -3,14 +3,11 @@
   export let subheading: string;
   export let alignRight: boolean = false;
   export let isCentered: boolean = false;
-  import { getContext } from "svelte";
-  const WINDOW = getContext<{ width: number; height: number }>("WINDOW");
-  const isMobile = WINDOW.width < 480;
 </script>
 
 <article class="heading" class:alignRight class:isCentered>
-  <h2 class="arc-h4">{heading}</h2>
-  <h5 class="subheading arc-body-{isMobile ? '2' : '1'}">{subheading}</h5>
+  <h2 class="arc-h3">{heading}</h2>
+  <h5 class="subheading arc-body-2">{subheading}</h5>
 </article>
 
 <style>

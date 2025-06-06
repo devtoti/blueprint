@@ -1,6 +1,11 @@
 <script lang="ts">
   let { project } = $props();
   import "../../styles/text-styles.css";
+  const imageContext = import.meta.glob("$lib/images/*.png", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }) as Record<string, string>;
 </script>
 
 {#snippet bullet(title: string, description: string)}
@@ -13,7 +18,7 @@
 <div class="active-project">
   <h2 class="arc-h1">{project.number}</h2>
   <h3 class="arc-h3">{project.title}</h3>
-  <p class="arc-body-1">{project.description}</p>
+  <p class="arc-body-2">{project.description}</p>
   <div class="tags">
     {#each project.tags as tag}
       <span class="tag arc-h5">{tag}</span>
@@ -21,7 +26,15 @@
   </div>
 </div>
 <div class="preview" id="preview">
-  <img src={project.image} alt={project.title} />
+  <img
+    src={imageContext[`/src/lib/images/${project.image}`]}
+    alt={project.title}
+  />
+  <img
+    class="blurred"
+    src={imageContext[`/src/lib/images/${project.image}`]}
+    alt={project.title}
+  />
 </div>
 {#if project.bullets}
   <article class="bullets">
@@ -48,12 +61,33 @@
     grid-row: 3 / span 1;
     width: 100%;
     height: 100%;
-    background-color: var(--bleu-200);
-    img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    img:not(.blurred) {
       width: 100%;
       height: 100%;
       object-fit: contain;
       object-position: center;
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    img.blurred {
+      filter: blur(20px);
+      transform: rotate(180deg);
+      height: 100%;
+      opacity: 0.75;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 9;
     }
   }
 

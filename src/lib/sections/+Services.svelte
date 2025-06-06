@@ -69,7 +69,7 @@
     class:active={item.active}
     onmouseenter={() => handleHover(array, item)}
   >
-    <h5 class="arc-h5">{item.title}</h5>
+    <h5 class="arc-h4">{item.title}</h5>
     <p class="arc-body-2">{item.description}</p>
   </button>
 {/snippet}
@@ -195,10 +195,10 @@
   }
   @media (min-width: 1920px) {
     .services-list-left {
-      grid-column: 1 / span 2;
+      grid-column: 1 / span 3;
     }
     .services-list-right {
-      grid-column: span 2 / -1;
+      grid-column: span 3 / -1;
     }
   }
 </style>

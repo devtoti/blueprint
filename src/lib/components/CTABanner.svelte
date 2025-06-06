@@ -30,7 +30,7 @@
   <div class="cta-banner-info">
     <h1 class="arc-h0 cta-text color-invert">Ponte en contacto</h1>
     <p class="arc-body-1 color-invert">
-      Si quieres que te eche la mano en uno de tus proyectos, o si buscas una
+      Si te interesa crear un proyecto conmigo, o si buscas una asesoría
       asesoría personalizada, no dudes en contactarme.
     </p>
     <div class="button-wrapper">

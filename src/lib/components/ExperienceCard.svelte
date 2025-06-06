@@ -112,7 +112,7 @@
       {#if experience.role === "Frontend Developer"}
         <IconCode />
       {:else}
-        <img src="/src/lib/icons/pen-nib.svg" alt="Pen Nib" />
+        <img src={PenNib} alt="Pen Nib" />
       {/if}
       <span></span><span></span><span></span><span></span>
     </div>
@@ -269,7 +269,6 @@
   .experience-card,
   .experience-card.active {
     background-color: var(--bg-primary);
-    max-width: 220px;
     min-height: 80px;
     border: 1px solid var(--border-tertiary);
     display: flex;
@@ -283,10 +282,12 @@
     background-position: -5px -5px;
     p {
       color: var(--text-secondary);
+      text-align: right;
     }
   }
   .experience-card.dev {
     align-items: flex-start !important;
+    width: 100%;
   }
   .link-wrapper {
     padding-top: 0.5rem;
@@ -392,9 +393,13 @@
       width: fit-content;
     }
     &.active {
-      background-color: var(--bleu-300);
-      * {
-        color: var(--white) !important;
+      background-color: var(--bleu-200);
+      p {
+        color: var(--bleu-700) !important;
+        font-weight: 600 !important;
+      }
+      h4 {
+        font-weight: 700 !important;
       }
     }
   }
@@ -460,7 +465,8 @@
   .role-overview {
     width: 100%;
     height: 100%;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     color: var(--text-primary);
     display: block;
     z-index: 30;

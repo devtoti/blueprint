@@ -1,8 +1,8 @@
 <script lang="ts">
   let { project, isActive, activeProject = $bindable() } = $props();
   import SolarGlobalOutline from "~icons/solar/global-outline";
-  import IconCode from "~icons/solar/code-bold-duotone";
   import PenNib from "$lib/icons/pen-nib.svg";
+  import FigmaIcon from "$lib/icons/figma.svelte";
   import IconWrapper from "$lib/components/IconWrapper.svelte";
   let innerWidth = $state(0);
   function handleClick() {
@@ -29,7 +29,7 @@
 >
   <h3 class="project-number arc-h3">{project.number}</h3>
   <h3 class="arc-h4 project-title">{project.title}</h3>
-  <p class="arc-body-1 project-description">{project.description}</p>
+  <p class="arc-body-2 project-description">{project.description}</p>
   <div class="project-card-icons">
     {#if project.url || project.figmaUrl}
       <div class="icons-wrapper">
@@ -37,7 +37,7 @@
           <IconWrapper Icon={SolarGlobalOutline} />
         </a>
         <a href={project.figmaUrl} target="_blank">
-          <IconWrapper Icon={PenNib} />
+          <IconWrapper Icon={FigmaIcon} />
         </a>
       </div>
     {/if}
@@ -171,6 +171,7 @@
     padding-top: 0.5rem;
     display: flex;
     gap: 0.5rem;
+    margin-top: auto;
   }
   .project-number {
     width: 100%;

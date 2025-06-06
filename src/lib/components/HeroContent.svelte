@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
+  import IsoGrid from "$lib/images/iso-grid.svg";
   let {
     title,
     subheading,
@@ -8,7 +9,7 @@
     buttonOneHref,
     buttonTwoText,
     buttonTwoHref,
-    bgPattern = "iso-grid",
+    bgPattern = IsoGrid,
     HeroImage = null,
     isHome = false,
   } = $props();
@@ -22,7 +23,7 @@
 
 <section
   class="hero-main {printPath.length > 1 ? printPath : 'home'}-section"
-  style="background: #f9f9f8 url('src/lib/images/{bgPattern}.svg');"
+  style="background: #f9f9f8 url('{bgPattern}');"
 >
   <article class="hero-text section-content">
     <div class="title">
@@ -30,7 +31,7 @@
       <h4 class="text-caption caption">{subheading}</h4>
     </div>
     <div class="subheader">
-      <p class="text-subheader arc-body-{isMobile ? '2' : '1'}">
+      <p class="text-subheader arc-body-2">
         {description}
       </p>
     </div>

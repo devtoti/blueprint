@@ -280,8 +280,13 @@
   }
   .floor-plan-1 {
     height: fit-content;
-    width: auto;
+    width: 100%;
     background-color: var(--bleu-50);
     transition: height 2s ease-in-out;
+  }
+  @media (min-width: 480px) {
+    .floor-plan-1 {
+      width: auto;
+    }
   }
 </style>
