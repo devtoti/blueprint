@@ -352,6 +352,7 @@
   }
   .experience-card:nth-child(odd) {
     align-items: flex-end;
+    width: 100%;
   }
   .experience-list {
     display: grid;

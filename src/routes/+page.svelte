@@ -3,17 +3,15 @@
   import "@radix-ui/themes/styles.css";
   import "../styles.css";
   import "../tokens.css";
+  import "../styles/text-styles.css";
   import { GRID } from "$lib/utils/gridData";
   import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import CTABanner from "$lib/components/CTABanner.svelte";
-  import Heading from "$lib/components/Heading.svelte";
   import WorkExperience from "$lib/sections/WorkExperience.svelte";
-  import MainIllustration from "$lib/images/main-illustration.svelte";
   import Projects from "$lib/sections/Projects.svelte";
   import RadialDeco from "$lib/images/radial-deco.svelte";
-  import Hero from "$lib/sections/Hero.svelte";
   import Services from "$lib/sections/+Services.svelte";
   import Skills from "$lib/sections/+Skills.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
@@ -110,7 +108,7 @@
     <Services />
   </section>
   {@render sectionDividers(2, "invert")}
-  <section class="main-content stripped-divider"></section>
+  <article class="main-content stripped-divider"></article>
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
     y={isMobile ? 16 : 12}
@@ -127,7 +125,7 @@
     invert
     children={() => null}
   />
-  <section class="main-content stripped-divider"></section>
+  <article class="main-content stripped-divider"></article>
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
@@ -142,15 +140,6 @@
 </main>
 
 <style>
-  .main-content {
-    position: relative;
-    background-color: var(--bg-primary);
-    min-height: 10svh;
-    padding: 0 1rem 1rem 1rem;
-    row-gap: 8px;
-    grid-column: 2 / -2;
-    flex-direction: column;
-  }
   .projects {
     grid-template-rows: 3rem repeat(4, 1fr);
   }
@@ -166,26 +155,21 @@
     border-top: 0;
     border-bottom: 0;
     height: inherit;
-    grid-column: 1 / -1;
+    grid-column: 2 / -2;
     background-color: var(--bg-primary);
     width: -webkit-fill-available;
   }
-  .stripped-divider {
-    grid-column: 2 / -2;
-    width: 100%;
-    background: repeating-linear-gradient(
-      to right,
-      #dadada,
-      #dadada 10px,
-      transparent 10px,
-      transparent 20px
-    );
-    height: 100px;
-    background-color: #e9e8e6;
-  }
+
   @media (min-width: 480px) {
     .main-content {
       grid-column: 3 / -3;
+    }
+    .radial-deco-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
     }
   }
   @media (min-width: 1029px) {

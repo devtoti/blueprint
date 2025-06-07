@@ -4,21 +4,21 @@
     {
       title: "Prototipos",
       active: true,
-      img: "src/lib/images/365junkhaul-preview.png",
+      img: "/src/lib/images/365junkhaul-preview.png",
       description:
         "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
     },
     {
       title: "Diseño de Interfaces",
       active: false,
-      img: "src/lib/images/bb4md-preview.png",
+      img: "/src/lib/images/bb4md-preview.png",
       description:
         "Creación de componentes personalizados apegados a los principios de accesibilidad y usabilidad",
     },
     {
       title: "Ilustraciones",
       active: false,
-      img: "src/lib/images/ikol-preview.png",
+      img: "/src/lib/images/ikol-preview.png",
       description:
         "Realizadas a mano o con herramientas de dibujo vectorial, con separación de capas para ser animadas",
     },
@@ -27,21 +27,21 @@
     {
       title: "Desarrollo de Aplicaciones",
       active: true,
-      img: "src/lib/images/365junkhaul-preview.png",
+      img: "/src/lib/images/365junkhaul-preview.png",
       description:
         "Traducción de diseño a código, estableciendo primeramente las tecnologías y el sistema de diseño a utilizar",
     },
     {
       title: "Landing Pages",
       active: false,
-      img: "src/lib/images/bb4md-preview.png",
+      img: "/src/lib/images/bb4md-preview.png",
       description:
         "Enfocadas en la conversión de usuarios y sujetas a A/B testing",
     },
     {
       title: "Integración de APIs",
       active: false,
-      img: "src/lib/images/ikol-preview.png",
+      img: "/src/lib/images/ikol-preview.png",
       description:
         "Integración de APIs para interactuar con el backend y desplegar visualizaciones de datos",
     },

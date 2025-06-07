@@ -75,6 +75,7 @@
     height: max-content;
     display: flex;
     flex-direction: column;
+    z-index: 1;
   }
   .trapezoid-wrapper.invert {
     flex-direction: column-reverse;
