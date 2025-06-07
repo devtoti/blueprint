@@ -1,24 +1,29 @@
 <script lang="ts">
   import Heading from "$lib/components/Heading.svelte";
+  const imageContext = import.meta.glob("$lib/images/*.png", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }) as Record<string, string>;
   const uxServices = $state([
     {
       title: "Prototipos",
       active: true,
-      img: "/src/lib/images/365junkhaul-preview.png",
+      img: "365junkhaul-preview.png",
       description:
         "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
     },
     {
       title: "Diseño de Interfaces",
       active: false,
-      img: "/src/lib/images/bb4md-preview.png",
+      img: "bb4md-preview.png",
       description:
         "Creación de componentes personalizados apegados a los principios de accesibilidad y usabilidad",
     },
     {
       title: "Ilustraciones",
       active: false,
-      img: "/src/lib/images/ikol-preview.png",
+      img: "ikol-preview.png",
       description:
         "Realizadas a mano o con herramientas de dibujo vectorial, con separación de capas para ser animadas",
     },
@@ -27,21 +32,21 @@
     {
       title: "Desarrollo de Aplicaciones",
       active: true,
-      img: "/src/lib/images/365junkhaul-preview.png",
+      img: "365junkhaul-preview.png",
       description:
         "Traducción de diseño a código, estableciendo primeramente las tecnologías y el sistema de diseño a utilizar",
     },
     {
       title: "Landing Pages",
       active: false,
-      img: "/src/lib/images/bb4md-preview.png",
+      img: "bb4md-preview.png",
       description:
         "Enfocadas en la conversión de usuarios y sujetas a A/B testing",
     },
     {
       title: "Integración de APIs",
       active: false,
-      img: "/src/lib/images/ikol-preview.png",
+      img: "ikol-preview.png",
       description:
         "Integración de APIs para interactuar con el backend y desplegar visualizaciones de datos",
     },
@@ -91,10 +96,16 @@
     {/each}
   </div>
   <div class="services-illustration-1 design">
-    <img src={highlightedServiceDesign} alt="Design" />
+    <img
+      src={imageContext[`/src/lib/images/${highlightedServiceDesign}`]}
+      alt="Design"
+    />
   </div>
   <div class="services-illustration-2 development">
-    <img src={highlightedServiceDevelopment} alt="Development" />
+    <img
+      src={imageContext[`/src/lib/images/${highlightedServiceDevelopment}`]}
+      alt="Development"
+    />
   </div>
 </article>
 

@@ -5,10 +5,11 @@
     title,
     subheading,
     description,
-    buttonOneText,
-    buttonOneHref,
-    buttonTwoText,
-    buttonTwoHref,
+    buttonOneText = null,
+    buttonOneHref = null,
+    buttonTwoText = null,
+    buttonTwoHref = null,
+    children,
     bgPattern = IsoGrid,
     HeroImage = null,
     isHome = false,
@@ -44,9 +45,16 @@
     {/if}
   </article>
   <article class="button-container">
-    <Button text={buttonOneText} href={buttonOneHref} primary />
-    <Button text={buttonTwoText} href={buttonTwoHref} secondary invert />
+    {#if buttonOneText && buttonOneHref}
+      <Button text={buttonOneText} href={buttonOneHref} primary />
+    {/if}
+    {#if buttonTwoText && buttonTwoHref}
+      <Button text={buttonTwoText} href={buttonTwoHref} secondary invert />
+    {/if}
   </article>
+  {#if children}
+    {@render children()}
+  {/if}
 </section>
 
 <style>

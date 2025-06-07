@@ -11,6 +11,7 @@
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
+  import CalendlyWidget from "$lib/components/CalendlyWidget.svelte";
 
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
@@ -28,47 +29,19 @@
 </script>
 
 <main>
-  <section
-    class="hero-main contact-section"
-    style="background: var(--bg-primary) url('src/lib/images/iso-grid.svg');"
+  <HeroContent
+    title="Contacto"
+    subheading="Agenda una llamada / escríbeme"
+    description="Actualmente me encuentro trabajando tiempo completo como designer y frontend developer, por lo que de momento mi disponibilidad es limitada. Si tienes alguna solicitud particular, por favor, ¡no dudes en contactarme!"
+    buttonOneText="Ver Diseños"
+    buttonOneHref="/projects"
+    buttonTwoText="Contáctame"
+    buttonTwoHref="/contact"
+    bgPattern="broken-paper-pattern"
+    HeroImage={PortalDorico}
   >
-    <article class="hero-text section-content">
-      <div class="title">
-        <h1 class="text-title barlow-extrabold">Contacto</h1>
-        <h4 class="text-caption caption">Agenda una llamada / escríbeme</h4>
-      </div>
-      <div class="subheader">
-        <p class="text-subheader arc-body-{isMobile ? '2' : '1'}">
-          Actualmente me encuentro trabajando tiempo completo como designer y
-          frontend developer, por lo que de momento mi disponibilidad es
-          limitada. Si tienes alguna solicitud particular, por favor, ¡no dudes
-          en contactarme!
-        </p>
-      </div>
-    </article>
-    <article class="hero-img">
-      <div
-        class="calendly-inline-widget"
-        data-url="https://calendly.com/devtoti/30min?hide_gdpr_banner=1"
-        style="min-width:280px;min-height:700px;height:100%;max-width:100%;"
-      ></div>
-      <script
-        type="text/javascript"
-        src="https://assets.calendly.com/assets/external/widget.js"
-        async
-      ></script>
-    </article>
-    <article class="hero-img-2">
-      <PaperBox />
-    </article>
-    <article class="button-container">
-      <Button
-        text="Enviar mensaje"
-        href="mailto:toti.webdev@gmail.com"
-        primary
-      />
-    </article>
-  </section>
+    <CalendlyWidget />
+  </HeroContent>
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}

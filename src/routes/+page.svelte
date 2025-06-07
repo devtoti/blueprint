@@ -40,6 +40,9 @@
         return grid.getColumnsDistance(10);
     }
   };
+  function openPDF() {
+    window.open("/docs/frontend-design-resume-jun-2025.pdf", "_blank");
+  }
 </script>
 
 {#snippet sectionDividers(num: number, invert = false)}
@@ -79,9 +82,10 @@
     buttonOneText="Contáctame"
     buttonOneHref="/contact"
     buttonTwoText="Resumé"
-    buttonTwoHref="/src/lib/docs/frontend-design-resume-jun-2025.pdf"
+    buttonTwoHref="/docs/frontend-design-resume-jun-2025.pdf"
     isHome
-  />
+    children={() => null}
+  ></HeroContent>
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
@@ -142,6 +146,27 @@
 <style>
   .projects {
     grid-template-rows: 3rem repeat(4, 1fr);
+  }
+  .button-wrapper {
+    width: 100%;
+    min-width: 10rem;
+    height: 2rem;
+    button {
+      width: 100%;
+      height: 100%;
+      border: none;
+      box-shadow: none;
+      cursor: pointer;
+    }
+  }
+  .arc-h4 {
+    font-weight: 600;
+    padding: 0.25rem 0 !important;
+  }
+  @media (min-width: 480px) {
+    .button-wrapper {
+      height: 2.5rem;
+    }
   }
   .work-experience {
     background-image: url("/src/lib/images/levels-pattern-cdmx-gray.svg");
