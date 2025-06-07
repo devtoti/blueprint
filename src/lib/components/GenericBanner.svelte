@@ -5,7 +5,7 @@
 
 <article style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
   <article class="floating-container">
-    <h2 class="arc-h1 color-invert">{heading}</h2>
+    <h2 class="arc-h2 color-invert">{heading}</h2>
     <p class="arc-body-1 color-invert">{description}</p>
     <div class="button-container">
       <Button {href} {text} primary invert />
@@ -26,7 +26,8 @@
       var(--bg-blueprint)
     );
     color: var(--white);
-    min-height: 35svh;
+    min-height: 40svh;
+    height: 100% !important;
     width: calc(100% - var(--side-padding-mobile) * 6);
     width: 100%;
     display: flex;

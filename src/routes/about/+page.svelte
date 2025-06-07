@@ -24,14 +24,14 @@
 
 <main>
   <HeroContent
-    title="Acerca de bp.dev"
+    title="Acerca de Blueprint"
     subheading="Agenda una llamada o escríbeme directamente"
     description="Originalmente pensado como un proyecto aislado para crear un nuevo sistema de diseño y una librería de componentes de React, Blueprint.dev se convirtió en un prototipo experimental a manera de sandbox para plasmar nuevas ideas y ejecutarlas simultáneamente."
-    buttonOneText="Inspiración"
-    buttonOneHref="/inspiration"
-    buttonTwoText="Timeline"
-    buttonTwoHref="/timeline"
-    bgPattern="broken-paper-pattern"
+    buttonOneText="Concepto"
+    buttonOneHref="/concept"
+    buttonTwoText="Contáctame"
+    buttonTwoHref="/contact"
+    bgPattern="/src/lib/images/iso-grid.svg"
     HeroImage={PortalDorico}
   />
   <DividerTrapezoid
@@ -45,7 +45,7 @@
     heading="¿Quieres saber más acerca de Blueprint.dev?"
     description="Explora la sección que he preparado para ti, en donde encontrarás más información acerca del proceso de diseño y los retos que he enfrentado durante la ejecución de este proyecto."
     href="/contact"
-    text="Contact Me"
+    text="Contáctame"
   />
   <DividerTrapezoid
     width={WINDOW.width}

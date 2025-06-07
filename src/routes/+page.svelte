@@ -79,7 +79,7 @@
     buttonOneText="Contáctame"
     buttonOneHref="/contact"
     buttonTwoText="Resumé"
-    buttonTwoHref="src/lib/docs/antonio-ruiz-frontend-design-resume-jun-2025.pdf"
+    buttonTwoHref="/src/lib/docs/frontend-design-resume-jun-2025.pdf"
     isHome
   />
   <DividerTrapezoid
@@ -144,7 +144,7 @@
     grid-template-rows: 3rem repeat(4, 1fr);
   }
   .work-experience {
-    background-image: url("src/lib/images/levels-pattern-cdmx-gray.svg");
+    background-image: url("/src/lib/images/levels-pattern-cdmx-gray.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

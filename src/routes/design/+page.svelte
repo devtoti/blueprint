@@ -31,7 +31,7 @@
     buttonOneHref="/projects"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
-    bgPattern="levels-pattern-cdmx-gray"
+    bgPattern="/src/lib/images/levels-pattern-cdmx-gray.svg"
     HeroImage={PortalDorico}
   />
   <DividerTrapezoid

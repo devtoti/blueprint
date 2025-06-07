@@ -10,7 +10,6 @@
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
-  console.log(page);
   onMount(() => {
     grid = GRID();
     window.addEventListener("resize", () => {

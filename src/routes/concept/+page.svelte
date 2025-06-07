@@ -26,10 +26,10 @@
     title="Concepto"
     subheading="Detrás de mi proceso de diseño y desarrollo"
     description="Blueprint.dev es un proyecto personal en donde el diseño y el desarrollo se fusionan para crear una experiencia de usuario excepcional, desafiando al mismo tiempo un par de paradigmas de la industria del desarrollo web."
-    buttonOneText="Sistema de Diseño"
-    buttonOneHref="/design-system"
-    buttonTwoText="Acerca de BP.dev"
-    buttonTwoHref="/about"
+    buttonOneText="Desarrollo"
+    buttonOneHref="/dev"
+    buttonTwoText="Diseño"
+    buttonTwoHref="/design"
     HeroImage={IsoCube}
   />
   <DividerTrapezoid

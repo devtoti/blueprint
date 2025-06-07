@@ -51,8 +51,9 @@
       ),
       linear-gradient(to bottom, var(--bg-blueprint), var(--bleu-600));
     color: var(--white);
-    min-height: 25svh;
+    min-height: 35svh;
     width: 100%;
+    height: 100%;
     width: calc(100% - var(--side-padding-mobile) * 6);
     display: flex;
     flex-direction: column;
