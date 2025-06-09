@@ -9,21 +9,21 @@
     {
       title: "Prototipos",
       active: true,
-      img: "365junkhaul-preview.png",
+      img: "prototypes.png",
       description:
         "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
     },
     {
       title: "Diseño de Interfaces",
       active: false,
-      img: "bb4md-preview.png",
+      img: "interfaces.png",
       description:
         "Creación de componentes personalizados apegados a los principios de accesibilidad y usabilidad",
     },
     {
       title: "Ilustraciones",
       active: false,
-      img: "ikol-preview.png",
+      img: "illustrations.png",
       description:
         "Realizadas a mano o con herramientas de dibujo vectorial, con separación de capas para ser animadas",
     },
@@ -32,21 +32,21 @@
     {
       title: "Desarrollo de Aplicaciones",
       active: true,
-      img: "365junkhaul-preview.png",
+      img: "app-development.png",
       description:
         "Traducción de diseño a código, estableciendo primeramente las tecnologías y el sistema de diseño a utilizar",
     },
     {
       title: "Landing Pages",
       active: false,
-      img: "bb4md-preview.png",
+      img: "landing-pages.png",
       description:
         "Enfocadas en la conversión de usuarios y sujetas a A/B testing",
     },
     {
       title: "Integración de APIs",
       active: false,
-      img: "ikol-preview.png",
+      img: "api-integration.png",
       description:
         "Integración de APIs para interactuar con el backend y desplegar visualizaciones de datos",
     },
@@ -116,7 +116,7 @@
     background-color: var(--bg-primary);
     gap: 1rem;
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 400px);
     grid-template-columns: repeat(6, 1fr);
     row-gap: 2rem;
   }
@@ -147,11 +147,14 @@
   }
   [class*="services-illustration"] {
     align-self: center;
+    height: 100%;
+    /* max-height: 420px; */
+    width: 100%;
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      opacity: 0.3;
+      object-fit: contain;
+      /* opacity: 0.6; */
     }
   }
   .services-illustration-1 {
@@ -161,7 +164,6 @@
   .services-illustration-2 {
     grid-column: 1 / -1;
     grid-row: 3 / 4;
-    transform: scaleX(-1);
   }
   @media (min-width: 480px) {
     .services-list-left {

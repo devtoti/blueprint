@@ -21,7 +21,7 @@
   <p class="arc-body-2">{project.description}</p>
   <div class="tags">
     {#each project.tags as tag}
-      <span class="tag arc-h5">{tag}</span>
+      <span class="tag arc-input"><strong>#</strong>{tag}</span>
     {/each}
   </div>
 </div>
@@ -112,13 +112,17 @@
     margin-top: 0.5rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.25rem;
     justify-content: center;
   }
   .tag {
-    background-color: var(--bleu-50);
     padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
+    border: 1px solid var(--gray-alpha-20);
+    color: var(--gray-alpha-50);
+    strong {
+      color: var(--gray-alpha-70);
+      padding-right: 0.25rem;
+    }
   }
   @media (min-width: 480px) {
     .preview {

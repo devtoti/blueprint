@@ -33,10 +33,8 @@
     title="Contacto"
     subheading="Agenda una llamada / escríbeme"
     description="Actualmente me encuentro trabajando tiempo completo como designer y frontend developer, por lo que de momento mi disponibilidad es limitada. Si tienes alguna solicitud particular, por favor, ¡no dudes en contactarme!"
-    buttonOneText="Ver Diseños"
-    buttonOneHref="/projects"
-    buttonTwoText="Contáctame"
-    buttonTwoHref="/contact"
+    buttonOneText="Enviar mensaje"
+    buttonOneHref="mailto:toti.webdev@gmail.com"
     bgPattern="broken-paper-pattern"
     HeroImage={PortalDorico}
   >

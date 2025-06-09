@@ -147,34 +147,6 @@
   .projects {
     grid-template-rows: 3rem repeat(4, 1fr);
   }
-  .button-wrapper {
-    width: 100%;
-    min-width: 10rem;
-    height: 2rem;
-    button {
-      width: 100%;
-      height: 100%;
-      border: none;
-      box-shadow: none;
-      cursor: pointer;
-    }
-  }
-  .arc-h4 {
-    font-weight: 600;
-    padding: 0.25rem 0 !important;
-  }
-  @media (min-width: 480px) {
-    .button-wrapper {
-      height: 2.5rem;
-    }
-  }
-  .work-experience {
-    background-image: url("/src/lib/images/levels-pattern-cdmx-gray.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
   section {
     border: 1.5px solid var(--border-secondary);
     border-top: 0;
@@ -195,6 +167,13 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 3;
+    }
+    .work-experience {
+      background-image: url("/src/lib/images/levels-pattern-cdmx-gray.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
   }
   @media (min-width: 1029px) {
