@@ -1,6 +1,8 @@
 <script lang="ts">
   let { project, isActive, activeProject = $bindable() } = $props();
+  import SolarLinkMinimalistic2Bold from "~icons/solar/link-minimalistic-2-bold";
   import SolarGlobalOutline from "~icons/solar/global-outline";
+  import IconCode from "~icons/solar/code-bold-duotone";
   import PenNib from "$lib/icons/pen-nib.svg";
   import FigmaIcon from "$lib/icons/figma.svelte";
   import IconWrapper from "$lib/components/IconWrapper.svelte";
@@ -34,7 +36,7 @@
     {#if project.url || project.figmaUrl}
       <div class="icons-wrapper">
         <a href={project.url} target="_blank">
-          <IconWrapper Icon={SolarGlobalOutline} />
+          <IconWrapper Icon={SolarLinkMinimalistic2Bold} />
         </a>
         <a href={project.figmaUrl} target="_blank">
           <IconWrapper Icon={FigmaIcon} />

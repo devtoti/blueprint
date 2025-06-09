@@ -1,5 +1,7 @@
 <script lang="ts">
   import BoxIllustration from "$lib/images/box-illustration.svelte";
+  import HoverMeTop from "$lib/images/hover-container.svelte";
+  import HoverMeBottom from "$lib/images/hover-container-bottom.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import { skills } from "$lib/utils/skills";
   let results: Record<string, number> = {};
@@ -73,22 +75,44 @@
   isCentered
 />
 <article class="skills-container">
+  <div class="hover-me-top-container">
+    <HoverMeTop />
+  </div>
   {#each Object.keys(mappedSkills()) as type}
     {@render skill({ name: type })}
   {/each}
+  <div class="hover-me-bottom-container">
+    <HoverMeBottom />
+  </div>
 </article>
 
 <style>
   .skills-container {
     width: 100%;
+    position: relative;
     grid-column: 1 / -1;
     background-color: var(--bg-primary);
     gap: 0.25rem;
     gap: 0.1rem;
     display: flex;
+    margin: 5rem 0 2rem 0;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+  }
+  .hover-me-top-container {
+    position: absolute;
+    top: -6.5rem;
+    pointer-events: none;
+    left: 0.25rem;
+    width: 12rem;
+  }
+  .hover-me-bottom-container {
+    position: absolute;
+    bottom: -2rem;
+    right: 0.25rem;
+    pointer-events: none;
+    width: 12rem;
   }
   .skill {
     all: unset;
@@ -154,7 +178,11 @@
   }
   @media (min-width: 480px) {
     .skills-container {
-      grid-column: 2 / -2;
+      grid-column: 1 / -1;
+    }
+    .hover-me-top-container,
+    .hover-me-bottom-container {
+      width: 8rem;
     }
     .skill {
       padding: 0.5rem 1rem;
@@ -163,9 +191,24 @@
       gap: 0.5rem;
     }
   }
+  @media (min-width: 768px) {
+    .skills-container {
+      grid-column: 2 / -2;
+    }
+  }
   @media (min-width: 1280px) {
     .skills-container {
       grid-column: 3 / -3;
+    }
+    .hover-me-top-container,
+    .hover-me-bottom-container {
+      width: 12rem;
+    }
+    .hover-me-top-container {
+      left: -1rem;
+    }
+    .hover-me-bottom-container {
+      right: -1rem;
     }
   }
 </style>

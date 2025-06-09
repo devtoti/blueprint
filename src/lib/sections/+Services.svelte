@@ -116,9 +116,9 @@
     background-color: var(--bg-primary);
     gap: 1rem;
     display: grid;
-    grid-template-rows: repeat(2, 400px);
+    grid-template-rows: 20rem auto 20rem auto;
     grid-template-columns: repeat(6, 1fr);
-    row-gap: 2rem;
+    row-gap: 1rem;
   }
   .service {
     all: unset;
@@ -185,6 +185,9 @@
     }
   }
   @media (min-width: 720px) {
+    .services-container {
+      grid-template-rows: repeat(2, 400px);
+    }
     .services-illustration-1 {
       grid-column: span 3 / -1;
       padding-right: 1rem;
@@ -204,6 +207,7 @@
   @media (min-width: 1024px) {
     .services-container {
       grid-column: 2 / -2;
+      row-gap: 2rem;
     }
   }
   @media (min-width: 1920px) {

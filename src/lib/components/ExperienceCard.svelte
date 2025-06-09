@@ -78,7 +78,7 @@
       active: false,
       figmaLink: null,
       overview:
-        "Encargado de desarrollar y dar mantenimiento al proyecto Social AI: Un portal para crear, automatizar y administrar contenido para redes sociales utilizando IA. Me aseguro de actualizar las plantillas de diseño utilizadas en campañas de marketing en Instragam, Facebook y Linkedin, para generar posts y publicaciones automáticas.",
+        "Encargado de desarrollar y dar mantenimiento al proyecto Social AI: Un portal para crear, automatizar y administrar contenido para redes sociales utilizando IA. Me aseguro de actualizar las plantillas de diseño utilizadas en campañas de marketing en Instragam, Facebook y Linkedin.",
       url: "https://getintheloop.ca",
     },
     {
@@ -88,7 +88,7 @@
       figmaLink: null,
       url: "https://lusilabs.com/",
       overview:
-        "Me desempeñé como asesor de diseño en LUSI Labs, una empresa que desarrolla software mediante modelos de machine learning y modelos matemáticos. Realicé prototipos de diseño, wireframes y mockups en una serie de proyectos de corto plazo.",
+        "Me desempeñé como asesor de diseño en LUSI Labs, una empresa que desarrolla software mediante modelos matemáticos y de machine learning. Realicé prototipos de diseño, wireframes y mockups en una serie de proyectos de corto plazo.",
     },
     {
       company: "Totaldevs",
