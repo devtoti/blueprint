@@ -31,7 +31,7 @@
 >
   <h3 class="project-number arc-h3">{project.number}</h3>
   <h3 class="arc-h4 project-title">{project.title}</h3>
-  <p class="arc-body-2 project-description">{project.description}</p>
+  <p class="arc-body-1 project-description">{project.description}</p>
   <div class="project-card-icons">
     {#if project.url || project.figmaUrl}
       <div class="icons-wrapper">

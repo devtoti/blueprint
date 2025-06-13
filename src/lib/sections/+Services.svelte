@@ -9,7 +9,7 @@
     {
       title: "Prototipos",
       active: true,
-      img: "prototypes.png",
+      img: "ui-designs.png",
       description:
         "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
     },
@@ -75,7 +75,7 @@
     onmouseenter={() => handleHover(array, item)}
   >
     <h5 class="arc-h4">{item.title}</h5>
-    <p class="arc-body-2">{item.description}</p>
+    <p class="arc-body-1">{item.description}</p>
   </button>
 {/snippet}
 
@@ -148,13 +148,11 @@
   [class*="services-illustration"] {
     align-self: center;
     height: 100%;
-    /* max-height: 420px; */
     width: 100%;
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      /* opacity: 0.6; */
     }
   }
   .services-illustration-1 {
@@ -166,22 +164,26 @@
     grid-row: 3 / 4;
   }
   @media (min-width: 480px) {
+    .services-container {
+      grid-template-rows: 30rem auto 30rem auto;
+    }
     .services-list-left {
       grid-column: 1 / span 3;
       grid-row: 1 / 2;
     }
     .services-list-right {
       grid-column: span 3 / -1;
-      grid-row: 2 / 3;
+      grid-row: 3 / 4;
     }
     .services-illustration-1 {
       grid-column: span 3 / -1;
       align-self: start;
+      grid-row: 1 / 2;
     }
     .services-illustration-2 {
       grid-column: 1 / span 3;
       align-self: start;
-      grid-row: 2 / 3;
+      grid-row: 3 / 4;
     }
   }
   @media (min-width: 720px) {
@@ -197,6 +199,9 @@
     .services-list-left {
       height: 100%;
       justify-content: space-evenly;
+    }
+    .services-list-right {
+      grid-row: 2 / 3;
     }
     .services-illustration-2 {
       grid-column: 1 / span 3;

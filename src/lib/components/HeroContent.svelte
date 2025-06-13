@@ -32,7 +32,7 @@
       <h4 class="text-caption caption">{subheading}</h4>
     </div>
     <div class="subheader">
-      <p class="text-subheader arc-body-2">
+      <p class="text-subheader arc-body-1">
         {description}
       </p>
     </div>

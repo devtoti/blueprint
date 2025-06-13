@@ -117,7 +117,7 @@
       <span></span><span></span><span></span><span></span>
     </div>
     <h2 class="arc-h4">{experience.role}</h2>
-    <p>{experience.description}</p>
+    <p class="arc-body-1">{experience.description}</p>
   </button>
 {:else}
   <div class="experience-card active" class:dev={!design} class:design>

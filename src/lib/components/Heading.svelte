@@ -7,7 +7,7 @@
 
 <article class="heading" class:alignRight class:isCentered>
   <h2 class="arc-h3">{heading}</h2>
-  <h5 class="subheading arc-body-2">{subheading}</h5>
+  <h5 class="subheading arc-body-1">{subheading}</h5>
 </article>
 
 <style>

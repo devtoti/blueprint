@@ -94,7 +94,7 @@
     children={() => null}
   />
 
-  <section class="main-content work-experience grainy">
+  <section class="main-content work-experience grainy" id="work-experience">
     <WorkExperience />
   </section>
   {@render sectionDividers(2)}
@@ -104,11 +104,11 @@
   {@render sectionDividers(1)}
   <LandingMidBanner winWidth={WINDOW.width} offset={grid.columnWidth} />
   {@render sectionDividers(1, "invert")}
-  <section class="main-content skills grainy">
+  <section class="main-content skills grainy" id="skills">
     <Skills />
   </section>
   {@render sectionDividers(2, "invert")}
-  <section class="main-content services grainy">
+  <section class="main-content services grainy" id="services">
     <Services />
   </section>
   {@render sectionDividers(2, "invert")}

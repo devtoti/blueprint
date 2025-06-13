@@ -31,8 +31,9 @@
     buttonOneHref="/concept"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
-    bgPattern="/src/lib/images/iso-grid.svg"
+    bgPattern="./src/lib/images/iso-grid.svg"
     HeroImage={PortalDorico}
+    children={() => null}
   />
   <DividerTrapezoid
     width={WINDOW.width}

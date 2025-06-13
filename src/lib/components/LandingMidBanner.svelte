@@ -20,7 +20,7 @@
       >
         Añade Blueprint a tu proyecto
       </h3>
-      <p class="arc-body-2 color-invert">
+      <p class="arc-body-1 color-invert">
         ¿Te interesaría implementar la filosofía de diseño de Blueprint.dev en
         tu proyecto, o simplemente te gustaría contar con alguna opinión
         técnica-proyectual?

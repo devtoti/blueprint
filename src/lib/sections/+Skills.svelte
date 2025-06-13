@@ -63,7 +63,7 @@
     class:isActive={activeTag === type.name.toLowerCase()}
     class:isMain={skills.some((s) => s.name.toLowerCase() == type.name)}
   >
-    <h5 class="arc-h4 skill-name">{type.name}</h5>
+    <h5 class="arc-h5 skill-name">{type.name}</h5>
     {#if isMainSkill(type.name)}
       <span></span><span></span><span></span><span></span>
     {/if}
@@ -95,7 +95,7 @@
     gap: 0.25rem;
     gap: 0.1rem;
     display: flex;
-    margin: 5rem 0 2rem 0;
+    margin: 6rem 0 2rem 0;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -104,7 +104,7 @@
     position: absolute;
     top: -6.5rem;
     pointer-events: none;
-    left: 0.25rem;
+    left: -0.25rem;
     width: 12rem;
   }
   .hover-me-bottom-container {

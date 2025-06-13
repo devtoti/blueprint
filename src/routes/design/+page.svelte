@@ -33,6 +33,7 @@
     buttonTwoHref="/contact"
     bgPattern="./src/lib/images/levels-pattern-cdmx-gray.svg"
     HeroImage={PortalDorico}
+    children={() => null}
   />
   <DividerTrapezoid
     width={WINDOW.width}

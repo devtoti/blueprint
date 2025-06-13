@@ -44,7 +44,7 @@
           <a href="/#projects" class="arc-body-2">Proyectos</a>
           <a href="/#skills" class="arc-body-2">Habilidades</a>
           <a href="/#services" class="arc-body-2">Servicios</a>
-          <a href="/mystery" class="arc-body-2">Mystery Box</a>
+          <!-- <a href="/mystery" class="arc-body-2">Mystery Box</a> -->
         </ul>
       </article>
       <article class="navigation-right">
@@ -59,19 +59,19 @@
       </article>
     </article>
     <article class="plan-info techs">
-      <h4 class="arc-h5">Hecho con</h4>
-      <p class="arc-body-2">Svelte, TypeScript, Figma</p>
+      <h4 class="arc-h6">Hecho con</h4>
+      <p class="arc-body-3">Svelte, TypeScript, Figma</p>
     </article>
     <article class="plan-info proj">
-      <h4 class="arc-h5">Proyecto</h4>
-      <p class="arc-body-2">Frontend & Design Portfolio</p>
+      <h4 class="arc-h6">Proyecto</h4>
+      <p class="arc-body-3">Frontend & Design Portfolio</p>
     </article>
     <article class="plan-info loc">
-      <h4 class="arc-h5">Ubicación</h4>
-      <p class="arc-body-2">CDMX, México</p>
+      <h4 class="arc-h6">Ubicación</h4>
+      <p class="arc-body-3">CDMX, México</p>
     </article>
     <article class="plan-info scale">
-      <h4 class="arc-h5">Escala</h4>
+      <h4 class="arc-h6">Escala</h4>
       <div id="scale">
         <div class="scale-top">
           <span class="arc-h6"></span>
@@ -97,19 +97,19 @@
       </div>
     </article>
     <article class="plan-info rev">
-      <h4 class="arc-h5">Última revisión</h4>
-      <p class="arc-body-2">2025-05-10</p>
+      <h4 class="arc-h6">Última revisión</h4>
+      <p class="arc-body-3">2025-05-10</p>
     </article>
     <article class="plan-info collab">
-      <h4 class="arc-h5">Colaboradores</h4>
-      <p class="arc-body-2">@devtoti</p>
+      <h4 class="arc-h6">Colaboradores</h4>
+      <p class="arc-body-3">@devtoti</p>
     </article>
     <article class="plan-info author">
-      <h4 class="arc-h5">Head Architect</h4>
-      <p class="arc-body-2">Antonio Ruiz</p>
+      <h4 class="arc-h6">Head Architect</h4>
+      <p class="arc-body-3">Antonio Ruiz</p>
     </article>
     <article class="plan-info v">
-      <h4 class="arc-h1">V1.0</h4>
+      <h4 class="arc-h3">V1.0</h4>
     </article>
     <article class="plan-info id" id="clave">
       <h4 class="arc-h0">A1</h4>
@@ -118,6 +118,9 @@
 </footer>
 
 <style>
+  h4 {
+    color: var(--text-primary) !important;
+  }
   a {
     padding: 0.5rem 0.5rem;
   }

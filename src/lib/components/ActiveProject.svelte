@@ -18,7 +18,7 @@
 <div class="active-project">
   <h2 class="arc-h1">{project.number}</h2>
   <h3 class="arc-h3">{project.title}</h3>
-  <p class="arc-body-2">{project.description}</p>
+  <p class="arc-body-1">{project.description}</p>
   <div class="tags">
     {#each project.tags as tag}
       <span class="tag arc-input"><strong>#</strong>{tag}</span>

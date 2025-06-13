@@ -58,17 +58,6 @@
     grid-column: 1 / -1;
     width: 100%;
     overflow: hidden;
-    /* overflow: hidden;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 8px;
-      height: 8px;
-      background-color: var(--bleu-200);
-      transform: translate(-50%, -50%);
-    } */
   }
   .cta-banner-info {
     width: 100%;
