@@ -365,7 +365,7 @@
     width: 100%;
   }
   .experience-card.active {
-    background-color: var(--white);
+    background-color: var(--bg-primary);
     background-image: radial-gradient(
       var(--bleu-50) 1px,
       transparent 0

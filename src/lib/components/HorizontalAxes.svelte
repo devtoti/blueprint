@@ -26,7 +26,7 @@
     class="highlight-after"
     style="right: 0; width: {highlightDims.widthRight}px;"
   ></span>
-  <ul class="axes axes-x grainy">
+  <ul class="axes axes-x grainy" data-theme="light">
     {#each axes.slice(0, 4) as axis}
       <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
         {axis}
@@ -42,7 +42,7 @@
     class="highlight-after"
     style="right: 0; width: {highlightDims.widthRight}px;"
   ></span>
-  <ul class="axes axes-x grainy">
+  <ul class="axes axes-x grainy" data-theme="light">
     {#each axes.slice(0, 8) as axis}
       <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
         {axis}
@@ -58,7 +58,7 @@
     class="highlight-after"
     style="right: 0; width: {highlightDims.widthRight}px;"
   ></span>
-  <ul class="axes axes-x grainy">
+  <ul class="axes axes-x grainy" data-theme="light">
     {#each axes as axis}
       <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
         {axis}
@@ -106,5 +106,17 @@
 
   li:first-child {
     grid-column-start: 2;
+  }
+  :global([data-theme="dark"]) ul {
+    background-color: var(--bleu-100) !important;
+  }
+  :global([data-theme="dark"]) li {
+    background-color: var(--bg-primary);
+    color: var(--bleu-300);
+    filter: brightness(0.8);
+  }
+  :global([data-theme="dark"]) .highlight-before,
+  :global([data-theme="dark"]) .highlight-after {
+    filter: brightness(0.3);
   }
 </style>

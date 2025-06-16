@@ -207,23 +207,23 @@
   --blue-radix-1200: #f8fafc;
 
   /* Primitives - Sand Radix */
-  --sand-radix-100: #21201c;
-  --sand-radix-200: #63635e;
-  --sand-radix-300: #82827c;
-  --sand-radix-400: #8d8d86;
-  --sand-radix-500: #bcbbb5;
-  --sand-radix-600: #cfceca;
-  --sand-radix-700: #dad9d6;
-  --sand-radix-800: #e2e1de;
-  --sand-radix-900: #e9e8e6;
-  --sand-radix-1000: #f1f0ef;
-  --sand-radix-1100: #f9f9f8;
-  --sand-radix-1200: #fdfdfc;
+  --sand-radix-100: #111110;
+  --sand-radix-200: #191918;
+  --sand-radix-300: #222221;
+  --sand-radix-400: #2a2a28;
+  --sand-radix-500: #31312e;
+  --sand-radix-600: #3b3a37;
+  --sand-radix-700: #494844;
+  --sand-radix-800: #62605b;
+  --sand-radix-900: #6f6d66;
+  --sand-radix-1000: #7c7b74;
+  --sand-radix-1100: #b5b3ad;
+  --sand-radix-1200: #eeeeec;
 
   /* Semantic - Background */
   --bg-primary: var(--sand-radix-200);
-  --bg-secondary: var(--sand-radix-200);
-  --bg-tertiary: var(--sand-radix-300);
+  --bg-secondary: var(--sand-radix-300);
+  --bg-tertiary: var(--sand-radix-400);
   --bg-darksand: var(--sand-radix-100);
   --bg-brand: var(--brand-primary);
   --bg-brand-light: var(--brand-light);
@@ -233,13 +233,13 @@
   --bg-sunken-2: var(--gray-alpha-20);
   --bg-sunken-3: var(--gray-alpha-50);
   --bg-sunken-4: var(--gray-alpha-70);
-  --bg-blueprint: var(--bleu-900);
+  --bg-blueprint: var(--bleu-100);
 
   /* Semantic - Text */
-  --text-primary: var(--bleu-900);
-  --text-secondary: var(--bleu-800);
-  --text-tertiary: var(--bleu-600);
-  --text-light: var(--bleu-100);
+  --text-primary: var(--bleu-200);
+  --text-secondary: var(--bleu-100);
+  --text-tertiary: var(--bleu-50);
+  --text-light: var(--bleu-800);
   --text-brand: var(--brand-light);
   --text-accent: var(--bleu-100);
 
@@ -252,8 +252,8 @@
   /* Semantic - Borders */
   --border-brand: var(--brand-accent);
   --border-primary: var(--bleu-800);
-  --border-secondary: var(--bleu-700);
-  --border-tertiary: var(--bleu-600);
+  --border-secondary: var(--bleu-50);
+  --border-tertiary: var(--bleu-100);
   --border-light: var(--bleu-300);
   --border-dark: var(--bleu-800);
 

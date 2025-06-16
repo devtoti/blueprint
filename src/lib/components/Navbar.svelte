@@ -14,11 +14,18 @@
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
   let isNavOpen = $state(false);
+  let isDarkMode = $state(false);
   onMount(() => {
     grid = GRID();
     window.addEventListener("resize", () => {
       grid = GRID();
     });
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      isDarkMode = true;
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
     return () => {
       window.removeEventListener("resize", () => {});
     };
@@ -27,10 +34,10 @@
   let currScrollPos = $state(0);
   function handleScroll() {
     const newPosition = window.pageYOffset;
-    if (newPosition > currScrollPos) {
+    if (newPosition > currScrollPos + 200) {
       showNav = false;
       currScrollPos = newPosition;
-    } else if (currScrollPos - newPosition >= 120) {
+    } else if (currScrollPos - newPosition >= 200) {
       showNav = true;
       currScrollPos = newPosition;
     }
@@ -54,11 +61,25 @@
       enableScroll();
     }
   });
+  function toggleTheme() {
+    isDarkMode = !isDarkMode;
+    if (isDarkMode) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+    }
+  }
 </script>
 
 <svelte:body use:getBodyHeight />
 <svelte:window onscroll={handleScroll} />
-<nav class="grainy" class:active={showNav}>
+<nav
+  class="grainy"
+  class:active={showNav}
+  data-theme={isDarkMode ? "dark" : "light"}
+>
   <article class="nav-container">
     <ul class="nav-links desktop-only">
       <li>
@@ -85,12 +106,100 @@
       <li>
         <a href="/about" class:active={page.url.pathname === "/about"}>About</a>
       </li>
+      <li>
+        <button
+          class="theme-toggle"
+          onclick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          {#if isDarkMode}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          {:else}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          {/if}
+        </button>
+      </li>
     </ul>
     <section class="mobile-only mobile-nav">
       <a href="/" class="blueprint-logo">
-        <img src={IconBlueprint} alt="Blueprint Logo" />
+        <!-- <img src={IconBlueprint} alt="Blueprint Logo" /> -->
+        <button
+          class="theme-toggle"
+          onclick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          {#if isDarkMode}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          {:else}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          {/if}
+        </button>
       </a>
-      <button>
+      <button class:isHidden={!showNav} style:opacity={showNav ? "1" : "0"}>
         <Button href="/contact" text="Contáctame" primary />
       </button>
       <div class="mobile-nav-icons">
@@ -206,6 +315,9 @@
     button {
       all: unset;
     }
+    button.isHidden {
+      display: none;
+    }
   }
   nav {
     position: sticky;
@@ -213,7 +325,7 @@
     height: 52px;
     justify-content: space-between;
     flex-direction: column;
-    background-color: #c2c2c2;
+    background-color: var(--bg-secondary);
     padding: 0;
     top: 12px;
     z-index: 80;
@@ -278,7 +390,7 @@
     z-index: 200;
   }
   .active-nav-links {
-    border: 1.5px solid var(--text-secondary);
+    border: 1.5px solid var(--border-secondary);
     border-top: none;
     border-bottom: none;
   }
@@ -326,7 +438,57 @@
         li:first-of-type {
           grid-column: 5 / span 1;
         }
+        li:last-of-type {
+          grid-column: span 1 / -2;
+        }
       }
     }
+  }
+  .theme-toggle {
+    all: unset;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    grid-column: span 1 / -1;
+  }
+
+  .theme-toggle:hover {
+    color: var(--icon-secondary);
+  }
+
+  .theme-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+  :global([data-theme="dark"]) nav {
+    background-color: var(--bg-primary);
+    color: var(--bleu-100);
+    box-shadow: var(--shadow-3);
+  }
+
+  :global([data-theme="dark"]) .nav-container {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-secondary);
+  }
+
+  :global([data-theme="dark"]) .active-nav-container {
+    background-color: var(--bg-primary);
+  }
+
+  :global([data-theme="dark"]) .active-nav-links {
+    background-color: var(--bg-primary);
+    border-color: var(--border-secondary);
+  }
+
+  :global([data-theme="dark"]) a {
+    color: var(--bleu-100);
+  }
+
+  :global([data-theme="dark"]) a.active {
+    color: var(--text-light);
   }
 </style>

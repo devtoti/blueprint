@@ -24,7 +24,7 @@
 
 <section
   class="hero-main {printPath.length > 1 ? printPath : 'home'}-section"
-  style="background: #f9f9f8 url('{bgPattern}');"
+  style="background: var(--bg-primary) url('{bgPattern}');"
 >
   <article class="hero-text section-content">
     <div class="title">

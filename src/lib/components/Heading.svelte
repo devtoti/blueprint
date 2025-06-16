@@ -17,6 +17,7 @@
     text-align: center;
     display: block;
     margin: 1rem 0;
+    color: var(--text-tertiary);
   }
   .isCentered {
     grid-column: 1 / -1 !important;
