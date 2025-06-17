@@ -1,5 +1,5 @@
 <svg
-  style="color: var(--border-light); width: 100%; height: 100%;"
+  style="color: #4774CC40; width: 100%; height: 100%;"
   viewBox="0 0 2183 1823"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"

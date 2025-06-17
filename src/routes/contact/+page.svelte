@@ -11,6 +11,7 @@
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
+  import IsoGrid from "$lib/images/iso-grid.svelte";
   import CalendlyWidget from "$lib/components/CalendlyWidget.svelte";
 
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
@@ -36,6 +37,8 @@
     buttonOneText="Enviar mensaje"
     buttonOneHref="mailto:toti.webdev@gmail.com"
     HeroImage={PortalDorico}
+    BgPattern={IsoGrid}
+    children={() => null}
   >
     <CalendlyWidget />
   </HeroContent>
