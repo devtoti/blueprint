@@ -141,7 +141,7 @@
   --border-primary: var(--bleu-600);
   --border-secondary: var(--bleu-400);
   --border-tertiary: var(--bleu-300);
-  --border-light: #ffffff;
+  --border-light: var(--bleu-100);
   --border-dark: var(--bleu-600);
 
   /* Semantic - Radii */
@@ -268,7 +268,7 @@
   --border-primary: var(--bleu-400);
   --border-secondary: var(--blue-radix-500);
   --border-tertiary: var(--blue-radix-200);
-  --border-light: var(--blue-radix-700);
+  --border-light: var(--blue-radix-200);
   --border-dark: var(--bleu-700);
 
   /* Semantic - Icons */

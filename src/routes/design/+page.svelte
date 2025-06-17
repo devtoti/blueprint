@@ -8,6 +8,7 @@
   import { GRID } from "$lib/utils/gridData";
   import PaperBox from "$lib/images/box-illustration.svelte";
   import PortalDorico from "$lib/images/portal-dorico.svelte";
+  import LevelsPattern from "$lib/images/levels-pattern-cdmx-gray.svelte";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
@@ -25,13 +26,13 @@
 <main>
   <HeroContent
     title="UI/UX Design"
-    subheading="Investigación, requisitos, diseño y evaluación"
+    subheading="Investigación, requisitos, diseño y evaluación" 
     description="Me especializo en crear interfaces de usuario únicas y atractivas que mejoran la experiencia del usuario, sustentadas en la framework UCD User Centered Design."
     buttonOneText="Ver Diseños"
     buttonOneHref="/projects"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
-    bgPattern="./src/lib/images/levels-pattern-cdmx-gray.svg"
+    BgPattern={LevelsPattern}
     HeroImage={PortalDorico}
     children={() => null}
   />

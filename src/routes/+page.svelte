@@ -14,6 +14,8 @@
   import RadialDeco from "$lib/images/radial-deco.svelte";
   import Services from "$lib/sections/+Services.svelte";
   import Skills from "$lib/sections/+Skills.svelte";
+  import IsoGrid from "$lib/images/iso-grid.svelte";
+  import PaperBox from "$lib/images/paper-box-new.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   onMount(() => {
@@ -83,6 +85,8 @@
     buttonOneHref="/contact"
     buttonTwoText="Resumé"
     buttonTwoHref="/docs/frontend-design-resume-jun-2025.pdf"
+    HeroImage={PaperBox}
+    BgPattern={IsoGrid}
     isHome
     children={() => null}
   ></HeroContent>

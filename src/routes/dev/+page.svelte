@@ -7,6 +7,7 @@
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
   import HeroContent from "$lib/components/HeroContent.svelte";
+  import LevelsPattern from "$lib/images/levels-pattern-cdmx-gray.svelte";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
@@ -32,6 +33,8 @@
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
     HeroImage={PaperBox}
+    children={() => null}
+    BgPattern={LevelsPattern}
   />
   <DividerTrapezoid
     width={WINDOW.width}

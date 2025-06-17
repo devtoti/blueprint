@@ -11,7 +11,7 @@
     buttonTwoText = null,
     buttonTwoHref = null,
     children,
-    bgPattern = IsoGrid,
+    BgPattern = null,
     HeroImage = null,
     isHome = false,
   } = $props();
@@ -26,8 +26,13 @@
 
 <section
   class="hero-main {printPath.length > 1 ? printPath : 'home'}-section"
-  style="background: var(--bg-primary) url('{bgPattern}');"
+  style="background: var(--bg-primary)"
 >
+  {#if BgPattern}
+    <div class="hero-BgPattern">
+      <BgPattern />
+    </div>
+  {/if}
   <article class="hero-text section-content">
     <div class="title">
       <h1 class="text-title barlow-extrabold" class:isHome>{title}</h1>
@@ -73,6 +78,7 @@
     overflow: hidden;
     grid-template-rows: 1fr 2fr 100px;
     row-gap: 2rem;
+    position: relative;
   }
 
   .hero-text {
@@ -166,5 +172,23 @@
       grid-column: 4 / span 4;
       grid-row: 2 / span 1;
     }
+  }
+  .hero-BgPattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .section-content,
+  .hero-img,
+  .button-container {
+    position: relative;
+    z-index: 1;
   }
 </style>

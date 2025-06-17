@@ -4,6 +4,7 @@
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount } from "svelte";
   import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
+  import IsoGrid from "$lib/images/iso-grid.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import PortalDorico from "$lib/images/portal-dorico.svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
@@ -31,7 +32,7 @@
     buttonOneHref="/concept"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
-    bgPattern="./src/lib/images/iso-grid.svg"
+    BgPattern={IsoGrid}
     HeroImage={PortalDorico}
     children={() => null}
   />
