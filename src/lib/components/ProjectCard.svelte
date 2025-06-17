@@ -3,7 +3,6 @@
   import SolarLinkMinimalistic2Bold from "~icons/solar/link-minimalistic-2-bold";
   import SolarGlobalOutline from "~icons/solar/global-outline";
   import IconCode from "~icons/solar/code-bold-duotone";
-  import PenNib from "$lib/icons/pen-nib.svg";
   import FigmaIcon from "$lib/icons/figma.svelte";
   import IconWrapper from "$lib/components/IconWrapper.svelte";
   let innerWidth = $state(0);

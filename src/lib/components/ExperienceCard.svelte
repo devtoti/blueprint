@@ -2,7 +2,7 @@
   let { experience, design } = $props();
   import "../../styles/text-styles.css";
   import IconCode from "~icons/solar/code-bold-duotone";
-  import PenNib from "$lib/icons/pen-nib.svg";
+  import IconPenNib from "$lib/icons/pen-nib.svelte";
   import GitHubIcon from "$lib/icons/github.svelte";
   import DribbbleIcon from "$lib/icons/dribbble.svelte";
   import FigmaIcon from "$lib/icons/figma.svelte";
@@ -112,7 +112,7 @@
       {#if experience.role === "Frontend Developer"}
         <IconCode />
       {:else}
-        <img src={PenNib} alt="Pen Nib" />
+        <IconPenNib />
       {/if}
       <span></span><span></span><span></span><span></span>
     </div>
@@ -277,7 +277,7 @@
     gap: 0.2rem;
     padding: 0.5rem;
     padding-top: 1rem;
-    background-image: radial-gradient(var(--bleu-100) 1px, transparent 0);
+    background-image: radial-gradient(var(--icon-tertiary) 1px, transparent 0);
     background-size: 10px 10px;
     background-position: -5px -5px;
     p {
@@ -378,6 +378,7 @@
     width: auto;
     height: 2rem;
     grid-template-columns: 1.2fr 1fr 1rem;
+    background-color: var(--bg-light);
     place-content: center;
     place-items: center;
     padding: 0.25rem 0.5rem;
@@ -392,11 +393,14 @@
       font-weight: 600;
       padding-left: 0.5rem;
       width: fit-content;
+      color: var(--text-tertiary);
     }
     &.active {
-      background-color: var(--bleu-200);
+      background-color: var(--bg-light-hover);
+      border: 1px solid var(--border-tertiary);
+      border-bottom: none;
       p {
-        color: var(--bleu-700) !important;
+        color: var(--text-tertiary) !important;
         font-weight: 600 !important;
       }
       h4 {
@@ -405,8 +409,11 @@
     }
   }
   .experience-list-item:hover {
-    background-color: var(--bleu-100);
+    background-color: var(--bg-light-hover);
     cursor: pointer;
+    p {
+      color: var(--text-primary);
+    }
   }
   .col-wrapper {
     position: relative;
@@ -480,7 +487,7 @@
     border: 1px solid var(--border-tertiary);
     border-top: none;
     &:hover {
-      background-color: var(--bg-tertiary);
+      background-color: var(--bg-light);
     }
   }
   @media (min-width: 480px) {
@@ -488,6 +495,21 @@
     .experience-card.active {
       width: 320px !important;
       max-width: 320px !important;
+    }
+  }
+  :global([data-theme="dark"]) {
+    .role-overview:hover {
+      background-color: var(--bg-secondary);
+    }
+    .experience-card-icon {
+      background-color: var(--bg-secondary) !important;
+      color: var(--icon-light) !important;
+    }
+    .experience-card {
+      background-image: radial-gradient(
+        var(--bleu-50) 1px,
+        transparent 0
+      ) !important;
     }
   }
 </style>

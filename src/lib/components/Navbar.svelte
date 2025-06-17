@@ -35,7 +35,7 @@
   function handleScroll() {
     const newPosition = window.pageYOffset;
     if (newPosition > currScrollPos + 200) {
-      showNav = false;
+      showNav = true;
       currScrollPos = newPosition;
     } else if (currScrollPos - newPosition >= 200) {
       showNav = true;

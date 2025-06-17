@@ -104,6 +104,8 @@
   --bg-brand-light: var(--brand-light);
   --bg-brand-dark: var(--brand-dark);
   --bg-light: var(--bleu-50);
+  --bg-light-hover: var(--bleu-100);
+  --bg-dark: var(--bleu-950);
   --bg-sunken-1: var(--gray-alpha-10);
   --bg-sunken-2: var(--gray-alpha-20);
   --bg-sunken-3: var(--gray-alpha-50);
@@ -229,6 +231,8 @@
   --bg-brand-light: var(--brand-light);
   --bg-brand-dark: var(--brand-dark);
   --bg-light: var(--bleu-50);
+  --bg-light-hover: var(--bleu-100);
+  --bg-dark: var(--sand-radix-300);
   --bg-sunken-1: var(--gray-alpha-10);
   --bg-sunken-2: var(--gray-alpha-20);
   --bg-sunken-3: var(--gray-alpha-50);
@@ -236,10 +240,10 @@
   --bg-blueprint: var(--bleu-100);
 
   /* Semantic - Text */
-  --text-primary: var(--bleu-200);
+  --text-primary: var(--blue-radix-700);
   --text-secondary: var(--bleu-100);
-  --text-tertiary: var(--bleu-50);
-  --text-light: var(--bleu-800);
+  --text-tertiary: var(--blue-radix-800);
+  --text-light: var(--blue-radix-600);
   --text-brand: var(--brand-light);
   --text-accent: var(--bleu-100);
 
@@ -259,9 +263,9 @@
 
   /* Semantic - Icons */
   --icon-brand: var(--brand-accent);
-  --icon-primary: var(--bleu-900);
-  --icon-secondary: var(--bleu-700);
-  --icon-tertiary: var(--bleu-600);
+  --icon-primary: var(--blue-radix-700);
+  --icon-secondary: var(--blue-radix-300);
+  --icon-tertiary: var(--blue-radix-200);
   --icon-light: var(--bleu-100);
   --icon-dark: var(--bleu-700);
 

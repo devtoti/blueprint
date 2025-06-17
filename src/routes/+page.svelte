@@ -169,7 +169,7 @@
       z-index: 3;
     }
     .work-experience {
-      background-image: url("/src/lib/images/levels-pattern-cdmx-gray.svg");
+      /* background-image: url("/src/lib/images/levels-pattern-cdmx-gray.svg"); */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
