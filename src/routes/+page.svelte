@@ -148,7 +148,7 @@
     grid-template-rows: 3rem repeat(4, 1fr);
   }
   section {
-    border: 1.5px solid var(--border-secondary);
+    border: 1.5px solid var(--border-tertiary);
     border-top: 0;
     border-bottom: 0;
     height: inherit;

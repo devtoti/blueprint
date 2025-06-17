@@ -146,4 +146,9 @@
       }
     }
   }
+  :global([data-theme="dark"]) {
+    .cta-banner {
+      background: radial-gradient(#7b81a8, #3a4d8e 50%, #161d4a 100%);
+    }
+  }
 </style>

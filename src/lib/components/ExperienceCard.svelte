@@ -398,6 +398,7 @@
     &.active {
       background-color: var(--bg-light-hover);
       border: 1px solid var(--border-tertiary);
+      color: var(--text-tertiary);
       border-bottom: none;
       p {
         color: var(--text-tertiary) !important;
@@ -510,6 +511,18 @@
         var(--bleu-50) 1px,
         transparent 0
       ) !important;
+    }
+    .experience-list-item {
+      h4,
+      p {
+        color: var(--text-secondary) !important;
+      }
+    }
+    .experience-list-item.active {
+      h4,
+      p {
+        color: var(--white) !important;
+      }
     }
   }
 </style>

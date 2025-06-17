@@ -42,25 +42,19 @@
     <polygon
       points="0,0 {w},{y} {width - w},{y} {width},0"
       fill="url(#grain)"
-      style="mix-blend-mode: multiply;"
+      style="opacity: 0.4; mix-blend-mode: overlay;"
     />
+    <!-- style="mix-blend-mode: multiply;" -->
     <polyline
       points="0,0 {w},{y}"
       fill="none"
       stroke-width="1.2"
-      stroke="var(--border-secondary)"
+      stroke="var(--border-tertiary)"
     />
-    <!-- <polyline
-    points="{w},{y} {width - w}, {y}"
-    fill="none"
-    stroke-dasharray="16"
-    stroke-width="3"
-    stroke="var(--border-secondary)"
-  /> -->
     <polyline
       points="{width - w},{y} {width},0"
       fill="none"
-      stroke="var(--border-secondary)"
+      stroke="var(--border-tertiary)"
       stroke-width="1.2"
     />
   </svg>
@@ -85,15 +79,15 @@
     grid-column: var(--start) / var(--end);
   }
   .divider-wrapper {
-    border-bottom: 1.2px dashed var(--border-secondary);
+    border-bottom: 1.2px dashed var(--border-tertiary);
     border-bottom-style: dashed;
     border-bottom-width: 1.3px;
-    border-bottom-color: var(--border-secondary);
+    border-bottom-color: var(--border-tertiary);
     border-image-slice: 1;
     border-image-source: repeating-linear-gradient(
       to right,
-      var(--border-secondary) 0,
-      var(--border-secondary) 8px,
+      var(--border-tertiary) 0,
+      var(--border-tertiary) 8px,
       transparent 8px,
       transparent 12px
     );

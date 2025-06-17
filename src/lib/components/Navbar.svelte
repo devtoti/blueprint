@@ -4,12 +4,12 @@
   import "../../styles/text-styles.css";
   import { page } from "$app/state";
   import IconHamburger from "$lib/icons/hamburger.svg";
-  import IconBlueprint from "$lib/icons/blueprint.svg";
   import IconCloseNav from "$lib/icons/close-nav.svg";
   import Button from "$lib/components/Button.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount } from "svelte";
   import { GRID } from "$lib/utils/gridData";
+
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
@@ -20,7 +20,6 @@
     window.addEventListener("resize", () => {
       grid = GRID();
     });
-    // Check for saved theme preference
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       isDarkMode = true;
@@ -61,6 +60,7 @@
       enableScroll();
     }
   });
+
   function toggleTheme() {
     isDarkMode = !isDarkMode;
     if (isDarkMode) {

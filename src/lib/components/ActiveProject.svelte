@@ -117,10 +117,10 @@
   }
   .tag {
     padding: 0.25rem 0.5rem;
-    border: 1px solid var(--gray-alpha-20);
-    color: var(--gray-alpha-50);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
     strong {
-      color: var(--gray-alpha-70);
+      color: var(--text-secondary);
       padding-right: 0.25rem;
     }
   }
@@ -167,6 +167,12 @@
     }
     .bullets {
       grid-column: 2 / span 3;
+    }
+  }
+  :global([data-theme="dark"]) {
+    .tag {
+      border: 1px solid var(--border-tertiary);
+      color: var(--text-tertiary);
     }
   }
 </style>

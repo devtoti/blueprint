@@ -28,6 +28,9 @@
 {/if}
 
 <style>
+  /* a {
+    color: var(--text-light) !important;
+  } */
   .button-wrapper {
     width: 100%;
     min-width: 10rem;

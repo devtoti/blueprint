@@ -76,4 +76,13 @@
       height: 32px;
     }
   }
+  :global([data-theme="dark"]) {
+    .icon-wrapper {
+      background-color: var(--bg-primary);
+      color: var(--icon-light);
+      span {
+        border-color: var(--border-secondary);
+      }
+    }
+  }
 </style>

@@ -223,4 +223,26 @@
       grid-column: span 3 / -1;
     }
   }
+  :global([data-theme="dark"]) {
+    .service {
+      h5 {
+        color: var(--text-primary);
+      }
+      p {
+        color: var(--text-tertiary);
+      }
+      &:hover {
+        background-color: var(--bg-secondary);
+      }
+    }
+    .service.active {
+      background-color: var(--bg-dark);
+    }
+    .services-illustration-1,
+    .services-illustration-2 {
+      img {
+        filter: brightness(1.5);
+      }
+    }
+  }
 </style>

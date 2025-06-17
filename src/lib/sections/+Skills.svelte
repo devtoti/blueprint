@@ -55,6 +55,7 @@
   <button
     class="skill"
     onmouseover={handleHover}
+    onclick={handleHover}
     onfocus={handleFocus}
     onmouseleave={handleLeave}
     class:isRelevant={relevantTags.filter(
@@ -91,7 +92,6 @@
     width: 100%;
     position: relative;
     grid-column: 1 / -1;
-    background-color: var(--bg-primary);
     gap: 0.25rem;
     gap: 0.1rem;
     display: flex;
@@ -209,6 +209,29 @@
     }
     .hover-me-bottom-container {
       right: -1rem;
+    }
+  }
+  :global([data-theme="dark"]) {
+    .skill {
+      background-color: var(--bg-secondary);
+      /* border: 1px solid var(--border-secondary); */
+      &:hover {
+        background-color: var(--sand-radix-500);
+      }
+    }
+    .skill.isRelevant {
+      background-color: var(--bleu-100);
+    }
+    .skill.isActive {
+      background-color: var(--bleu-300);
+    }
+    .skill.isMain.isActive {
+      h5 {
+        color: var(--white) !important;
+      }
+    }
+    span {
+      border-color: var(--border-secondary) !important;
     }
   }
 </style>

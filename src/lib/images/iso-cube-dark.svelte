@@ -5,7 +5,7 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
 >
-  <g style="mix-blend-mode:multiply">
+  <g style="mix-blend-mode:screen">
     <rect
       width="64.8"
       height="64.8"
@@ -28,7 +28,7 @@
       stroke-width="1.35"
     />
   </g>
-  <g style="mix-blend-mode:multiply">
+  <g style="mix-blend-mode:screen">
     <rect
       width="64.8"
       height="64.8"
@@ -51,7 +51,7 @@
       stroke-width="1.35"
     />
   </g>
-  <g style="mix-blend-mode:multiply">
+  <g style="mix-blend-mode:screen">
     <rect
       width="64.8"
       height="64.8"
@@ -74,7 +74,7 @@
       stroke-width="0.675"
     />
   </g>
-  <g style="mix-blend-mode:multiply">
+  <g style="mix-blend-mode:screen">
     <rect
       width="64.8"
       height="64.8"
@@ -104,7 +104,7 @@
     stroke="var(--border-tertiary)"
     stroke-width="0.675"
   />
-  <g style="mix-blend-mode:multiply">
+  <g style="mix-blend-mode:screen">
     <rect
       width="64.8"
       height="64.8"
@@ -127,7 +127,7 @@
       stroke-width="0.675"
     />
   </g>
-  <g style="mix-blend-mode:multiply">
+  <g style="mix-blend-mode:screen">
     <rect
       width="64.8"
       height="64.8"

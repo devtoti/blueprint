@@ -374,4 +374,15 @@
       text-align: right;
     }
   }
+  :global([data-theme="dark"]) {
+    .plan-info {
+      outline: 1px solid var(--border-tertiary);
+      h4 {
+        color: var(--text-tertiary) !important;
+      }
+      p {
+        color: var(--text-primary) !important;
+      }
+    }
+  }
 </style>

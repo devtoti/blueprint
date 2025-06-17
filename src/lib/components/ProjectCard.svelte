@@ -216,4 +216,30 @@
       grid-column: span 3 / -2 !important;
     }
   }
+  :global([data-theme="dark"]) {
+    .project-card {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-tertiary);
+      background-image: radial-gradient(var(--bg-light) 1px, transparent 0);
+      &:hover {
+        background-color: var(--bg-secondary);
+      }
+    }
+    .project-card.active {
+      background-color: var(--bg-secondary);
+      border-color: var(--border-secondary);
+    }
+    .project-number {
+      color: var(--text-light);
+    }
+    .project-title {
+      color: var(--text-primary);
+    }
+    .project-description {
+      color: var(--text-tertiary);
+    }
+    .bracket {
+      border-color: var(--border-secondary) !important;
+    }
+  }
 </style>

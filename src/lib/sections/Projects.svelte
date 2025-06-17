@@ -11,11 +11,6 @@
   <h3 class="arc-h4 color-invert">Proyectos Destacados</h3>
 </article>
 <div class="main-content">
-  <!-- <Heading
-    heading="Proyectos Destacados"
-    subheading="Durante los últimos +5 años he desarrollado un interés particular por el diseño UI/UX y el desarrollo frontend de manera integral. He trabajado en diversos startups de Estados Unidos y Canadá, desempeñándome primordialmente como frontend designer."
-    alignRight
-  /> -->
   <div class="projects-container">
     <ActiveProject project={activeProject} />
     {#each projects as project, index}
@@ -49,7 +44,7 @@
     width: 100%;
     text-align: center;
     height: 2.5rem;
-    background-color: var(--bleu-500);
+    background-color: var(--bg-blueprint);
     h3 {
       position: absolute;
       inset: 0;

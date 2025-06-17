@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
+  import type { Writable } from "svelte/store";
   import IsoGrid from "$lib/images/iso-grid.svg";
   let {
     title,
@@ -15,9 +16,10 @@
     isHome = false,
   } = $props();
   import IsoCube from "$lib/images/iso-cube.svelte";
+  import IsoCubeDark from "$lib/images/iso-cube-dark.svelte";
   import Button from "$lib/components/Button.svelte";
-  import { page } from "$app/state";
-  const printPath = page.url.pathname.replace("/", "");
+  import { page } from "$app/stores";
+  const printPath = $page.url.pathname.replace("/", "");
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   const isMobile = $derived(WINDOW.width < 480);
 </script>

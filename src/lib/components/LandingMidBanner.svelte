@@ -50,7 +50,7 @@
         transparent 20px
       ),
       linear-gradient(to bottom, var(--bg-blueprint), var(--bleu-600));
-    color: var(--white);
+    color: var(--text-light);
     min-height: 35svh;
     width: 100%;
     height: 100%;
@@ -89,9 +89,6 @@
   }
 
   @media (min-width: 480px) and (max-width: 1028px) {
-    .button-wrapper {
-      height: 40px;
-    }
     .mid-banner {
       grid-column: 1 / -1;
       width: 100%;
@@ -116,6 +113,28 @@
     }
     .button-container {
       flex-direction: row-reverse;
+    }
+  }
+  :global([data-theme="dark"]) {
+    .mid-banner-background {
+      background: repeating-linear-gradient(
+          to left,
+          var(--bleu-100),
+          var(--bleu-100) 10px,
+          transparent 10px,
+          transparent 20px
+        ),
+        linear-gradient(to bottom, var(--bg-blueprint), var(--bleu-100));
+    }
+    .mid-banner {
+      background: repeating-linear-gradient(
+          to left,
+          var(--bleu-50),
+          var(--bleu-50) 10px,
+          transparent 10px,
+          transparent 20px
+        ),
+        linear-gradient(to bottom, var(--bg-blueprint), var(--bleu-100));
     }
   }
 </style>
