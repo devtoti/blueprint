@@ -16,6 +16,8 @@
   import Skills from "$lib/sections/+Skills.svelte";
   import IsoGrid from "$lib/images/iso-grid.svelte";
   import PaperBox from "$lib/images/paper-box-new.svelte";
+  import { theme } from "$lib/stores.js";
+  let isDarkMode = $derived($theme === "dark");
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   onMount(() => {
@@ -42,9 +44,6 @@
         return grid.getColumnsDistance(10);
     }
   };
-  function openPDF() {
-    window.open("/docs/frontend-design-resume-jun-2025.pdf", "_blank");
-  }
 </script>
 
 {#snippet sectionDividers(num: number, invert = false)}
@@ -86,10 +85,10 @@
     buttonTwoText="Resumé"
     buttonTwoHref="/docs/frontend-design-resume-jun-2025.pdf"
     HeroImage={PaperBox}
-    BgPattern={IsoGrid}
     isHome
     children={() => null}
   ></HeroContent>
+  <!-- <h1 class="arc-h4" style="grid-column: 2 / -2">theme: {isDarkMode ? "dark" : "light"}</h1> -->
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}

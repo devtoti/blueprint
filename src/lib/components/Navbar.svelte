@@ -2,19 +2,21 @@
   import "../../styles.css";
   import "../../tokens.css";
   import "../../styles/text-styles.css";
-  import { page } from "$app/state";
+  // import { page } from "$app/stores"; // Removed deprecated import
   import IconHamburger from "$lib/icons/hamburger.svg";
   import IconCloseNav from "$lib/icons/close-nav.svg";
   import Button from "$lib/components/Button.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
-  import { getContext, onMount } from "svelte";
+  import { getContext, onMount, setContext } from "svelte";
   import { GRID } from "$lib/utils/gridData";
-
+  import { theme } from "$lib/stores.js";
+  let { currentPath = "/" } = $props();
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
   let isNavOpen = $state(false);
-  let isDarkMode = $state(false);
+  let isDarkMode = $derived($theme === "dark");
+
   onMount(() => {
     grid = GRID();
     window.addEventListener("resize", () => {
@@ -22,13 +24,17 @@
     });
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
-      isDarkMode = true;
       document.documentElement.setAttribute("data-theme", "dark");
+      theme.set("dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      theme.set("light");
     }
     return () => {
       window.removeEventListener("resize", () => {});
     };
   });
+
   let showNav = $state(true);
   let currScrollPos = $state(0);
   function handleScroll() {
@@ -62,53 +68,45 @@
   });
 
   function toggleTheme() {
-    isDarkMode = !isDarkMode;
-    if (isDarkMode) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-    } else {
+    if ($theme === "dark") {
       document.documentElement.removeAttribute("data-theme");
       localStorage.setItem("theme", "light");
+      theme.set("light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+      theme.set("dark");
     }
   }
 </script>
 
 <svelte:body use:getBodyHeight />
 <svelte:window onscroll={handleScroll} />
-<nav
-  class="grainy"
-  class:active={showNav}
-  data-theme={isDarkMode ? "dark" : "light"}
->
+<nav class="grainy" class:active={showNav}>
   <article class="nav-container">
     <ul class="nav-links desktop-only">
       <li>
-        <a href="/" class:active={page.url.pathname === "/"}>Blueprint</a>
+        <a href="/" class:active={currentPath === "/"}>Blueprint</a>
       </li>
       <li>
-        <a href="/dev" class:active={page.url.pathname === "/dev"}>Dev</a>
+        <a href="/dev" class:active={currentPath === "/dev"}>Dev</a>
       </li>
       <li>
-        <a href="/design" class:active={page.url.pathname === "/design"}
-          >Design</a
-        >
+        <a href="/design" class:active={currentPath === "/design"}>Design</a>
       </li>
       <li>
-        <a href="/concept" class:active={page.url.pathname === "/concept"}
-          >Concept</a
-        >
+        <a href="/concept" class:active={currentPath === "/concept"}>Concept</a>
       </li>
       <li>
-        <a href="/contact" class:active={page.url.pathname === "/contact"}
-          >Contact</a
-        >
+        <a href="/contact" class:active={currentPath === "/contact"}>Contact</a>
       </li>
       <li>
-        <a href="/about" class:active={page.url.pathname === "/about"}>About</a>
+        <a href="/about" class:active={currentPath === "/about"}>About</a>
       </li>
       <li>
         <button
           class="theme-toggle"
+          type="button"
           onclick={toggleTheme}
           aria-label="Toggle theme"
         >
@@ -156,6 +154,7 @@
       <a href="/" class="blueprint-logo">
         <!-- <img src={IconBlueprint} alt="Blueprint Logo" /> -->
         <button
+          type="button"
           class="theme-toggle"
           onclick={toggleTheme}
           aria-label="Toggle theme"

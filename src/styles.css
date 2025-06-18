@@ -190,7 +190,7 @@ body {
   height: 100px;
   background-color: #e9e8e6;
   width: 100%;
-  border: 1.5px solid var(--border-secondary);
+  border: 1.5px solid var(--border-tertiary);
   border-top: 0;
   border-bottom: 0;
 }

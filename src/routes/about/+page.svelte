@@ -32,7 +32,6 @@
     buttonOneHref="/concept"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
-    BgPattern={IsoGrid}
     HeroImage={PortalDorico}
     children={() => null}
   />

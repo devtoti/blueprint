@@ -5,6 +5,7 @@
   import Navbar from "$lib/components/Navbar.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import HorizontalAxes from "$lib/components/HorizontalAxes.svelte";
+  import { page } from "$app/stores";
   let innerWidth = $state(0);
   let innerHeight = $state(0);
   let wnd = $state({ width: 0, height: 0 });
@@ -24,7 +25,7 @@
 
 <svelte:window bind:innerWidth bind:innerHeight />
 <HorizontalAxes width={innerWidth} height={innerHeight} />
-<Navbar />
+<Navbar currentPath={$page.url.pathname} />
 {@render children()}
 <p>{innerWidth}, {innerHeight}</p>
 <Footer window={wnd} />

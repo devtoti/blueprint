@@ -1,7 +1,5 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import type { Writable } from "svelte/store";
-  import IsoGrid from "$lib/images/iso-grid.svg";
   let {
     title,
     subheading,
@@ -11,12 +9,11 @@
     buttonTwoText = null,
     buttonTwoHref = null,
     children,
-    BgPattern = null,
+    bgPattern = "iso-grid.svg",
     HeroImage = null,
     isHome = false,
   } = $props();
   import IsoCube from "$lib/images/iso-cube.svelte";
-  import IsoCubeDark from "$lib/images/iso-cube-dark.svelte";
   import Button from "$lib/components/Button.svelte";
   import { page } from "$app/stores";
   const printPath = $page.url.pathname.replace("/", "");
@@ -26,13 +23,8 @@
 
 <section
   class="hero-main {printPath.length > 1 ? printPath : 'home'}-section"
-  style="background: var(--bg-primary)"
+  style="background: var(--bg-primary);background-image: url('./images/{bgPattern}');background-size: cover;background-position: center;background-repeat: repeat;"
 >
-  {#if BgPattern}
-    <div class="hero-BgPattern">
-      <BgPattern />
-    </div>
-  {/if}
   <article class="hero-text section-content">
     <div class="title">
       <h1 class="text-title barlow-extrabold" class:isHome>{title}</h1>
@@ -76,11 +68,16 @@
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
-    grid-template-rows: 1fr 2fr 100px;
+    grid-template-rows: 0.5fr 2fr 100px;
     row-gap: 2rem;
     position: relative;
   }
-
+  .section-content,
+  .hero-img,
+  .button-container {
+    position: relative;
+    z-index: 1;
+  }
   .hero-text {
     border-top: 0;
     border-bottom: 0;
@@ -172,23 +169,17 @@
       grid-column: 4 / span 4;
       grid-row: 2 / span 1;
     }
-  }
-  .hero-BgPattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 0;
-    pointer-events: none;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .section-content,
-  .hero-img,
-  .button-container {
-    position: relative;
-    z-index: 1;
+    .hero-BgPattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 0;
+      pointer-events: none;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 </style>

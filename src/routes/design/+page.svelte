@@ -6,9 +6,9 @@
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import { GRID } from "$lib/utils/gridData";
-  import PaperBox from "$lib/images/box-illustration.svelte";
   import PortalDorico from "$lib/images/portal-dorico.svelte";
-  import LevelsPattern from "$lib/images/levels-pattern-cdmx-gray.svelte";
+  import { theme } from "$lib/stores.js";
+  let isDarkMode = $derived($theme === "dark");
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
@@ -32,7 +32,11 @@
     buttonOneHref="/projects"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
-    BgPattern={LevelsPattern}
+    bgPattern={
+      isDarkMode
+        ? "levels-pattern-dark.svg"
+        : "levels-pattern-light.svg"
+    }
     HeroImage={PortalDorico}
     children={() => null}
   />

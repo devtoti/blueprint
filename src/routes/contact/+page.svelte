@@ -37,7 +37,6 @@
     buttonOneText="Enviar mensaje"
     buttonOneHref="mailto:toti.webdev@gmail.com"
     HeroImage={PortalDorico}
-    BgPattern={IsoGrid}
     children={() => null}
   >
     <CalendlyWidget />

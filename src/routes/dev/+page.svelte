@@ -8,10 +8,11 @@
   import { GRID } from "$lib/utils/gridData";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import LevelsPattern from "$lib/images/levels-pattern-cdmx-gray.svelte";
+  import { theme } from "$lib/stores.js";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
-
+  let isDarkMode = $derived($theme === "dark");
   onMount(() => {
     grid = GRID();
     window.addEventListener("resize", () => {
@@ -33,8 +34,12 @@
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
     HeroImage={PaperBox}
+    bgPattern={
+      isDarkMode
+        ? "levels-pattern-dark.svg"
+        : "levels-pattern-light.svg"
+    }
     children={() => null}
-    BgPattern={LevelsPattern}
   />
   <DividerTrapezoid
     width={WINDOW.width}

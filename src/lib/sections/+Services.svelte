@@ -124,6 +124,7 @@
     all: unset;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
+    border: 1px solid var(--border-light);
     &:hover {
       background-color: var(--bg-tertiary);
     }

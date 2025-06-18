@@ -7,7 +7,10 @@
   import { GRID } from "$lib/utils/gridData";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import IsoCube from "$lib/images/iso-cube-old.svelte";
+  import IsoCubeDark from "$lib/images/iso-cube-dark.svelte";
   import IsoGrid from "$lib/images/iso-grid.svelte";
+  import { theme } from "$lib/stores.js";
+  let isDarkMode = $derived($theme === "dark");
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
@@ -31,8 +34,7 @@
     buttonOneHref="/dev"
     buttonTwoText="Diseño"
     buttonTwoHref="/design"
-    HeroImage={IsoCube}
-    BgPattern={IsoGrid}
+    HeroImage={isDarkMode ? IsoCubeDark : IsoCube}
     children={() => null}
   />
   <DividerTrapezoid
