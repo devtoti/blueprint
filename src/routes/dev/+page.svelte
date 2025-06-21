@@ -8,7 +8,7 @@
   import { GRID } from "$lib/utils/gridData";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import LevelsPattern from "$lib/images/levels-pattern-cdmx-gray.svelte";
-  import { theme } from "$lib/stores.js";
+  import { theme } from "$lib/stores";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());

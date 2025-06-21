@@ -9,14 +9,14 @@
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount, setContext } from "svelte";
   import { GRID } from "$lib/utils/gridData";
-  import { theme } from "$lib/stores.js";
+  import { theme, lang } from "$lib/stores";
   let { currentPath = "/" } = $props();
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
   let isNavOpen = $state(false);
   let isDarkMode = $derived($theme === "dark");
-
+  let currentLang = $derived($lang);
   onMount(() => {
     grid = GRID();
     window.addEventListener("resize", () => {
@@ -67,6 +67,16 @@
     }
   });
 
+  function toggleLang() {
+    if ($lang === "en") {
+      localStorage.setItem("lang", "es");
+      lang.set("es");
+    } else {
+      localStorage.setItem("lang", "en");
+      lang.set("en");
+    }
+  }
+
   function toggleTheme() {
     if ($theme === "dark") {
       document.documentElement.removeAttribute("data-theme");
@@ -104,6 +114,11 @@
         <a href="/about" class:active={currentPath === "/about"}>About</a>
       </li>
       <li>
+        <label for="lang">{$lang}</label>
+        <select id="lang" name="lang" onchange={toggleLang} value={$lang}>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
         <button
           class="theme-toggle"
           type="button"

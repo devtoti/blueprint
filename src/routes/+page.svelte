@@ -7,6 +7,7 @@
   import { GRID } from "$lib/utils/gridData";
   import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
+  import TrapezoidDiv from "$lib/components/TrapezoidDiv.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import CTABanner from "$lib/components/CTABanner.svelte";
   import WorkExperience from "$lib/sections/WorkExperience.svelte";
@@ -14,9 +15,10 @@
   import RadialDeco from "$lib/images/radial-deco.svelte";
   import Services from "$lib/sections/+Services.svelte";
   import Skills from "$lib/sections/+Skills.svelte";
-  import IsoGrid from "$lib/images/iso-grid.svelte";
+  import Text from "$lib/components/Text.svelte";
   import PaperBox from "$lib/images/paper-box-new.svelte";
-  import { theme } from "$lib/stores.js";
+  import { theme, lang } from "$lib/stores";
+  console.log($lang);
   let isDarkMode = $derived($theme === "dark");
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
@@ -78,17 +80,17 @@
 <main>
   <HeroContent
     title="Blueprint.dev()"
-    subheading="UX Research • UI Design • Development"
-    description="Producción de páginas y aplicaciones web de vanguardia altamente personalizables y accesibles. Diseño paramétrico adaptativo apegado a los principios de usabilidad y de diseño."
     buttonOneText="Contáctame"
     buttonOneHref="/contact"
     buttonTwoText="Resumé"
     buttonTwoHref="/docs/frontend-design-resume-jun-2025.pdf"
     HeroImage={PaperBox}
     isHome
+    currentPage="Home"
+    bgPattern="iso-grid.svg"
     children={() => null}
-  ></HeroContent>
-  <!-- <h1 class="arc-h4" style="grid-column: 2 / -2">theme: {isDarkMode ? "dark" : "light"}</h1> -->
+  />
+
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
@@ -106,15 +108,15 @@
   </section>
   {@render sectionDividers(1)}
   <LandingMidBanner winWidth={WINDOW.width} offset={grid.columnWidth} />
-  {@render sectionDividers(1, "invert")}
+  {@render sectionDividers(1, true)}
   <section class="main-content skills grainy" id="skills">
     <Skills />
   </section>
-  {@render sectionDividers(2, "invert")}
+  {@render sectionDividers(2, true)}
   <section class="main-content services grainy" id="services">
     <Services />
   </section>
-  {@render sectionDividers(2, "invert")}
+  {@render sectionDividers(2, true)}
   <article class="main-content stripped-divider"></article>
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
@@ -171,6 +173,7 @@
       transform: translate(-50%, -50%);
       z-index: 3;
     }
+
     .work-experience {
       /* background-image: url("/src/lib/images/levels-pattern-cdmx-gray.svg"); */
       background-size: cover;

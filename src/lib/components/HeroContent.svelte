@@ -1,20 +1,32 @@
 <script lang="ts">
   import { getContext } from "svelte";
+  import { dictionary } from "$lib/dictionary";
   let {
     title,
-    subheading,
-    description,
     buttonOneText = null,
     buttonOneHref = null,
     buttonTwoText = null,
     buttonTwoHref = null,
+    currentPage = "Home",
     children,
     bgPattern = "iso-grid.svg",
     HeroImage = null,
     isHome = false,
+  }: {
+    currentPage: keyof typeof dictionary;
+    title: string;
+    buttonOneText: string | null;
+    buttonOneHref: string | null;
+    buttonTwoText: string | null;
+    buttonTwoHref: string | null;
+    children: any;
+    bgPattern: string;
+    HeroImage: any;
+    isHome: boolean;
   } = $props();
   import IsoCube from "$lib/images/iso-cube.svelte";
   import Button from "$lib/components/Button.svelte";
+  import Text from "$lib/components/Text.svelte";
   import { page } from "$app/stores";
   const printPath = $page.url.pathname.replace("/", "");
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
@@ -28,11 +40,13 @@
   <article class="hero-text section-content">
     <div class="title">
       <h1 class="text-title barlow-extrabold" class:isHome>{title}</h1>
-      <h4 class="text-caption caption">{subheading}</h4>
+      <h4 class="text-caption caption">
+        <Text page={currentPage} text="heading" />
+      </h4>
     </div>
     <div class="subheader">
       <p class="text-subheader arc-body-1">
-        {description}
+        <Text page={currentPage} text="subheading" />
       </p>
     </div>
   </article>

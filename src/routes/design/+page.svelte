@@ -7,7 +7,7 @@
   import HeroContent from "$lib/components/HeroContent.svelte";
   import { GRID } from "$lib/utils/gridData";
   import PortalDorico from "$lib/images/portal-dorico.svelte";
-  import { theme } from "$lib/stores.js";
+  import { theme } from "$lib/stores";
   let isDarkMode = $derived($theme === "dark");
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
