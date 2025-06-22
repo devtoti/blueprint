@@ -23,6 +23,28 @@ export const dictionary = {
             es: "Producción de páginas y aplicaciones web de vanguardia altamente personalizables y accesibles. Diseño paramétrico adaptativo apegado a los principios de usabilidad y de accesibilidad.",
         },
     },
+    Error: {
+        heading: {
+            en: "404",
+            es: "404",
+        },
+        description: {
+            en: "Page not found",
+            es: "Página no encontrada",
+        },
+        subheading: {
+            en: "The page you are looking for does not exist... yet. Try going back to the homepage or navigate through the site using the navigation menu.",
+            es: "La página que estás buscando no existe... por ahora. Intenta volver al inicio o navega por el sitio usando el menú de navegación.",
+        },
+        primaryButton: {
+            en: "Go back to homepage",
+            es: "Volver al inicio",
+        },
+        secondaryButton: {
+            en: "Contact me",
+            es: "Contáctame",
+        },
+    },
     Dev: {
         heading: {
             en: "Development",
@@ -558,5 +580,91 @@ export const dictionary = {
             en: "Explore Blueprint",
             es: "Explorar Blueprint",
         }
+    },
+    ["navigation"]: {
+        home: {
+            en: "Home",
+            es: "Inicio",
+        },
+        about: {
+            en: "About",
+            es: "Acerca de",
+        },
+        contact: {
+            en: "Contact",
+            es: "Contacto",
+        },
+        design: {
+            en: "Design",
+            es: "Diseño",
+        },
+        development: {
+            en: "Development",
+            es: "Desarrollo",
+        },
+        concept: {
+            en: "Concept",
+            es: "Concepto",
+        },
+        ["home-skills"]: {
+            en: "Skills",
+            es: "Habilidades",
+        },
+        ["home-projects"]: {
+            en: "Project",
+            es: "Proyecto",
+        },
+        ["home-work-experience"]: {
+            en: "Work Experience",
+            es: "Experiencia Laboral",
+        },
+        ["home-services"]: {
+            en: "Services",
+            es: "Servicios",
+        },
+        ["mystery-box"]: {
+            en: "Mystery Box",
+            es: "Mystery Box",
+        },
+        
+    },
+    ["footer-legend"]: {
+        title: {
+            en: "Blueprint.dev",
+            es: "Blueprint.dev",
+        },
+        description: {
+            en: "Architectural design & frontend development",
+            es: "Diseño arquitectónico y desarrollo frontend",
+        },
+        techs: {
+            en: "Made with",
+            es: "Hecho con",
+        },
+        project: {
+            en: "Project",
+            es: "Proyecto",
+        },
+        location: {
+            en: "Location",
+            es: "Ubicación",
+        },
+        scale: {
+            en: "Scale",
+            es: "Escala",
+        },
+        ["last-update"]: {
+            en: "Last Update",
+            es: "Última actualización",
+        },
+        collaborators: {
+            en: "Collaborators",
+            es: "Colaboradores",
+        },
+        author: {
+            en: "Head Architect",
+            es: "Head Architect",
+        },
+        
     }
 };

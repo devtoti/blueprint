@@ -23,13 +23,15 @@
 
 <main>
   <HeroContent
-    title="404"
-    subheading="Página no encontrada"
-    description={`La página ${page.url.pathname} que estás buscando  no existe... por ahora. Intenta volver al inicio o navega por el sitio usando el menú de navegación.`}
+    currentPage="Error"
     buttonOneText="Volver al inicio"
     buttonOneHref="/"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
+    children={() => null}
+    bgPattern="iso-grid.svg"
+    HeroImage={null}
+    isHome={false}
   />
   <DividerTrapezoid
     width={WINDOW.width}

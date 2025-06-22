@@ -6,9 +6,8 @@
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
   import HeroContent from "$lib/components/HeroContent.svelte";
-  import IsoCube from "$lib/images/iso-cube-old.svelte";
+  import IsoCube from "$lib/images/iso-cube.svelte";
   import IsoCubeDark from "$lib/images/iso-cube-dark.svelte";
-  import IsoGrid from "$lib/images/iso-grid.svelte";
   import { theme } from "$lib/stores";
   let isDarkMode = $derived($theme === "dark");
   let WINDOW: { width: number; height: number } = getContext("WINDOW");

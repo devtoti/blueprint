@@ -30,9 +30,6 @@
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
     currentPage="Design"
-    title="UI/UX Design"
-    subheading="Investigación, requisitos, diseño y evaluación"
-    description="Me especializo en crear interfaces de usuario únicas y atractivas que mejoran la experiencia del usuario, sustentadas en la framework UCD User Centered Design."
     isHome={false}
     bgPattern={isDarkMode
       ? "levels-pattern-dark.svg"

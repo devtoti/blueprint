@@ -5,6 +5,7 @@
   import Linkedin from "$lib/icons/linkedin.svelte";
   import Dribbble from "$lib/icons/dribbble.svelte";
   import Upwork from "$lib/icons/upwork.svelte";
+  import Text from "$lib/components/Text.svelte";
   let { window } = $props();
 </script>
 
@@ -15,8 +16,10 @@
     </div>
   {/if}
   <span class="footer-title">
-    <h2 class="arc-h2">Blueprint.dev</h2>
-    <p class="arc-body-2">Architectural design & development</p>
+    <h2 class="arc-h2"><Text section="footer-legend" text="title" /></h2>
+    <p class="arc-body-2">
+      <Text section="footer-legend" text="description" />
+    </p>
     <div class="icons">
       <a href="https://github.com/devtoti" target="_blank">
         <Github />
@@ -39,39 +42,59 @@
     <article class="nav-links">
       <article class="navigation-left">
         <ul>
-          <a href="/" class="arc-body-2">Home</a>
-          <a href="/#work-experience" class="arc-body-2">Experiencia</a>
-          <a href="/#projects" class="arc-body-2">Proyectos</a>
-          <a href="/#skills" class="arc-body-2">Habilidades</a>
-          <a href="/#services" class="arc-body-2">Servicios</a>
-          <!-- <a href="/mystery" class="arc-body-2">Mystery Box</a> -->
+          <a href="/" class="arc-body-2"
+            ><Text section="navigation" text="home" /></a
+          >
+          <a href="/#work-experience" class="arc-body-2"
+            ><Text section="navigation" text="home-work-experience" /></a
+          >
+          <a href="/#projects" class="arc-body-2"
+            ><Text section="navigation" text="home-projects" /></a
+          >
+          <a href="/#skills" class="arc-body-2"
+            ><Text section="navigation" text="home-skills" /></a
+          >
+          <a href="/#services" class="arc-body-2"
+            ><Text section="navigation" text="home-services" /></a
+          >
+          <a href="/mystery" class="arc-body-2">Mystery Box</a>
         </ul>
       </article>
       <article class="navigation-right">
         <ul>
           <a href="/about" class="arc-body-2">Blueprint</a>
-          <a href="/dev" class="arc-body-2">Development</a>
-          <a href="/design" class="arc-body-2">Design</a>
-          <a href="/concept" class="arc-body-2">Concepto</a>
-          <a href="/contact" class="arc-body-2">Contacto</a>
-          <a href="/about" class="arc-body-2">Acerca</a>
+          <a href="/dev" class="arc-body-2"
+            ><Text section="navigation" text="development" /></a
+          >
+          <a href="/design" class="arc-body-2"
+            ><Text section="navigation" text="design" /></a
+          >
+          <a href="/concept" class="arc-body-2"
+            ><Text section="navigation" text="concept" /></a
+          >
+          <a href="/contact" class="arc-body-2"
+            ><Text section="navigation" text="contact" /></a
+          >
+          <a href="/about" class="arc-body-2"
+            ><Text section="navigation" text="about" /></a
+          >
         </ul>
       </article>
     </article>
     <article class="plan-info techs">
-      <h4 class="arc-h6">Hecho con</h4>
+      <h4 class="arc-h6"><Text section="footer-legend" text="techs" /></h4>
       <p class="arc-body-3">Svelte, TypeScript, Figma</p>
     </article>
     <article class="plan-info proj">
-      <h4 class="arc-h6">Proyecto</h4>
+      <h4 class="arc-h6"><Text section="footer-legend" text="project" /></h4>
       <p class="arc-body-3">Frontend & Design Portfolio</p>
     </article>
     <article class="plan-info loc">
-      <h4 class="arc-h6">Ubicación</h4>
+      <h4 class="arc-h6"><Text section="footer-legend" text="location" /></h4>
       <p class="arc-body-3">CDMX, México</p>
     </article>
     <article class="plan-info scale">
-      <h4 class="arc-h6">Escala</h4>
+      <h4 class="arc-h6"><Text section="footer-legend" text="scale" /></h4>
       <div id="scale">
         <div class="scale-top">
           <span class="arc-h6"></span>
@@ -97,15 +120,19 @@
       </div>
     </article>
     <article class="plan-info rev">
-      <h4 class="arc-h6">Última revisión</h4>
-      <p class="arc-body-3">2025-05-10</p>
+      <h4 class="arc-h6">
+        <Text section="footer-legend" text="last-update" />
+      </h4>
+      <p class="arc-body-3">2025-06-22</p>
     </article>
     <article class="plan-info collab">
-      <h4 class="arc-h6">Colaboradores</h4>
+      <h4 class="arc-h6">
+        <Text section="footer-legend" text="collaborators" />
+      </h4>
       <p class="arc-body-3">@devtoti</p>
     </article>
     <article class="plan-info author">
-      <h4 class="arc-h6">Head Architect</h4>
+      <h4 class="arc-h6"><Text section="footer-legend" text="author" /></h4>
       <p class="arc-body-3">Antonio Ruiz</p>
     </article>
     <article class="plan-info v">

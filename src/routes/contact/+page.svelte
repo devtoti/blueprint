@@ -31,11 +31,14 @@
 
 <main>
   <HeroContent
+    bgPattern="iso-grid.svg"
     currentPage="Contact"
     isHome={false}
     HeroImage={PortalDorico}
     buttonOneText="Enviar mensaje"
     buttonOneHref="mailto:toti.webdev@gmail.com"
+    buttonTwoText="Explorar Blueprint"
+    buttonTwoHref="/about"
   >
     <CalendlyWidget />
   </HeroContent>

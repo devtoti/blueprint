@@ -37,15 +37,15 @@
   <article class="hero-text section-content">
     <div class="title">
       <h1 class="text-title barlow-extrabold" class:isHome>
-        <Text page={currentPage} text="heading" />
+        <Text section={currentPage} text="heading" />
       </h1>
       <h4 class="text-caption caption">
-        <Text page={currentPage} text="description" />
+        <Text section={currentPage} text="description" />
       </h4>
     </div>
     <div class="subheader">
       <p class="text-subheader arc-body-1">
-        <Text page={currentPage} text="subheading" />
+        <Text section={currentPage} text="subheading" />
       </p>
     </div>
   </article>
