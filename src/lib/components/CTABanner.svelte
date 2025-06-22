@@ -3,6 +3,10 @@
   import LeftHand from "./LeftHand.svelte";
   import RightHand from "./RightHand.svelte";
   import Button from "./Button.svelte";
+  import Text from "./Text.svelte";
+  import { dictionary } from "$lib/dictionary";
+  import { lang } from "$lib/stores";
+  const lan = $derived($lang as "en" | "es");
   let active = false;
   onMount(() => {
     window.addEventListener("scroll", () => {
@@ -28,16 +32,15 @@
 
 <article class="cta-banner">
   <div class="cta-banner-info">
-    <h1 class="arc-h0 cta-text color-invert">Ponte en contacto</h1>
+    <h1 class="arc-h0 cta-text color-invert"><Text section="cta-banner" text="title" /></h1>
     <p class="arc-body-1 color-invert">
-      Si te interesa crear un proyecto conmigo, o si buscas una asesoría
-      asesoría personalizada, no dudes en contactarme.
+      <Text section="cta-banner" text="description" />
     </p>
     <div class="button-wrapper">
-      <Button text="Contáctame" href="/contact" secondary invert />
+      <Button text={dictionary["cta-banner"].primaryButton[lan]} href="/contact" secondary invert />
     </div>
     <div class="button-wrapper">
-      <Button text="Explorar Blueprint" href="/about" primary invert />
+      <Button text={dictionary["cta-banner"].secondaryButton[lan]} href="/about" primary invert />
     </div>
   </div>
   <div class="illustrations-container">

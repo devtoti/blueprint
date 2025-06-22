@@ -540,5 +540,23 @@ export const dictionary = {
                 es: "Integración de APIs para interactuar con el backend y desplegar visualizaciones de datos",
             },
         }
-    ]
+    ],
+    ["cta-banner"]: {
+        title: {
+            en: "Get in touch",
+            es: "Ponte en contacto",
+        },
+        description: {
+            en: "If you are interested in creating a project with me, or if you are looking for a personalized consultancy, do not hesitate to contact me.",
+            es: "Si te interesa crear un proyecto conmigo, o si buscas una asesoría asesoría personalizada, no dudes en contactarme.",
+        },
+        primaryButton: {
+            en: "Contact me",
+            es: "Contáctame",
+        },
+        secondaryButton: {
+            en: "Explore Blueprint",
+            es: "Explorar Blueprint",
+        }
+    }
 };

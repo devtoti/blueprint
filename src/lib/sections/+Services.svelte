@@ -103,11 +103,13 @@
   .services-list-left {
     grid-column: 1 / -1;
     grid-row: 2 / 3;
+    justify-content: space-evenly;
   }
   .services-list-right {
     grid-column: 1 / -1;
     grid-row: 4 / 5;
     align-self: start;
+    justify-content: space-evenly;
   }
   [class*="services-illustration"] {
     align-self: center;
