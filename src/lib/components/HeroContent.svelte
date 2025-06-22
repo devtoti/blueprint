@@ -2,7 +2,6 @@
   import { getContext } from "svelte";
   import { dictionary } from "$lib/dictionary";
   let {
-    title,
     buttonOneText = null,
     buttonOneHref = null,
     buttonTwoText = null,
@@ -14,7 +13,6 @@
     isHome = false,
   }: {
     currentPage: keyof typeof dictionary;
-    title: string;
     buttonOneText: string | null;
     buttonOneHref: string | null;
     buttonTwoText: string | null;
@@ -30,7 +28,6 @@
   import { page } from "$app/stores";
   const printPath = $page.url.pathname.replace("/", "");
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
-  const isMobile = $derived(WINDOW.width < 480);
 </script>
 
 <section
@@ -39,9 +36,11 @@
 >
   <article class="hero-text section-content">
     <div class="title">
-      <h1 class="text-title barlow-extrabold" class:isHome>{title}</h1>
-      <h4 class="text-caption caption">
+      <h1 class="text-title barlow-extrabold" class:isHome>
         <Text page={currentPage} text="heading" />
+      </h1>
+      <h4 class="text-caption caption">
+        <Text page={currentPage} text="description" />
       </h4>
     </div>
     <div class="subheader">

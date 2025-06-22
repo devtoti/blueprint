@@ -71,8 +71,7 @@
   </button>
 {/snippet}
 <Heading
-  heading="Enfoque dual desarrollo y diseño"
-  subheading="Este es un listado de las tecnologías y herramientas que utilizo constantemente para llevar a cabo mis proyectos de diseño y desarrollo web."
+  page="skills"
   isCentered
 />
 <article class="skills-container">

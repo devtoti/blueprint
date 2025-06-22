@@ -25,14 +25,14 @@
 
 <main>
   <HeroContent
-    title="Acerca de Blueprint"
-    subheading="Agenda una llamada o escríbeme directamente"
-    description="Originalmente pensado como un proyecto aislado para crear un nuevo sistema de diseño y una librería de componentes de React, Blueprint.dev se convirtió en un prototipo experimental a manera de sandbox para plasmar nuevas ideas y ejecutarlas simultáneamente."
+    currentPage="About"
     buttonOneText="Concepto"
     buttonOneHref="/concept"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
     HeroImage={PortalDorico}
+    isHome={false}
+    bgPattern="iso-grid.svg"
     children={() => null}
   />
   <DividerTrapezoid

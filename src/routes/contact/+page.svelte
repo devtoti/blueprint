@@ -31,13 +31,11 @@
 
 <main>
   <HeroContent
-    title="Contacto"
-    subheading="Agenda una llamada / escríbeme"
-    description="Actualmente me encuentro trabajando tiempo completo como designer y frontend developer, por lo que de momento mi disponibilidad es limitada. Si tienes alguna solicitud particular, por favor, ¡no dudes en contactarme!"
+    currentPage="Contact"
+    isHome={false}
+    HeroImage={PortalDorico}
     buttonOneText="Enviar mensaje"
     buttonOneHref="mailto:toti.webdev@gmail.com"
-    HeroImage={PortalDorico}
-    children={() => null}
   >
     <CalendlyWidget />
   </HeroContent>

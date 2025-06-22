@@ -1,13 +1,15 @@
 <script lang="ts">
-  export let heading: string;
-  export let subheading: string;
-  export let alignRight: boolean = false;
-  export let isCentered: boolean = false;
+  let { page, alignRight, isCentered }: { page: string; alignRight?: boolean; isCentered?: boolean } = $props();
+  import Text from "$lib/components/Text.svelte";
 </script>
 
 <article class="heading" class:alignRight class:isCentered>
-  <h2 class="arc-h3">{heading}</h2>
-  <h5 class="subheading arc-body-1">{subheading}</h5>
+  <h2 class="arc-h3">
+    <Text text="heading" page={page} />
+  </h2>
+  <h5 class="subheading arc-body-1">
+    <Text text="subheading" page={page} />
+  </h5>
 </article>
 
 <style>

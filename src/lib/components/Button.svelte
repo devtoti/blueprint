@@ -1,17 +1,28 @@
 <script lang="ts">
   let {
-    text = "Click aquí",
+    text,
     href = "/",
     primary = false,
     secondary = false,
     invert = false,
   } = $props();
+  import Text from "$lib/components/Text.svelte";
+  import { dictionary } from "$lib/dictionary";
+
+  // Check if the text exists in the Buttons dictionary using type assertion
+  const isTranslatable = $derived(
+    text && (dictionary as any).Buttons && text in (dictionary as any).Buttons
+  );
 </script>
 
 {#if primary}
   <div class="button-wrapper">
     <a {href} class="arc-button-primary arc-h4 button-text" class:invert>
-      {text}
+      {#if isTranslatable}
+        <Text section="Buttons" {text} />
+      {:else}
+        {text}
+      {/if}
     </a>
     <span class="square top-left"></span>
     <span class="square top-right"></span>
@@ -22,7 +33,11 @@
 {#if secondary}
   <div class="button-wrapper">
     <a {href} class="arc-button-secondary arc-h4" class:invert>
-      {text}
+      {#if isTranslatable}
+        <Text section="Buttons" {text} />
+      {:else}
+        {text}
+      {/if}
     </a>
   </div>
 {/if}

@@ -1,24 +1,38 @@
 <script lang="ts">
-  let { project } = $props();
+  let { project, ix } = $props();
   import "../../styles/text-styles.css";
+  import Text from "$lib/components/Text.svelte";
+  import { dictionary } from "$lib/dictionary";
+  import { lang } from "$lib/stores";
   const imageContext = import.meta.glob("$lib/images/*.png", {
     eager: true,
     query: "?url",
     import: "default",
   }) as Record<string, string>;
+  const lan = $derived($lang as "en" | "es");
+  const bullets = $derived(dictionary["highlighted-projects"][ix].bullets);
+  console.log(bullets);
 </script>
 
-{#snippet bullet(title: string, description: string)}
+{#snippet bullet(blt: any, id: number)}
   <div class="bullet">
-    <h3 class="arc-h4">{title}</h3>
-    <p class="arc-body-1">{description}</p>
+    <h3 class="arc-h4">
+      {blt.title[lan]}
+    </h3>
+    <p class="arc-body-1">{blt.description[lan]}</p>
   </div>
 {/snippet}
 
 <div class="active-project">
-  <h2 class="arc-h1">{project.number}</h2>
-  <h3 class="arc-h3">{project.title}</h3>
-  <p class="arc-body-1">{project.description}</p>
+  <h2 class="arc-h1">
+    {project.title}
+  </h2>
+  <h3 class="arc-h3">
+    {project.title}
+  </h3>
+  <p class="arc-body-1">
+    <Text text="description" section="highlighted-projects" sectionIx={ix} />
+  </p>
   <div class="tags">
     {#each project.tags as tag}
       <span class="tag arc-input"><strong>#</strong>{tag}</span>
@@ -36,10 +50,10 @@
     alt={project.title}
   />
 </div>
-{#if project.bullets}
+{#if bullets}
   <article class="bullets">
-    {#each project.bullets as entry}
-      {@render bullet(entry.title, entry.description)}
+    {#each bullets as blt, ix}
+      {@render bullet(blt, ix)}
     {/each}
   </article>
 {/if}
@@ -55,7 +69,7 @@
   }
   .bullets {
     grid-row: 4 / 5;
-    display: none;
+    display: block;
   }
   .preview {
     grid-row: 3 / span 1;

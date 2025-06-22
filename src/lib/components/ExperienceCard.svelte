@@ -2,8 +2,10 @@
   let { experience, design } = $props();
   import "../../styles/text-styles.css";
   import IconCode from "~icons/solar/code-bold-duotone";
+  import Text from "$lib/components/Text.svelte";
   import IconPenNib from "$lib/icons/pen-nib.svelte";
   import GitHubIcon from "$lib/icons/github.svelte";
+  import { dictionary } from "$lib/dictionary";
   import DribbbleIcon from "$lib/icons/dribbble.svelte";
   import FigmaIcon from "$lib/icons/figma.svelte";
   import WallsThickCol from "$lib/images/walls-thick-col.svelte";
@@ -20,86 +22,12 @@
     company: string;
     date: string;
     active: boolean;
-    overview: string;
+    overview: { en: string; es: string } | string;
     figmaLink: string | null;
     url: string | null;
   };
-  let designRoles = $state<Card[]>([
-    {
-      company: "Draftbit",
-      date: "2024-2025",
-      active: false,
-      figmaLink: null,
-      url: "https://draftbit.com/",
-      overview:
-        "Me desempeñé como diseñador UI/UX en Draftbit, una plataforma no-code, low-code para crear aplicaciones móviles desde cero. Fui responsable del diseño y desarrollo los prototipos de la aplicación, así como del sistema de diseño de la plataforma.",
-    },
-    {
-      company: "Upwork",
-      date: "2023 - now",
-      active: false,
-      figmaLink: null,
-      url: "https://www.upwork.com/freelancers/~012c76ce4bf87c7147?mp_source=share",
-      overview:
-        "Ofrezco una gama amplia de servicios de diseño y asesorías técnicas en Upwork, una plataforma para encontrar y contratar freelancers. Elaboro prototipos, landing pages y aplicaciones web para clientes de todo el mundo.",
-    },
-    {
-      company: "Totaldevs",
-      date: "2021 - 2022",
-      active: false,
-      figmaLink: null,
-      url: null,
-      overview:
-        "Asesoré a startups para la optimización del rendimiento de las landing pages mediante la metodología AIDA y la refinación de los conversion funnels para mejorar las métricas clave como visitas a la página, CVRs, CTRs y DTRs.",
-    },
-    {
-      company: "La Loma CDMX",
-      date: "2020 - 2022",
-      active: false,
-      figmaLink: null,
-      url: null,
-      overview:
-        "Desarrollé la página web de Loma Residencial y administré las redes sociales de la empresa, una empresa desarrolladora de proyectos de vivienda en el Club de Golf México, Ciudad de México. Elaboré la campaña publicitaria y coordiné el proceso de venta de los departamentos por medios digitales.",
-    },
-  ]);
-  let frontendRoles = $state([
-    {
-      company: "Upwork",
-      date: "2024 -now",
-      active: false,
-      figmaLink: null,
-      overview:
-        "Realizo proyectos de desarrollo web utilizando frameworks como React, Next y Tailwind CSS. También llevo a cabo rediseño de landing pages para mejorar la conversión de leads y mejora de la experiencia de usuario.",
-      url: "https://www.upwork.com/freelancers/~012c76ce4bf87c7147?mp_source=share",
-    },
-    {
-      company: "Get In The Loop",
-      date: "2024 - now",
-      active: false,
-      figmaLink: null,
-      overview:
-        "Encargado de desarrollar y dar mantenimiento al proyecto Social AI: Un portal para crear, automatizar y administrar contenido para redes sociales utilizando IA. Me aseguro de actualizar las plantillas de diseño utilizadas en campañas de marketing en Instragam, Facebook y Linkedin.",
-      url: "https://getintheloop.ca",
-    },
-    {
-      company: "LUSI Labs",
-      date: "2022 - 2022",
-      active: false,
-      figmaLink: null,
-      url: "https://lusilabs.com/",
-      overview:
-        "Me desempeñé como asesor de diseño en LUSI Labs, una empresa que desarrolla software mediante modelos matemáticos y de machine learning. Realicé prototipos de diseño, wireframes y mockups en una serie de proyectos de corto plazo.",
-    },
-    {
-      company: "Totaldevs",
-      date: "2021 - 2022",
-      active: false,
-      figmaLink: null,
-      url: null,
-      overview:
-        "Bootcamp. Ayudé a construir diversas páginas web en Wordpress mientras aprendía a programar en HTML, CSS y JavaScript. Comencé a familiarizarme con frameworks como React y SASS y a desarrollar aplicaciones web responsivas.",
-    },
-  ]);
+  let frontendRoles = $state(dictionary["projects-frontend"]);
+  let designRoles = $state(dictionary["projects-design"]);
 </script>
 
 {#if !isActive}
@@ -144,7 +72,7 @@
     <p>{experience.description}</p>
     <div class="experience-list">
       {#if design}
-        {#each designRoles as role}
+        {#each designRoles as role, ix}
           <button
             class="experience-list-item left"
             onclick={() => (role.active = !role.active)}
@@ -161,7 +89,9 @@
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
             >
-              <p class="arc-body-2">{role.overview}</p>
+              <p class="arc-body-2">
+                <Text text="overview" page="projects-design" array={ix} />
+              </p>
               <div class="link-wrapper">
                 {#if role.figmaLink}
                   <a
@@ -207,7 +137,9 @@
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
             >
-              <p class="arc-body-2">{role.overview}</p>
+              <p class="arc-body-2">
+                <Text text="overview" page="projects-frontend" array={ix} />
+              </p>
               <div class="link-wrapper">
                 {#if role.figmaLink}
                   <a

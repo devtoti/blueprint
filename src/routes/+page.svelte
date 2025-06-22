@@ -16,6 +16,7 @@
   import Services from "$lib/sections/+Services.svelte";
   import Skills from "$lib/sections/+Skills.svelte";
   import Text from "$lib/components/Text.svelte";
+  import { dictionary } from "$lib/dictionary";
   import PaperBox from "$lib/images/paper-box-new.svelte";
   import { theme, lang } from "$lib/stores";
   console.log($lang);
@@ -79,10 +80,9 @@
 
 <main>
   <HeroContent
-    title="Blueprint.dev()"
-    buttonOneText="Contáctame"
+    buttonOneText="CTA"
     buttonOneHref="/contact"
-    buttonTwoText="Resumé"
+    buttonTwoText="CV"
     buttonTwoHref="/docs/frontend-design-resume-jun-2025.pdf"
     HeroImage={PaperBox}
     isHome

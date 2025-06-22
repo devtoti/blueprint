@@ -27,9 +27,9 @@
 
 <main>
   <HeroContent
-    title="Concepto"
-    subheading="Detrás de mi proceso de diseño y desarrollo"
-    description="Blueprint.dev es un proyecto personal en donde el diseño y el desarrollo se fusionan para crear una experiencia de usuario excepcional, desafiando al mismo tiempo un par de paradigmas de la industria del desarrollo web."
+    currentPage="Concept"
+    isHome={false}
+    bgPattern="iso-grid.svg"
     buttonOneText="Desarrollo"
     buttonOneHref="/dev"
     buttonTwoText="Diseño"

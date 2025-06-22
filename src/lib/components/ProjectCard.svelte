@@ -1,10 +1,9 @@
 <script lang="ts">
   let { project, isActive, activeProject = $bindable() } = $props();
   import SolarLinkMinimalistic2Bold from "~icons/solar/link-minimalistic-2-bold";
-  import SolarGlobalOutline from "~icons/solar/global-outline";
-  import IconCode from "~icons/solar/code-bold-duotone";
   import FigmaIcon from "$lib/icons/figma.svelte";
   import IconWrapper from "$lib/components/IconWrapper.svelte";
+  import Text from "$lib/components/Text.svelte";
   let innerWidth = $state(0);
   function handleClick() {
     activeProject = project;
@@ -30,7 +29,9 @@
 >
   <h3 class="project-number arc-h3">{project.number}</h3>
   <h3 class="arc-h4 project-title">{project.title}</h3>
-  <p class="arc-body-1 project-description">{project.description}</p>
+  <p class="arc-body-1 project-description">
+    <Text text="description" section="highlighted-projects" sectionIx={project.ix} />
+  </p>
   <div class="project-card-icons">
     {#if project.url || project.figmaUrl}
       <div class="icons-wrapper">

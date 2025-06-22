@@ -25,18 +25,18 @@
 
 <main>
   <HeroContent
-    title="UI/UX Design"
-    subheading="Investigación, requisitos, diseño y evaluación" 
-    description="Me especializo en crear interfaces de usuario únicas y atractivas que mejoran la experiencia del usuario, sustentadas en la framework UCD User Centered Design."
     buttonOneText="Ver Diseños"
     buttonOneHref="/projects"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
-    bgPattern={
-      isDarkMode
-        ? "levels-pattern-dark.svg"
-        : "levels-pattern-light.svg"
-    }
+    currentPage="Design"
+    title="UI/UX Design"
+    subheading="Investigación, requisitos, diseño y evaluación"
+    description="Me especializo en crear interfaces de usuario únicas y atractivas que mejoran la experiencia del usuario, sustentadas en la framework UCD User Centered Design."
+    isHome={false}
+    bgPattern={isDarkMode
+      ? "levels-pattern-dark.svg"
+      : "levels-pattern-light.svg"}
     HeroImage={PortalDorico}
     children={() => null}
   />

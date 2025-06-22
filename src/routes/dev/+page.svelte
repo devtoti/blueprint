@@ -26,13 +26,12 @@
 
 <main>
   <HeroContent
-    title="Development"
-    subheading="Programación de páginas y aplicaciones web"
-    description="Me especializo en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona utilizar tecnologías de vanguardia como React, Svelte, TypeScript y Tailwind CSS para facilitar los procesos de desarrollo."
     buttonOneText="Explorar Proyectos"
     buttonOneHref="/#projects"
     buttonTwoText="Contáctame"
     buttonTwoHref="/contact"
+    currentPage="Dev"
+    isHome={false}
     HeroImage={PaperBox}
     bgPattern={
       isDarkMode

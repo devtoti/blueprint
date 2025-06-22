@@ -2,9 +2,9 @@
   import Heading from "../components/Heading.svelte";
   import ProjectCard from "../components/ProjectCard.svelte";
   import ActiveProject from "../components/ActiveProject.svelte";
-  import { projects as projectData } from "../utils/projects";
+  import { dictionary } from "../dictionary";
+  const projectData = dictionary["highlighted-projects"].slice(0, -1);
   let activeProject = $state(projectData[0]);
-  const projects = $state(projectData.slice(0, -1));
 </script>
 
 <article class="projects-banner">
@@ -12,8 +12,8 @@
 </article>
 <div class="main-content">
   <div class="projects-container">
-    <ActiveProject project={activeProject} />
-    {#each projects as project, index}
+    <ActiveProject project={activeProject} ix={activeProject.id - 1} />
+    {#each projectData as project, index}
       <ProjectCard
         bind:activeProject
         isActive={activeProject.id === index + 1}
@@ -21,12 +21,12 @@
           id: project.id,
           number: project.number,
           title: project.title,
-          description: project.description,
           tags: project.tags,
-          bullets: project.bullets,
+          description: project.description,
           url: project.url,
           figmaUrl: project.figmaUrl,
           image: project.image,
+          ix: index,
         }}
       />
     {/each}

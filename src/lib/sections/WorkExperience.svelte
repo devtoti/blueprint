@@ -4,8 +4,7 @@
 </script>
 
 <Heading
-  heading="Experiencia Laboral"
-  subheading="Durante los últimos +5 años he desarrollado un interés particular por el diseño UI/UX y el desarrollo frontend de manera conjunta:"
+  page="work-experience"
 />
 
 {#snippet card(

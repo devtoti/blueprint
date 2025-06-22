@@ -80,8 +80,7 @@
 {/snippet}
 
 <Heading
-  heading="Servicios Disponibles"
-  subheading="Ofrezco una amplia gama de servicios afines al diseño y el desarrollo de aplicaciones web."
+  page="services"
   alignRight
 />
 <article class="services-container">
