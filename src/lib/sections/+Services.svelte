@@ -1,108 +1,72 @@
 <script lang="ts">
   import Heading from "$lib/components/Heading.svelte";
+  import Text from "$lib/components/Text.svelte";
+  import { dictionary as services } from "$lib/dictionary";
   const imageContext = import.meta.glob("$lib/images/*.png", {
     eager: true,
     query: "?url",
     import: "default",
   }) as Record<string, string>;
-  const uxServices = $state([
-    {
-      title: "Prototipos",
-      active: true,
-      img: "ui-designs.png",
-      description:
-        "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
-    },
-    {
-      title: "Diseño de Interfaces",
-      active: false,
-      img: "interfaces.png",
-      description:
-        "Creación de componentes personalizados apegados a los principios de accesibilidad y usabilidad",
-    },
-    {
-      title: "Ilustraciones",
-      active: false,
-      img: "illustrations.png",
-      description:
-        "Realizadas a mano o con herramientas de dibujo vectorial, con separación de capas para ser animadas",
-    },
-  ]);
-  const frontendServices = $state([
-    {
-      title: "Desarrollo de Aplicaciones",
-      active: true,
-      img: "app-development.png",
-      description:
-        "Traducción de diseño a código, estableciendo primeramente las tecnologías y el sistema de diseño a utilizar",
-    },
-    {
-      title: "Landing Pages",
-      active: false,
-      img: "landing-pages.png",
-      description:
-        "Enfocadas en la conversión de usuarios y sujetas a A/B testing",
-    },
-    {
-      title: "Integración de APIs",
-      active: false,
-      img: "api-integration.png",
-      description:
-        "Integración de APIs para interactuar con el backend y desplegar visualizaciones de datos",
-    },
-  ]);
-  function handleHover(array: any[], item: any) {
-    array.forEach((service) => {
-      if (service.title === item.title) {
-        service.active = true;
-      } else {
-        service.active = false;
-      }
-    });
-  }
-  let highlightedServiceDesign = $derived(
-    uxServices.find((service) => service.active)?.img
+  const uxServices = $state(
+    services["services-list"].filter((service) => service.type === "design")
   );
-  let highlightedServiceDevelopment = $derived(
-    frontendServices.find((service) => service.active)?.img
+  const frontendServices = $state(
+    services["services-list"].filter(
+      (service) => service.type === "development"
+    )
+  );
+  function handleHover(item: any, type: string) {
+    if (type === "design") {
+      activeDesign = item;
+    } else {
+      activeFrontend = item;
+    }
+  }
+  let activeDesign = $derived(uxServices[0]);
+  let activeFrontend = $derived(frontendServices[0]);
+  let firstDevelopmentIndex = $derived(
+    Array.from(services["services-list"]).findIndex(
+      (service) => service.type === "development"
+    )
   );
 </script>
 
-{#snippet item(array: any[], item: any)}
+{#snippet item(service: any, type: string, ix: number)}
   <button
     class="service"
-    class:active={item.active}
-    onmouseenter={() => handleHover(array, item)}
+    class:active={service.active}
+    onmouseenter={(e) => handleHover(service, type)}
   >
-    <h5 class="arc-h4">{item.title}</h5>
-    <p class="arc-body-1">{item.description}</p>
+    <h5 class="arc-h4">
+      <Text section="services-list" text="title" sectionIx={ix} />
+    </h5>
+    <p class="arc-body-1">
+      <Text section="services-list" text="description" sectionIx={ix} />
+    </p>
   </button>
 {/snippet}
 
-<Heading
-  page="services"
-  alignRight
-/>
+<Heading page="services" alignRight />
 <article class="services-container">
   <div class="services-list-left">
     {#each uxServices as UXservice, ix}
-      {@render item(uxServices, UXservice)}
+      {@render item(UXservice, "design", ix)}
     {/each}
   </div>
   <div class="services-list-right">
     {#each frontendServices as feService, ix}
-      {@render item(frontendServices, feService)}
+      {@render item(feService, "development", firstDevelopmentIndex + ix)}
     {/each}
   </div>
   <div class="services-illustration-1 design">
     <img
-      src={imageContext[`/src/lib/images/${highlightedServiceDesign}`]}
+      src={imageContext[`/src/lib/images/${activeDesign.img}`]}
       alt="Design"
     />
   </div>
   <div class="services-illustration-2 development">
     <img
-      src={imageContext[`/src/lib/images/${highlightedServiceDevelopment}`]}
+      src={imageContext[`/src/lib/images/${activeFrontend.img}`]}
       alt="Development"
     />
   </div>

@@ -5,10 +5,10 @@
 
 <article class="heading" class:alignRight class:isCentered>
   <h2 class="arc-h3">
-    <Text text="heading" page={page} />
+    <Text section={page} text="heading" />
   </h2>
   <h5 class="subheading arc-body-1">
-    <Text text="subheading" page={page} />
+    <Text section={page} text="subheading" />
   </h5>
 </article>
 

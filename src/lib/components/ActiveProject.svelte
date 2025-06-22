@@ -189,4 +189,10 @@
       color: var(--text-tertiary);
     }
   }
+  .service {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+  }
 </style>

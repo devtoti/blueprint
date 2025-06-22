@@ -130,7 +130,7 @@ export const dictionary = {
         },
         subheading: {
             en: "This is a list of the technologies and tools I use constantly to carry out my design and web development projects.",
-            es: "Ofrezco una gama amplia de servicios de diseño y asesorías técnicas en Upwork, una plataforma para encontrar y contratar freelancers. Elaboro prototipos, landing pages y aplicaciones web para clientes de todo el mundo.",
+            es: "Este es un listado de las tecnologías y herramientas que utilizo constantemente para llevar a cabo mis proyectos de diseño y desarrollo web.",
         },
     },
     ["projects-frontend"]: [{
@@ -448,5 +448,97 @@ export const dictionary = {
                 }
             ]
         },
+    ],
+    ["mid-banner"]: {
+        title: {
+            en: "Add Blueprint to your project",
+            es: "Añade Blueprint a tu proyecto",
+        },
+        description: {
+            en: "Would you like to implement the design philosophy of Blueprint.dev in your project, or simply want to get some technical-projectual feedback?",
+            es: "¿Te interesaría implementar la filosofía de diseño de Blueprint.dev en tu proyecto, o simplemente te gustaría contar con alguna opinión técnica-proyectual?",
+        },
+        primaryButton: {
+            en: "Explore Blueprint",
+            es: "Explorar Blueprint",
+        },
+        secondaryButton: {
+            en: "Contact me",
+            es: "Contáctame",
+        }
+    },
+    ["services-list"]: [
+        {
+            type: "design",
+            title: {
+                en: "Prototypes",
+                es: "Prototipos",
+            },
+            img: "ui-designs.png",
+            description: {
+                en: "Handmade from mockups and then transferred to high fidelity",
+                es: "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
+            },
+          },
+          {
+            type: "design",
+            title: {
+                en: "UI Design",
+                es: "Diseño de Interfaces",
+            },
+            img: "interfaces.png",
+            description: {
+                en: "Creation of custom components adhering to accessibility and usability principles",
+                es: "Creación de componentes personalizados apegados a los principios de accesibilidad y usabilidad",
+            },
+          },
+          {
+            type: "design",
+            title: {
+                en: "Illustrations",
+                es: "Ilustraciones",
+            },
+            img: "illustrations.png",
+            description: {
+                en: "Handmade or vectorial drawing tools, with layer separation for animation",
+                es: "Realizadas a mano o con herramientas de dibujo vectorial, con separación de capas para ser animadas",
+            },
+        },
+        {
+            type: "development",
+            title: {
+                en: "App Development",
+                es: "Desarrollo de Aplicaciones",
+            },
+            img: "app-development.png",
+            description: {
+                en: "Translation of design to code, establishing first the technologies and the design system to use",
+                es: "Traducción de diseño a código, estableciendo primeramente las tecnologías y el sistema de diseño a utilizar",
+            },
+        },
+          {
+            type: "development",
+            title: {
+                en: "Landing Pages",
+                es: "Landing Pages",
+            },
+            img: "landing-pages.png",
+            description: {
+                en: "Focused on user conversion and subject to A/B testing",
+                es: "Enfocadas en la conversión de usuarios y sujetas a A/B testing",
+            },
+        },
+          {
+            type: "development",
+            title: {
+                en: "API Integration",
+                es: "Integración de APIs",
+            },
+            img: "api-integration.png",
+            description: {
+                en: "Integration of APIs to interact with the backend and deploy data visualizations",
+                es: "Integración de APIs para interactuar con el backend y desplegar visualizaciones de datos",
+            },
+        }
     ]
 };
