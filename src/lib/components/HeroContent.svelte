@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { dictionary } from "$lib/dictionary";
   let {
     buttonOneText = null,
@@ -27,7 +26,6 @@
   import Text from "$lib/components/Text.svelte";
   import { page } from "$app/stores";
   const printPath = $page.url.pathname.replace("/", "");
-  let WINDOW: { width: number; height: number } = getContext("WINDOW");
 </script>
 
 <section

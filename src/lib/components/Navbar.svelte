@@ -2,7 +2,6 @@
   import "../../styles.css";
   import "../../tokens.css";
   import "../../styles/text-styles.css";
-  // import { page } from "$app/stores"; // Removed deprecated import
   import IconHamburger from "$lib/icons/hamburger.svg";
   import IconCloseNav from "$lib/icons/close-nav.svg";
   import Button from "$lib/components/Button.svelte";
@@ -16,7 +15,6 @@
   let grid = $state(GRID());
   let isNavOpen = $state(false);
   let isDarkMode = $derived($theme === "dark");
-  let currentLang = $derived($lang);
   onMount(() => {
     grid = GRID();
     window.addEventListener("resize", () => {
@@ -67,16 +65,6 @@
     }
   });
 
-  function toggleLang() {
-    if ($lang === "en") {
-      localStorage.setItem("lang", "es");
-      lang.set("es");
-    } else {
-      localStorage.setItem("lang", "en");
-      lang.set("en");
-    }
-  }
-
   function toggleTheme() {
     if ($theme === "dark") {
       document.documentElement.removeAttribute("data-theme");
@@ -114,8 +102,7 @@
         <a href="/about" class:active={currentPath === "/about"}>About</a>
       </li>
       <li>
-        <label for="lang">{$lang}</label>
-        <select id="lang" name="lang" onchange={toggleLang} value={$lang}>
+        <select id="lang" name="lang" bind:value={$lang} class="lang-select">
           <option value="en">EN</option>
           <option value="es">ES</option>
         </select>
@@ -167,51 +154,56 @@
     </ul>
     <section class="mobile-only mobile-nav">
       <a href="/" class="blueprint-logo">
-        <!-- <img src={IconBlueprint} alt="Blueprint Logo" /> -->
-        <button
-          type="button"
-          class="theme-toggle"
-          onclick={toggleTheme}
-          aria-label="Toggle theme"
-        >
-          {#if isDarkMode}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="5" />
-              <line x1="12" y1="1" x2="12" y2="3" />
-              <line x1="12" y1="21" x2="12" y2="23" />
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-              <line x1="1" y1="12" x2="3" y2="12" />
-              <line x1="21" y1="12" x2="23" y2="12" />
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-            </svg>
-          {:else}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-          {/if}
-        </button>
+        <div class="mobile-nav-settings">
+          <button
+            type="button"
+            class="theme-toggle"
+            onclick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {#if isDarkMode}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            {:else}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            {/if}
+          </button>
+          <select id="lang" name="lang" bind:value={$lang} class="lang-select">
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
       </a>
       <button class:isHidden={!showNav} style:opacity={showNav ? "1" : "0"}>
         <Button href="/contact" text="Contáctame" primary />
@@ -309,6 +301,11 @@
     width: inherit;
     padding: 0 1rem;
     position: relative;
+  }
+  .mobile-nav-settings {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
   }
   .nav-links a {
     font-size: 0.75rem;
@@ -416,37 +413,58 @@
       font-weight: 700;
     }
   }
+  .lang-select {
+    all: unset;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .lang-select:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+  }
+
+  .lang-select:focus {
+    outline: none;
+    background-color: rgba(128, 128, 128, 0.15);
+  }
   @media (min-width: 480px) {
-    .mobile-nav {
-      display: none !important;
-    }
-    .desktop-only {
-      display: flex !important;
-    }
     .nav-container {
       width: -webkit-fill-available;
     }
-    ul.nav-links {
-      grid-column: 3 / -3;
-      display: contents !important;
-      list-style: none;
-      align-self: center;
-      justify-self: center;
-      width: 100%;
-      gap: 1rem;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      li:first-of-type {
-        grid-column: 3 / span 1;
-      }
-    }
     @media (min-width: 1029px) {
+      .mobile-nav {
+        display: none !important;
+      }
+      .desktop-only {
+        display: flex !important;
+      }
+      ul.nav-links {
+        grid-column: 3 / -3;
+        display: contents !important;
+        list-style: none;
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        gap: 1rem;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        li:first-of-type {
+          grid-column: 3 / span 1;
+        }
+      }
       ul.nav-links {
         grid-column: 3 / -3;
         li:first-of-type {

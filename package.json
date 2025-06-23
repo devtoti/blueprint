@@ -25,6 +25,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"@radix-ui/themes": "^3.2.1"
+		"@radix-ui/themes": "^3.2.1",
+		"svelte-persisted-store": "^0.12.0"
 	}
 }

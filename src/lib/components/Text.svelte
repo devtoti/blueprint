@@ -15,6 +15,7 @@
   } = $props();
 
   const language = $derived($lang);
+  
 </script>
 
 {#if sectionIx !== undefined && textIx !== undefined}
