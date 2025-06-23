@@ -1,12 +1,40 @@
 export const dictionary = {
     Buttons: {
-        CTA: {
+        contact: {
             en: "Get in touch",
             es: "Contáctame",
         },
-        CV: {
+        resume: {
             en: "Resumé",
             es: "Currículum",
+        },
+        explore: {
+            en: "Explore Blueprint",
+            es: "Explorar Blueprint",
+        },
+        design: {
+            en: "View services",
+            es: "Ver servicios",
+        },
+        development: {
+            en: "Explore projects",
+            es: "Explorar proyectos",
+        },
+        ["send-message"]: {
+            en: "Send message",
+            es: "Enviar mensaje",
+        },
+        concept: {
+            en: "Explore concept",
+            es: "Explorar concepto",
+        },
+        ["view-projects"]: {
+            en: "View projects",
+            es: "Ver proyectos",
+        },
+        ["view-skills"]: {
+            en: "View skills",
+            es: "Ver skills",
         },
     },
     Home: {
@@ -19,8 +47,8 @@ export const dictionary = {
             es: "INVESTIGACIÓN UX • DISEÑO UI • DESARROLLO WEB",
         },
         subheading: {
-            en: "Production of high-end, customizable and accessible web pages and applications. Parametric design adapted to the most demanding usability and accessibility principles.",
-            es: "Producción de páginas y aplicaciones web de vanguardia altamente personalizables y accesibles. Diseño paramétrico adaptativo apegado a los principios de usabilidad y de accesibilidad.",
+            en: "Modern, highly customizable websites and webapps focused on delivering exceptional user experiences. Parametric and architectural design applied to the UCD User Centered Design framework.",
+            es: "Páginas y aplicaciones web modernas, altamente personalizables y accesibles. Diseño paramétrico y arquitectónico aplicado al framework UCD User Centered Design.",
         },
     },
     Error: {
@@ -37,8 +65,8 @@ export const dictionary = {
             es: "La página que estás buscando no existe... por ahora. Intenta volver al inicio o navega por el sitio usando el menú de navegación.",
         },
         primaryButton: {
-            en: "Go back to homepage",
-            es: "Volver al inicio",
+            en: "Homepage",
+            es: "Ir al inicio",
         },
         secondaryButton: {
             en: "Contact me",
@@ -47,16 +75,16 @@ export const dictionary = {
     },
     Dev: {
         heading: {
-            en: "Development",
-            es: "Desarrollo",
+            en: "Frontend Development",
+            es: "Desarrollo Frontend",
         },
         description: {
-            en: "Programming of web pages and applications",
-            es: "Programación de páginas y aplicaciones web",
+            en: "Parametric websites and webapps",
+            es: "Páginas y aplicaciones web con diseño paramétrico",
         },
         subheading: {
-            en: "I specialize in translating design interfaces into dynamic, functional and reusable code. I'm passionate about using cutting-edge technologies like React, Svelte, TypeScript and Tailwind CSS to streamline development processes.",
-            es: "Me especializo en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona utilizar tecnologías de vanguardia como React, Svelte, TypeScript y Tailwind CSS para facilitar los procesos de desarrollo.",
+            en: "I specialize in translating custom user interfaces into dynamic, functional and reusable components. I enjoy designing and developing with cutting-edge technologies like React, Svelte, TypeScript and Tailwind CSS.",
+            es: "Especializado en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona mezclar el diseño de interfaces altamente personalizables con tecnologías como React, Svelte, TypeScript y Tailwind CSS.",
         },
     },
     Design: {
@@ -65,12 +93,12 @@ export const dictionary = {
             es: "Diseño UI/UX",
         },
         description: {
-            en: "Research, design requirements, and evaluation",
-            es: "Investigación, requisitos, diseño y evaluación",
+            en: "understandment / research / design / evaluation",
+            es: "entendimiento / investigación / diseño / evaluación",
         },
         subheading: {
-            en: "I specialize in creating unique and attractive user interfaces that improve the user experience, supported by the UCD User Centered Design framework.",
-            es: "Me especializo en crear interfaces de usuario únicas y atractivas que mejoran la experiencia del usuario, sustentadas en la framework UCD User Centered Design.",
+            en: "Constantly aiming to find creative solutions to come up with outstanding user interfaces. My design process is based on extensive UX research and the UCD User Centered Design framework.",
+            es: "Enfocado en encontrar soluciones creativas para crear interfaces de usuario que mejoren la experiencia del usuario. Mi proceso de diseño se sustenta en la investigación UX y el framework UCD User Centered Design.",
         },
     },
     Concept: {
@@ -83,8 +111,8 @@ export const dictionary = {
             es: "Detrás de mi proceso de diseño y desarrollo",
         },
         subheading: {
-            en: "Blueprint.dev is a personal project where design and development merge to create exceptional user experiences, challenging a few paradigms of the web development industry.",
-            es: "Blueprint.dev es un proyecto personal en donde el diseño y el desarrollo se fusionan para crear una experiencia de usuario excepcional, desafiando al mismo tiempo un par de paradigmas de la industria del desarrollo web.",
+            en: "Blueprint.dev started as a personal project where design and coding get merged in order to create exceptional user experiences. It's a callout for creativeness and innovation.",
+            es: "Blueprint.dev nació como un proyecto personal en donde el diseño y el código se fusionan con el objetivo evocar experiencias de usuario únicas, desafiando algunos paradigmas dentro de la industria del desarrollo web.",
         },
     },
     Contact: {
@@ -97,18 +125,8 @@ export const dictionary = {
             es: "Agenda una llamada / escríbeme",
         },
         subheading: {
-            en: "Currently working full-time as a designer and frontend developer, so my availability is limited. If you have any particular request, please, don't hesitate to contact me!",
-            es: "Actualmente trabajo tiempo completo como diseñador y desarrollador frontend, por lo que mi disponibilidad es limitada. Si tienes alguna solicitud particular, por favor, ¡no dudes en contactarme!",
-        },
-        Button: {
-            CTA: {
-                en: "Get in touch",
-                es: "Contáctame",
-            },
-            CV: {
-                en: "Resumé",
-                es: "Currículum",
-            },
+            en: "I am currently working full-time as a designer and frontend developer, so my availability is limited. If you have any particular request, please don't hesitate to contact me!",
+            es: "Actualmente me encuentro trabajando tiempo completo como diseñador y desarrollador frontend, por lo que mi disponibilidad es limitada. Si tienes alguna solicitud en particular, por favor, ¡no dudes en contactarme!",
         },
     },
     About: {
@@ -117,12 +135,12 @@ export const dictionary = {
             es: "Acerca de Blueprint",
         },
         description: {
-            en: "Schedule a call or contact me directly",
-            es: "Agenda una llamada o escríbeme directamente",
+            en: "An architectural approach to web design",
+            es: "Un enfoque arquitectónico al diseño web",
         },
         subheading: {
-            en: "Originally conceived as an isolated project to create a new design system and a React component library, Blueprint.dev ended up as an experimental lab to experiment with new ideas and execute them simultaneously.",
-            es: "Originalmente pensado como un proyecto aislado para crear un nuevo sistema de diseño y una librería de componentes de React, Blueprint.dev se convirtió en un prototipo experimental a manera de sandbox para plasmar nuevas ideas y ejecutarlas simultáneamente.",
+            en: "Originally conceived as personal project to create a new design system, Blueprint.dev ended up becoming a playground where I can experiment with new ideas and frontend technologies.",
+            es: "Originalmente concebido como un proyecto personal para crear un nuevo sistema de diseño, Blueprint.dev se convirtió en un sandbox experimental donde puedo experimentar con nuevas ideas y tecnologías de desarrollo frontend.",
         },
     },
     ["work-experience"]: {
@@ -131,8 +149,8 @@ export const dictionary = {
             es: "Experiencia Laboral",
         },
         subheading: {
-            en: "Over the last +5 years I've developed a particular interest in UI/UX design and frontend development",
-            es: "Durante los últimos +5 años he desarrollado un interés particular por el diseño UI/UX y el desarrollo frontend de manera conjunta:",
+            en: "Explore my work experience from the last 4+ years, seen from two perspectives: UI/UX design and frontend development.",
+            es: "Explora mi trayectoria laboral de los últimos 4+ años, vista desde dos frentes: mi desempeño como diseñador UI/UX y como desarrollador frontend.",
         },
     },
     ["services"]: {
@@ -141,8 +159,8 @@ export const dictionary = {
             es: "Servicios",
         },
         subheading: {
-            en: "I offer a wide range of design and technical consulting services on Upwork, a platform for finding and hiring freelancers. I create prototypes, landing pages and web applications for clients around the world.",
-            es: "Ofrezco una gama amplia de servicios de diseño y asesorías técnicas en Upwork, una plataforma para encontrar y contratar freelancers. Elaboro prototipos, landing pages y aplicaciones web para clientes de todo el mundo.",
+            en: "Get to know some of the services I offer for the different phases of web development production, from UX research and prototyping, all the way to backend integrations.",
+            es: "Conoce algunos de los servicios que ofrezco para las distintas fases de los procesos de producción de desarrollo web, desde la investigación de los requerimientos hasta integraciones con el backend.",
         },
     },
     ["skills"]: {
@@ -151,8 +169,8 @@ export const dictionary = {
             es: "Enfoque dual desarrollo y diseño",
         },
         subheading: {
-            en: "This is a list of the technologies and tools I use constantly to carry out my design and web development projects.",
-            es: "Este es un listado de las tecnologías y herramientas que utilizo constantemente para llevar a cabo mis proyectos de diseño y desarrollo web.",
+            en: "This is a list of the technologies and tools I use constantly to carry out different frontend projects. Hover over each skill to visualize how these technologies are wired together.",
+            es: "Este es un listado de las tecnologías y herramientas que utilizo constantemente para llevar a cabo diferentes proyectos de desarrollo frontend. Pasa el cursor sobre cada habilidad para visualizar cómo estas tecnologías se relacionan entre sí.",
         },
     },
     ["projects-frontend"]: [{
@@ -247,8 +265,8 @@ export const dictionary = {
     ],
     ["highlighted-projects"]: [
         {
-            id: 1,
-            number: "01",
+            id: 2,
+            number: "02",
             title: "Junkhaul Moving Services",
             url: "https://365junkhaul.com",
             figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
@@ -292,8 +310,8 @@ export const dictionary = {
             ]
         },
         {
-            id: 2,
-            number: "02",
+            id: 1,
+            number: "01",
             title: "MobileKangaroo",
             url: "https://mobilekangaroo.com",
             figmaUrl: "https://www.figma.com/design/dF4RjnxjxV0xF2gi8iMfXU/MobileKangaroo-Website-Revamp?node-id=0-1&t=U2HbEfk7Y2UhRWo1-1",
@@ -306,8 +324,8 @@ export const dictionary = {
             bullets: [
                 {
                     title: {
-                        en: "Reestructuración",
-                        es: "Reestructuración",
+                        en: "Redesign",
+                        es: "Rediseño",
                     },
                     description: {
                         en: "Radical redesign of the website from a new design system and navigation structure.",
@@ -565,12 +583,12 @@ export const dictionary = {
     ],
     ["cta-banner"]: {
         title: {
-            en: "Get in touch",
+            en: "Get in touch now",
             es: "Ponte en contacto",
         },
         description: {
-            en: "If you are interested in creating a project with me, or if you are looking for a personalized consultancy, do not hesitate to contact me.",
-            es: "Si te interesa crear un proyecto conmigo, o si buscas una asesoría asesoría personalizada, no dudes en contactarme.",
+            en: "If you are interested in creating a project with me, or if you are looking for a specialized technical or design consultancy, do not hesitate to contact me.",
+            es: "Si te interesa crear un proyecto conmigo, o si buscas alguna asesoría técnica o de diseño personalizada, no dudes en contactarme.",
         },
         primaryButton: {
             en: "Contact me",

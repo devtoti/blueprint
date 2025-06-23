@@ -11,7 +11,6 @@
   }) as Record<string, string>;
   const lan = $derived($lang as "en" | "es");
   const bullets = $derived(dictionary["highlighted-projects"][ix].bullets);
-  console.log(bullets);
 </script>
 
 {#snippet bullet(blt: any, id: number)}
@@ -25,7 +24,7 @@
 
 <div class="active-project">
   <h2 class="arc-h1">
-    {project.title}
+    0{project.id}
   </h2>
   <h3 class="arc-h3">
     {project.title}
@@ -153,19 +152,25 @@
     }
     .bullets {
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       grid-row: 5 / 6;
       .bullet {
         display: grid;
-        grid-template-rows: 1.5rem auto;
+        grid-template-rows: min-content auto;
         row-gap: 0.5rem;
         h3 {
           align-self: start;
+          font-size: clamp(0.8rem, 1.5vw, 1rem);
         }
       }
     }
     .bullet {
       flex: 1;
+      height: 100%;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      border: 1px solid var(--border-light);
     }
     .tags {
       justify-content: flex-start;

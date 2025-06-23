@@ -5,13 +5,9 @@
   import RadialDeco from "$lib/images/radial-deco.svelte";
   import PortalDorico from "$lib/images/portal-dorico.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
-  import BrokenPaperPattern from "$lib/images/broken-paper-pattern.svg";
-  import PaperBox from "$lib/images/paper-box.svelte";
-  import Button from "$lib/components/Button.svelte";
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
-  import IsoGrid from "$lib/images/iso-grid.svelte";
   import CalendlyWidget from "$lib/components/CalendlyWidget.svelte";
 
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
@@ -35,10 +31,10 @@
     currentPage="Contact"
     isHome={false}
     HeroImage={PortalDorico}
-    buttonOneText="Enviar mensaje"
+    buttonOneText="send-message"
     buttonOneHref="mailto:toti.webdev@gmail.com"
-    buttonTwoText="Explorar Blueprint"
-    buttonTwoHref="/about"
+    buttonTwoText={null}
+    buttonTwoHref={null}
   >
     <CalendlyWidget />
   </HeroContent>

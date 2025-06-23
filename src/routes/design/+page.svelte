@@ -25,9 +25,9 @@
 
 <main>
   <HeroContent
-    buttonOneText="Ver Diseños"
-    buttonOneHref="/projects"
-    buttonTwoText="Contáctame"
+    buttonOneText="view-skills"
+    buttonOneHref="/#skills"
+    buttonTwoText="contact"
     buttonTwoHref="/contact"
     currentPage="Design"
     isHome={false}

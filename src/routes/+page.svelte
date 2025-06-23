@@ -80,9 +80,9 @@
 
 <main>
   <HeroContent
-    buttonOneText="CTA"
+    buttonOneText="contact"
     buttonOneHref="/contact"
-    buttonTwoText="CV"
+    buttonTwoText="resume"
     buttonTwoHref="/docs/frontend-design-resume-jun-2025.pdf"
     HeroImage={PaperBox}
     isHome

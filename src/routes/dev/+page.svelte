@@ -26,9 +26,9 @@
 
 <main>
   <HeroContent
-    buttonOneText="Explorar Proyectos"
+    buttonOneText="view-projects"
     buttonOneHref="/#projects"
-    buttonTwoText="Contáctame"
+    buttonTwoText="contact"
     buttonTwoHref="/contact"
     currentPage="Dev"
     isHome={false}

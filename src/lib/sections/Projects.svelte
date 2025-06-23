@@ -3,7 +3,7 @@
   import ProjectCard from "../components/ProjectCard.svelte";
   import ActiveProject from "../components/ActiveProject.svelte";
   import { dictionary } from "../dictionary";
-  const projectData = dictionary["highlighted-projects"].slice(0, -1);
+  const projectData = dictionary["highlighted-projects"].slice(0, -1).toSorted((a,b) => a.id - b.id);
   let activeProject = $state(projectData[0]);
 </script>
 

@@ -110,13 +110,13 @@
           <span class="arc-h6"></span>
           <span class="arc-h6"></span>
         </div>
-        <ul>
+        <!-- <ul>
           <li class="arc-h6">1</li>
           <li class="arc-h6">2.5</li>
           <li class="arc-h6">5</li>
           <li class="arc-h6">10</li>
           <li class="arc-h6">20</li>
-        </ul>
+        </ul> -->
       </div>
     </article>
     <article class="plan-info rev">

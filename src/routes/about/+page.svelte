@@ -26,9 +26,9 @@
 <main>
   <HeroContent
     currentPage="About"
-    buttonOneText="Concepto"
+    buttonOneText="concept"
     buttonOneHref="/concept"
-    buttonTwoText="Contáctame"
+    buttonTwoText="contact"
     buttonTwoHref="/contact"
     HeroImage={PortalDorico}
     isHome={false}

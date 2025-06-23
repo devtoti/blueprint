@@ -32,15 +32,27 @@
 
 <article class="cta-banner">
   <div class="cta-banner-info">
-    <h1 class="arc-h0 cta-text color-invert"><Text section="cta-banner" text="title" /></h1>
-    <p class="arc-body-1 color-invert">
+    <h1 class="arc-h0 cta-text color-invert">
+      <Text section="cta-banner" text="title" />
+    </h1>
+    <h5 class="arc-body-1 color-invert">
       <Text section="cta-banner" text="description" />
-    </p>
+    </h5>
     <div class="button-wrapper">
-      <Button text={dictionary["cta-banner"].primaryButton[lan]} href="/contact" secondary invert />
+      <Button
+        text={dictionary["cta-banner"].primaryButton[lan]}
+        href="/contact"
+        secondary
+        invert
+      />
     </div>
     <div class="button-wrapper">
-      <Button text={dictionary["cta-banner"].secondaryButton[lan]} href="/about" primary invert />
+      <Button
+        text={dictionary["cta-banner"].secondaryButton[lan]}
+        href="/about"
+        primary
+        invert
+      />
     </div>
   </div>
   <div class="illustrations-container">
@@ -78,6 +90,9 @@
     .cta-text {
       margin-bottom: 0 !important;
       padding-bottom: 0 !important;
+    }
+    h5 {
+      padding-bottom: 0.5rem;
     }
   }
   .illustrations-container {

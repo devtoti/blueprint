@@ -29,10 +29,10 @@
     currentPage="Concept"
     isHome={false}
     bgPattern="iso-grid.svg"
-    buttonOneText="Desarrollo"
-    buttonOneHref="/dev"
-    buttonTwoText="Diseño"
-    buttonTwoHref="/design"
+    buttonOneText="development"
+    buttonOneHref="/#projects"
+    buttonTwoText="design"
+    buttonTwoHref="/#services"
     HeroImage={isDarkMode ? IsoCubeDark : IsoCube}
     children={() => null}
   />
