@@ -13,11 +13,31 @@ theme.subscribe((value) => {
 });
 
 export const lang: Writable<string> = writable(
-  browser ? (localStorage.getItem("lang") || "en") : "en"
+  fromLocalStorage("lang", "en")
 );
 
-lang.subscribe((value) => {
+toLocalStorage(lang, "lang");
+
+function fromLocalStorage(storageKey: string, fallbackValue: any) {
+	if (browser) {
+		const storedValue = window.localStorage.getItem(storageKey)
+
+    if (storedValue !== "undefined" && storedValue !== null) {
+      return typeof fallbackValue === "object"
+        ? JSON.parse(storedValue)
+        : storedValue;
+    }
+	}
+	
+	return fallbackValue
+}
+function toLocalStorage(store: Writable<any>, storageKey: string) {
   if (browser) {
-    localStorage.setItem("lang", value);
-  }
-});
+    store.subscribe((value) => {
+      let storageValue =
+        typeof value === "object" ? JSON.stringify(value) : value;
+
+      window.localStorage.setItem(storageKey, storageValue);
+		})
+	}
+}

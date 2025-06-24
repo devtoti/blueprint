@@ -44,12 +44,7 @@
     startEnd={1}
     children={() => null}
   />
-  <GenericBanner
-    heading="¿Quieres saber más acerca de Blueprint.dev?"
-    description="Explora la sección que he preparado para ti, en donde encontrarás más información acerca del proceso de diseño y los retos que he enfrentado durante la ejecución de este proyecto."
-    href="/contact"
-    text="Contact Me"
-  />
+  <GenericBanner href="/contact" buttonText="contact" />
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}

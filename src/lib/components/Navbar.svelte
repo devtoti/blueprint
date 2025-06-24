@@ -5,11 +5,13 @@
   import IconHamburger from "$lib/icons/hamburger.svg";
   import IconCloseNav from "$lib/icons/close-nav.svg";
   import Button from "$lib/components/Button.svelte";
+  import Text from "$lib/components/Text.svelte";
+  import { dictionary as navigation } from "$lib/dictionary";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount, setContext } from "svelte";
   import { GRID } from "$lib/utils/gridData";
   import { theme, lang } from "$lib/stores";
-  let { currentPath = "/" } = $props();
+  let { currentPath = "/", toggleTheme } = $props();
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
@@ -20,17 +22,6 @@
     window.addEventListener("resize", () => {
       grid = GRID();
     });
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      theme.set("dark");
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-      theme.set("light");
-    }
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
   });
 
   let showNav = $state(true);
@@ -64,18 +55,6 @@
       enableScroll();
     }
   });
-
-  function toggleTheme() {
-    if ($theme === "dark") {
-      document.documentElement.removeAttribute("data-theme");
-      localStorage.setItem("theme", "light");
-      theme.set("light");
-    } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-      theme.set("dark");
-    }
-  }
 </script>
 
 <svelte:body use:getBodyHeight />
@@ -153,60 +132,8 @@
       </li>
     </ul>
     <section class="mobile-only mobile-nav">
-      <a href="/" class="blueprint-logo">
-        <div class="mobile-nav-settings">
-          <button
-            type="button"
-            class="theme-toggle"
-            onclick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {#if isDarkMode}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="5" />
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-              </svg>
-            {:else}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-            {/if}
-          </button>
-          <select id="lang" name="lang" bind:value={$lang} class="lang-select">
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
-        </div>
-      </a>
       <button class:isHidden={!showNav} style:opacity={showNav ? "1" : "0"}>
-        <Button href="/contact" text="Contáctame" primary />
+        <Button href="/contact" text="contact" primary />
       </button>
       <div class="mobile-nav-icons">
         {#if isNavOpen}
@@ -239,32 +166,85 @@
       invert
     />
     <ul class="active-nav-links links-container">
+      <div class="mobile-nav-settings">
+        <select id="lang" name="lang" bind:value={$lang} class="lang-select">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+        <button
+          type="button"
+          class="theme-toggle"
+          onclick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          {#if isDarkMode}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          {:else}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          {/if}
+        </button>
+      </div>
       <li>
-        <a href="/" class="arc-h4" onclick={() => (isNavOpen = false)}>Home</a>
+        <a href="/" class="arc-h4" onclick={() => (isNavOpen = false)}>
+          <Text section="navigation" text="home" />
+        </a>
       </li>
       <li>
-        <a href="/dev" class="arc-h4" onclick={() => (isNavOpen = false)}>Dev</a
-        >
+        <a href="/dev" class="arc-h4" onclick={() => (isNavOpen = false)}>
+          <Text section="navigation" text="development" />
+        </a>
       </li>
       <li>
-        <a href="/design" class="arc-h4" onclick={() => (isNavOpen = false)}
-          >Design</a
-        >
+        <a href="/design" class="arc-h4" onclick={() => (isNavOpen = false)}>
+          <Text section="navigation" text="design" />
+        </a>
       </li>
       <li>
-        <a href="/concept" class="arc-h4" onclick={() => (isNavOpen = false)}
-          >Concept</a
-        >
+        <a href="/concept" class="arc-h4" onclick={() => (isNavOpen = false)}>
+          <Text section="navigation" text="concept" />
+        </a>
       </li>
       <li>
-        <a href="/contact" class="arc-h4" onclick={() => (isNavOpen = false)}
-          >Contact</a
-        >
+        <a href="/contact" class="arc-h4" onclick={() => (isNavOpen = false)}>
+          <Text section="navigation" text="contact" />
+        </a>
       </li>
       <li>
-        <a href="/about" class="arc-h4" onclick={() => (isNavOpen = false)}
-          >About</a
-        >
+        <a href="/about" class="arc-h4" onclick={() => (isNavOpen = false)}>
+          <Text section="navigation" text="about" />
+        </a>
       </li>
     </ul>
     <DividerTrapezoid
@@ -298,14 +278,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: inherit;
+    width: 100% !important;
     padding: 0 1rem;
     position: relative;
+    & :first-child {
+      grid-column: 2 / 3;
+    }
   }
   .mobile-nav-settings {
+    width: 100%;
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0 2rem;
   }
   .nav-links a {
     font-size: 0.75rem;
@@ -321,6 +307,7 @@
     }
   }
   .mobile-nav-icons {
+    grid-column: 3 / 4;
     display: flex;
     gap: 0.5rem;
     button {
@@ -345,6 +332,7 @@
     text-transform: uppercase;
     color: var(--text-secondary);
     transition: top 0.5s ease-in-out;
+    overflow: visible;
   }
   nav.active {
     top: 12px;
@@ -358,6 +346,7 @@
     box-shadow: var(--shadow-3);
     background-color: var(--bg-secondary);
     width: 100%;
+    overflow: visible;
   }
   .black-overlay:not(.isNavOpen) {
     opacity: 0;
@@ -401,7 +390,7 @@
     z-index: 200;
   }
   .active-nav-links {
-    border: 1.5px solid var(--border-secondary);
+    border: 1.5px solid var(--border-tertiary);
     border-top: none;
     border-bottom: none;
   }
@@ -414,8 +403,7 @@
     }
   }
   .lang-select {
-    all: unset;
-    background: transparent;
+    background-color: transparent;
     border: none;
     color: inherit;
     font-family: inherit;
@@ -424,6 +412,8 @@
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     transition: background-color 0.2s;
+    position: relative;
+    z-index: 100;
   }
 
   .lang-select:hover {
@@ -504,20 +494,24 @@
 
   :global([data-theme="dark"]) .nav-container {
     background-color: var(--bg-primary);
-    border-bottom: 1px solid var(--border-secondary);
+    border-bottom: 1px solid var(--border-tertiary);
   }
 
   :global([data-theme="dark"]) .active-nav-container {
     background-color: var(--bg-primary);
   }
+  :global([data-theme="dark"]) .mobile-nav-settings {
+    color: var(--text-secondary);
+  }
 
   :global([data-theme="dark"]) .active-nav-links {
     background-color: var(--bg-primary);
-    border-color: var(--border-secondary);
+    border-color: var(--border-tertiary);
+    
   }
 
   :global([data-theme="dark"]) a {
-    color: var(--bleu-100);
+    color: var(--text-secondary);
   }
 
   :global([data-theme="dark"]) a.active {

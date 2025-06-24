@@ -68,7 +68,7 @@
   }
   .bullets {
     grid-row: 4 / 5;
-    display: block;
+    display: none;
   }
   .preview {
     grid-row: 3 / span 1;

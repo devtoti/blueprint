@@ -684,5 +684,15 @@ export const dictionary = {
             es: "Head Architect",
         },
         
+    },
+    ["contact-banner"]: {
+        title: {
+            en: "Schedule a meeting",
+            es: "Ponte en contacto conmigo",
+        },
+        description: {
+            en: "Schedule a meeting with me to learn more about my work, skills and services.",
+            es: "Agenda una reunión conmigo para conocer más acerca de mi trabajo, habilidades y servicios.",
+        },
     }
 };

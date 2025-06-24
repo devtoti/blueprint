@@ -57,7 +57,7 @@
           <a href="/#services" class="arc-body-2"
             ><Text section="navigation" text="home-services" /></a
           >
-          <a href="/mystery" class="arc-body-2">Mystery Box</a>
+          <!-- <a href="/mystery" class="arc-body-2">Mystery Box</a> -->
         </ul>
       </article>
       <article class="navigation-right">

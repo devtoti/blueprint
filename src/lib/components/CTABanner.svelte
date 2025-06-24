@@ -7,7 +7,7 @@
   import { dictionary } from "$lib/dictionary";
   import { lang } from "$lib/stores";
   const lan = $derived($lang as "en" | "es");
-  let active = false;
+  let active = $state(false);
   onMount(() => {
     window.addEventListener("scroll", () => {
       const banner = document.querySelector(".cta-banner");

@@ -8,18 +8,26 @@
     import: "default",
   }) as Record<string, string>;
   const uxServices = $state(
-    services["services-list"].filter((service) => service.type === "design")
+    services["services-list"]
+      .filter((service) => service.type === "design")
+      .map((service, index) => ({ ...service, active: index === 0 }))
   );
   const frontendServices = $state(
-    services["services-list"].filter(
-      (service) => service.type === "development"
-    )
+    services["services-list"]
+      .filter((service) => service.type === "development")
+      .map((service, index) => ({ ...service, active: index === 0 }))
   );
-  function handleHover(item: any, type: string) {
+  function handleActive(item: any, type: string) {
     if (type === "design") {
       activeDesign = item;
+      uxServices.forEach(service => {
+        service.active = service.title.en === item.title.en;
+      });
     } else {
       activeFrontend = item;
+      frontendServices.forEach(service => {
+        service.active = service.title.en === item.title.en;
+      });
     }
   }
   let activeDesign = $derived(uxServices[0]);
@@ -35,7 +43,8 @@
   <button
     class="service"
     class:active={service.active}
-    onmouseenter={(e) => handleHover(service, type)}
+    onmouseenter={(e) => handleActive(service, type)}
+    onclick={() => handleActive(service, type)}
   >
     <h5 class="arc-h4">
       <Text section="services-list" text="title" sectionIx={ix} />

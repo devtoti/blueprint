@@ -1,14 +1,19 @@
 <script lang="ts">
-  let { offset = 0, heading, description, href, text } = $props();
+  let { offset = 0, href, buttonText } = $props();
   import Button from "$lib/components/Button.svelte";
+  import Text from "$lib/components/Text.svelte";
 </script>
 
 <article style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
   <article class="floating-container">
-    <h2 class="arc-h2 color-invert">{heading}</h2>
-    <p class="arc-body-1 color-invert">{description}</p>
+    <h2 class="arc-h2 color-invert">
+      <Text section="contact-banner" text="title" />
+    </h2>
+    <p class="arc-body-1 color-invert">
+      <Text section="contact-banner" text="description" />
+    </p>
     <div class="button-container">
-      <Button {href} {text} primary invert />
+      <Button {href} text={buttonText} primary invert />
     </div>
   </article>
 </article>

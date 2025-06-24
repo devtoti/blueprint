@@ -90,7 +90,7 @@
               onclick={() => (role.active = !role.active)}
             >
               <p class="arc-body-2">
-                <Text text="overview" page="projects-design" array={ix} />
+                <Text text="overview" section="projects-design" sectionIx={ix} />
               </p>
               <div class="link-wrapper">
                 {#if role.figmaLink}
@@ -138,7 +138,7 @@
               onclick={() => (role.active = !role.active)}
             >
               <p class="arc-body-2">
-                <Text text="overview" page="projects-frontend" array={ix} />
+                <Text text="overview" section="projects-frontend" sectionIx={ix} />
               </p>
               <div class="link-wrapper">
                 {#if role.figmaLink}

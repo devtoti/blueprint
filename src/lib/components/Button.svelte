@@ -8,8 +8,6 @@
   } = $props();
   import Text from "$lib/components/Text.svelte";
   import { dictionary } from "$lib/dictionary";
-
-  // Check if the text exists in the Buttons dictionary using type assertion
   const isTranslatable = $derived(
     text && (dictionary as any).Buttons && text in (dictionary as any).Buttons
   );

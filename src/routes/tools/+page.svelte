@@ -44,12 +44,7 @@
     startEnd={1}
     children={() => null}
   />
-  <GenericBanner
-    heading="Tools"
-    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-    href="/contact"
-    text="Get in touch"
-  />
+  <GenericBanner href="/contact" buttonText="contact" />
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}
