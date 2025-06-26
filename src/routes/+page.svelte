@@ -17,7 +17,7 @@
   import Skills from "$lib/sections/+Skills.svelte";
   import Text from "$lib/components/Text.svelte";
   import { dictionary } from "$lib/dictionary";
-  import PaperBox from "$lib/images/paper-box-new.svelte";
+  import Blueprint from "$lib/images/blueprint.svelte";
   import { theme, lang } from "$lib/stores";
   console.log($lang);
   let isDarkMode = $derived($theme === "dark");
@@ -84,7 +84,7 @@
     buttonOneHref="/contact"
     buttonTwoText="resume"
     buttonTwoHref="/docs/frontend-design-resume-jun-2025.pdf"
-    HeroImage={PaperBox}
+    HeroImage={Blueprint}
     isHome
     currentPage="Home"
     bgPattern="iso-grid.svg"

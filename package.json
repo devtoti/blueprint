@@ -26,6 +26,7 @@
 	},
 	"dependencies": {
 		"@radix-ui/themes": "^3.2.1",
+		"gsap": "^3.13.0",
 		"svelte-persisted-store": "^0.12.0"
 	}
 }

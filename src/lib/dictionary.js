@@ -190,8 +190,8 @@ export const dictionary = {
         active: false,
         figmaLink: null,
         overview: {
-            en: "I'm responsible for developing and maintaining the Social AI project: a portal for creating, automating and managing content for social media using AI. I ensure that the design templates used in marketing campaigns on Instagram, Facebook and Linkedin are updated.",
-            es: "Encargado de desarrollar y dar mantenimiento al proyecto Social AI: Un portal para crear, automatizar y administrar contenido para redes sociales utilizando IA. Me aseguro de actualizar las plantillas de diseño utilizadas en campañas de marketing en Instragam, Facebook y Linkedin.",
+            en: "I'm responsible for developing and maintaining the Social AI project: a portal for creating, automating and managing content for social media using AI.",
+            es: "Encargado de desarrollar y dar mantenimiento al proyecto Social AI: Un portal para crear, automatizar y administrar contenido para redes sociales utilizando IA.",
         },
         url: "https://getintheloop.ca",
     },
@@ -213,7 +213,7 @@ export const dictionary = {
         figmaLink: null,
         url: null,
         overview: {
-            en: "Bootcamp. I helped build various Wordpress websites while learning to program in HTML, CSS and JavaScript. I started to familiarize myself with frameworks like React and SASS and to develop responsive web applications.",
+            en: "Bootcamp. I helped build various Wordpress websites in HTML, CSS and JavaScript. I developed responsive web applications with React and SASS.",
             es: "Bootcamp. Ayudé a construir diversas páginas web en Wordpress mientras aprendía a programar en HTML, CSS y JavaScript. Comencé a familiarizarme con frameworks como React y SASS y a desarrollar aplicaciones web responsivas.",
         },
     },
@@ -258,8 +258,8 @@ export const dictionary = {
         figmaLink: null,
         url: null,
         overview: {
-            en: "I developed the Loma Residencial website and managed the company's social media, a real estate developer in the Mexico City Club de Golf, Mexico City. I created the advertising campaign and coordinated the sale of the apartments through digital media.",
-            es: "Desarrollé la página web de Loma Residencial y administré las redes sociales de la empresa, una empresa desarrolladora de proyectos de vivienda en el Club de Golf México, Ciudad de México. Elaboré la campaña publicitaria y coordiné el proceso de venta de los departamentos por medios digitales.",
+            en: "I developed the Loma Residencial website and managed the company's social media, a real estate developer in the Mexico City Club de Golf, Mexico City.",
+            es: "Desarrollé la página web de Loma Residencial y administré las redes sociales de la empresa, una empresa desarrolladora de proyectos de vivienda en el Club de Golf México, Ciudad de México.",
         }
     },
     ],

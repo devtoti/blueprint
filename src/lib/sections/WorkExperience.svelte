@@ -3,9 +3,7 @@
   import ExperienceCard from "../components/ExperienceCard.svelte";
 </script>
 
-<Heading
-  page="work-experience"
-/>
+<Heading page="work-experience" />
 
 {#snippet card(
   ExperienceCard: any,
@@ -278,7 +276,7 @@
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;

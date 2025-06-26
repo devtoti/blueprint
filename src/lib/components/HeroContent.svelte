@@ -69,7 +69,7 @@
 
 <style>
   .hero-img {
-    max-height: 70vw;
+    max-height: 400px;
   }
   .hero-main {
     width: 100%;
@@ -80,7 +80,7 @@
     background-repeat: no-repeat;
     overflow: hidden;
     grid-template-rows: 0.5fr 2fr 100px;
-    row-gap: 2rem;
+    row-gap: 1rem;
     position: relative;
   }
   .section-content,
@@ -101,14 +101,6 @@
     justify-content: flex-end;
     .isHome {
       font-size: clamp(2rem, 4vw, 3.5rem) !important;
-    }
-  }
-  .title {
-    h1 {
-      padding-bottom: 0.5rem;
-    }
-    h4 {
-      padding-bottom: 1rem;
     }
   }
   .hero-img {
@@ -154,7 +146,6 @@
     .hero-img {
       grid-column: 6 / -1;
       grid-row: 1 / 3;
-      max-height: 50svh !important;
       height: 100%;
       width: 100%;
     }
@@ -172,12 +163,22 @@
       grid-row: 1 / 2;
     }
 
+    .title {
+      h1 {
+        margin-bottom: -4px;
+      }
+      h4 {
+        padding-bottom: 1rem;
+      }
+    }
     .hero-img {
-      grid-column: 9 / span 4;
-      max-height: 80%;
+      grid-column: 8 / span 6;
+      /* max-height: 80%; */
     }
     .button-container {
       grid-column: 4 / span 4;
+      flex-direction: row;
+      max-width: 100%;
       grid-row: 2 / span 1;
     }
     .hero-BgPattern {

@@ -198,6 +198,7 @@ main,
 nav,
 footer,
 section,
+.hero-main,
 .nav-container,
 ul.axes {
   display: grid;
@@ -218,6 +219,7 @@ ul.axes {
 
 @media (min-width: 480px) {
   main,
+  .hero-main,
   nav,
   footer,
   section,
@@ -258,6 +260,7 @@ ul.axes {
   footer,
   section,
   ul.axes,
+  .hero-main,
   .nav-container {
     grid-template-columns: var(--side-padding-desktop) repeat(12, 1fr) var(
         --side-padding-desktop
