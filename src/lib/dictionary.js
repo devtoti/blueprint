@@ -47,8 +47,8 @@ export const dictionary = {
             es: "INVESTIGACIÓN UX • DISEÑO UI • DESARROLLO WEB",
         },
         subheading: {
-            en: "Modern, highly customizable websites and webapps focused on delivering exceptional user experiences. Parametric and architectural design applied to the UCD User Centered Design framework.",
-            es: "Páginas y aplicaciones web modernas, altamente personalizables y accesibles. Diseño paramétrico y arquitectónico aplicado al framework UCD User Centered Design.",
+            en: "Modern, highly customizable websites and webapps focused on delivering exceptional user experiences. Parametric and architectural design applied to web development, following the UCD User Centered Design framework.",
+            es: "Páginas y aplicaciones web modernas, altamente personalizables y accesibles. Diseño paramétrico y arquitectónico aplicado al desarrollo web, apegado a la metodología UCD.",
         },
     },
     Error: {
@@ -403,7 +403,7 @@ export const dictionary = {
             id: 4,
             number: "04",
             title: "IKOL Web 3.0",
-            url: "https://ikolcoin.com",
+            url: "https://landing-pages-lime.vercel.app/",
             figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
             image: "ikol-preview.png",
             description: {
@@ -691,8 +691,8 @@ export const dictionary = {
             es: "Ponte en contacto conmigo",
         },
         description: {
-            en: "Schedule a meeting with me to learn more about my work, skills and services.",
-            es: "Agenda una reunión conmigo para conocer más acerca de mi trabajo, habilidades y servicios.",
+            en: "Schedule a meeting with me to learn more about my work, skills and services. Let's talk about your next project.",
+            es: "Agenda una reunión conmigo para conocer más acerca de mi trabajo, habilidades y servicios. Platiquemos de tu próximo proyecto.",
         },
     }
 };

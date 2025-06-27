@@ -20,12 +20,12 @@
   function handleActive(item: any, type: string) {
     if (type === "design") {
       activeDesign = item;
-      uxServices.forEach(service => {
+      uxServices.forEach((service) => {
         service.active = service.title.en === item.title.en;
       });
     } else {
       activeFrontend = item;
-      frontendServices.forEach(service => {
+      frontendServices.forEach((service) => {
         service.active = service.title.en === item.title.en;
       });
     }
@@ -97,6 +97,7 @@
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     border: 1px solid var(--border-light);
+    background-color: var(--white);
     &:hover {
       background-color: var(--bg-tertiary);
     }
@@ -209,6 +210,9 @@
       &:hover {
         background-color: var(--bg-secondary);
       }
+    }
+    .service {
+      background-color: var(--bg-primary);
     }
     .service.active {
       background-color: var(--bg-dark);

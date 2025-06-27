@@ -30,11 +30,11 @@
 
 <section
   class="hero-main {printPath.length > 1 ? printPath : 'home'}-section"
-  style="background: var(--bg-primary);background-image: url('./images/{bgPattern}');background-size: cover;background-position: center;background-repeat: repeat;"
+  style="background-image: url('./images/{bgPattern}');background-size: cover;background-position: center;background-repeat: repeat;"
 >
   <article class="hero-text section-content">
     <div class="title">
-      <h1 class="text-title barlow-extrabold" class:isHome>
+      <h1 class="text-title barlow-extrabold arc-h1" class:isHome>
         <Text section={currentPage} text="heading" />
       </h1>
       <h4 class="text-caption caption">
@@ -42,7 +42,7 @@
       </h4>
     </div>
     <div class="subheader">
-      <p class="text-subheader arc-body-1">
+      <p class="text-subheader arc-body-0">
         <Text section={currentPage} text="subheading" />
       </p>
     </div>
@@ -72,6 +72,7 @@
     max-height: 400px;
   }
   .hero-main {
+    background-color: var(--bg-secondary);
     width: 100%;
     min-height: 75svh;
     grid-column: 1 / -1;
@@ -100,7 +101,8 @@
     align-items: center;
     justify-content: flex-end;
     .isHome {
-      font-size: clamp(2rem, 4vw, 3.5rem) !important;
+      font-size: clamp(2.5rem, 4vw, 4rem) !important;
+      padding-bottom: 0;
     }
   }
   .hero-img {
@@ -192,6 +194,11 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+    }
+  }
+  :global([data-theme="dark"]) {
+    .hero-main {
+      background-color: var(--bg-primary);
     }
   }
 </style>

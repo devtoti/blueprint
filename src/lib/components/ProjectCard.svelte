@@ -30,7 +30,11 @@
   <h3 class="project-number arc-h3">{project.number}</h3>
   <h3 class="arc-h4 project-title">{project.title}</h3>
   <p class="arc-body-1 project-description">
-    <Text text="description" section="highlighted-projects" sectionIx={project.ix} />
+    <Text
+      text="description"
+      section="highlighted-projects"
+      sectionIx={project.ix}
+    />
   </p>
   <div class="project-card-icons">
     {#if project.url || project.figmaUrl}
@@ -54,7 +58,7 @@
   .project-card {
     grid-column: 1 / -1;
     position: relative;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     width: 100%;
     height: 100%;
     border: 1px solid var(--border-tertiary);
@@ -134,7 +138,7 @@
     transition: all 0.6s ease-in-out;
   }
   .project-card.active {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     .bracket {
       position: absolute;
       box-sizing: border-box;

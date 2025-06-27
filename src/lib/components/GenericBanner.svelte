@@ -6,10 +6,10 @@
 
 <article style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
   <article class="floating-container">
-    <h2 class="arc-h2 color-invert">
+    <h2 class="arc-h0 color-invert">
       <Text section="contact-banner" text="title" />
     </h2>
-    <p class="arc-body-1 color-invert">
+    <p class="arc-body-0 color-invert">
       <Text section="contact-banner" text="description" />
     </p>
     <div class="button-container">

@@ -20,17 +20,27 @@
       <h3
         class={winWidth <= 360
           ? "arc-h1 title color-invert"
-          : "arc-h3 title color-invert"}
+          : "arc-h2 title color-invert"}
       >
         <Text section="mid-banner" text="title" />
       </h3>
-      <p class="arc-body-1 color-invert">
+      <p class="arc-body-0 color-invert">
         <Text section="mid-banner" text="description" />
       </p>
     </span>
     <span class="button-container">
-      <Button href="/about" text={dictionary["mid-banner"].primaryButton[lan]} secondary invert />
-      <Button href="/contact" text={dictionary["mid-banner"].secondaryButton[lan]} primary invert />
+      <Button
+        href="/about"
+        text={dictionary["mid-banner"].primaryButton[lan]}
+        secondary
+        invert
+      />
+      <Button
+        href="/contact"
+        text={dictionary["mid-banner"].secondaryButton[lan]}
+        primary
+        invert
+      />
     </span>
   </article>
   <div class="mid-banner-background" style="height: {clientHeight}px"></div>

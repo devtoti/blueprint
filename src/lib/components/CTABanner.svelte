@@ -35,7 +35,7 @@
     <h1 class="arc-h0 cta-text color-invert">
       <Text section="cta-banner" text="title" />
     </h1>
-    <h5 class="arc-body-1 color-invert">
+    <h5 class="arc-body-0 color-invert">
       <Text section="cta-banner" text="description" />
     </h5>
     <div class="button-wrapper">
