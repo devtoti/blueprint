@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount, getContext } from "svelte";
   import { dictionary } from "$lib/dictionary";
   let {
     buttonOneText = null,
@@ -42,7 +43,7 @@
       </h4>
     </div>
     <div class="subheader">
-      <p class="text-subheader arc-body-0">
+      <p class="text-subheader arc-body-1">
         <Text section={currentPage} text="subheading" />
       </p>
     </div>

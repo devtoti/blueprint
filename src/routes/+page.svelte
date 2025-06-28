@@ -18,9 +18,6 @@
   import Text from "$lib/components/Text.svelte";
   import { dictionary } from "$lib/dictionary";
   import Blueprint from "$lib/images/blueprint.svelte";
-  import { theme, lang } from "$lib/stores";
-  console.log($lang);
-  let isDarkMode = $derived($theme === "dark");
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   onMount(() => {

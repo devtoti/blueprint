@@ -264,51 +264,7 @@ export const dictionary = {
     },
     ],
     ["highlighted-projects"]: [
-        {
-            id: 2,
-            number: "02",
-            title: "Junkhaul Moving Services",
-            url: "https://365junkhaul.com",
-            figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
-            image: "365junkhaul-preview.png",
-            description: {
-                en: "Checkout with payment system and admin dashboard for the company Junkhaul Moving Services. Developed with React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
-                es: "Checkout con sistema de pagos y dashboard de administración para la empresa Junkhaul Moving Services. Desarrollado con React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
-            },
-            tags: ["React", "Nextjs", "TailwindCSS", "Typescript", "Figma", "Stripe", "Supabase"],
-            bullets: [
-                {
-                    title: {
-                        en: "Checkout",
-                        es: "Checkout",
-                    },
-                    description: {
-                        en: "Creation of a checkout to hire moving services with a catalog of 1000+ products from Supabase, integrated with Stripe to process payments.",
-                        es: "Creación de un checkout para contratar servicios de mudanza con un catálogo de 1000+ productos de Supabase, integrado con Stripe para procesar pagos.",
-                    },
-                },
-                {
-                    title: {
-                        en: "Dashboard",
-                        es: "Dashboard",
-                    },
-                    description: {
-                        en: "Implementation of a dashboard in SvelteKit connected with the Stripe API to manage purchases and track orders.",
-                        es: "Implementación de un dashboard en SvelteKit conectado con el API de Stripe para administrar las compras y darle seguimiento a los pedidos.",
-                    },
-                },
-                {
-                    title: {
-                        en: "Authentication",
-                        es: "Autenticación",
-                    },
-                    description: {
-                        en: "Implementation of Magic Link for users to login (user/admin) and track their purchases.",
-                        es: "Implementación de Magic Link para permitir a los usuarios iniciar sesión (user/admin) y darle seguimiento a sus compras.",
-                    },
-                }
-            ]
-        },
+       
         {
             id: 1,
             number: "01",
@@ -352,6 +308,50 @@ export const dictionary = {
                         es: "La nueva landing page fue aprobada por Apple en cuanto a estética y requerimientos de diseño.",
                     },
                 },
+            ]
+        },{
+            id: 2,
+            number: "02",
+            title: "Junkhaul Moving Services",
+            url: "https://365junkhaul.com",
+            figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
+            image: "365junkhaul-preview.png",
+            description: {
+                en: "Checkout with payment system and admin dashboard for the company Junkhaul Moving Services. Developed with React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
+                es: "Checkout con sistema de pagos y dashboard de administración para la empresa Junkhaul Moving Services. Desarrollado con React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
+            },
+            tags: ["React", "Nextjs", "TailwindCSS", "Typescript", "Figma", "Stripe", "Supabase"],
+            bullets: [
+                {
+                    title: {
+                        en: "Checkout",
+                        es: "Checkout",
+                    },
+                    description: {
+                        en: "Creation of a checkout to hire moving services with a catalog of 1000+ products from Supabase, integrated with Stripe to process payments.",
+                        es: "Creación de un checkout para contratar servicios de mudanza con un catálogo de 1000+ productos de Supabase, integrado con Stripe para procesar pagos.",
+                    },
+                },
+                {
+                    title: {
+                        en: "Dashboard",
+                        es: "Dashboard",
+                    },
+                    description: {
+                        en: "Implementation of a dashboard in SvelteKit connected with the Stripe API to manage purchases and track orders.",
+                        es: "Implementación de un dashboard en SvelteKit conectado con el API de Stripe para administrar las compras y darle seguimiento a los pedidos.",
+                    },
+                },
+                {
+                    title: {
+                        en: "Authentication",
+                        es: "Autenticación",
+                    },
+                    description: {
+                        en: "Implementation of Magic Link for users to login (user/admin) and track their purchases.",
+                        es: "Implementación de Magic Link para permitir a los usuarios iniciar sesión (user/admin) y darle seguimiento a sus compras.",
+                    },
+                }
             ]
         },
         {

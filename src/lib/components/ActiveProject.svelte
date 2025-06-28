@@ -1,10 +1,13 @@
 <script lang="ts">
   let { project, ix } = $props();
   import "../../styles/text-styles.css";
+  import SolarLinkMinimalistic2Bold from "~icons/solar/link-minimalistic-2-bold";
+  import FigmaIcon from "$lib/icons/figma.svelte";
+  import IconWrapper from "$lib/components/IconWrapper.svelte";
   import Text from "$lib/components/Text.svelte";
   import { dictionary } from "$lib/dictionary";
   import { lang } from "$lib/stores";
-  const imageContext = import.meta.glob("$lib/images/*.png", {
+  const imageContext = import.meta.glob("$lib/images/*.{svg,png}", {
     eager: true,
     query: "?url",
     import: "default",
@@ -23,9 +26,19 @@
 {/snippet}
 
 <div class="active-project">
-  <h2 class="arc-h1">
-    0{project.id}
-  </h2>
+  <div class="heading">
+    <h2 class="arc-h1 project-id">
+      0{project.id}
+    </h2>
+    <div class="icons-wrapper">
+      <a href={project.url} target="_blank">
+        <IconWrapper Icon={SolarLinkMinimalistic2Bold} />
+      </a>
+      <a href={project.figmaUrl} target="_blank">
+        <IconWrapper Icon={FigmaIcon} />
+      </a>
+    </div>
+  </div>
   <h3 class="arc-h3">
     {project.title}
   </h3>
@@ -137,12 +150,36 @@
       padding-right: 0.25rem;
     }
   }
+  .heading {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    width: 100%;
+    .project-id {
+      grid-column: 2 / 3;
+    }
+  }
+  .icons-wrapper {
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .icons-wrapper {
+    margin-left: auto;
+    a {
+      padding: 0 0.25rem;
+    }
+  }
   @media (min-width: 480px) {
     .preview {
       grid-row: 3 / span 2;
     }
   }
   @media (min-width: 1024px) {
+    .project-id {
+      grid-column: 1 / 2 !important;
+    }
     .active-project,
     .bullets,
     .preview {
