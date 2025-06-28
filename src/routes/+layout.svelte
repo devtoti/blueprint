@@ -1,5 +1,6 @@
 <script lang="ts">
   import { injectAnalytics } from "@vercel/analytics/sveltekit";
+  import LogRocket from 'logrocket';
   import "$lib/fonts/fonts.css";
   import { fade } from "svelte/transition";
   import { onMount, setContext } from "svelte";
@@ -33,6 +34,7 @@
     }
     pageHasLoaded = true;
     injectAnalytics();
+    LogRocket.init('devtoti/blueprintdev');
     // to be changed later
     const handleAnchorClick = (e: Event) => {
       const target = e.target as HTMLElement;
