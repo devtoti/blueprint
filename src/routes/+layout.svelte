@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { injectAnalytics } from "@vercel/analytics/sveltekit";
   import "$lib/fonts/fonts.css";
   import { fade } from "svelte/transition";
   import { onMount, setContext } from "svelte";
@@ -31,6 +32,7 @@
       $theme = "light";
     }
     pageHasLoaded = true;
+    injectAnalytics();
     // to be changed later
     const handleAnchorClick = (e: Event) => {
       const target = e.target as HTMLElement;
