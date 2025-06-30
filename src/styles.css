@@ -153,6 +153,7 @@ body {
     background: url("/src/lib/images/grainy-texture-dark.png");
     mix-blend-mode: multiply;
     z-index: -5;
+    pointer-events: none;
   }
 }
 

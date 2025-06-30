@@ -1,6 +1,6 @@
 <script lang="ts">
   import { injectAnalytics } from "@vercel/analytics/sveltekit";
-  import LogRocket from 'logrocket';
+  import LogRocket from "logrocket";
   import "$lib/fonts/fonts.css";
   import { fade } from "svelte/transition";
   import { onMount, setContext } from "svelte";
@@ -8,79 +8,36 @@
   import { theme } from "$lib/stores";
   import Navbar from "$lib/components/Navbar.svelte";
   import Footer from "$lib/components/Footer.svelte";
-  import HorizontalAxes from "$lib/components/HorizontalAxes.svelte";
   import { page } from "$app/stores";
+  import { GRID } from "$lib/utils/gridData";
+  import {
+    injectCalendly,
+    establishTheme,
+    handleAnchorClick,
+    handleHashOnLoad,
+    toggleTheme,
+  } from "$lib/utils";
+  let pageHasLoaded = $state(false);
   let innerWidth = $state(0);
   let innerHeight = $state(0);
   let wnd = $state({ width: 0, height: 0 });
-  let pageHasLoaded = $state(false);
+  let bodyHeight = $state(0);
+  let grid = $state(GRID());
+
   $effect(() => {
     wnd.width = innerWidth;
     wnd.height = innerHeight;
+    setContext("WINDOW", wnd);
+    setContext("GRID", grid);
+    // $inspect(wnd, grid);
   });
-  setContext("WINDOW", wnd);
+
   onMount(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.head.appendChild(script);
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      $theme = "dark";
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-      $theme = "light";
-    }
     pageHasLoaded = true;
-    injectAnalytics();
-    LogRocket.init('devtoti/blueprintdev');
-    // to be changed later
-    const handleAnchorClick = (e: Event) => {
-      const target = e.target as HTMLElement;
-      const link = target.closest(
-        'a[href^="#"], a[href^="/#"]'
-      ) as HTMLAnchorElement;
-
-      if (link) {
-        e.preventDefault();
-        const href = link.getAttribute("href");
-        const targetId = href?.startsWith("/#")
-          ? href.substring(2)
-          : href?.substring(1);
-        if (targetId) {
-          const targetElement = document.getElementById(targetId);
-          if (targetElement) {
-            const offset = 64;
-            const targetPosition = targetElement.offsetTop - offset;
-
-            window.scrollTo({
-              top: targetPosition,
-              behavior: "smooth",
-            });
-          }
-        }
-      }
-    };
-
-    const handleHashOnLoad = () => {
-      if (window.location.hash) {
-        const targetId = window.location.hash.substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          setTimeout(() => {
-            const offset = 64; // 52px navbar height + 12px top position
-            const targetPosition = targetElement.offsetTop - offset;
-
-            window.scrollTo({
-              top: targetPosition,
-              behavior: "smooth",
-            });
-          }, 100);
-        }
-      }
-    };
-
+    // injectAnalytics();
+    // LogRocket.init('devtoti/blueprintdev');
+    injectCalendly();
+    establishTheme(theme);
     document.addEventListener("click", handleAnchorClick);
     handleHashOnLoad();
 
@@ -90,26 +47,22 @@
     };
   });
 
-  function toggleTheme() {
-    if ($theme === "dark") {
-      document.documentElement.removeAttribute("data-theme");
-      localStorage.setItem("theme", "light");
-      $theme = "light";
-    } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-      $theme = "dark";
-    }
+  const getBodyHeight = (body: HTMLElement) => {
+    bodyHeight = body.clientHeight;
+  };
+
+  function handleToggleTheme() {
+    toggleTheme(theme, $theme);
   }
 </script>
 
+<svelte:body use:getBodyHeight />
 <svelte:window bind:innerWidth bind:innerHeight />
 {#if pageHasLoaded}
-  <HorizontalAxes width={innerWidth} height={innerHeight} />
-  <Navbar currentPath={$page.url.pathname} {toggleTheme} />
+  <Navbar currentPath={$page.url.pathname} toggleTheme={handleToggleTheme} />
   {@render children()}
   <Footer window={wnd} />
-  <HorizontalAxes width={innerWidth} height={innerHeight} />
+  <!-- <HorizontalAxes width={innerWidth} /> -->
 {:else}
   <div class="page-loading arc-h4" transition:fade>Loading...</div>
 {/if}

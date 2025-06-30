@@ -1,6 +1,9 @@
 <script lang="ts">
-  let { width, height } = $props();
+  let { width, handleClick } = $props();
   let highlightDims = $state({ widthLeft: 0, widthRight: 0 });
+  let mobile = width <= 464;
+  let tablet = width > 464 && width <= 1012;
+  let desktop = width > 1012;
   const axes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
   const highlightAxis = (
     axis: MouseEvent & { currentTarget: HTMLLIElement }
@@ -17,57 +20,42 @@
   };
 </script>
 
-{#if width <= 464}
-  <span
-    class="highlight-before"
-    style="left: 0; width: {highlightDims.widthLeft}px;"
-  ></span>
-  <span
-    class="highlight-after"
-    style="right: 0; width: {highlightDims.widthRight}px;"
-  ></span>
+<span
+  class="highlight-before"
+  style="left: 0; width: {highlightDims.widthLeft}px;"
+></span>
+<span
+  class="highlight-after"
+  style="right: 0; width: {highlightDims.widthRight}px;"
+></span>
+<button data-theme="light" onclick={handleClick} type="button">
   <ul class="axes axes-x grainy" data-theme="light">
-    {#each axes.slice(0, 4) as axis}
-      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
-        {axis}
-      </li>
-    {/each}
+    {#if mobile}
+      {#each axes.slice(0, 4) as axis}
+        <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
+          {axis}
+        </li>
+      {/each}
+    {:else if tablet}
+      {#each axes.slice(0, 8) as axis}
+        <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
+          {axis}
+        </li>
+      {/each}
+    {:else if desktop}
+      {#each axes as axis}
+        <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
+          {axis}
+        </li>
+      {/each}
+    {/if}
   </ul>
-{:else if width > 464 && width <= 1012}
-  <span
-    class="highlight-before"
-    style="left: 0; width: {highlightDims.widthLeft}px;"
-  ></span>
-  <span
-    class="highlight-after"
-    style="right: 0; width: {highlightDims.widthRight}px;"
-  ></span>
-  <ul class="axes axes-x grainy" data-theme="light">
-    {#each axes.slice(0, 8) as axis}
-      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
-        {axis}
-      </li>
-    {/each}
-  </ul>
-{:else if width > 1012}
-  <span
-    class="highlight-before"
-    style="left: 0; width: {highlightDims.widthLeft}px;"
-  ></span>
-  <span
-    class="highlight-after"
-    style="right: 0; width: {highlightDims.widthRight}px;"
-  ></span>
-  <ul class="axes axes-x grainy" data-theme="light">
-    {#each axes as axis}
-      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
-        {axis}
-      </li>
-    {/each}
-  </ul>
-{/if}
+</button>
 
 <style>
+  button {
+    display: contents;
+  }
   ul {
     grid-column: 1 / -1;
     width: 100%;
@@ -88,6 +76,7 @@
     width: 100%;
     text-align: center;
     background-color: var(--bg-tertiary);
+    cursor: s-resize;
   }
   li:hover {
     background-color: var(--sand-radix-600);
@@ -107,16 +96,18 @@
   li:first-child {
     grid-column-start: 2;
   }
-  :global([data-theme="dark"]) ul {
-    background-color: var(--bleu-100) !important;
-  }
-  :global([data-theme="dark"]) li {
-    background-color: var(--bg-primary);
-    color: var(--bleu-300);
-    filter: brightness(0.8);
-  }
-  :global([data-theme="dark"]) .highlight-before,
-  :global([data-theme="dark"]) .highlight-after {
-    filter: brightness(0.3);
+  :global([data-theme="dark"]) {
+    ul {
+      background-color: var(--bleu-100) !important;
+    }
+    li {
+      background-color: var(--bg-primary);
+      color: var(--bleu-300);
+      filter: brightness(0.8);
+    }
+    .highlight-before,
+    .highlight-after {
+      filter: brightness(0.3);
+    }
   }
 </style>

@@ -2,52 +2,30 @@
   import "../../styles.css";
   import "../../tokens.css";
   import "../../styles/text-styles.css";
+  import HorizontalAxes from "$lib/components/HorizontalAxes.svelte";
   import IconHamburger from "$lib/icons/hamburger.svg";
   import IconCloseNav from "$lib/icons/close-nav.svg";
   import Button from "$lib/components/Button.svelte";
   import Text from "$lib/components/Text.svelte";
-  import { dictionary as navigation } from "$lib/dictionary";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
-  import { getContext, onMount, setContext } from "svelte";
-  import { GRID } from "$lib/utils/gridData";
+  import {
+    showHideNavOnScroll,
+    showHideAxesOnClick,
+    disableScroll,
+    enableScroll,
+  } from "$lib/utils";
+  import { getContext } from "svelte";
   import { theme, lang } from "$lib/stores";
   let { currentPath = "/", toggleTheme } = $props();
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
+  let GRID = getContext("GRID");
   let isMobile = $derived(WINDOW.width <= 464);
-  let grid = $state(GRID());
   let isNavOpen = $state(false);
   let isDarkMode = $derived($theme === "dark");
-  onMount(() => {
-    grid = GRID();
-    window.addEventListener("resize", () => {
-      grid = GRID();
-    });
-  });
-
   let showNav = $state(true);
   let currScrollPos = $state(0);
-  function handleScroll() {
-    const newPosition = window.pageYOffset;
-    if (newPosition > currScrollPos + 200) {
-      showNav = true;
-      currScrollPos = newPosition;
-    } else if (currScrollPos - newPosition >= 200) {
-      showNav = true;
-      currScrollPos = newPosition;
-    }
-  }
-  let bodyHeight = $state(0);
-  const getBodyHeight = (body: HTMLElement) => {
-    bodyHeight = body.clientHeight;
-  };
-  function disableScroll() {
-    window.onscroll = function () {
-      window.scrollTo(0, 0);
-    };
-  }
-  function enableScroll() {
-    window.onscroll = null;
-  }
+  // $inspect(GRID);
+  $inspect(isNavOpen);
   $effect(() => {
     if (isNavOpen) {
       disableScroll();
@@ -57,8 +35,19 @@
   });
 </script>
 
-<svelte:body use:getBodyHeight />
-<svelte:window onscroll={handleScroll} />
+<svelte:window
+  on:scroll={() => {
+    if (window.scrollY > currScrollPos + 20) {
+      showNav = false;
+      currScrollPos = window.scrollY;
+    } else if (window.scrollY < currScrollPos) {
+      console.log("true");
+      currScrollPos = window.scrollY;
+      showNav = true;
+    }
+  }}
+/>
+<HorizontalAxes width={innerWidth} handleClick={showHideAxesOnClick} />
 <nav class="grainy" class:active={showNav}>
   <article class="nav-container">
     <ul class="nav-links desktop-only">
@@ -150,7 +139,7 @@
   </article>
   <article class="active-nav-container" class:isNavOpen>
     <article class="main-content stripped-divider"></article>
-    <DividerTrapezoid
+    <!-- <DividerTrapezoid
       width={WINDOW.width}
       y={isMobile ? 16 : 100}
       w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
@@ -164,7 +153,7 @@
       startEnd={1}
       children={() => null}
       invert
-    />
+    /> -->
     <ul class="active-nav-links links-container">
       <div class="mobile-nav-settings">
         <select id="lang" name="lang" bind:value={$lang} class="lang-select">
@@ -247,7 +236,7 @@
         </a>
       </li>
     </ul>
-    <DividerTrapezoid
+    <!-- <DividerTrapezoid
       width={WINDOW.width}
       y={isMobile ? 16 : 100}
       w={isMobile ? 16 : grid.getColumnsDistance(1) + grid.gap * 2.5}
@@ -261,11 +250,12 @@
       startEnd={1}
       invert
       children={() => null}
-    />
+    /> -->
     <article class="main-content stripped-divider"></article>
   </article>
 </nav>
-<div class="black-overlay" class:isNavOpen style="height: {bodyHeight}px"></div>
+
+<!-- <div class="black-overlay" class:isNavOpen style="height: {bodyHeight}px"></div> -->
 
 <style>
   .desktop-only {
@@ -297,15 +287,6 @@
     font-size: 0.75rem;
     font-weight: 400;
   }
-  .blueprint-logo {
-    all: unset;
-    grid-column: 1 / 2;
-    align-self: center;
-    img {
-      width: 1.2rem;
-      height: 1.2rem;
-    }
-  }
   .mobile-nav-icons {
     grid-column: 3 / 4;
     display: flex;
@@ -313,9 +294,9 @@
     button {
       all: unset;
     }
-    button.isHidden {
+    /* button.isHidden {
       display: none;
-    }
+    } */
   }
   nav {
     position: sticky;
@@ -339,6 +320,15 @@
   }
   nav:not(.active) {
     top: -28px;
+  }
+  :global(nav:not(.active).no-axes) {
+    top: -40px;
+  }
+  :global(.axes.disabled) {
+    height: 0px !important;
+  }
+  :global(.active.no-axes) {
+    top: -0px !important;
   }
   .nav-container {
     display: relative;
@@ -365,7 +355,7 @@
     flex-direction: column;
     flex-grow: 1;
   }
-  .black-overlay {
+  /* .black-overlay {
     pointer-events: none;
     width: 100svw;
     min-height: 100svh;
@@ -376,7 +366,7 @@
     left: 0;
     z-index: 10;
     transition: opacity 0.5s ease-in-out;
-  }
+  } */
   .links-container {
     height: 100%;
     background-color: var(--bg-secondary);
@@ -486,35 +476,31 @@
     width: 20px;
     height: 20px;
   }
-  :global([data-theme="dark"]) nav {
-    background-color: var(--bg-primary);
-    color: var(--bleu-100);
-    box-shadow: var(--shadow-3);
-  }
-
-  :global([data-theme="dark"]) .nav-container {
-    background-color: var(--bg-primary);
-    border-bottom: 1px solid var(--border-tertiary);
-  }
-
-  :global([data-theme="dark"]) .active-nav-container {
-    background-color: var(--bg-primary);
-  }
-  :global([data-theme="dark"]) .mobile-nav-settings {
-    color: var(--text-secondary);
-  }
-
-  :global([data-theme="dark"]) .active-nav-links {
-    background-color: var(--bg-primary);
-    border-color: var(--border-tertiary);
-    
-  }
-
-  :global([data-theme="dark"]) a {
-    color: var(--text-secondary);
-  }
-
-  :global([data-theme="dark"]) a.active {
-    color: var(--text-light);
+  :global([data-theme="dark"]) {
+    nav {
+      background-color: var(--bg-primary);
+      color: var(--bleu-100);
+      box-shadow: var(--shadow-3);
+    }
+    .nav-container {
+      background-color: var(--bg-primary);
+      border-bottom: 1px solid var(--border-tertiary);
+    }
+    .active-nav-container {
+      background-color: var(--bg-primary);
+    }
+    .mobile-nav-settings {
+      color: var(--text-secondary);
+    }
+    .active-nav-links {
+      background-color: var(--bg-primary);
+      border-color: var(--border-tertiary);
+    }
+    a {
+      color: var(--text-secondary);
+    }
+    a.active {
+      color: var(--text-light);
+    }
   }
 </style>

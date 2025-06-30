@@ -6,6 +6,8 @@
   import Dribbble from "$lib/icons/dribbble.svelte";
   import Upwork from "$lib/icons/upwork.svelte";
   import Text from "$lib/components/Text.svelte";
+  import HorizontalAxes from "$lib/components/HorizontalAxes.svelte";
+  import { showHideAxesOnClick } from "$lib/utils";
   let { window } = $props();
 </script>
 
@@ -143,6 +145,7 @@
     </article>
   </div>
 </footer>
+<HorizontalAxes width={innerWidth} handleClick={showHideAxesOnClick} />
 
 <style>
   h4 {
