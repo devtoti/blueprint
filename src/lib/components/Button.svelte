@@ -5,6 +5,9 @@
     primary = false,
     secondary = false,
     invert = false,
+    lg = false,
+    md = false,
+    sm = false,
   } = $props();
   import Text from "$lib/components/Text.svelte";
   import { dictionary } from "$lib/dictionary";
@@ -14,7 +17,7 @@
 </script>
 
 {#if primary}
-  <div class="button-wrapper">
+  <div class="button-wrapper" class:lg class:md class:sm>
     <a {href} class="arc-button-primary arc-h4 button-text" class:invert>
       {#if isTranslatable}
         <Text section="Buttons" {text} />
@@ -29,7 +32,7 @@
   </div>
 {/if}
 {#if secondary}
-  <div class="button-wrapper">
+  <div class="button-wrapper" class:lg class:md class:sm>
     <a {href} class="arc-button-secondary arc-h4" class:invert>
       {#if isTranslatable}
         <Text section="Buttons" {text} />
@@ -41,13 +44,17 @@
 {/if}
 
 <style>
-  /* a {
-    color: var(--text-light) !important;
-  } */
   .button-wrapper {
     width: 100%;
-    min-width: 10rem;
+  }
+  .button-wrapper.lg {
+    height: 2.5rem;
+  }
+  .button-wrapper.md {
     height: 2rem;
+  }
+  .button-wrapper.sm {
+    height: 1.5rem;
   }
   .arc-h4 {
     font-weight: 600;

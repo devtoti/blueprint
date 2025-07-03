@@ -3,13 +3,13 @@
   import LogRocket from "logrocket";
   import "$lib/fonts/fonts.css";
   import { fade } from "svelte/transition";
-  import { onMount, setContext } from "svelte";
+  import { onMount, setContext, tick } from "svelte";
   let { children } = $props();
   import { theme } from "$lib/stores";
   import Navbar from "$lib/components/Navbar.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import { page } from "$app/stores";
-  import { GRID } from "$lib/utils/gridData";
+  import { GRID, initialGrid } from "$lib/utils/gridData";
   import {
     injectCalendly,
     establishTheme,
@@ -21,21 +21,30 @@
   let innerWidth = $state(0);
   let innerHeight = $state(0);
   let wnd = $state({ width: 0, height: 0 });
-  let bodyHeight = $state(0);
   let grid = $state(GRID());
 
   $effect(() => {
     wnd.width = innerWidth;
     wnd.height = innerHeight;
     setContext("WINDOW", wnd);
-    setContext("GRID", grid);
-    // $inspect(wnd, grid);
   });
 
   onMount(() => {
+    tick().then(() => {
+      grid = GRID();
+    });
+
+    window.addEventListener("resize", () => {
+      grid = GRID();
+    });
+    return () => {
+      window.removeEventListener("resize", () => {});
+    };
+  });
+  onMount(() => {
     pageHasLoaded = true;
-    // injectAnalytics();
-    // LogRocket.init('devtoti/blueprintdev');
+    injectAnalytics();
+    LogRocket.init("devtoti/blueprintdev");
     injectCalendly();
     establishTheme(theme);
     document.addEventListener("click", handleAnchorClick);
@@ -47,19 +56,18 @@
     };
   });
 
-  const getBodyHeight = (body: HTMLElement) => {
-    bodyHeight = body.clientHeight;
-  };
-
   function handleToggleTheme() {
     toggleTheme(theme, $theme);
   }
 </script>
 
-<svelte:body use:getBodyHeight />
 <svelte:window bind:innerWidth bind:innerHeight />
 {#if pageHasLoaded}
-  <Navbar currentPath={$page.url.pathname} toggleTheme={handleToggleTheme} />
+  <Navbar
+    currentPath={$page.url.pathname}
+    {grid}
+    toggleTheme={handleToggleTheme}
+  />
   {@render children()}
   <Footer window={wnd} />
   <!-- <HorizontalAxes width={innerWidth} /> -->

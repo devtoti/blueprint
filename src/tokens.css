@@ -280,21 +280,20 @@
   --icon-dark: var(--bleu-700);
 
   /* Semantic - Shadows */
-  --shadow-1: inset 0 -1px 1px 0 var(--gray-alpha-30),
-    inset 0 3px 4px 0 var(--gray-alpha-50);
+  --shadow-1: inset 0 -1px 1px 0 var(--white-alpha-30),
+    inset 0 3px 4px 0 var(--white-alpha-50);
 
-  --shadow-2: 0 1px 1px 0 var(--gray-alpha-60),
-    0 2px 1px -1px var(--gray-alpha-60), 0 1px 3px 0 var(--gray-alpha-50);
+  --shadow-2: 0 1px 1px 0 var(--white-alpha-10),
+    0 2px 1px -1px var(--white-alpha-20), 0 1px 3px 0 var(--white-alpha-50);
 
-  --shadow-3: 0 2px 3px -2px var(--gray-alpha-30),
-    0 3px 8px -2px var(--gray-alpha-60), 0 4px 12px -4px var(--gray-alpha-70);
+  --shadow-3: 0 2px 8px -4px var(--white-alpha-10);
 
-  --shadow-4: 0 8px 40px var(--gray-alpha-30),
-    0 12px 32px -16px var(--gray-alpha-50);
+  --shadow-4: 0 8px 40px var(--white-alpha-30),
+    0 12px 32px -16px var(--white-alpha-50);
 
-  --shadow-5: 0 12px 60px var(--gray-alpha-50),
-    0 12px 32px -16px var(--gray-alpha-70);
+  --shadow-5: 0 12px 60px var(--white-alpha-50),
+    0 12px 32px -16px var(--white-alpha-70);
 
-  --shadow-6: 0 12px 60px var(--gray-alpha-40), 0 16px 64px var(--gray-alpha-60),
-    0 16px 36px -20px var(--gray-alpha-90);
+  --shadow-6: 0 12px 60px var(--white-alpha-40), 0 16px 64px var(--white-alpha-60),
+    0 16px 36px -20px var(--white-alpha-90);
 }

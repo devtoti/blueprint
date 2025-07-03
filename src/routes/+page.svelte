@@ -7,7 +7,6 @@
   import { GRID } from "$lib/utils/gridData";
   import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
-  import TrapezoidDiv from "$lib/components/TrapezoidDiv.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import CTABanner from "$lib/components/CTABanner.svelte";
   import WorkExperience from "$lib/sections/WorkExperience.svelte";
@@ -15,8 +14,6 @@
   import RadialDeco from "$lib/images/radial-deco.svelte";
   import Services from "$lib/sections/+Services.svelte";
   import Skills from "$lib/sections/+Skills.svelte";
-  import Text from "$lib/components/Text.svelte";
-  import { dictionary } from "$lib/dictionary";
   import Blueprint from "$lib/images/blueprint.svelte";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");

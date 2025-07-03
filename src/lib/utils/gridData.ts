@@ -1,4 +1,5 @@
-export { GRID }
+import { browser } from "$app/environment";
+export { GRID, initialGrid }
 const initialGrid = {
     width: 0,
     height: 0,
@@ -12,7 +13,7 @@ const initialGrid = {
     widthNoPadding: 0
 }
 const GRID = () => {
-   if (typeof document === 'undefined') return initialGrid;
+    if (!browser) return initialGrid;
     const grid = document.querySelector("main")
     if (!grid) return initialGrid;
     const computedStyle = window.getComputedStyle(grid);

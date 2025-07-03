@@ -1,9 +1,6 @@
 <script lang="ts">
   let { width, handleClick } = $props();
   let highlightDims = $state({ widthLeft: 0, widthRight: 0 });
-  let mobile = width <= 464;
-  let tablet = width > 464 && width <= 1012;
-  let desktop = width > 1012;
   const axes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
   const highlightAxis = (
     axis: MouseEvent & { currentTarget: HTMLLIElement }
@@ -30,25 +27,11 @@
 ></span>
 <button data-theme="light" onclick={handleClick} type="button">
   <ul class="axes axes-x grainy" data-theme="light">
-    {#if mobile}
-      {#each axes.slice(0, 4) as axis}
-        <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
-          {axis}
-        </li>
-      {/each}
-    {:else if tablet}
-      {#each axes.slice(0, 8) as axis}
-        <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
-          {axis}
-        </li>
-      {/each}
-    {:else if desktop}
-      {#each axes as axis}
-        <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
-          {axis}
-        </li>
-      {/each}
-    {/if}
+    {#each axes as axis}
+      <li onmouseenter={highlightAxis} onmouseleave={unhighlightAxis}>
+        {axis}
+      </li>
+    {/each}
   </ul>
 </button>
 
@@ -95,6 +78,27 @@
 
   li:first-child {
     grid-column-start: 2;
+  }
+  .axes li {
+    display: none;
+  }
+  li:nth-child(-n + 4) {
+    display: block;
+  }
+  @media (min-width: 480px) {
+    .axes li:nth-child(-n + 6) {
+      display: block;
+    }
+  }
+  @media (min-width: 720px) {
+    ul.axes li:nth-child(-n + 8) {
+      display: block;
+    }
+  }
+  @media (min-width: 1029px) {
+    ul.axes li {
+      display: block !important;
+    }
   }
   :global([data-theme="dark"]) {
     ul {

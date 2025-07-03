@@ -99,7 +99,7 @@ export const showHideNavOnScroll = (
   console.log(currScrollPos);
 };
 
-export const showHideAxesOnClick = (e: MouseEvent) => {
+export const showHideAxesOnClick = () => {
   const axes = document.querySelectorAll<HTMLElement>(".axes");
   const nav = document.querySelector<HTMLElement>("nav");
   const hasActiveAxes =

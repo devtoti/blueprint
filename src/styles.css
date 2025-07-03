@@ -43,6 +43,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .text-caption {
   font-size: 1rem;
   background: none;
@@ -60,15 +61,14 @@ body {
   margin: 0 !important;
   background-color: var(--bg-tertiary);
   background-size: 16px 16px;
-  background-image: linear-gradient(
-      to right,
+  background-image: linear-gradient(to right,
       var(--gray-alpha-10) 1px,
-      transparent 1px
-    ),
+      transparent 1px),
     linear-gradient(to bottom, var(--gray-alpha-10) 1px, transparent 1px);
   max-width: 100svw;
   background-attachment: fixed;
 }
+
 .grainy:not(.hero)::before {
   content: "";
   position: absolute;
@@ -82,6 +82,7 @@ body {
   mix-blend-mode: multiply;
   pointer-events: none;
 }
+
 .bg-texture::before {
   content: "";
   position: absolute;
@@ -96,6 +97,7 @@ body {
   pointer-events: none;
   z-index: 1;
 }
+
 .hero.grainy::after {
   content: "";
   position: absolute;
@@ -109,17 +111,17 @@ body {
   mix-blend-mode: multiply;
   pointer-events: none;
 }
+
 [data-theme="dark"] {
   body {
     background-attachment: scroll;
     background-color: var(--bg-tertiary);
-    background-image: linear-gradient(
-        to right,
+    background-image: linear-gradient(to right,
         rgba(13, 116, 206, 0.1) 1px,
-        transparent 1px
-      ),
+        transparent 1px),
       linear-gradient(to bottom, rgba(5, 136, 240, 0.1) 1px, transparent 1px);
   }
+
   .bg-texture::after {
     content: "";
     position: absolute;
@@ -133,6 +135,7 @@ body {
     filter: invert(1);
     z-index: -5;
   }
+
   .bg-texture::before {
     content: "";
     position: absolute;
@@ -145,10 +148,12 @@ body {
     mix-blend-mode: multiply;
     z-index: -5;
   }
+
   body::before {
     background-color: var(--border-tertiary);
     background-size: 16px 16px;
   }
+
   .grainy:not(.hero)::before {
     background: url("/src/lib/images/grainy-texture-dark.png");
     mix-blend-mode: multiply;
@@ -166,6 +171,7 @@ body {
   grid-column: 2 / -2;
   flex-direction: column;
 }
+
 /* .desktop-only {
   z-index: -100;
   opacity: 0;
@@ -178,16 +184,15 @@ body {
 .radial-deco-wrapper {
   display: block;
 }
+
 .stripped-divider {
   grid-column: 2 / -2;
   width: 100%;
-  background: repeating-linear-gradient(
-    to right,
-    #dadada,
-    #dadada 10px,
-    transparent 10px,
-    transparent 20px
-  );
+  background: repeating-linear-gradient(to right,
+      #dadada,
+      #dadada 10px,
+      transparent 10px,
+      transparent 20px);
   height: 100px;
   background-color: #e9e8e6;
   width: 100%;
@@ -195,6 +200,7 @@ body {
   border-top: 0;
   border-bottom: 0;
 }
+
 main,
 nav,
 footer,
@@ -203,13 +209,11 @@ section,
 .nav-container,
 ul.axes {
   display: grid;
-  grid-template-columns: var(--side-padding-mobile) repeat(4, 1fr) var(
-      --side-padding-mobile
-    );
-    justify-items: center;
-    column-gap: var(--col-gap);
-    overflow: hidden;
-    grid-template-rows: 1fr;
+  grid-template-columns: var(--side-padding-mobile) repeat(4, 1fr) var(--side-padding-mobile);
+  justify-items: center;
+  column-gap: var(--col-gap);
+  overflow: hidden;
+  grid-template-rows: 1fr;
 }
 
 .main-content {
@@ -219,6 +223,7 @@ ul.axes {
 }
 
 @media (min-width: 480px) {
+
   main,
   .hero-main,
   nav,
@@ -226,9 +231,7 @@ ul.axes {
   section,
   .nav-container,
   ul.axes {
-    grid-template-columns: var(--side-padding-desktop) repeat(8, 1fr) var(
-        --side-padding-desktop
-      );
+    grid-template-columns: var(--side-padding-desktop) repeat(6, 1fr) var(--side-padding-desktop);
   }
 
   .main-content {
@@ -237,15 +240,6 @@ ul.axes {
   }
 }
 
-/* .desktop-only {
-  z-index: 1;
-  opacity: 1;
-}
-
-.mobile-only {
-  z-index: -100;
-  opacity: 0;
-} */
 @media (min-width: 720px) {
   .radial-deco-wrapper {
     position: absolute !important;
@@ -254,8 +248,20 @@ ul.axes {
     transform: translate(-50%, -50%) !important;
     z-index: 3 !important;
   }
+  main,
+  .hero-main,
+  nav,
+  footer,
+  section,
+  .nav-container,
+  ul.axes {
+    grid-template-columns: var(--side-padding-desktop) repeat(8, 1fr) var(--side-padding-desktop);
+  }
 }
+
+
 @media (min-width: 1029px) {
+
   main,
   nav,
   footer,
@@ -263,9 +269,7 @@ ul.axes {
   ul.axes,
   .hero-main,
   .nav-container {
-    grid-template-columns: var(--side-padding-desktop) repeat(12, 1fr) var(
-        --side-padding-desktop
-      );
+    grid-template-columns: var(--side-padding-desktop) repeat(12, 1fr) var(--side-padding-desktop);
   }
 
   .main-content {
@@ -383,85 +387,101 @@ ul.axes {
   font-weight: 900;
   font-style: italic;
 }
+
 /* Heading Styles */
 .arc-h0 {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 800; /* ExtraBold */
+  font-weight: 800;
+  /* ExtraBold */
   font-size: 48px;
   letter-spacing: 10%;
   text-transform: uppercase;
   color: var(--text-primary);
-  padding-bottom: 16px; /* ~1/3 * 48px */
+  padding-bottom: 16px;
+  /* ~1/3 * 48px */
 }
 
 .arc-h1 {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 800; /* ExtraBold */
+  font-weight: 800;
+  /* ExtraBold */
   font-size: 24px;
   letter-spacing: 10%;
   text-transform: uppercase;
   color: var(--text-primary);
-  padding-bottom: 8px; /* ~1/3 * 24px */
+  padding-bottom: 8px;
+  /* ~1/3 * 24px */
 }
 
 .arc-h2 {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
+  /* Bold */
   font-size: 18px;
   letter-spacing: 10%;
   text-transform: uppercase;
   color: var(--text-primary);
-  padding-bottom: 5px; /* ~1/3 * 16px */
+  padding-bottom: 5px;
+  /* ~1/3 * 16px */
 }
 
 .arc-h3 {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 700; /* ExtraBold */
+  font-weight: 700;
+  /* ExtraBold */
   font-size: 16px;
   letter-spacing: 10%;
   text-transform: uppercase;
   color: var(--text-primary);
-  padding-bottom: 4px; /* ~1/3 * 12px */
+  padding-bottom: 4px;
+  /* ~1/3 * 12px */
 }
 
 .arc-h4 {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 600; /* ExtraBold */
+  font-weight: 600;
+  /* ExtraBold */
   font-size: 14px;
   letter-spacing: 10%;
   text-transform: uppercase;
   color: var(--text-primary);
-  padding-bottom: 3px; /* ~1/3 * 10px */
+  padding-bottom: 3px;
+  /* ~1/3 * 10px */
 }
 
 .arc-h5 {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
+  /* Bold */
   font-size: clamp(10px, 3vw, 12px);
   letter-spacing: 10%;
   text-transform: uppercase;
   color: var(--text-primary);
-  padding-bottom: 3px; /* ~1/3 * 10px */
+  padding-bottom: 3px;
+  /* ~1/3 * 10px */
 }
 
 /* Body Styles */
 .arc-body-0 {
   font-family: "Gotham", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400; /* Book */
+  font-weight: 400;
+  /* Book */
   font-size: clamp(16px, 4vw, 20px);
   color: var(--text-secondary);
 }
+
 .arc-body-1 {
   font-family: "Gotham", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400; /* Book */
+  font-weight: 400;
+  /* Book */
   font-size: clamp(12px, 3vw, 16px);
   color: var(--text-secondary);
 }
@@ -469,7 +489,8 @@ ul.axes {
 .arc-body-2 {
   font-family: "Gotham", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400; /* Book */
+  font-weight: 400;
+  /* Book */
   font-size: clamp(12px, 3vw, 14px);
   color: var(--text-tertiary);
 }
@@ -477,7 +498,8 @@ ul.axes {
 .arc-body-3 {
   font-family: "Gotham", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400; /* Book */
+  font-weight: 400;
+  /* Book */
   font-size: 10px;
   color: var(--text-tertiary);
 }
@@ -485,10 +507,12 @@ ul.axes {
 /* List Item Style */
 .arc-mono {
   font-family: "Roboto Mono", "Courier New", Courier, monospace;
-  font-weight: 500; /* Regular */
+  font-weight: 500;
+  /* Regular */
   font-size: 14px;
   color: var(--text-secondary);
 }
+
 .arc-txt-li {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -497,25 +521,31 @@ ul.axes {
   letter-spacing: 10%;
   color: var(--text-secondary);
 }
+
 /* Input Style */
 .arc-input {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 600; /* Bold */
+  font-weight: 600;
+  /* Bold */
   font-size: 10px;
   letter-spacing: 10%;
   text-transform: uppercase;
   color: var(--text-primary);
 }
+
 .color-invert {
   color: var(--white);
 }
+
 [class*="arc-button"] {
   background-color: var(--white);
+
   #button-text {
     padding-bottom: 0;
   }
 }
+
 button {
   border: none;
   background: none;
@@ -525,62 +555,74 @@ button {
   background-color: var(--bg-blueprint);
   color: var(--white);
   border: 2px solid var(--blue-radix-800);
+
   &:hover {
     outline: 1.5px solid var(--border-tertiary);
     background-color: var(--white);
     color: var(--text-primary);
   }
 }
+
 [data-theme="dark"] .arc-button-primary.invert {
   background-color: var(--white);
   color: var(--text-tertiary);
   background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(0.25) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='%232b2b3100'/><path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5'  stroke-width='1' stroke='none' fill='%233b82f640'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+
   &:hover {
     outline: 1.5px solid var(--border-primary);
     background-color: var(--bleu-600);
     color: var(--white);
   }
 }
+
 .arc-button-primary {
   background-color: var(--bg-blueprint);
   color: var(--white);
   border: 2px solid var(--blue-radix-1000);
   background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(0.25) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='%232b2b3100'/><path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5'  stroke-width='1' stroke='none' fill='%23ffffff33'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+
   &:hover {
     outline: 1.5px solid var(--border-primary);
     background-color: var(--white);
     color: var(--text-primary);
   }
 }
+
 .arc-button-primary.invert {
   background-color: var(--white);
   color: var(--text-primary);
   background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(0.25) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='%232b2b3100'/><path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5'  stroke-width='1' stroke='none' fill='%233b82f640'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+
   &:hover {
     outline: 1.5px solid var(--border-primary);
     background-color: var(--bleu-600);
     color: var(--white);
   }
 }
+
 .arc-button-secondary.invert {
   background-color: var(--bleu-100);
   background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='70' height='8' patternTransform='scale(0.6) rotate(0)'><rect x='0' y='0' width='200%' height='100%' fill='%232b2b3100'/><path d='M-.02 22c8.373 0 11.938-4.695 16.32-9.662C20.785 7.258 25.728 2 35 2c9.272 0 14.215 5.258 18.7 10.338C58.082 17.305 61.647 22 70.02 22M-.02 14.002C8.353 14 11.918 9.306 16.3 4.339 20.785-.742 25.728-6 35-6 44.272-6 49.215-.742 53.7 4.339c4.382 4.967 7.947 9.661 16.32 9.664M70 6.004c-8.373-.001-11.918-4.698-16.3-9.665C49.215-8.742 44.272-14 35-14c-9.272 0-14.215 5.258-18.7 10.339C11.918 1.306 8.353 6-.02 6.002'  stroke-width='1' stroke='%23173e8830' fill='none'/></pattern></defs><rect width='800%' height='400%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
   color: var(--text-primary);
 }
+
 .arc-button-secondary {
   background-color: var(--bg-blueprint);
   background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='70' height='8' patternTransform='scale(0.6) rotate(0)'><rect x='0' y='0' width='200%' height='100%' fill='%232b2b3100'/><path d='M-.02 22c8.373 0 11.938-4.695 16.32-9.662C20.785 7.258 25.728 2 35 2c9.272 0 14.215 5.258 18.7 10.338C58.082 17.305 61.647 22 70.02 22M-.02 14.002C8.353 14 11.918 9.306 16.3 4.339 20.785-.742 25.728-6 35-6 44.272-6 49.215-.742 53.7 4.339c4.382 4.967 7.947 9.661 16.32 9.664M70 6.004c-8.373-.001-11.918-4.698-16.3-9.665C49.215-8.742 44.272-14 35-14c-9.272 0-14.215 5.258-18.7 10.339C11.918 1.306 8.353 6-.02 6.002'  stroke-width='1' stroke='%2385A3E0' fill='none'/></pattern></defs><rect width='800%' height='400%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
   color: var(--white);
+
   &:hover {
     outline: 1.5px solid var(--border-primary);
     background-color: var(--white);
     color: var(--text-primary);
   }
 }
+
 [data-theme="dark"] .arc-button-secondary.invert {
   background-color: var(--bleu-50);
   background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='70' height='8' patternTransform='scale(0.6) rotate(0)'><rect x='0' y='0' width='200%' height='100%' fill='%232b2b3100'/><path d='M-.02 22c8.373 0 11.938-4.695 16.32-9.662C20.785 7.258 25.728 2 35 2c9.272 0 14.215 5.258 18.7 10.338C58.082 17.305 61.647 22 70.02 22M-.02 14.002C8.353 14 11.918 9.306 16.3 4.339 20.785-.742 25.728-6 35-6 44.272-6 49.215-.742 53.7 4.339c4.382 4.967 7.947 9.661 16.32 9.664M70 6.004c-8.373-.001-11.918-4.698-16.3-9.665C49.215-8.742 44.272-14 35-14c-9.272 0-14.215 5.258-18.7 10.339C11.918 1.306 8.353 6-.02 6.002'  stroke-width='1' stroke='%23ffffff33' fill='none'/></pattern></defs><rect width='800%' height='400%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
   color: var(--text-primary);
+
   &:hover {
     background-color: var(--bleu-50);
     color: var(--white);
@@ -597,12 +639,14 @@ a {
   height: 100%;
   padding: 0.5rem 1rem;
 }
+
 .button-wrapper {
   position: relative;
   height: 32px;
   /* margin: 1rem 0; */
   /* max-width: 240px; */
 }
+
 .button-container {
   display: flex;
   flex-direction: column;
@@ -610,6 +654,7 @@ a {
   justify-content: center;
   gap: 1rem;
 }
+
 .square {
   position: absolute;
   height: 8px;
@@ -623,33 +668,36 @@ a {
   right: -4px;
   transition: all 0.6s ease-in-out;
 }
+
 .square.top-left {
   top: -4px;
   left: -4px;
   transition: all 0.6s ease-in-out;
 }
+
 .square.bottom-left {
   bottom: -4px;
   left: -4px;
   transition: all 0.6s ease-in-out;
 }
+
 .square.bottom-right {
   bottom: -4px;
   right: -4px;
   transition: all 0.6s ease-in-out;
 }
+
 [data-theme="dark"] {
   .square {
     border-color: var(--border-secondary);
   }
-.stripped-divider {
-  background: repeating-linear-gradient(
-    to right,
-    var(--fg-secondary),
-    var(--fg-secondary) 10px,
-    transparent 10px,
-    transparent 20px
-  );
-  background-color: var(--bg-sunken-3);
-}
+
+  .stripped-divider {
+    background: repeating-linear-gradient(to right,
+        var(--fg-secondary),
+        var(--fg-secondary) 10px,
+        transparent 10px,
+        transparent 20px);
+    background-color: var(--bg-sunken-3);
+  }
 }
