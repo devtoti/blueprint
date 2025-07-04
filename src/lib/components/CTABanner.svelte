@@ -6,26 +6,46 @@
   import Text from "./Text.svelte";
   import { dictionary } from "$lib/dictionary";
   import { lang } from "$lib/stores";
+  import { theme } from "$lib/stores";
+  const isDarkMode = $derived($theme === "dark");
   const lan = $derived($lang as "en" | "es");
   let active = $state(false);
-  onMount(() => {
-    window.addEventListener("scroll", () => {
-      const banner = document.querySelector(".cta-banner");
-      if (!banner) return;
-      const rect = banner.getBoundingClientRect();
-      const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
-      const isNearTop = rect.top <= 240;
-      // 60px is the height of the banner
-      const isScrollingDown = rect.top < 60;
 
-      if (isInView && isNearTop && !isScrollingDown) {
-        active = true;
-      } else {
-        active = false;
-      }
-    });
+  onMount(() => {
+    const rightHand = document.querySelector(
+      ".cta-banner .right-hand"
+    ) as HTMLElement;
+    const leftHand = document.querySelector(
+      ".cta-banner .left-hand"
+    ) as HTMLElement;
+    if (!rightHand || !leftHand) return;
+
+    const handleScroll = () => {
+      const banner = document.querySelector(".cta-banner") as HTMLElement;
+      if (!banner) return;
+
+      const rect = banner.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const elementCenter = rect.top + rect.height / 2;
+      const distanceFromCenter = Math.abs(viewportHeight / 2 - elementCenter);
+      const maxDistance = viewportHeight / 2;
+
+      const ratio = Math.max(0, 1 - distanceFromCenter / maxDistance);
+      const transition = "transform 0.5s ease-out";
+      rightHand.style.transition = transition;
+      leftHand.style.transition = transition;
+      const rightPosition = 25 - 25 * ratio;
+      const leftPosition = -25 + 28 * ratio;
+
+      rightHand.style.transform = `translateX(${rightPosition}%)`;
+      leftHand.style.transform = `translateX(${leftPosition}%)`;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => {
-      window.removeEventListener("scroll", () => {});
+      window.removeEventListener("scroll", handleScroll);
     };
   });
 </script>
@@ -57,10 +77,10 @@
   </div>
   <div class="illustrations-container">
     <div class="left-hand container" class:active role="button" tabindex="0">
-      <LeftHand />
+      <LeftHand isDark={isDarkMode} />
     </div>
     <div class="right-hand container" class:active role="button" tabindex="0">
-      <RightHand />
+      <RightHand isDark={isDarkMode} />
     </div>
   </div>
 </article>
@@ -73,6 +93,9 @@
     grid-column: 1 / -1;
     width: 100%;
     overflow: hidden;
+    border: 1.5px solid var(--border-secondary);
+    border-left: none;
+    border-right: none;
   }
   .cta-banner-info {
     width: 100%;
@@ -94,6 +117,10 @@
     h5 {
       padding-bottom: 0.5rem;
     }
+  }
+  .button-wrapper {
+    width: 100%;
+    max-width: 12rem;
   }
   .illustrations-container {
     position: absolute;
@@ -167,6 +194,9 @@
   :global([data-theme="dark"]) {
     .cta-banner {
       background: radial-gradient(#7b81a8, #3a4d8e 50%, #161d4a 100%);
+    }
+    .illustrations-container {
+      mix-blend-mode: screen;
     }
   }
 </style>

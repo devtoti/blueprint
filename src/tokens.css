@@ -250,12 +250,12 @@
   --fg-raised-3: var(--white-alpha-50);
 
   /* Semantic - Text */
-  --text-primary: var(--blue-radix-800);
+  --text-primary: var(--blue-radix-900);
   --text-secondary: var(--bleu-500);
-  --text-tertiary: var(--bleu-100);
+  --text-tertiary: var(--blue-radix-700);
   --text-light: var(--blue-radix-600);
   --text-brand: var(--brand-light);
-  --text-accent: var(--bleu-100);
+  --text-accent: var(--bleu-300);
 
   /* Semantic - Brand */
   --brand-primary: #ffbf49;
@@ -265,10 +265,10 @@
 
   /* Semantic - Borders */
   --border-brand: var(--brand-accent);
-  --border-primary: var(--bleu-400);
-  --border-secondary: var(--blue-radix-500);
-  --border-tertiary: var(--blue-radix-200);
-  --border-light: var(--blue-radix-200);
+  --border-primary: var(--bleu-500);
+  --border-secondary: var(--bleu-300);
+  --border-tertiary: var(--bleu-100);
+  --border-light: var(--bleu-50);
   --border-dark: var(--bleu-700);
 
   /* Semantic - Icons */
@@ -276,7 +276,7 @@
   --icon-primary: var(--blue-radix-700);
   --icon-secondary: var(--blue-radix-300);
   --icon-tertiary: var(--blue-radix-200);
-  --icon-light: var(--bleu-100);
+  --icon-light: var(--bleu-400);
   --icon-dark: var(--bleu-700);
 
   /* Semantic - Shadows */
@@ -286,7 +286,7 @@
   --shadow-2: 0 1px 1px 0 var(--white-alpha-10),
     0 2px 1px -1px var(--white-alpha-20), 0 1px 3px 0 var(--white-alpha-50);
 
-  --shadow-3: 0 2px 8px -4px var(--white-alpha-10);
+  --shadow-3: 0 4px 4px -4px var(--white-alpha-30);
 
   --shadow-4: 0 8px 40px var(--white-alpha-30),
     0 12px 32px -16px var(--white-alpha-50);

@@ -2,7 +2,7 @@
   import { theme } from "$lib/stores";
   let { width = 100, y, w, startEnd = 2, invert = false, children } = $props();
   let clientWidth = $state(0);
-  const color = $derived($theme !== "dark" ? "#ECECEB" : "#191918");
+  const color = $derived($theme !== "dark" ? "#ECECEB" : "#111110");
 </script>
 
 <div
@@ -18,7 +18,7 @@
     viewBox="0 0 {width} {y}"
     height={y}
     preserveAspectRatio="none"
-    color={color}
+    {color}
     style={`--start: ${startEnd}; --end: -${startEnd}; --width: ${width}px`}
   >
     <defs>
@@ -104,5 +104,4 @@
     transform-origin: center;
     transform: rotate(180deg);
   }
-
 </style>

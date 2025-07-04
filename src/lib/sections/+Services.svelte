@@ -18,16 +18,23 @@
       .map((service, index) => ({ ...service, active: index === 0 }))
   );
   function handleActive(item: any, type: string) {
+    const isMobile = window.innerWidth <= 720;
     if (type === "design") {
       activeDesign = item;
       uxServices.forEach((service) => {
         service.active = service.title.en === item.title.en;
       });
+      if (isMobile) {
+        scrollToElement("services-illustration-1");
+      }
     } else {
       activeFrontend = item;
       frontendServices.forEach((service) => {
         service.active = service.title.en === item.title.en;
       });
+      if (isMobile) {
+        scrollToElement("services-illustration-2");
+      }
     }
   }
   let activeDesign = $derived(uxServices[0]);
@@ -37,6 +44,17 @@
       (service) => service.type === "development"
     )
   );
+
+  function scrollToElement(el: string) {
+    const element = document.getElementById(el);
+    const offset = 64;
+    const elementPosition = element?.getBoundingClientRect().top ?? 0;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
 </script>
 
 {#snippet item(service: any, type: string, ix: number)}
@@ -85,7 +103,7 @@
   .services-container {
     width: 100%;
     grid-column: 1 / -1;
-    background-color: var(--bg-primary);
+    /* background-color: var(--bg-primary); */
     gap: 1rem;
     display: grid;
     grid-template-rows: 20rem auto 20rem auto;
@@ -215,7 +233,7 @@
       background-color: var(--bg-primary);
     }
     .service.active {
-      background-color: var(--bg-dark);
+      background-color: var(--bg-light);
     }
     .services-illustration-1,
     .services-illustration-2 {

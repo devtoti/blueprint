@@ -69,7 +69,7 @@
     text-align: left;
     gap: 0.2rem;
     padding: 0.5rem;
-    background-image: radial-gradient(var(--bleu-100) 1px, transparent 0);
+    background-image: radial-gradient(var(--bg-light) 1px, transparent 0);
     background-size: 10px 10px;
     background-position: -5px -5px;
     transition: transform 0.3s ease-in-out;
@@ -87,8 +87,9 @@
       border: none;
     }
     &:hover {
-      background-color: var(--bg-secondary);
+      background-color: var(--bg-primary);
       cursor: pointer;
+      border: 2px solid var(--border-secondary);
       .bracket {
         position: absolute;
         box-sizing: border-box;
@@ -139,6 +140,7 @@
   }
   .project-card.active {
     background-color: var(--bg-primary);
+    border: 2px solid var(--border-secondary);
     .bracket {
       position: absolute;
       box-sizing: border-box;
@@ -195,7 +197,8 @@
 
   :global(.projects-container:has(.project-card:hover))
     .project-card:not(:hover) {
-    opacity: 0.8;
+    opacity: 0.7;
+    filter: grayscale(0.3);
   }
   @media (min-width: 480px) {
     .project-card:first-of-type {
@@ -245,6 +248,23 @@
     }
     .bracket {
       border-color: var(--border-secondary) !important;
+    }
+  }
+  :global([data-theme="dark"]) {
+    .project-card {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-light);
+      background-image: radial-gradient(
+        var(--blue-radix-200) 1px,
+        transparent 0
+      );
+    }
+    .project-card.active {
+      background-color: var(--white-alpha-10);
+      border-color: var(--border-primary);
+    }
+    .bracket {
+      border-color: var(--border-primary) !important;
     }
   }
 </style>

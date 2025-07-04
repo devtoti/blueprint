@@ -614,7 +614,7 @@
   }
   :global([data-theme="dark"]) {
     nav {
-      background-color: var(--bg-primary);
+      background-color: var(--bg-darksand);
       color: var(--bleu-100);
       box-shadow: var(--shadow-3);
     }

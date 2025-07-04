@@ -143,10 +143,10 @@
   }
   .tag {
     padding: 0.25rem 0.5rem;
-    border: 1px solid var(--border-primary);
+    /* border: 1px solid var(--border-primary); */
     color: var(--text-primary);
     strong {
-      color: var(--text-secondary);
+      color: var(--text-primary);
       padding-right: 0.25rem;
     }
   }
@@ -227,8 +227,10 @@
   }
   :global([data-theme="dark"]) {
     .tag {
-      border: 1px solid var(--border-tertiary);
       color: var(--text-tertiary);
+      strong {
+        color: var(--text-tertiary);
+      }
     }
   }
   .service {

@@ -93,6 +93,9 @@
     children={() => null}
   />
 
+  <!-- {@render sectionDividers(2)} -->
+  <article class="main-content stripped-divider"></article>
+  {@render sectionDividers(2)}
   <section class="main-content work-experience grainy" id="work-experience">
     <WorkExperience />
   </section>
@@ -100,9 +103,10 @@
   <section class="main-content projects grainy" id="projects">
     <Projects />
   </section>
-  {@render sectionDividers(1)}
-  <LandingMidBanner winWidth={WINDOW.width} offset={grid.columnWidth} />
-  {@render sectionDividers(1, true)}
+  {@render sectionDividers(2)}
+  <!-- <LandingMidBanner winWidth={WINDOW.width} offset={grid.columnWidth} /> -->
+  <article class="main-content stripped-divider"></article>
+  {@render sectionDividers(2, true)}
   <section class="main-content skills grainy" id="skills">
     <Skills />
   </section>
@@ -156,6 +160,10 @@
     width: -webkit-fill-available;
   }
 
+  .work-experience {
+    min-height: 60svh;
+    grid-template-rows: 200px 1fr;
+  }
   @media (min-width: 480px) {
     .main-content {
       grid-column: 3 / -3;
@@ -169,7 +177,7 @@
     }
 
     .work-experience {
-      /* background-image: url("/src/lib/images/levels-pattern-cdmx-gray.svg"); */
+      background-image: url("/images/levels-pattern-light.svg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -179,6 +187,14 @@
   @media (min-width: 1029px) {
     .main-content {
       grid-column: 3 / -3;
+    }
+  }
+  :global([data-theme="dark"]) {
+    section {
+      background-color: var(--bg-darksand);
+    }
+    .work-experience {
+      background-image: url("/images/levels-pattern-dark.svg");
     }
   }
 </style>

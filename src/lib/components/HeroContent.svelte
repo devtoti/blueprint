@@ -199,7 +199,7 @@
   }
   :global([data-theme="dark"]) {
     .hero-main {
-      background-color: var(--bg-primary);
+      background-color: var(--bg-darksand);
     }
   }
 </style>

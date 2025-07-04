@@ -90,7 +90,11 @@
               onclick={() => (role.active = !role.active)}
             >
               <p class="arc-body-2">
-                <Text text="overview" section="projects-design" sectionIx={ix} />
+                <Text
+                  text="overview"
+                  section="projects-design"
+                  sectionIx={ix}
+                />
               </p>
               <div class="link-wrapper">
                 {#if role.figmaLink}
@@ -138,7 +142,11 @@
               onclick={() => (role.active = !role.active)}
             >
               <p class="arc-body-2">
-                <Text text="overview" section="projects-frontend" sectionIx={ix} />
+                <Text
+                  text="overview"
+                  section="projects-frontend"
+                  sectionIx={ix}
+                />
               </p>
               <div class="link-wrapper">
                 {#if role.figmaLink}
@@ -431,6 +439,9 @@
     }
   }
   :global([data-theme="dark"]) {
+    .experience-card {
+      border-color: var(--border-primary);
+    }
     .role-overview:hover {
       background-color: var(--bg-secondary);
     }

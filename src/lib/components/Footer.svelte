@@ -369,6 +369,7 @@
     margin: 1rem 0;
     width: 100%;
     grid-column: 1 / -1;
+    border-bottom: 1px solid var(--border-primary);
   }
   @media (min-width: 480px) {
     .footer-container {
@@ -405,13 +406,25 @@
     }
   }
   :global([data-theme="dark"]) {
+    .footer,
+    .footer-container {
+      background-color: var(--bg-darksand);
+    }
     .plan-info {
-      outline: 1px solid var(--border-tertiary);
+      outline: 1px solid var(--border-secondary);
       h4 {
-        color: var(--text-tertiary) !important;
+        color: var(--text-primary) !important;
       }
       p {
         color: var(--text-primary) !important;
+      }
+    }
+    .nav-links a {
+      color: var(--text-primary) !important;
+    }
+    .plan-info.id {
+      h4 {
+        color: var(--bleu-100) !important;
       }
     }
   }
