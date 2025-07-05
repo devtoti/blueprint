@@ -1,14 +1,10 @@
 <script lang="ts">
-  import BoxIllustration from "$lib/images/box-illustration.svelte";
   import HoverMeTop from "$lib/images/hover-container.svelte";
   import HoverMeBottom from "$lib/images/hover-container-bottom.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import { skills } from "$lib/utils/skills";
-  let results: Record<string, number> = {};
-  let activeTag = $state<string>("");
-  let mainTags = skills;
-  let relevantTags = $state<string[]>([]);
   const mappedSkills = () => {
+    const results: Record<string, number> = {};
     skills.forEach((skill) => {
       skill.tags.forEach((tag) => {
         const lowerTag = tag.toLowerCase();
@@ -21,64 +17,103 @@
     });
     return results;
   };
-  const handleHover = (e: MouseEvent) => {
-    const currSkill = (e.target as HTMLElement).innerText.toLowerCase();
-    const isValidSkill =
-      skills.filter((s) => s.name.toLowerCase().includes(currSkill)).length > 0;
-    if (isValidSkill) {
-      const tagList = skills.filter((s) =>
-        s.name.toLowerCase().includes(currSkill)
-      );
+  let results: Record<string, number> = $state(mappedSkills());
+  let activeTag = $state<string>("");
+  let relevantTags = $state<string[]>([]);
+  let activeTimeout = $state<number | null>(null);
+
+  const handleClick = (e: MouseEvent | TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const target = e.currentTarget as HTMLElement;
+    const rawText = target.innerText;
+
+    const currSkill = rawText
+      .replace(/[^\w\s\/]/g, "")
+      .trim()
+      .toLowerCase();
+
+    const matchingSkills = skills.filter((skill) =>
+      skill.tags.some((tag) => tag.toLowerCase() === currSkill)
+    );
+
+    if (matchingSkills.length > 0) {
+      const allTags = matchingSkills.flatMap((skill) => skill.tags);
       activeTag = currSkill;
-      relevantTags = tagList[0].tags;
+      relevantTags = allTags;
     }
-    return [];
+    if (activeTimeout) clearTimeout(activeTimeout);
+    activeTimeout = setTimeout(() => {
+      handleLeave(e);
+    }, 4000);
   };
+
+  const handleSimpleClick = (e: MouseEvent | TouchEvent) => {
+    const target = e.currentTarget as HTMLElement;
+    const rawText = target.innerText;
+
+    const currSkill = rawText
+      .replace(/[^\w\s\/]/g, "")
+      .trim()
+      .toLowerCase();
+
+    const matchingSkills = skills.filter((skill) =>
+      skill.tags.some((tag) => tag.toLowerCase() === currSkill)
+    );
+
+    if (matchingSkills.length > 0) {
+      const allTags = matchingSkills.flatMap((skill) => skill.tags);
+      activeTag = currSkill;
+      relevantTags = allTags;
+    }
+  };
+
   const handleFocus = (e: FocusEvent) => {
     return null;
   };
-  const handleLeave = (e: MouseEvent) => {
+  const handleLeave = (e: MouseEvent | TouchEvent) => {
     activeTag = "";
     relevantTags = [];
   };
   const isMainSkill = (tag: string) =>
-    skills.some((s) => s.name.toLowerCase() == tag);
+    skills.some((s) => s.name.toLowerCase() === tag.toLowerCase());
 </script>
 
-{#snippet item(title: string, description: string)}
-  <div class="service">
-    <h5 class="arc-h5">{title}</h5>
-    <p class="arc-body-2">{description}</p>
-  </div>
-{/snippet}
 {#snippet skill(type: { name: string })}
+  {@const isRelevantValue = relevantTags.some(
+    (tag) => tag.toLowerCase() === type.name.toLowerCase()
+  )}
+  {@const isActiveValue = activeTag === type.name.toLowerCase()}
+  {@const isMainValue = skills.some(
+    (s) => s.name.toLowerCase() === type.name.toLowerCase()
+  )}
+
   <button
     class="skill"
-    onmouseover={handleHover}
-    onclick={handleHover}
+    onmouseenter={handleClick}
+    ontouchstart={handleSimpleClick}
+    onmousedown={handleSimpleClick}
+    onclick={handleSimpleClick}
     onfocus={handleFocus}
     onmouseleave={handleLeave}
-    class:isRelevant={relevantTags.filter(
-      (tag) => tag.toLowerCase() === type.name.toLowerCase()
-    ).length > 0}
-    class:isActive={activeTag === type.name.toLowerCase()}
-    class:isMain={skills.some((s) => s.name.toLowerCase() == type.name)}
+    ontouchend={handleLeave}
+    class:isRelevant={isRelevantValue}
+    class:isActive={isActiveValue}
+    class:isMain={isMainValue}
   >
     <h5 class="arc-h5 skill-name">{type.name}</h5>
-    {#if isMainSkill(type.name)}
+    {#if isMainValue}
       <span></span><span></span><span></span><span></span>
     {/if}
   </button>
 {/snippet}
-<Heading
-  page="skills"
-  isCentered
-/>
+<Heading page="skills" isCentered />
 <article class="skills-container">
   <div class="hover-me-top-container">
     <HoverMeTop />
   </div>
-  {#each Object.keys(mappedSkills()) as type}
+  {#each Object.keys(results) as type}
     {@render skill({ name: type })}
   {/each}
   <div class="hover-me-bottom-container">
@@ -124,6 +159,12 @@
     padding: 0.5rem 1rem;
     padding: 0.25rem 0.5rem;
     transition: background-color 0.5s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
     &:hover {
       background-color: var(--sand-radix-700);
     }
@@ -213,7 +254,6 @@
   :global([data-theme="dark"]) {
     .skill {
       background-color: var(--bg-secondary);
-      /* border: 1px solid var(--border-secondary); */
       &:hover {
         background-color: var(--sand-radix-500);
       }

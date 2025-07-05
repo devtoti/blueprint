@@ -18,23 +18,16 @@
       .map((service, index) => ({ ...service, active: index === 0 }))
   );
   function handleActive(item: any, type: string) {
-    const isMobile = window.innerWidth <= 720;
     if (type === "design") {
       activeDesign = item;
       uxServices.forEach((service) => {
         service.active = service.title.en === item.title.en;
       });
-      if (isMobile) {
-        scrollToElement("services-illustration-1");
-      }
     } else {
       activeFrontend = item;
       frontendServices.forEach((service) => {
         service.active = service.title.en === item.title.en;
       });
-      if (isMobile) {
-        scrollToElement("services-illustration-2");
-      }
     }
   }
   let activeDesign = $derived(uxServices[0]);
@@ -45,9 +38,24 @@
     )
   );
 
+  function handleClick(service: any, type: string) {
+    const isMobile = window.innerWidth <= 720;
+    handleActive(service, type);
+    if (isMobile && type === "design") {
+      scrollToElement("services-illustration-1");
+    } else if (isMobile && type === "development") {
+      scrollToElement("services-illustration-2");
+    }
+  }
+  function handleHover(service: any, type: string) {
+    const isMobile = window.innerWidth <= 720;
+    if (isMobile) return;
+    handleActive(service, type);
+  }
+
   function scrollToElement(el: string) {
-    const element = document.getElementById(el);
-    const offset = 64;
+    const element = document.getElementsByClassName(el)[0];
+    const offset = 80;
     const elementPosition = element?.getBoundingClientRect().top ?? 0;
     const offsetPosition = elementPosition + window.pageYOffset - offset;
     window.scrollTo({
@@ -61,8 +69,8 @@
   <button
     class="service"
     class:active={service.active}
-    onmouseenter={(e) => handleActive(service, type)}
-    onclick={() => handleActive(service, type)}
+    onmouseenter={(e) => handleHover(service, type)}
+    onclick={() => handleClick(service, type)}
   >
     <h5 class="arc-h4">
       <Text section="services-list" text="title" sectionIx={ix} />
