@@ -1,6 +1,7 @@
 <script lang="ts">
   import Heading from "../components/Heading.svelte";
   import ExperienceCard from "../components/ExperienceCard.svelte";
+  import { dictionary } from "../dictionary";
 </script>
 
 <Heading page="work-experience" />
@@ -10,7 +11,7 @@
   data: {
     experience: {
       role: string;
-      description: string;
+      description: string[];
     };
     design: boolean;
   }
@@ -62,14 +63,40 @@
   {@render card(ExperienceCard, {
     experience: {
       role: "Frontend Developer",
-      description: "React / Svelte / Node / CSS",
+      description: [
+        "React",
+        "Nextjs",
+        "Svelte",
+        "SvelteKit",
+        "Tailwind",
+        "MUI",
+        "Chakra UI",
+        "Shadcn",
+        "gsap",
+        "nodejs",
+        "Responsive Design",
+        "Typescript",
+        "Sass",
+      ],
     },
     design: false,
   })}
   {@render card(ExperienceCard, {
     experience: {
       role: "UI/UX Designer",
-      description: "Figma / Illustrator / Photoshop / CAD",
+      description: [
+        "UCD",
+        "UX Research",
+        "Wireframing",
+        "Surveys",
+        "User Testing",
+        "User Flows",
+        "a11y",
+        "Prototyping",
+        "Figma",
+        "Illustrations",
+        "Adobe Suite",
+      ],
     },
     design: true,
   })}

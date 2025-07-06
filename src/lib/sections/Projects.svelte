@@ -1,14 +1,19 @@
 <script lang="ts">
-  import Heading from "../components/Heading.svelte";
+  import "../../tokens.css";
   import ProjectCard from "../components/ProjectCard.svelte";
   import ActiveProject from "../components/ActiveProject.svelte";
+  import Text from "../components/Text.svelte";
   import { dictionary } from "../dictionary";
-  const projectData = dictionary["highlighted-projects"].slice(0, -1).toSorted((a,b) => a.id - b.id);
+  const projectData = dictionary["highlighted-projects"]
+    .slice(0, -1)
+    .toSorted((a, b) => a.id - b.id);
   let activeProject = $state(projectData[0]);
 </script>
 
 <article class="projects-banner">
-  <h3 class="arc-h4 color-invert">Proyectos Destacados</h3>
+  <h3 class="arc-h4 color-invert">
+    <Text section="projects-banner" text="title" />
+  </h3>
 </article>
 <div class="main-content">
   <div class="projects-container">
@@ -44,7 +49,7 @@
     width: 100%;
     text-align: center;
     height: 2.5rem;
-    background-color: var(--bg-blueprint);
+    background: linear-gradient(to right, var(--bleu-300), var(--bleu-500));
     h3 {
       position: absolute;
       inset: 0;

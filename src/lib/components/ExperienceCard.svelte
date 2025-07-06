@@ -10,7 +10,6 @@
   import FigmaIcon from "$lib/icons/figma.svelte";
   import WallsThickCol from "$lib/images/walls-thick-col.svelte";
   import SolarLinkMinimalistic2Bold from "~icons/solar/link-minimalistic-2-bold";
-  import SolarCloseCircleBoldDuotone from "~icons/solar/close-circle-bold-duotone";
   let isActive = $state(false);
   const closeOverview = (card: Card[]) => {
     card.forEach((role: any) => {
@@ -45,7 +44,11 @@
       <span></span><span></span><span></span><span></span>
     </div>
     <h2 class="arc-h4">{experience.role}</h2>
-    <p class="arc-body-1">{experience.description}</p>
+    <div class="tag-container arc-body-2">
+      {#each experience.description as description}
+        <span class="tag">{description}</span>
+      {/each}
+    </div>
   </button>
 {:else}
   <div class="experience-card active" class:dev={!design} class:design>
@@ -69,7 +72,11 @@
     </button>
 
     <h2 class="arc-h3">{experience.role}</h2>
-    <p>{experience.description}</p>
+    <div class="tag-container arc-body-2">
+      {#each experience.description as description}
+        <span class="tag">{description}</span>
+      {/each}
+    </div>
     <div class="experience-list">
       {#if design}
         {#each designRoles as role, ix}
@@ -200,7 +207,7 @@
 {/if}
 
 <style>
-  .experience-card {
+  .experience-card:not(.active) {
     cursor: pointer;
   }
   .experience-card:hover {
@@ -333,7 +340,7 @@
       font-weight: 600;
       padding-left: 0.5rem;
       width: fit-content;
-      color: var(--text-tertiary);
+      color: var(--text-primary);
     }
     &.active {
       background-color: var(--bg-light-hover);
@@ -431,6 +438,29 @@
       background-color: var(--bg-light);
     }
   }
+  .tag-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    .tag {
+      background-color: var(--bg-light);
+      padding: 0.1rem 0.5rem;
+      border-radius: 0.25rem;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+    }
+  }
+  .experience-card.active .tag-container {
+    .tag {
+      background-color: var(--bg-primary);
+      padding: 0.1rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 12px;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+    }
+  }
   @media (min-width: 480px) {
     .experience-card,
     .experience-card.active {
@@ -458,7 +488,7 @@
     .experience-list-item {
       h4,
       p {
-        color: var(--text-secondary) !important;
+        color: var(--text-primary) !important;
       }
     }
     .experience-list-item.active {

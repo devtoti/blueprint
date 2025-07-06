@@ -148,6 +148,16 @@
 <HorizontalAxes width={innerWidth} handleClick={showHideAxesOnClick} />
 
 <style>
+  footer {
+    background-image: linear-gradient(
+        to right,
+        var(--gray-alpha-10) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, var(--gray-alpha-10) 1px, transparent 1px);
+    background-size: 16px 16px;
+    background-position: -5px -5px;
+  }
   h4 {
     color: var(--text-primary) !important;
   }

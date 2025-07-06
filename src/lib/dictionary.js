@@ -173,19 +173,9 @@ export const dictionary = {
             es: "Este es un listado de las tecnologías y herramientas que utilizo constantemente para llevar a cabo diferentes proyectos de desarrollo frontend. Pasa el cursor sobre cada habilidad para visualizar cómo estas tecnologías se relacionan entre sí.",
         },
     },
-    ["projects-frontend"]: [{
-        company: "Upwork",
-        date: "2024 - now",
-        active: false,
-        figmaLink: null,
-        overview: {
-            en: "I offer a wide range of design and technical consulting services on Upwork, a platform for finding and hiring freelancers. I create prototypes, landing pages and web applications for clients around the world.",
-            es: "Realizo proyectos de desarrollo web utilizando frameworks como React, Next y Tailwind CSS. También llevo a cabo rediseño de landing pages para mejorar la conversión de leads y mejora de la experiencia de usuario.",
-        },
-        url: "https://www.upwork.com/freelancers/~012c76ce4bf87c7147?mp_source=share",
-    },
-    {
-        company: "Get In The Loop",
+    ["projects-frontend"]: [
+        {
+            company: "Get In The Loop",
         date: "2024 - 2025",
         active: false,
         figmaLink: null,
@@ -195,6 +185,17 @@ export const dictionary = {
         },
         url: "https://getintheloop.ca",
     },
+    {
+    company: "Upwork",
+    date: "2024 - now",
+    active: false,
+    figmaLink: null,
+    overview: {
+        en: "I offer a wide range of design and technical consulting services on Upwork, a platform for finding and hiring freelancers. I create prototypes, landing pages and web applications for clients around the world.",
+        es: "Realizo proyectos de desarrollo web utilizando frameworks como React, Next y Tailwind CSS. También llevo a cabo rediseño de landing pages para mejorar la conversión de leads y mejora de la experiencia de usuario.",
+    },
+    url: "https://www.upwork.com/freelancers/~012c76ce4bf87c7147?mp_source=share",
+},
     {
         company: "LUSI Labs",
         date: "2022 - 2022",
@@ -208,7 +209,7 @@ export const dictionary = {
     },
     {
         company: "Totaldevs",
-        date: "2021 - 2022",
+        date: "2021 - 2023",
         active: false,
         figmaLink: null,
         url: null,
@@ -218,9 +219,26 @@ export const dictionary = {
         },
     },
     ],
-    ["projects-design"]: [{
+    ["projects-banner"]: {
+        title: {
+            en: "Highlighted Projects",
+            es: "Proyectos Destacados",
+        },
+    },
+    ["projects-design"]: [
+        {
+            company: "Send It Digital Inc",
+            date: "2025 - now",
+            active: false,
+            figmaLink: null,
+            url: "https://www.send-it.digital/",
+            overview: {
+                en: "I design and run A/B testing on landing pages for different social media marketing campaigns for lead generation, mostly using Figma, JS, Unbounce, Clickflare, and Ringba.",
+                es: "Diseño y ejecución de pruebas A/B en landing pages para diferentes campañas de marketing en redes socialespara la generación de leads, principalmente utilizando Figma, JS, Unbounce, Clickflare, y Ringba.",
+            }
+        }, {
         company: "Draftbit",
-        date: "2024-2025",
+        date: "2024 - 2025",
         active: false,
         figmaLink: null,
         url: "https://draftbit.com/",
@@ -242,7 +260,7 @@ export const dictionary = {
     },
     {
         company: "Totaldevs",
-        date: "2021 - 2022",
+        date: "2021 - 2023",
         active: false,
         figmaLink: null,
         url: null,
@@ -251,17 +269,17 @@ export const dictionary = {
             es: "Asesoré a startups para la optimización del rendimiento de las landing pages mediante la metodología AIDA y la refinación de los conversion funnels para mejorar las métricas clave como visitas a la página, CVRs, CTRs y DTRs.",
         },
     },
-    {
-        company: "La Loma CDMX",
-        date: "2020 - 2022",
-        active: false,
-        figmaLink: null,
-        url: null,
-        overview: {
-            en: "I developed the Loma Residencial website and managed the company's social media, a real estate developer in the Mexico City Club de Golf, Mexico City.",
-            es: "Desarrollé la página web de Loma Residencial y administré las redes sociales de la empresa, una empresa desarrolladora de proyectos de vivienda en el Club de Golf México, Ciudad de México.",
-        }
-    },
+    // {
+    //     company: "La Loma CDMX",
+    //     date: "2020 - 2022",
+    //     active: false,
+    //     figmaLink: null,
+    //     url: null,
+    //     overview: {
+    //         en: "I developed the Loma Residencial website and managed the company's social media, a real estate developer in the Mexico City Club de Golf, Mexico City.",
+    //         es: "Desarrollé la página web de Loma Residencial y administré las redes sociales de la empresa, una empresa desarrolladora de proyectos de vivienda en el Club de Golf México, Ciudad de México.",
+    //     }
+    // },
     ],
     ["highlighted-projects"]: [
        
@@ -313,7 +331,7 @@ export const dictionary = {
             id: 2,
             number: "02",
             title: "Junkhaul Moving Services",
-            url: "https://365junkhaul.com",
+            url: "https://365junkhaul.com/booking",
             figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
             image: "365junkhaul-preview.png",
             description: {

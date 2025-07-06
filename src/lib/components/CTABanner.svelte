@@ -20,28 +20,39 @@
     ) as HTMLElement;
     if (!rightHand || !leftHand) return;
 
+    let ticking = false;
+
     const handleScroll = () => {
-      const banner = document.querySelector(".cta-banner") as HTMLElement;
-      if (!banner) return;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const banner = document.querySelector(".cta-banner") as HTMLElement;
+          if (!banner) return;
 
-      const rect = banner.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const elementCenter = rect.top + rect.height / 2;
-      const distanceFromCenter = Math.abs(viewportHeight / 2 - elementCenter);
-      const maxDistance = viewportHeight / 2;
+          const rect = banner.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+          const elementCenter = rect.top + rect.height / 2;
+          const distanceFromCenter = Math.abs(
+            viewportHeight / 2 - elementCenter
+          );
+          const maxDistance = viewportHeight / 2;
 
-      const ratio = Math.max(0, 1 - distanceFromCenter / maxDistance);
-      const transition = "transform 0.5s ease-out";
-      rightHand.style.transition = transition;
-      leftHand.style.transition = transition;
-      const rightPosition = 25 - 25 * ratio;
-      const leftPosition = -25 + 28 * ratio;
+          const ratio = Math.max(0, 1 - distanceFromCenter / maxDistance);
+          const transition = "transform 0.5s ease-out";
+          rightHand.style.transition = transition;
+          leftHand.style.transition = transition;
+          const rightPosition = 25 - 25 * ratio;
+          const leftPosition = -25 + 28 * ratio;
 
-      rightHand.style.transform = `translateX(${rightPosition}%)`;
-      leftHand.style.transform = `translateX(${leftPosition}%)`;
+          rightHand.style.transform = `translateX(${rightPosition}%)`;
+          leftHand.style.transform = `translateX(${leftPosition}%)`;
+
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     return () => {
