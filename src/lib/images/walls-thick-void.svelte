@@ -17,6 +17,7 @@
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
+  role="presentation"
   style="transform: rotate({rotate}deg); transform-origin: center;"
 >
   <g opacity="0.2">

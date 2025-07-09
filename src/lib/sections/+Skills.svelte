@@ -102,7 +102,7 @@
     class:isActive={isActiveValue}
     class:isMain={isMainValue}
   >
-    <h5 class="arc-h5 skill-name">{type.name}</h5>
+    <p class="arc-h5 skill-name">{type.name}</p>
     {#if isMainValue}
       <span></span><span></span><span></span><span></span>
     {/if}
@@ -176,17 +176,17 @@
     background-color: var(--bleu-100);
   }
   .skill.isActive {
-    background-color: var(--bleu-300);
+    background-color: var(--bleu-500);
   }
   .skill.isMain.isActive {
-    h5 {
+    p {
       color: var(--white) !important;
+      font-weight: 600;
     }
   }
   .skill.isMain {
-    span {
-      position: absolute;
-    }
+    width: fit-content;
+    height: auto;
     span:first-of-type {
       position: absolute;
       inset: 0 -5%;
@@ -265,7 +265,7 @@
       background-color: var(--bleu-300);
     }
     .skill.isMain.isActive {
-      h5 {
+      p {
         color: var(--white) !important;
       }
     }

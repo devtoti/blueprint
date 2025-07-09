@@ -124,9 +124,10 @@
 
   /* Semantic - Text */
   --text-primary: var(--bleu-700);
-  --text-secondary: var(--bleu-400);
-  --text-tertiary: var(--bleu-300);
+  --text-secondary: var(--bleu-500);
+  --text-tertiary: var(--bleu-400);
   --text-light: var(--bleu-50);
+  --text-dark: var(--bleu-800);
   --text-brand: var(--brand-light);
   --text-accent: var(--bleu-700);
 
@@ -138,9 +139,9 @@
 
   /* Semantic - Borders */
   --border-brand: var(--brand-primary);
-  --border-primary: var(--bleu-600);
-  --border-secondary: var(--bleu-400);
-  --border-tertiary: var(--bleu-300);
+  --border-primary: var(--bleu-700);
+  --border-secondary: var(--bleu-500);
+  --border-tertiary: var(--bleu-400);
   --border-light: var(--bleu-100);
   --border-dark: var(--bleu-600);
 
@@ -154,9 +155,9 @@
 
   /* Semantic - Icons */
   --icon-brand: var(--brand-light);
-  --icon-primary: var(--bleu-600);
-  --icon-secondary: var(--bleu-400);
-  --icon-tertiary: var(--bleu-100);
+  --icon-primary: var(--bleu-700);
+  --icon-secondary: var(--bleu-500);
+  --icon-tertiary: var(--bleu-400);
   --icon-light: #ffffff;
   --icon-dark: var(--bleu-700);
 
@@ -211,7 +212,7 @@
   /* Primitives - Sand Radix */
   --sand-radix-100: #111110;
   --sand-radix-200: #191918;
-  --sand-radix-300: #222221;
+ --sand-radix-300: #222221;
   --sand-radix-400: #2a2a28;
   --sand-radix-500: #31312e;
   --sand-radix-600: #3b3a37;
@@ -254,6 +255,7 @@
   --text-secondary: var(--bleu-500);
   --text-tertiary: var(--blue-radix-700);
   --text-light: var(--blue-radix-600);
+  --text-dark: var(--bleu-300);
   --text-brand: var(--brand-light);
   --text-accent: var(--bleu-300);
 

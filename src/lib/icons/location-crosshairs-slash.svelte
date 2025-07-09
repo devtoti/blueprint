@@ -8,6 +8,7 @@
   viewBox="0 0 21 17"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
+  role="presentation"
 >
   <g clip-path="url(#clip0_312_3403)">
     <path

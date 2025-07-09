@@ -5,6 +5,7 @@
 <svg
   viewBox="0 0 32 16"
   fill="none"
+  role="presentation"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   style="transform: rotate({rotate}deg); transform-origin: center; min-width: 32px; min-height: 16px;"

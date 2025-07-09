@@ -83,104 +83,109 @@
       <li>
         <a href="/about" class:active={currentPath === "/about"}>About</a>
       </li>
-      <div class="settings-container desktop-only">
-        <button
-          class:active={isSettingsOpen}
-          class="settings-icon"
-          onclick={() => (isSettingsOpen = !isSettingsOpen)}
-        >
-          <SolarSettingsLinear width={20} height={20} />
-        </button>
-        <div class="settings grainy" class:open={isSettingsOpen}>
-          <table class="settings-table">
-            <tbody>
-              <tr>
-                <th class="arc-body-3">LANG</th>
-                <th class="arc-body-3">THEME</th>
-                <th class="arc-body-3">GUIDES</th>
-              </tr>
-              <tr>
-                <td>
-                  <select
-                    id="lang"
-                    name="lang"
-                    bind:value={$lang}
-                    class="lang-select"
-                  >
-                    <option value="en">EN</option>
-                    <option value="es">ES</option>
-                  </select>
-                </td>
-                <td>
-                  <button
-                    class="theme-toggle"
-                    type="button"
-                    onclick={toggleTheme}
-                    aria-label="Toggle theme"
-                  >
-                    {#if isDarkMode}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="5" />
-                        <line x1="12" y1="1" x2="12" y2="3" />
-                        <line x1="12" y1="21" x2="12" y2="23" />
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                        <line x1="1" y1="12" x2="3" y2="12" />
-                        <line x1="21" y1="12" x2="23" y2="12" />
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                      </svg>
-                    {:else}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path
-                          d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-                        />
-                      </svg>
-                    {/if}
-                  </button>
-                </td>
-                <td>
-                  <button
-                    class:active={hasActiveAxes}
-                    class="axes-icon"
-                    onclick={() => {
-                      hasActiveAxes = !hasActiveAxes;
-                      showHideAxesOnClick();
-                    }}
-                  >
-                    {#if hasActiveAxes}
-                      <AxesActive width={20} height={20} />
-                    {:else}
-                      <AxesInactive width={20} height={20} />
-                    {/if}
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </ul>
+    <div class="settings-container desktop-only">
+      <button
+        class:active={isSettingsOpen}
+        class="settings-icon"
+        aria-label="Open page settings"
+        onclick={() => (isSettingsOpen = !isSettingsOpen)}
+      >
+        <SolarSettingsLinear width={20} height={20} />
+      </button>
+      <div class="settings grainy" class:open={isSettingsOpen}>
+        <table class="settings-table" role="presentation">
+          <tbody>
+            <tr>
+              <th class="arc-body-3">LANG</th>
+              <th class="arc-body-3">THEME</th>
+              <th class="arc-body-3">GUIDES</th>
+            </tr>
+            <tr>
+              <td>
+                <select
+                  id="lang"
+                  name="lang"
+                  bind:value={$lang}
+                  class="lang-select"
+                  aria-label="Language"
+                >
+                  <option value="en">EN</option>
+                  <option value="es">ES</option>
+                </select>
+              </td>
+              <td>
+                <button
+                  class="theme-toggle"
+                  type="button"
+                  onclick={toggleTheme}
+                  aria-label="Toggle theme"
+                >
+                  {#if isDarkMode}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      role="presentation"
+                    >
+                      <circle cx="12" cy="12" r="5" />
+                      <line x1="12" y1="1" x2="12" y2="3" />
+                      <line x1="12" y1="21" x2="12" y2="23" />
+                      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                      <line x1="1" y1="12" x2="3" y2="12" />
+                      <line x1="21" y1="12" x2="23" y2="12" />
+                      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                  {:else}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      role="presentation"
+                    >
+                      <path
+                        d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                      />
+                    </svg>
+                  {/if}
+                </button>
+              </td>
+              <td>
+                <button
+                  class:active={hasActiveAxes}
+                  class="axes-icon"
+                  aria-label="Toggle page axes/guides"
+                  onclick={() => {
+                    hasActiveAxes = !hasActiveAxes;
+                    showHideAxesOnClick();
+                  }}
+                >
+                  {#if hasActiveAxes}
+                    <AxesActive width={20} height={20} />
+                  {:else}
+                    <AxesInactive width={20} height={20} />
+                  {/if}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <!-- MOBILE -->
     <section class="mobile-only mobile-nav">
       <div class="mobile-nav-icons">
@@ -194,23 +199,24 @@
           </button>
         {/if}
       </div>
-      <button
+      <div
         class:isHidden={!showNav}
         class="cta-button"
         style:opacity={showNav ? "1" : "0"}
       >
         <Button href="/contact" text="contact" primary md />
-      </button>
+      </div>
       <div class="settings-container mobile-only">
         <button
           class:active={isSettingsOpen}
           class="settings-icon"
+          aria-label="Open page settings"
           onclick={() => (isSettingsOpen = !isSettingsOpen)}
         >
           <SolarSettingsLinear width={20} height={20} />
         </button>
         <div class="settings grainy" class:open={isSettingsOpen}>
-          <table class="settings-table">
+          <table class="settings-table" role="presentation">
             <tbody>
               <tr>
                 <th class="arc-body-3">LANG</th>
@@ -224,6 +230,7 @@
                     name="lang"
                     bind:value={$lang}
                     class="lang-select"
+                    aria-label="Language"
                   >
                     <option value="en">EN</option>
                     <option value="es">ES</option>
@@ -247,6 +254,7 @@
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        role="presentation"
                       >
                         <circle cx="12" cy="12" r="5" />
                         <line x1="12" y1="1" x2="12" y2="3" />
@@ -269,6 +277,7 @@
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        role="presentation"
                       >
                         <path
                           d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
@@ -281,6 +290,7 @@
                   <button
                     class:active={hasActiveAxes}
                     class="axes-icon"
+                    aria-label="Toggle page axes/guides"
                     onclick={() => {
                       hasActiveAxes = !hasActiveAxes;
                       showHideAxesOnClick();
@@ -317,33 +327,33 @@
       children={() => null}
       invert
     />
-    <ul class="active-nav-links links-container">
-      <li>
+    <ul class="active-nav-links links-container" role="menu">
+      <li role="menuitem">
         <a href="/" class="arc-h4" onclick={() => (isNavOpen = false)}>
           <Text section="navigation" text="home" />
         </a>
       </li>
-      <li>
+      <li role="menuitem">
         <a href="/dev" class="arc-h4" onclick={() => (isNavOpen = false)}>
           <Text section="navigation" text="development" />
         </a>
       </li>
-      <li>
+      <li role="menuitem">
         <a href="/design" class="arc-h4" onclick={() => (isNavOpen = false)}>
           <Text section="navigation" text="design" />
         </a>
       </li>
-      <li>
+      <li role="menuitem">
         <a href="/concept" class="arc-h4" onclick={() => (isNavOpen = false)}>
           <Text section="navigation" text="concept" />
         </a>
       </li>
-      <li>
+      <li role="menuitem">
         <a href="/contact" class="arc-h4" onclick={() => (isNavOpen = false)}>
           <Text section="navigation" text="contact" />
         </a>
       </li>
-      <li>
+      <li role="menuitem">
         <a href="/about" class="arc-h4" onclick={() => (isNavOpen = false)}>
           <Text section="navigation" text="about" />
         </a>
@@ -367,7 +377,7 @@
     <article class="main-content stripped-divider"></article>
   </article>
 </nav>
-<div class="black-overlay" class:isNavOpen style="height: {bodyHeight}px"></div>
+<div class="black-overlay" class:isNavOpen style="height: 100svh"></div>
 
 <style>
   nav {
@@ -429,6 +439,9 @@
   .cta-button {
     width: 100%;
     grid-column: 3 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   button.settings-icon {
     color: var(--icon-primary);

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount, getContext } from "svelte";
   import { dictionary } from "$lib/dictionary";
   let {
     buttonOneText = null,
@@ -38,9 +37,9 @@
       <h1 class="text-title barlow-extrabold arc-h1" class:isHome>
         <Text section={currentPage} text="heading" />
       </h1>
-      <h4 class="text-caption caption">
+      <h2 class="text-caption caption arc-h4">
         <Text section={currentPage} text="description" />
-      </h4>
+      </h2>
     </div>
     <div class="subheader">
       <p class="text-subheader arc-body-1">
@@ -105,6 +104,9 @@
       font-size: clamp(2.5rem, 4vw, 4rem) !important;
       padding-bottom: 0;
     }
+  }
+  .text-caption {
+    color: var(--text-dark);
   }
   .hero-img {
     grid-column: 2 / -2;

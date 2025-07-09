@@ -63,12 +63,12 @@
 
 <article class="cta-banner">
   <div class="cta-banner-info">
-    <h1 class="arc-h0 cta-text color-invert">
+    <h2 class="arc-h0 cta-text color-invert">
       <Text section="cta-banner" text="title" />
-    </h1>
-    <h5 class="arc-body-0 color-invert">
+    </h2>
+    <h3 class="arc-body-0 color-invert">
       <Text section="cta-banner" text="description" />
-    </h5>
+    </h3>
     <div class="button-wrapper">
       <Button
         text={dictionary["cta-banner"].primaryButton[lan]}
@@ -87,10 +87,10 @@
     </div>
   </div>
   <div class="illustrations-container">
-    <div class="left-hand container" class:active role="button" tabindex="0">
+    <div class="left-hand container" class:active>
       <LeftHand isDark={isDarkMode} />
     </div>
-    <div class="right-hand container" class:active role="button" tabindex="0">
+    <div class="right-hand container" class:active>
       <RightHand isDark={isDarkMode} />
     </div>
   </div>
@@ -125,7 +125,7 @@
       margin-bottom: 0 !important;
       padding-bottom: 0 !important;
     }
-    h5 {
+    h3 {
       padding-bottom: 0.5rem;
     }
   }

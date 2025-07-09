@@ -18,13 +18,22 @@
       });
     }
   }
+
+  function handleKeydown(event: KeyboardEvent) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleClick();
+    }
+  }
 </script>
 
 <svelte:window bind:innerWidth />
-<button
+<div
   class="project-card"
   onclick={handleClick}
+  onkeydown={handleKeydown}
   tabindex="0"
+  role="button"
   class:active={isActive}
 >
   <h3 class="project-number arc-h3">{project.number}</h3>
@@ -39,12 +48,18 @@
   <div class="project-card-icons">
     {#if project.url || project.figmaUrl}
       <div class="icons-wrapper">
-        <a href={project.url} target="_blank">
+        <button
+          onclick={() => window.open(project.url, "_blank")}
+          aria-label="Visit the project's website"
+        >
           <IconWrapper Icon={SolarLinkMinimalistic2Bold} />
-        </a>
-        <a href={project.figmaUrl} target="_blank">
+        </button>
+        <button
+          onclick={() => window.open(project.figmaUrl, "_blank")}
+          aria-label="Visit the project's Figma file"
+        >
           <IconWrapper Icon={FigmaIcon} />
-        </a>
+        </button>
       </div>
     {/if}
   </div>
@@ -52,7 +67,7 @@
   <span class="bracket top-right"></span>
   <span class="bracket bottom-left"></span>
   <span class="bracket bottom-right"></span>
-</button>
+</div>
 
 <style>
   .project-card {
@@ -72,7 +87,6 @@
     background-image: radial-gradient(var(--bg-light) 1px, transparent 0);
     background-size: 10px 10px;
     background-position: -5px -5px;
-    transition: transform 0.3s ease-in-out;
     .project-title {
       color: var(--text-secondary);
     }
@@ -89,7 +103,8 @@
     &:hover {
       background-color: var(--bg-primary);
       cursor: pointer;
-      border: 2px solid var(--border-secondary);
+      outline: 1px solid var(--border-secondary);
+      box-shadow: var(--shadow-3);
       .bracket {
         position: absolute;
         box-sizing: border-box;
@@ -101,42 +116,34 @@
         right: 0;
         border-top: 1px solid var(--border-secondary);
         border-right: 1px solid var(--border-secondary);
-        transition: all 0.6s ease-in-out;
       }
       .bracket.top-left {
         top: 0;
         left: 0;
         border-top: 1px solid var(--border-secondary);
         border-left: 1px solid var(--border-secondary);
-        transition: all 0.6s ease-in-out;
       }
       .bracket.bottom-left {
         bottom: 0;
         left: 0;
         border-bottom: 1px solid var(--border-secondary);
         border-left: 1px solid var(--border-secondary);
-        transition: all 0.6s ease-in-out;
       }
       .bracket.bottom-right {
         bottom: 0;
         right: 0;
         border-bottom: 1px solid var(--border-secondary);
         border-right: 1px solid var(--border-secondary);
-        transition: all 0.6s ease-in-out;
       }
     }
   }
   .icons-wrapper {
     display: flex;
     gap: 0.5rem;
-    a {
+    button {
       margin: 0;
       padding: 0;
     }
-  }
-  .project-card,
-  .project-card.active {
-    transition: all 0.6s ease-in-out;
   }
   .project-card.active {
     background-color: var(--bg-primary);
@@ -194,12 +201,12 @@
       color: var(--text-primary);
     }
   }
-
+  /* 
   :global(.projects-container:has(.project-card:hover))
     .project-card:not(:hover) {
     opacity: 0.7;
     filter: grayscale(0.3);
-  }
+  } */
   @media (min-width: 480px) {
     .project-card:first-of-type {
       grid-column: 1 / span 3;

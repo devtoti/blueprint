@@ -34,6 +34,7 @@
     class="experience-card"
     class:dev={!design}
     onclick={() => (isActive = !isActive)}
+    aria-label="Open and explore my career path"
   >
     <div class="experience-card-icon">
       {#if experience.role === "Frontend Developer"}
@@ -63,6 +64,7 @@
         height="16"
         viewBox="0 0 24 24"
         aria-label="Close"
+        role="presentation"
       >
         <path
           fill="currentColor"
@@ -84,6 +86,7 @@
             class="experience-list-item left"
             onclick={() => (role.active = !role.active)}
             class:active={role.active}
+            aria-label="Open my design experience card with my career path"
           >
             <h4 class="arc-h5">{role.company}</h4>
             <p class="arc-txt-li">{role.date}</p>
@@ -95,6 +98,7 @@
             <button
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
+              aria-label="Close my design experience card overview"
             >
               <p class="arc-body-2">
                 <Text
@@ -109,6 +113,10 @@
                     class="experience-card-icon"
                     href={role.figmaLink}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={"Visit the official Figma file for " +
+                      role.company +
+                      " (opens in new tab)"}
                   >
                     <FigmaIcon />
                     <span></span><span></span><span></span><span></span>
@@ -119,6 +127,10 @@
                     class="experience-card-icon"
                     href={role.url}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={"Visit the official website for " +
+                      role.company +
+                      " (opens in new tab)"}
                   >
                     <SolarLinkMinimalistic2Bold />
                     <span></span><span></span><span></span><span></span>
@@ -134,6 +146,7 @@
             class="experience-list-item"
             onclick={() => (role.active = !role.active)}
             class:active={role.active}
+            aria-label="Open my frontend developer experience card with my career path"
           >
             <span>
               <h4 class="arc-h5">{role.company}</h4>
@@ -147,6 +160,7 @@
             <button
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
+              aria-label="Close my frontend developer experience card overview"
             >
               <p class="arc-body-2">
                 <Text
@@ -161,6 +175,10 @@
                     class="experience-card-icon"
                     href={role.figmaLink}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={"Visit the official Figma file for " +
+                      role.company +
+                      " (opens in new tab)"}
                   >
                     <FigmaIcon />
                     <span></span><span></span><span></span><span></span>
@@ -171,6 +189,10 @@
                     class="experience-card-icon"
                     href={role.url}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={"Visit the official website for " +
+                      role.company +
+                      " (opens in new tab)"}
                   >
                     <SolarLinkMinimalistic2Bold />
                     <span></span><span></span><span></span><span></span>
@@ -188,6 +210,8 @@
           class="experience-card-icon"
           href="https://github.com/devtoti"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit my GitHub profile @devtoti (opens in new tab)"
         >
           <GitHubIcon />
           <span></span><span></span><span></span><span></span>
@@ -197,6 +221,8 @@
           class="experience-card-icon"
           href="https://dribbble.com/totisketches"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit my Dribbble portfolio @totisketches (opens in new tab)"
         >
           <DribbbleIcon />
           <span></span><span></span><span></span><span></span>

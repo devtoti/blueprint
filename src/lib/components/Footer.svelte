@@ -22,19 +22,36 @@
     <p class="arc-body-2">
       <Text section="footer-legend" text="description" />
     </p>
-    <div class="icons">
-      <a href="https://github.com/devtoti" target="_blank">
+    <div class="icons" role="group" aria-label="Social media links">
+      <a
+        href="https://github.com/devtoti"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit my GitHub profile @devtoti (opens in new tab)"
+      >
         <Github />
       </a>
-      <a href="https://www.linkedin.com/in/devtoti" target="_blank">
+      <a
+        href="https://www.linkedin.com/in/devtoti"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit my LinkedIn profile @devtoti (opens in new tab)"
+      >
         <Linkedin />
       </a>
-      <a href="https://dribbble.com/totisketches" target="_blank">
+      <a
+        href="https://dribbble.com/totisketches"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit my Dribbble portfolio @totisketches (opens in new tab)"
+      >
         <Dribbble />
       </a>
       <a
         href="https://www.upwork.com/freelancers/~012c76ce4bf87c7147"
         target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit my Upwork profile (opens in new tab)"
       >
         <Upwork />
       </a>
@@ -42,61 +59,91 @@
   </span>
   <div class="footer-container">
     <article class="nav-links">
-      <article class="navigation-left">
+      <article
+        class="navigation-left"
+        role="navigation"
+        aria-label="Primary navigation links"
+      >
         <ul>
-          <a href="/" class="arc-body-2"
-            ><Text section="navigation" text="home" /></a
-          >
-          <a href="/#work-experience" class="arc-body-2"
-            ><Text section="navigation" text="home-work-experience" /></a
-          >
-          <a href="/#projects" class="arc-body-2"
-            ><Text section="navigation" text="home-projects" /></a
-          >
-          <a href="/#skills" class="arc-body-2"
-            ><Text section="navigation" text="home-skills" /></a
-          >
-          <a href="/#services" class="arc-body-2"
-            ><Text section="navigation" text="home-services" /></a
-          >
+          <li>
+            <a href="/" class="arc-body-2"
+              ><Text section="navigation" text="home" /></a
+            >
+          </li>
+          <li>
+            <a href="/#work-experience" class="arc-body-2"
+              ><Text section="navigation" text="home-work-experience" /></a
+            >
+          </li>
+          <li>
+            <a href="/#projects" class="arc-body-2"
+              ><Text section="navigation" text="home-projects" /></a
+            >
+          </li>
+          <li>
+            <a href="/#skills" class="arc-body-2"
+              ><Text section="navigation" text="home-skills" /></a
+            >
+          </li>
+          <li>
+            <a href="/#services" class="arc-body-2"
+              ><Text section="navigation" text="home-services" /></a
+            >
+          </li>
           <!-- <a href="/mystery" class="arc-body-2">Mystery Box</a> -->
         </ul>
       </article>
-      <article class="navigation-right">
+      <article
+        class="navigation-right"
+        role="navigation"
+        aria-label="Secondary navigation links"
+      >
         <ul>
-          <a href="/about" class="arc-body-2">Blueprint</a>
-          <a href="/dev" class="arc-body-2"
-            ><Text section="navigation" text="development" /></a
-          >
-          <a href="/design" class="arc-body-2"
-            ><Text section="navigation" text="design" /></a
-          >
-          <a href="/concept" class="arc-body-2"
-            ><Text section="navigation" text="concept" /></a
-          >
-          <a href="/contact" class="arc-body-2"
-            ><Text section="navigation" text="contact" /></a
-          >
-          <a href="/about" class="arc-body-2"
-            ><Text section="navigation" text="about" /></a
-          >
+          <li>
+            <a href="/about" class="arc-body-2">Blueprint</a>
+          </li>
+          <li>
+            <a href="/dev" class="arc-body-2"
+              ><Text section="navigation" text="development" /></a
+            >
+          </li>
+          <li>
+            <a href="/design" class="arc-body-2"
+              ><Text section="navigation" text="design" /></a
+            >
+          </li>
+          <li>
+            <a href="/concept" class="arc-body-2"
+              ><Text section="navigation" text="concept" /></a
+            >
+          </li>
+          <li>
+            <a href="/contact" class="arc-body-2"
+              ><Text section="navigation" text="contact" /></a
+            >
+          </li>
+          <li>
+            <a href="/about" class="arc-body-2"
+              ><Text section="navigation" text="about" /></a
+            >
+          </li>
         </ul>
       </article>
     </article>
     <article class="plan-info techs">
-      <h4 class="arc-h6"><Text section="footer-legend" text="techs" /></h4>
+      <span class="arc-h6"><Text section="footer-legend" text="techs" /></span>
       <p class="arc-body-3">Svelte, TypeScript, Figma</p>
     </article>
     <article class="plan-info proj">
-      <h4 class="arc-h6"><Text section="footer-legend" text="project" /></h4>
+      <h6 class="arc-h6"><Text section="footer-legend" text="project" /></h6>
       <p class="arc-body-3">Frontend & Design Portfolio</p>
     </article>
     <article class="plan-info loc">
-      <h4 class="arc-h6"><Text section="footer-legend" text="location" /></h4>
+      <h6 class="arc-h6"><Text section="footer-legend" text="location" /></h6>
       <p class="arc-body-3">CDMX, México</p>
     </article>
     <article class="plan-info scale">
-      <h4 class="arc-h6"><Text section="footer-legend" text="scale" /></h4>
+      <h6 class="arc-h6"><Text section="footer-legend" text="scale" /></h6>
       <div id="scale">
         <div class="scale-top">
           <span class="arc-h6"></span>
@@ -122,26 +169,26 @@
       </div>
     </article>
     <article class="plan-info rev">
-      <h4 class="arc-h6">
+      <h6 class="arc-h6">
         <Text section="footer-legend" text="last-update" />
-      </h4>
+      </h6>
       <p class="arc-body-3">2025-06-22</p>
     </article>
     <article class="plan-info collab">
-      <h4 class="arc-h6">
+      <h6 class="arc-h6">
         <Text section="footer-legend" text="collaborators" />
-      </h4>
+      </h6>
       <p class="arc-body-3">@devtoti</p>
     </article>
     <article class="plan-info author">
-      <h4 class="arc-h6"><Text section="footer-legend" text="author" /></h4>
+      <h6 class="arc-h6"><Text section="footer-legend" text="author" /></h6>
       <p class="arc-body-3">Antonio Ruiz</p>
     </article>
     <article class="plan-info v">
       <h4 class="arc-h3">V1.0</h4>
     </article>
     <article class="plan-info id" id="clave">
-      <h4 class="arc-h0">A1</h4>
+      <h5 class="arc-h0">A1</h5>
     </article>
   </div>
 </footer>
@@ -151,14 +198,14 @@
   footer {
     background-image: linear-gradient(
         to right,
-        var(--gray-alpha-10) 1px,
+        var(--gray-alpha-05) 1px,
         transparent 1px
       ),
-      linear-gradient(to bottom, var(--gray-alpha-10) 1px, transparent 1px);
+      linear-gradient(to bottom, var(--gray-alpha-05) 1px, transparent 1px);
     background-size: 16px 16px;
     background-position: -5px -5px;
   }
-  h4 {
+  h6 {
     color: var(--text-primary) !important;
   }
   a {
@@ -223,7 +270,6 @@
     grid-column: 2 / -2;
     width: 100%;
     grid-row: 3 / 4;
-    background-color: var(--bg-primary);
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(7, auto);
@@ -416,8 +462,7 @@
     }
   }
   :global([data-theme="dark"]) {
-    .footer,
-    .footer-container {
+    .footer {
       background-color: var(--bg-darksand);
     }
     .plan-info {

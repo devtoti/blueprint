@@ -72,9 +72,9 @@
     onmouseenter={(e) => handleHover(service, type)}
     onclick={() => handleClick(service, type)}
   >
-    <h5 class="arc-h4">
+    <span class="arc-h4">
       <Text section="services-list" text="title" sectionIx={ix} />
-    </h5>
+    </span>
     <p class="arc-body-1">
       <Text section="services-list" text="description" sectionIx={ix} />
     </p>

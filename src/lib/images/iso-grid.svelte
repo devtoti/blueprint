@@ -3,6 +3,7 @@
   viewBox="0 0 1280 1249"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
+  role="presentation"
 >
   <path
     opacity="0.9"

@@ -61,7 +61,7 @@
       stroke-width="1.2"
     />
   </svg>
-  <div class="divider-wrapper" style="width: {width - w * 2}px"></div>
+  <div class="divider-wrapper" style="width: 100%"></div>
 </div>
 
 <style>

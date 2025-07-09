@@ -31,10 +31,10 @@
       0{project.id}
     </h2>
     <div class="icons-wrapper">
-      <a href={project.url} target="_blank">
+      <a href={project.url} target="_blank" aria-label="Visit project's website">
         <IconWrapper Icon={SolarLinkMinimalistic2Bold} />
       </a>
-      <a href={project.figmaUrl} target="_blank">
+      <a href={project.figmaUrl} target="_blank" aria-label="Visit project's Figma file">
         <IconWrapper Icon={FigmaIcon} />
       </a>
     </div>

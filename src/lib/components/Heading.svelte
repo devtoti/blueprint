@@ -1,5 +1,9 @@
 <script lang="ts">
-  let { page, alignRight, isCentered }: { page: string; alignRight?: boolean; isCentered?: boolean } = $props();
+  let {
+    page,
+    alignRight,
+    isCentered,
+  }: { page: string; alignRight?: boolean; isCentered?: boolean } = $props();
   import Text from "$lib/components/Text.svelte";
 </script>
 
@@ -7,9 +11,9 @@
   <h2 class="arc-h3">
     <Text section={page} text="heading" />
   </h2>
-  <h5 class="subheading arc-body-1">
+  <h3 class="subheading arc-body-1">
     <Text section={page} text="subheading" />
-  </h5>
+  </h3>
 </article>
 
 <style>
