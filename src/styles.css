@@ -235,6 +235,29 @@ ul.axes {
   grid-template-rows: 1fr;
 }
 
+section {
+  position: relative;
+}
+
+@media (min-width: 720px) {
+section:not(#projects):not(.hero-main):not(.mobile-only):after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  height: calc(100% - 2px);
+  width: calc(100% - 1.5rem); 
+  border: 1px solid var(--bleu-200);
+  z-index: 1;
+  pointer-events: none;
+}
+[data-theme="dark"] section:not(#projects):not(.hero-main):not(.mobile-only):after {
+  border: 1px solid var(--bleu-50);
+}
+}
+
 .main-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

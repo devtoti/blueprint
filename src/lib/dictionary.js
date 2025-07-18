@@ -149,8 +149,8 @@ export const dictionary = {
             es: "Experiencia Laboral",
         },
         subheading: {
-            en: "Explore my work experience from the last 4+ years, seen from two perspectives: UI/UX design and frontend development.",
-            es: "Explora mi trayectoria laboral de los últimos 4+ años, vista desde dos frentes: mi desempeño como diseñador UI/UX y como desarrollador frontend.",
+            en: "Learn more about my work experience, seen from two different, yet complementary perspectives: UI/UX design and frontend development. This unique combination of skills allows me to create cohesive, user-centered web experiences from concept to implementation",
+            es: "Conoce más acerca de mi experiencia laboral, vista desde dos perspectivas complementarias: diseño UI/UX y desarrollo frontend. Esta combinación única de habilidades me permite llevar a cabo proyectos desde su concepción hasta la implementación.",
         },
     },
     ["services"]: {

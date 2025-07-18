@@ -44,7 +44,10 @@
   onMount(() => {
     pageHasLoaded = true;
     injectAnalytics();
-    LogRocket.init("devtoti/blueprintdev");
+    //webdev
+    // LogRocket.init("devtoti/blueprintdev");
+    //sketches
+    LogRocket.init("lwg6hv/blueprint");
     injectCalendly();
     establishTheme(theme);
     document.addEventListener("click", handleAnchorClick);

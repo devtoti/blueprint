@@ -172,7 +172,7 @@
       <h6 class="arc-h6">
         <Text section="footer-legend" text="last-update" />
       </h6>
-      <p class="arc-body-3">2025-06-22</p>
+      <p class="arc-body-3">2025-07-18</p>
     </article>
     <article class="plan-info collab">
       <h6 class="arc-h6">

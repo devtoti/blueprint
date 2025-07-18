@@ -250,7 +250,7 @@
     gap: 0.2rem;
     padding: 0.5rem;
     padding-top: 1rem;
-    background-image: radial-gradient(var(--icon-tertiary) 1px, transparent 0);
+    background-image: radial-gradient(var(--gray-alpha-10) 1px, transparent 0);
     background-size: 10px 10px;
     background-position: -5px -5px;
     p {
