@@ -16,7 +16,7 @@
   <span class="button-container">
     <div class="button-wrapper">
       <a
-        href="/docs/antonio-ruiz-frontend-design-resume-jun-2025.pdf"
+        href="/docs/arc-frontend-developer-en-resume.pdf"
         class="arc-button-secondary arc-h3 invert">Curriculum</a
       >
     </div>

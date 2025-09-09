@@ -77,7 +77,7 @@
     buttonOneText="contact"
     buttonOneHref="/contact"
     buttonTwoText="resume"
-    buttonTwoHref="/docs/frontend-design-resume-jun-2025.pdf"
+    buttonTwoHref="/docs/arc-frontend-developer-en-resume.pdf"
     HeroImage={Blueprint}
     isHome
     currentPage="Home"
