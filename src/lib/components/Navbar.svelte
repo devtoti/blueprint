@@ -66,7 +66,7 @@
   <article class="nav-container">
     <ul class="nav-links desktop-only">
       <li>
-        <a href="/" class:active={currentPath === "/"}>Blueprint</a>
+        <a href="/" class:active={currentPath === "/"}>Home</a>
       </li>
       <li>
         <a href="/dev" class:active={currentPath === "/dev"}>Dev</a>
@@ -80,9 +80,9 @@
       <li>
         <a href="/contact" class:active={currentPath === "/contact"}>Contact</a>
       </li>
-      <li>
+      <!-- <li>
         <a href="/about" class:active={currentPath === "/about"}>About</a>
-      </li>
+      </li> -->
     </ul>
     <div class="settings-container desktop-only">
       <button
@@ -353,11 +353,11 @@
           <Text section="navigation" text="contact" />
         </a>
       </li>
-      <li role="menuitem">
+      <!-- <li role="menuitem">
         <a href="/about" class="arc-h4" onclick={() => (isNavOpen = false)}>
           <Text section="navigation" text="about" />
         </a>
-      </li>
+      </li> -->
     </ul>
     <DividerTrapezoid
       width={WINDOW.width}

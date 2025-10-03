@@ -39,16 +39,16 @@ export const dictionary = {
     },
     Home: {
         heading: {
-            en: "Blueprint.dev()",
-            es: "Blueprint.dev()",
+            en: " Frontend Developer • UX Engineer",
+            es: " Frontend Developer • UX Engineer",
         },
         description: {
-            en: "UX RESEARCH • UI DESIGN • FRONTEND DEVELOPMENT",
-            es: "INVESTIGACIÓN UX • DISEÑO UI • DESARROLLO WEB",
+            en: "Personal Work Portfolio 2025",
+            es: "Portafolio Personal 2025",
         },
         subheading: {
-            en: "Modern, highly customizable websites and webapps focused on delivering exceptional user experiences. Parametric and architectural design applied to web development, following the UCD User Centered Design framework.",
-            es: "Páginas y aplicaciones web modernas, altamente personalizables y accesibles. Diseño paramétrico y arquitectónico aplicado al desarrollo web, apegado a la metodología UCD.",
+            en: "I am an architect, turned software developer. I specialize in unifying UI/UX design with frontend development. I enjoy creating high impact web applications and user-centered websites that leave a lasting impression.",
+            es: "Arquitecto de profesión, apasionado también por el desarrollo de software. Me especializo en unificar el diseño UI/UX con el desarrollo frontend para crear páginas web y aplicaciones centradas en el usuario que causen un impacto memorable.",
         },
     },
     Error: {
@@ -79,12 +79,12 @@ export const dictionary = {
             es: "Desarrollo Frontend",
         },
         description: {
-            en: "Parametric websites and webapps",
-            es: "Páginas y aplicaciones web con diseño paramétrico",
+            en: "Modular websites and webapps",
+            es: "Páginas y aplicaciones modulares",
         },
         subheading: {
             en: "I specialize in translating custom user interfaces into dynamic, functional and reusable components. I enjoy designing and developing with cutting-edge technologies like React, Svelte, TypeScript and Tailwind CSS.",
-            es: "Especializado en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona mezclar el diseño de interfaces altamente personalizables con tecnologías como React, Svelte, TypeScript y Tailwind CSS.",
+            es: "Me especializo en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona mezclar el diseño de interfaces altamente personalizables con tecnologías como React, Svelte, TypeScript y Tailwind CSS.",
         },
     },
     Design: {
@@ -93,26 +93,26 @@ export const dictionary = {
             es: "Diseño UI/UX",
         },
         description: {
-            en: "understandment / research / design / evaluation",
-            es: "entendimiento / investigación / diseño / evaluación",
+            en: "UX Resarch, wireframing and prototyping",
+            es: "Investigación, wireframes y prototipos",
         },
         subheading: {
-            en: "Constantly aiming to find creative solutions to come up with outstanding user interfaces. My design process is based on extensive UX research and the UCD User Centered Design framework.",
-            es: "Enfocado en encontrar soluciones creativas para crear interfaces de usuario que mejoren la experiencia del usuario. Mi proceso de diseño se sustenta en la investigación UX y el framework UCD User Centered Design.",
+            en: "Coming up with creative solutions to improve user experience and cause a lasting imrpession is something I love doing. My design process is based on UX research and the User Centered Design framework (UCD).",
+            es: "Me gusta encontrar soluciones creativas para mejorar la experiencia del usuario y causar un impacto memorable. Mi proceso de diseño se sustenta en la investigación UX y el User Centered Design (UCD).",
         },
     },
     Concept: {
         heading: {
-            en: "Concept",
-            es: "Concepto",
+            en: "Site concept",
+            es: "Concepto del sitio",
         },
         description: {
-            en: "Behind my design and development process",
-            es: "Detrás de mi proceso de diseño y desarrollo",
+            en: "Blueprint design system",
+            es: "Sistema de diseño Blueprint",
         },
         subheading: {
-            en: "Blueprint.dev started as a personal project where design and coding get merged in order to create exceptional user experiences. It's a callout for creativeness and innovation.",
-            es: "Blueprint.dev nació como un proyecto personal en donde el diseño y el código se fusionan con el objetivo evocar experiencias de usuario únicas, desafiando algunos paradigmas dentro de la industria del desarrollo web.",
+            en: "This website is just the beginning of a much bigger project, currently in development. It's a callout for creativeness and innovation, through which I seek to show my architectural approach applied to web development.",
+            es: "Este sitio tan solo es el inicio de un proyecto mucho más grande, actualmente en desarrollo. Es una invitación a la creatividad y la innovación, a través del cual busco mostrar mi enfoque arquitectónico aplicado al desarrollo web.",
         },
     },
     Contact: {
@@ -125,8 +125,8 @@ export const dictionary = {
             es: "Agenda una llamada / escríbeme",
         },
         subheading: {
-            en: "I am currently working full-time as a designer and frontend developer, so my availability is limited. If you have any particular request, please don't hesitate to contact me!",
-            es: "Actualmente me encuentro trabajando tiempo completo como diseñador y desarrollador frontend, por lo que mi disponibilidad es limitada. Si tienes alguna solicitud en particular, por favor, ¡no dudes en contactarme!",
+            en: "I am currently working as a designer and frontend developer, so my availability is limited. If you have any particular request, please don't hesitate to contact me!",
+            es: "Actualmente me encuentro trabajando como diseñador y desarrollador frontend, por lo que mi disponibilidad es limitada. Si tienes alguna solicitud en particular, por favor, ¡no dudes en contactarme!",
         },
     },
     About: {
@@ -146,21 +146,21 @@ export const dictionary = {
     ["work-experience"]: {
         heading: {
             en: "Work Experience",
-            es: "Experiencia Laboral",
+            es: "Trayectoria profesional",
         },
         subheading: {
-            en: "Learn more about my work experience, seen from two different, yet complementary perspectives: UI/UX design and frontend development. This unique combination of skills allows me to create cohesive, user-centered web experiences from concept to implementation",
-            es: "Conoce más acerca de mi experiencia laboral, vista desde dos perspectivas complementarias: diseño UI/UX y desarrollo frontend. Esta combinación única de habilidades me permite llevar a cabo proyectos desde su concepción hasta la implementación.",
+            en: "My approach to web development has always been done hand in hand with UI/UX design. I enjoy solving both technical and design problems, which is why I like to think about myself as a UX Engineer.",
+            es: "El enfoque que le he dado al desarrollo web ha ido siempre de la mano con el diseño UI/UX. Disfruto resolver constantemente problemas técnicos y de diseño, por ello es que me consideroun UX Engineer.",
         },
     },
     ["services"]: {
         heading: {
-            en: "Services",
-            es: "Servicios",
+            en: "What I am good at",
+            es: "Lo que sé hacer",
         },
         subheading: {
-            en: "Get to know some of the services I offer for the different phases of web development production, from UX research and prototyping, all the way to backend integrations.",
-            es: "Conoce algunos de los servicios que ofrezco para las distintas fases de los procesos de producción de desarrollo web, desde la investigación de los requerimientos hasta integraciones con el backend.",
+            en: "Get to know some of the things I enjoy the most and do best when developing software. This includes design-related tasks, frontend development, and backend integrations.",
+            es: "Conoce algunas de las cosas que más disfruto y mejor sé hacer dentro de la industria del desarrollo de software. Esto incluye procesos de diseño que van desde la ideación hasta la producción de código.",
         },
     },
     ["skills"]: {
@@ -169,8 +169,8 @@ export const dictionary = {
             es: "Enfoque dual desarrollo y diseño",
         },
         subheading: {
-            en: "This is a list of the technologies and tools I use constantly to carry out different frontend projects. Hover over each skill to visualize how these technologies are wired together.",
-            es: "Este es un listado de las tecnologías y herramientas que utilizo constantemente para llevar a cabo diferentes proyectos de desarrollo frontend. Pasa el cursor sobre cada habilidad para visualizar cómo estas tecnologías se relacionan entre sí.",
+            en: "This is a list of the technologies and tools I use most of the time. Hover over each skill to visualize how these technologies are wired together.",
+            es: "Este es un listado de las tecnologías y herramientas con las que trabajo constantemente. Pasa el cursor sobre cada habilidad para visualizar cómo estas tecnologías se relacionan entre sí.",
         },
     },
     ["projects-frontend"]: [
@@ -666,12 +666,12 @@ export const dictionary = {
     },
     ["footer-legend"]: {
         title: {
-            en: "Blueprint.dev",
-            es: "Blueprint.dev",
+            es: "blueprint.design",
+            en: "blueprint.design",
         },
         description: {
-            en: "Architectural design & frontend development",
-            es: "Diseño arquitectónico y desarrollo frontend",
+            en: "Frontend development from a new perspective",
+            es: "Desarrollo frontend desde una nueva perspectiva",
         },
         techs: {
             en: "Made with",

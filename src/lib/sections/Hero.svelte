@@ -5,7 +5,7 @@
 <section class="hero grainy">
   <article class="section-content hero-content">
     <div class="title">
-      <h1 class="text-title barlow-extrabold">Blueprint.dev</h1>
+      <h1 class="arc-h2 barlow-extrabold">Blueprint.dev</h1>
       <h4 class="text-caption">Frontend development & design portfolio</h4>
       <p class="arc-body-1">
         I'm a frontend developer and designer with a passion for creating
