@@ -5,7 +5,6 @@
   import "../tokens.css";
   import "../styles/text-styles.css";
   import { GRID } from "$lib/utils/gridData";
-  import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import CTABanner from "$lib/components/CTABanner.svelte";
@@ -15,6 +14,7 @@
   import Services from "$lib/sections/+Services.svelte";
   import Skills from "$lib/sections/+Skills.svelte";
   import Blueprint from "$lib/images/blueprint.svelte";
+  import { setDividerWidth as computeDividerWidth } from "$lib/utils";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   onMount(() => {
@@ -27,20 +27,7 @@
     };
   });
   const isMobile = $derived(WINDOW.width <= 480);
-  const setDividerWidth = (width: number) => {
-    // 464px value because it takes away 2 times the column gap (2*8px)
-    // 1012px value because it takes away 2 times the column gap (2*8px)
-    switch (true) {
-      case width <= 464:
-        return grid.getColumnsDistance(4);
-      case width > 464 && width <= 1012:
-        return grid.getColumnsDistance(6);
-      case width > 1012:
-        return grid.getColumnsDistance(10);
-      default:
-        return grid.getColumnsDistance(10);
-    }
-  };
+  const setDividerWidth = (width: number) => computeDividerWidth(width, grid);
 </script>
 
 {#snippet sectionDividers(num: number, invert = false)}

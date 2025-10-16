@@ -20,7 +20,7 @@
 
 <style>
   .button-container {
-    width: clamp(120px, 10vw, 25rem);
+    width: clamp(190px, 10vw, 25rem);
   }
   .mid-banner {
     position: relative;

@@ -84,17 +84,26 @@
         {#each designRoles as role, ix}
           <button
             class="experience-list-item left"
-            onclick={() => (role.active = !role.active)}
+            onclick={() => null}
             class:active={role.active}
             aria-label="Open my design experience card with my career path"
           >
-            <h4 class="arc-h5">{role.company}</h4>
+            <span>
+              <a
+                href={role.url}
+                class="role-url arc-h5"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${role.company}'s website (opens in new tab)`}
+                >{role.company}</a
+              >
+            </span>
             <p class="arc-txt-li">{role.date}</p>
             <div class="col-wrapper">
               <WallsThickCol />
             </div>
           </button>
-          {#if role.active}
+          <!-- {#if role.active}
             <button
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
@@ -138,25 +147,32 @@
                 {/if}
               </div>
             </button>
-          {/if}
+          {/if} -->
         {/each}
       {:else}
         {#each frontendRoles as role, ix}
           <button
             class="experience-list-item"
-            onclick={() => (role.active = !role.active)}
+            onclick={() => null}
             class:active={role.active}
             aria-label="Open my frontend developer experience card with my career path"
           >
             <span>
-              <h4 class="arc-h5">{role.company}</h4>
+              <a
+                href={role.url}
+                class="role-url arc-h5"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${role.company}'s website (opens in new tab)`}
+                >{role.company}</a
+              >
             </span>
             <p class="arc-txt-li">{role.date}</p>
             <div class="col-wrapper">
               <WallsThickCol />
             </div>
           </button>
-          {#if role.active}
+          <!-- {#if role.active}
             <button
               class="arc-txt-li role-overview"
               onclick={() => (role.active = !role.active)}
@@ -200,7 +216,7 @@
                 {/if}
               </div>
             </button>
-          {/if}
+          {/if} -->
         {/each}
       {/if}
     </div>
@@ -261,17 +277,6 @@
   .experience-card.dev {
     align-items: flex-start !important;
     width: 100%;
-  }
-  .link-wrapper {
-    padding-top: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: flex-end;
-    a:hover {
-      background-color: var(--bg-tertiary);
-    }
   }
   .close-button {
     all: unset;
@@ -357,16 +362,20 @@
     padding: 0.25rem 0.5rem;
     span {
       width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    h4 {
-      justify-self: flex-start;
+    span:hover {
+      background-color: var(--bg-light-hover);
+    }
+    a {
+      display: block;
       font-weight: 600;
       padding-left: 0.5rem;
-      width: fit-content;
       color: var(--text-primary);
+      width: 100%;
     }
     &.active {
       background-color: var(--bg-light-hover);
@@ -383,8 +392,8 @@
     }
   }
   .experience-list-item:hover {
-    background-color: var(--bg-light-hover);
-    cursor: pointer;
+    /* background-color: var(--bg-light-hover); */
+    /* cursor: pointer; */
     p {
       color: var(--text-primary);
     }
@@ -428,10 +437,19 @@
     }
     .experience-list-item {
       grid-template-columns: 1rem 1fr 1.2fr;
-      h4 {
-        order: -2;
-        padding-left: auto;
+      span {
         width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        height: 100%;
+      }
+      a {
+        order: -2;
+        justify-self: end;
+        margin-left: auto;
+        text-align: right;
+        padding-right: 0.5rem;
       }
       p {
         order: -3;
@@ -440,6 +458,13 @@
         order: -4;
       }
     }
+    /* .link-wrapper {
+      justify-content: flex-end;
+      .experience-card-icon {
+        justify-content: flex-end;
+        text-align: right;
+      }
+    } */
     .icons {
       flex-direction: row-reverse;
     }
