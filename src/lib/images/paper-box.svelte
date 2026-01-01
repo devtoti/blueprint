@@ -4,6 +4,7 @@
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
+  role="presentation"
 >
   <path
     d="M78.2495 105.25L115.75 86.5L153.25 105.25L115.75 124L78.2495 105.25Z"

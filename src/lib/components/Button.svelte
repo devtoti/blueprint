@@ -44,6 +44,9 @@
 {/if}
 
 <style>
+  .arc-button-primary {
+    padding: 0.5rem 0;
+  }
   .button-wrapper {
     width: 100%;
   }

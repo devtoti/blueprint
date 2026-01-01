@@ -34,7 +34,7 @@
 >
   <article class="hero-text section-content">
     <div class="title">
-      <h1 class="text-title barlow-extrabold arc-h1" class:isHome>
+      <h1 class="text-title barlow-extrabold arc-h2" class:isHome>
         <Text section={currentPage} text="heading" />
       </h1>
       <h2 class="text-caption caption arc-h4">
@@ -100,10 +100,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    .isHome {
-      font-size: clamp(2.5rem, 4vw, 4rem) !important;
+    /* .isHome {
+      font-size: clamp(1.25rem, 4vw, 2.5rem) !important;
       padding-bottom: 0;
-    }
+    } */
   }
   .text-caption {
     color: var(--text-dark);

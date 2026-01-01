@@ -29,26 +29,26 @@ export const dictionary = {
             es: "Explorar concepto",
         },
         ["view-projects"]: {
-            en: "View projects",
-            es: "Ver proyectos",
+            en: " projects",
+            es: "Explorar proyectos"
         },
         ["view-skills"]: {
-            en: "View skills",
-            es: "Ver skills",
+            en: "Explore skills",
+            es: "Explorar skills",
         },
     },
     Home: {
         heading: {
-            en: "Blueprint.dev()",
-            es: "Blueprint.dev()",
+            en: " Frontend Developer • UX Engineer",
+            es: " Frontend Developer • UX Engineer",
         },
         description: {
-            en: "UX RESEARCH • UI DESIGN • FRONTEND DEVELOPMENT",
-            es: "INVESTIGACIÓN UX • DISEÑO UI • DESARROLLO WEB",
+            en: "Personal Work Portfolio 2025",
+            es: "Portafolio Personal 2025",
         },
         subheading: {
-            en: "Modern, highly customizable websites and webapps focused on delivering exceptional user experiences. Parametric and architectural design applied to web development, following the UCD User Centered Design framework.",
-            es: "Páginas y aplicaciones web modernas, altamente personalizables y accesibles. Diseño paramétrico y arquitectónico aplicado al desarrollo web, apegado a la metodología UCD.",
+            en: "I am an architect with a strong passion for design and web development. I specialize in unifying UI/UX design with frontend engineering. I enjoy creating persuasive, high-impact websites and web applications focused on improving user experience and brand perception.",
+            es: "Arquitecto de profesión, apasionado por el diseño y desarrollo de software. Me especializo en unificar el diseño UI/UX con el frontend para crear páginas y aplicaciones web enfocadas en el usuario y la percepción de marca."
         },
     },
     Error: {
@@ -79,12 +79,12 @@ export const dictionary = {
             es: "Desarrollo Frontend",
         },
         description: {
-            en: "Parametric websites and webapps",
-            es: "Páginas y aplicaciones web con diseño paramétrico",
+            en: "Modular websites and webapps",
+            es: "Páginas y aplicaciones modulares",
         },
         subheading: {
             en: "I specialize in translating custom user interfaces into dynamic, functional and reusable components. I enjoy designing and developing with cutting-edge technologies like React, Svelte, TypeScript and Tailwind CSS.",
-            es: "Especializado en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona mezclar el diseño de interfaces altamente personalizables con tecnologías como React, Svelte, TypeScript y Tailwind CSS.",
+            es: "Me especializo en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona mezclar el diseño de interfaces altamente personalizables con tecnologías como React, Svelte, TypeScript y Tailwind CSS.",
         },
     },
     Design: {
@@ -93,26 +93,26 @@ export const dictionary = {
             es: "Diseño UI/UX",
         },
         description: {
-            en: "understandment / research / design / evaluation",
-            es: "entendimiento / investigación / diseño / evaluación",
+            en: "UX Resarch, wireframing and prototyping",
+            es: "Investigación, wireframes y prototipos",
         },
         subheading: {
-            en: "Constantly aiming to find creative solutions to come up with outstanding user interfaces. My design process is based on extensive UX research and the UCD User Centered Design framework.",
-            es: "Enfocado en encontrar soluciones creativas para crear interfaces de usuario que mejoren la experiencia del usuario. Mi proceso de diseño se sustenta en la investigación UX y el framework UCD User Centered Design.",
+            en: "Coming up with creative solutions to improve user experience and cause a lasting imrpession is something I love doing. My design process is based on UX research and the User Centered Design framework (UCD).",
+            es: "Me gusta encontrar soluciones creativas para mejorar la experiencia del usuario y causar un impacto memorable. Mi proceso de diseño se sustenta en la investigación UX y el User Centered Design (UCD).",
         },
     },
     Concept: {
         heading: {
-            en: "Concept",
-            es: "Concepto",
+            en: "Site concept",
+            es: "Concepto del sitio",
         },
         description: {
-            en: "Behind my design and development process",
-            es: "Detrás de mi proceso de diseño y desarrollo",
+            en: "Blueprint design system",
+            es: "Sistema de diseño Blueprint",
         },
         subheading: {
-            en: "Blueprint.dev started as a personal project where design and coding get merged in order to create exceptional user experiences. It's a callout for creativeness and innovation.",
-            es: "Blueprint.dev nació como un proyecto personal en donde el diseño y el código se fusionan con el objetivo evocar experiencias de usuario únicas, desafiando algunos paradigmas dentro de la industria del desarrollo web.",
+            en: "This website is just the beginning of a much bigger project, currently in development. It's a callout for creativeness and innovation, through which I seek to show my architectural approach applied to web development.",
+            es: "Este sitio tan solo es el inicio de un proyecto mucho más grande, actualmente en desarrollo. Es una invitación a la creatividad y la innovación, a través del cual busco mostrar mi enfoque arquitectónico aplicado al desarrollo web.",
         },
     },
     Contact: {
@@ -125,8 +125,8 @@ export const dictionary = {
             es: "Agenda una llamada / escríbeme",
         },
         subheading: {
-            en: "I am currently working full-time as a designer and frontend developer, so my availability is limited. If you have any particular request, please don't hesitate to contact me!",
-            es: "Actualmente me encuentro trabajando tiempo completo como diseñador y desarrollador frontend, por lo que mi disponibilidad es limitada. Si tienes alguna solicitud en particular, por favor, ¡no dudes en contactarme!",
+            en: "I am currently working as a designer and frontend developer, so my availability is limited. If you have any particular request, please don't hesitate to contact me!",
+            es: "Actualmente me encuentro trabajando como diseñador y desarrollador frontend, por lo que mi disponibilidad es limitada. Si tienes alguna solicitud en particular, por favor, ¡no dudes en contactarme!",
         },
     },
     About: {
@@ -143,24 +143,48 @@ export const dictionary = {
             es: "Originalmente concebido como un proyecto personal para crear un nuevo sistema de diseño, Blueprint.dev se convirtió en un sandbox experimental donde puedo experimentar con nuevas ideas y tecnologías de desarrollo frontend.",
         },
     },
+    Marketing: {
+        heading: {
+            en: "Digital marketing solutions",
+            es: "Soluciones digitales para marketing",
+        },
+        description: {
+            en: "Antonio Ruiz – UI/UX - Frontend",
+            es: "Antonio Ruiz – UI/UX - Frontend",
+        },
+        subheading: {
+            en: "Experience in crafting lead-generation websites with persuasive UI/UX/UCD designs. I help small-businesses and startups find their brand identity and increase their digital presence.",
+            es: "Experiencia creando lead-generation websites con diseño UI/UX/UCD persuasivo. Facilito la presencia digital e identidad de marca para startups y negocios emergentes",
+        },
+    },
     ["work-experience"]: {
         heading: {
             en: "Work Experience",
-            es: "Experiencia Laboral",
+            es: "Trayectoria profesional",
         },
         subheading: {
-            en: "Explore my work experience from the last 4+ years, seen from two perspectives: UI/UX design and frontend development.",
-            es: "Explora mi trayectoria laboral de los últimos 4+ años, vista desde dos frentes: mi desempeño como diseñador UI/UX y como desarrollador frontend.",
+            en: "My approach to web development has always been done hand in hand with UI/UX design. I enjoy solving both technical and design problems, which is why I like to think about myself as a UX Engineer.",
+            es: "El enfoque que le he dado al desarrollo web ha ido siempre de la mano con el diseño UI/UX. Disfruto resolver constantemente problemas técnicos y de diseño, por ello es que me consideroun UX Engineer.",
         },
     },
     ["services"]: {
         heading: {
-            en: "Services",
-            es: "Servicios",
+            en: "What I am good at",
+            es: "Lo que sé hacer",
         },
         subheading: {
-            en: "Get to know some of the services I offer for the different phases of web development production, from UX research and prototyping, all the way to backend integrations.",
-            es: "Conoce algunos de los servicios que ofrezco para las distintas fases de los procesos de producción de desarrollo web, desde la investigación de los requerimientos hasta integraciones con el backend.",
+            en: "Get to know some of the things I enjoy the most and do best when developing software. This includes design-related tasks, frontend development, and backend integrations.",
+            es: "Conoce algunas de las cosas que más disfruto y mejor sé hacer dentro de la industria del desarrollo de software. Esto incluye procesos de diseño que van desde la ideación hasta la producción de código.",
+        },
+    },
+    ["marketing"]: {
+        heading: {
+            en: "Design strategies",
+            es: "Estrategias de diseño",
+        },
+        subheading: {
+            en: "My approach to digital marketing leverages a unique combination of technical expertise, design thinking, and research methodology. I deliver comprehensive digital solutions from initial concept through implementation, employing proven strategies outlined below:",
+            es: "La aproximación al marketing digital que utilizo destaca en la combinación de habilidades técnicas, de diseño y de investigación para crear productos digitales de inicio a fin, de forma integral. Conoce algunas de mis estrategies:",
         },
     },
     ["skills"]: {
@@ -169,55 +193,55 @@ export const dictionary = {
             es: "Enfoque dual desarrollo y diseño",
         },
         subheading: {
-            en: "This is a list of the technologies and tools I use constantly to carry out different frontend projects. Hover over each skill to visualize how these technologies are wired together.",
-            es: "Este es un listado de las tecnologías y herramientas que utilizo constantemente para llevar a cabo diferentes proyectos de desarrollo frontend. Pasa el cursor sobre cada habilidad para visualizar cómo estas tecnologías se relacionan entre sí.",
+            en: "This is a list of the technologies and tools I use most of the time. Hover over each skill to visualize how these technologies are wired together.",
+            es: "Este es un listado de las tecnologías y herramientas con las que trabajo constantemente. Pasa el cursor sobre cada habilidad para visualizar cómo estas tecnologías se relacionan entre sí.",
         },
     },
     ["projects-frontend"]: [
         {
             company: "Get In The Loop",
-        date: "2024 - 2025",
-        active: false,
-        figmaLink: null,
-        overview: {
-            en: "I'm responsible for developing and maintaining the Social AI project: a portal for creating, automating and managing content for social media using AI.",
-            es: "Encargado de desarrollar y dar mantenimiento al proyecto Social AI: Un portal para crear, automatizar y administrar contenido para redes sociales utilizando IA.",
+            date: "2024 - 2025",
+            active: false,
+            figmaLink: null,
+            overview: {
+                en: "I'm responsible for developing and maintaining the Social AI project: a portal for creating, automating and managing content for social media using AI.",
+                es: "Encargado de desarrollar y dar mantenimiento al proyecto Social AI: Un portal para crear, automatizar y administrar contenido para redes sociales utilizando IA.",
+            },
+            url: "https://getintheloop.ca",
         },
-        url: "https://getintheloop.ca",
-    },
-    {
-    company: "Upwork",
-    date: "2024 - now",
-    active: false,
-    figmaLink: null,
-    overview: {
-        en: "I offer a wide range of design and technical consulting services on Upwork, a platform for finding and hiring freelancers. I create prototypes, landing pages and web applications for clients around the world.",
-        es: "Realizo proyectos de desarrollo web utilizando frameworks como React, Next y Tailwind CSS. También llevo a cabo rediseño de landing pages para mejorar la conversión de leads y mejora de la experiencia de usuario.",
-    },
-    url: "https://www.upwork.com/freelancers/~012c76ce4bf87c7147?mp_source=share",
-},
-    {
-        company: "LUSI Labs",
-        date: "2022 - 2022",
-        active: false,
-        figmaLink: null,
-        url: "https://lusilabs.com/",
-        overview: {
-            en: "I was a design consultant at LUSI Labs, a company that develops software through mathematical models and machine learning. I created prototypes, wireframes and mockups for a series of short-term projects.",
-            es: "Me desempeñé como asesor de diseño en LUSI Labs, una empresa que desarrolla software mediante modelos matemáticos y de machine learning. Realicé prototipos de diseño, wireframes y mockups en una serie de proyectos de corto plazo.",
+        {
+            company: "Upwork",
+            date: "2024 - now",
+            active: false,
+            figmaLink: null,
+            overview: {
+                en: "I offer a wide range of design and technical consulting services on Upwork, a platform for finding and hiring freelancers. I create prototypes, landing pages and web applications for clients around the world.",
+                es: "Realizo proyectos de desarrollo web utilizando frameworks como React, Next y Tailwind CSS. También llevo a cabo rediseño de landing pages para mejorar la conversión de leads y mejora de la experiencia de usuario.",
+            },
+            url: "https://www.upwork.com/freelancers/~012c76ce4bf87c7147?mp_source=share",
         },
-    },
-    {
-        company: "Totaldevs",
-        date: "2021 - 2023",
-        active: false,
-        figmaLink: null,
-        url: null,
-        overview: {
-            en: "Bootcamp. I helped build various Wordpress websites in HTML, CSS and JavaScript. I developed responsive web applications with React and SASS.",
-            es: "Bootcamp. Ayudé a construir diversas páginas web en Wordpress mientras aprendía a programar en HTML, CSS y JavaScript. Comencé a familiarizarme con frameworks como React y SASS y a desarrollar aplicaciones web responsivas.",
+        {
+            company: "LUSI Labs",
+            date: "2022 - 2022",
+            active: false,
+            figmaLink: null,
+            url: "https://lusilabs.com/",
+            overview: {
+                en: "I was a design consultant at LUSI Labs, a company that develops software through mathematical models and machine learning. I created prototypes, wireframes and mockups for a series of short-term projects.",
+                es: "Me desempeñé como asesor de diseño en LUSI Labs, una empresa que desarrolla software mediante modelos matemáticos y de machine learning. Realicé prototipos de diseño, wireframes y mockups en una serie de proyectos de corto plazo.",
+            },
         },
-    },
+        {
+            company: "Totaldevs",
+            date: "2021 - 2023",
+            active: false,
+            figmaLink: null,
+            url: null,
+            overview: {
+                en: "Bootcamp. I helped build various Wordpress websites in HTML, CSS and JavaScript. I developed responsive web applications with React and SASS.",
+                es: "Bootcamp. Ayudé a construir diversas páginas web en Wordpress mientras aprendía a programar en HTML, CSS y JavaScript. Comencé a familiarizarme con frameworks como React y SASS y a desarrollar aplicaciones web responsivas.",
+            },
+        },
     ],
     ["projects-banner"]: {
         title: {
@@ -227,7 +251,7 @@ export const dictionary = {
     },
     ["projects-design"]: [
         {
-            company: "Send It Digital Inc",
+            company: "Send It Digital",
             date: "2025 - now",
             active: false,
             figmaLink: null,
@@ -237,52 +261,52 @@ export const dictionary = {
                 es: "Diseño y ejecución de pruebas A/B en landing pages para diferentes campañas de marketing en redes socialespara la generación de leads, principalmente utilizando Figma, JS, Unbounce, Clickflare, y Ringba.",
             }
         }, {
-        company: "Draftbit",
-        date: "2024 - 2025",
-        active: false,
-        figmaLink: null,
-        url: "https://draftbit.com/",
-        overview: {
-            en: "I was a UI/UX designer at Draftbit, a no-code, low-code platform for creating mobile applications from scratch. I was responsible for the design and development of the application prototypes, as well as the design system of the platform.",
-            es: "Me desempeñé como diseñador UI/UX en Draftbit, una plataforma no-code, low-code para crear aplicaciones móviles desde cero. Fui responsable del diseño y desarrollo los prototipos de la aplicación, así como del sistema de diseño de la plataforma.",
-        }
-    },
-    {
-        company: "Upwork",
-        date: "2023 - now",
-        active: false,
-        figmaLink: null,
-        url: "https://www.upwork.com/freelancers/~012c76ce4bf87c7147?mp_source=share",
-        overview: {
-            en: "I offer a wide range of design and technical consulting services on Upwork, a platform for finding and hiring freelancers. I create prototypes, landing pages and web applications for clients around the world.",
-            es: "Ofrezco una gama amplia de servicios de diseño y asesorías técnicas en Upwork, una plataforma para encontrar y contratar freelancers. Elaboro prototipos, landing pages y aplicaciones web para clientes de todo el mundo.",
+            company: "Draftbit",
+            date: "2024 - 2025",
+            active: false,
+            figmaLink: null,
+            url: "https://draftbit.com/",
+            overview: {
+                en: "I was a UI/UX designer at Draftbit, a no-code, low-code platform for creating mobile applications from scratch. I was responsible for the design and development of the application prototypes, as well as the design system of the platform.",
+                es: "Me desempeñé como diseñador UI/UX en Draftbit, una plataforma no-code, low-code para crear aplicaciones móviles desde cero. Fui responsable del diseño y desarrollo los prototipos de la aplicación, así como del sistema de diseño de la plataforma.",
+            }
         },
-    },
-    {
-        company: "Totaldevs",
-        date: "2021 - 2023",
-        active: false,
-        figmaLink: null,
-        url: null,
-        overview: {
-            en: "I advised startups on optimizing the performance of landing pages using the AIDA methodology and refining conversion funnels to improve key metrics such as page visits, CVRs, CTRs and DTRs.",
-            es: "Asesoré a startups para la optimización del rendimiento de las landing pages mediante la metodología AIDA y la refinación de los conversion funnels para mejorar las métricas clave como visitas a la página, CVRs, CTRs y DTRs.",
+        {
+            company: "Upwork",
+            date: "2023 - now",
+            active: false,
+            figmaLink: null,
+            url: "https://www.upwork.com/freelancers/~012c76ce4bf87c7147?mp_source=share",
+            overview: {
+                en: "I offer a wide range of design and technical consulting services on Upwork, a platform for finding and hiring freelancers. I create prototypes, landing pages and web applications for clients around the world.",
+                es: "Ofrezco una gama amplia de servicios de diseño y asesorías técnicas en Upwork, una plataforma para encontrar y contratar freelancers. Elaboro prototipos, landing pages y aplicaciones web para clientes de todo el mundo.",
+            },
         },
-    },
-    // {
-    //     company: "La Loma CDMX",
-    //     date: "2020 - 2022",
-    //     active: false,
-    //     figmaLink: null,
-    //     url: null,
-    //     overview: {
-    //         en: "I developed the Loma Residencial website and managed the company's social media, a real estate developer in the Mexico City Club de Golf, Mexico City.",
-    //         es: "Desarrollé la página web de Loma Residencial y administré las redes sociales de la empresa, una empresa desarrolladora de proyectos de vivienda en el Club de Golf México, Ciudad de México.",
-    //     }
-    // },
+        {
+            company: "Totaldevs",
+            date: "2021 - 2023",
+            active: false,
+            figmaLink: null,
+            url: null,
+            overview: {
+                en: "I advised startups on optimizing the performance of landing pages using the AIDA methodology and refining conversion funnels to improve key metrics such as page visits, CVRs, CTRs and DTRs.",
+                es: "Asesoré a startups para la optimización del rendimiento de las landing pages mediante la metodología AIDA y la refinación de los conversion funnels para mejorar las métricas clave como visitas a la página, CVRs, CTRs y DTRs.",
+            },
+        },
+        // {
+        //     company: "La Loma CDMX",
+        //     date: "2020 - 2022",
+        //     active: false,
+        //     figmaLink: null,
+        //     url: null,
+        //     overview: {
+        //         en: "I developed the Loma Residencial website and managed the company's social media, a real estate developer in the Mexico City Club de Golf, Mexico City.",
+        //         es: "Desarrollé la página web de Loma Residencial y administré las redes sociales de la empresa, una empresa desarrolladora de proyectos de vivienda en el Club de Golf México, Ciudad de México.",
+        //     }
+        // },
     ],
     ["highlighted-projects"]: [
-       
+
         {
             id: 1,
             number: "01",
@@ -304,7 +328,7 @@ export const dictionary = {
                     description: {
                         en: "Radical redesign of the website from a new design system and navigation structure.",
                         es: "Rediseño radical de la página web a partir de un nuevo sistema de diseño y estructura de navegación.",
-                    } 
+                    }
                 },
                 {
                     title: {
@@ -327,7 +351,7 @@ export const dictionary = {
                     },
                 },
             ]
-        },{
+        }, {
             id: 2,
             number: "02",
             title: "Junkhaul Moving Services",
@@ -432,7 +456,7 @@ export const dictionary = {
             bullets: [
                 {
                     title: {
-                        en:"Unique Palette",
+                        en: "Unique Palette",
                         es: "Paleta única",
                     },
                     description: {
@@ -537,8 +561,8 @@ export const dictionary = {
                 en: "Handmade from mockups and then transferred to high fidelity",
                 es: "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
             },
-          },
-          {
+        },
+        {
             type: "design",
             title: {
                 en: "UI Design",
@@ -549,8 +573,8 @@ export const dictionary = {
                 en: "Creation of custom components adhering to accessibility and usability principles",
                 es: "Creación de componentes personalizados apegados a los principios de accesibilidad y usabilidad",
             },
-          },
-          {
+        },
+        {
             type: "design",
             title: {
                 en: "Illustrations",
@@ -574,7 +598,7 @@ export const dictionary = {
                 es: "Traducción de diseño a código, estableciendo primeramente las tecnologías y el sistema de diseño a utilizar",
             },
         },
-          {
+        {
             type: "development",
             title: {
                 en: "Landing Pages",
@@ -586,7 +610,7 @@ export const dictionary = {
                 es: "Enfocadas en la conversión de usuarios y sujetas a A/B testing",
             },
         },
-          {
+        {
             type: "development",
             title: {
                 en: "API Integration",
@@ -598,6 +622,129 @@ export const dictionary = {
                 es: "Integración de APIs para interactuar con el backend y desplegar visualizaciones de datos",
             },
         }
+    ],
+    ["marketing-list"]: [
+        {
+            type: "development",
+            title: {
+                en: "Marketing Campaigns",
+                es: "Campañas de marketing",
+            },
+            description: {
+                en: "HTML, CSS, JS, React, Svelte",
+                es: "HTML, CSS, JS, React, Svelte",
+            },
+        },
+        {
+            type: "development",
+            title: {
+                en: "Lead Generation",
+                es: "Generación de leads",
+            },
+            description: {
+                en: "Landerlab, Unbounce",
+                es: "Landerlab, Unbounce",
+            },
+        },
+        {
+            type: "development",
+            title: {
+                en: "CMS Management",
+                es: "Gestión de CMS",
+            },
+            description: {
+                en: "Wordpress, Wix, Webflow",
+                es: "Wordpress, Wix, Webflow",
+            },
+        },
+        {
+            type: "design",
+            title: {
+                en: "Digital Illustrations",
+                es: "Ilustraciones digitales",
+            },
+            description: {
+                en: "SVG, Adobe Suite, Affinity",
+                es: "SVG, Adobe Suite, Affinity",
+            },
+        },
+        {
+            type: "design",
+            title: {
+                en: "Design Systems",
+                es: "Sistemas de diseño",
+            },
+            description: {
+                en: "Figma, UI Libraries",
+                es: "Figma, Librerías UI",
+            },
+        },
+        {
+            type: "design",
+            title: {
+                en: "User Experience",
+                es: "Experiencia de usuario",
+            },
+            description: {
+                en: "UCD Framework",
+                es: "UCD Framework",
+            },
+        },
+        {
+            type: "design",
+            title: {
+                en: "UX Research",
+                es: "Investigación UX",
+            },
+            description: {
+                en: "Market benchmarking, User testing",
+                es: "Benchmarking de mercado, Testing de usuarios",
+            },
+        },
+        {
+            type: "design",
+            title: {
+                en: "Conversion Interfaces",
+                es: "Interfaces de conversión",
+            },
+            description: {
+                en: "A/B Testing, Conversion optimization",
+                es: "A/B Testing, Optimización de conversión",
+            },
+        },
+        {
+            type: "design",
+            title: {
+                en: "Web Prototyping",
+                es: "Prototipado web",
+            },
+            description: {
+                en: "Figma, Prototyping tools",
+                es: "Figma, Herramientas de prototipado",
+            },
+        },
+        {
+            type: "design",
+            title: {
+                en: "Brand Development",
+                es: "Desarrollo de marca",
+            },
+            description: {
+                en: "Brand identity, Visual design",
+                es: "Identidad de marca, Diseño visual",
+            },
+        },
+        {
+            type: "development",
+            title: {
+                en: "Web Analytics",
+                es: "Analytics web",
+            },
+            description: {
+                en: "Lighthouse, A11y checkers, LogRocket",
+                es: "Lighthouse, A11y checkers, LogRocket",
+            },
+        },
     ],
     ["cta-banner"]: {
         title: {
@@ -662,16 +809,16 @@ export const dictionary = {
             en: "Mystery Box",
             es: "Mystery Box",
         },
-        
+
     },
     ["footer-legend"]: {
         title: {
-            en: "Blueprint.dev",
-            es: "Blueprint.dev",
+            es: "devtoti-portfolio",
+            en: "devtoti-portfolio",
         },
         description: {
-            en: "Architectural design & frontend development",
-            es: "Diseño arquitectónico y desarrollo frontend",
+            en: "Frontend development from a new perspective",
+            es: "Desarrollo frontend desde una nueva perspectiva",
         },
         techs: {
             en: "Made with",
@@ -701,7 +848,7 @@ export const dictionary = {
             en: "Head Architect",
             es: "Head Architect",
         },
-        
+
     },
     ["contact-banner"]: {
         title: {
