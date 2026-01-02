@@ -242,4 +242,11 @@
       max-height: 100%;
     }
   }
+  :global([data-theme="dark"] .new-project-card) {
+    background-color: var(--bg-tertiary);
+    /* border: 1.5px solid var(--border-tertiary); */
+    box-shadow:
+      var(--shadow-3),
+      0 6px 12px 0 rgba(198, 184, 184, 0.174);
+  }
 </style>

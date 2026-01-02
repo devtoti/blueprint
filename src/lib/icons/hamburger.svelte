@@ -1,0 +1,17 @@
+<script lang="ts">
+  let { isDark }: { isDark?: boolean } = $props();
+</script>
+
+<svg
+  width="40"
+  height="10"
+  role="presentation"
+  viewBox="0 0 40 10"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <line y1="1" x2="40" y2="1" stroke="var(--icon-primary)" stroke-width="2" />
+  <line y1="5" x2="40" y2="5" stroke="var(--icon-primary)" stroke-width="2" />
+  <line y1="9" x2="40" y2="9" stroke="var(--icon-primary)" stroke-width="2" />
+</svg>
+

@@ -2,7 +2,7 @@
   import "../../styles.css";
   import "../../tokens.css";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
-  import PaperBox from "$lib/images/paper-box-new.svelte";
+  import PaperBox from "$lib/images/paper-box.svelte";
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";

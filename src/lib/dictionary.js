@@ -195,6 +195,16 @@ export const dictionary = {
             es: "ArchUI es un nuevo sistema de diseño modular y flexible inspirado en la arquitectura clásica y los blueprints. Sus componentes están diseñados mediante tokens granulares para desarrollar interfaces web altamente personalizables y reutilizables.",
         },
     },
+    ["archui-themes"]: {
+        heading: {
+            en: "Three unique App themes",
+            es: "Tres App Themes únicos",
+        },
+        subheading: {
+            en: "Each theme is based on a different architectural style and uses its own color palette and typography. Since all the components are built using the same base tokens, the themes are highly consistent and maintain a coherent visual identity.",
+            es: "Cada Theme está basado en un estilo arquitectónico diferente y utiliza su propia paleta de colores y tipografía. Como todos los componentes se construyen utilizando los mismos tokens base, los temas son altamente consistentes y mantienen una identidad visual coherente.",
+        },
+    },
     ["marketing"]: {
         heading: {
             en: "Design strategies",

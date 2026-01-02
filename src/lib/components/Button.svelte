@@ -155,7 +155,7 @@
 
   /* Primary dark theme */
   :global([data-theme="dark"] .arc-button-primary) {
-    background-color: var(--bg-blueprint);
+    background-color: var(--bleu-300);
     color: var(--white);
     border: 2px solid var(--blue-radix-800);
   }
@@ -228,6 +228,29 @@
     border: 1px solid var(--border-primary);
     color: var(--text-primary);
     border-radius: 0.25rem;
+  }
+
+  /* Dark theme for tertiary button */
+  :global([data-theme="dark"] .arc-button-tertiary) {
+    background-color: transparent;
+    border: 1px solid var(--border-tertiary);
+    color: var(--text-tertiary);
+  }
+  :global([data-theme="dark"] .arc-button-tertiary:hover),
+  :global([data-theme="dark"] .arc-button-tertiary:active) {
+    background-color: transparent;
+    border: 1px solid var(--border-tertiary);
+    color: var(--text-tertiary);
+  }
+  :global([data-theme="dark"] .arc-button-tertiary.invert) {
+    background-color: var(--bleu-100);
+    border: 1px solid var(--border-tertiary);
+    color: var(--white);
+  }
+  :global([data-theme="dark"] .arc-button-tertiary.invert:hover) {
+    background-color: transparent;
+    border: 1px solid var(--border-tertiary);
+    color: var(--white);
   }
 
   /* Button container utility */

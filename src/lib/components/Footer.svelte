@@ -425,7 +425,6 @@
     margin: 1rem 0;
     width: 100%;
     grid-column: 1 / -1;
-    border-bottom: 1px solid var(--border-primary);
   }
   @media (min-width: 480px) {
     .footer-container {

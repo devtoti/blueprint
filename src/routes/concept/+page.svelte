@@ -10,6 +10,7 @@
   import IsoCube from "$lib/images/iso-cube.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import IsoCubeDark from "$lib/images/iso-cube-dark.svelte";
+  import ArchUIHero from "$lib/images/archui-hero.svelte";
   import { setDividerWidth as computeDividerWidth } from "$lib/utils";
   import { theme } from "$lib/stores";
   let isDarkMode = $derived($theme === "dark");
@@ -70,7 +71,7 @@
     buttonOneHref="/#projects"
     buttonTwoText="design"
     buttonTwoHref="https://github.com/devtoti/archui-lib"
-    HeroImage={isDarkMode ? IsoCubeDark : IsoCube}
+    HeroImage={ArchUIHero}
     children={() => null}
   />
   <DividerTrapezoid
@@ -91,6 +92,7 @@
       draggable="false"
       aria-labelledby="archui-caption"
     />
+    <Heading page="archui-themes" alignRight />
     <img
       src={imageContext[`/src/lib/images/archui-classical-orders-min.png`]}
       alt="Screenshot of the ArchUI Design System classical orders, demonstrating three classical columns with different chapiters"

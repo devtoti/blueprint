@@ -5,8 +5,8 @@
   import AxesActive from "$lib/icons/location-crosshairs.svelte";
   import AxesInactive from "$lib/icons/location-crosshairs-slash.svelte";
   import HorizontalAxes from "$lib/components/HorizontalAxes.svelte";
-  import IconHamburger from "$lib/icons/hamburger.svg";
-  import IconCloseNav from "$lib/icons/close-nav.svg";
+  import IconHamburger from "$lib/icons/hamburger.svelte";
+  import IconCloseNav from "$lib/icons/close-nav.svelte";
   import Button from "$lib/components/Button.svelte";
   import Text from "$lib/components/Text.svelte";
   import SolarSettingsLinear from "~icons/solar/settings-linear";
@@ -191,11 +191,11 @@
       <div class="mobile-nav-icons">
         {#if isNavOpen}
           <button onclick={() => (isNavOpen = false)}>
-            <img src={IconCloseNav} alt="Close Menu" />
+            <IconCloseNav isDark={isDarkMode} />
           </button>
         {:else}
           <button onclick={() => (isNavOpen = true)}>
-            <img src={IconHamburger} alt="Hamburger Menu" />
+            <IconHamburger isDark={isDarkMode} />
           </button>
         {/if}
       </div>
@@ -327,7 +327,7 @@
       children={() => null}
       invert
     />
-    <ul class="active-nav-links links-container" role="menu">
+    <ul class="active-nav-links bg-texture links-container" role="menu">
       <li role="menuitem">
         <a href="/" class="arc-h4" onclick={() => (isNavOpen = false)}>
           <Text section="navigation" text="home" />
@@ -642,7 +642,7 @@
       color: var(--text-secondary);
     }
     .active-nav-links {
-      background-color: var(--bg-primary);
+      background-color: var(--bg-darksand);
       border-color: var(--border-tertiary);
     }
     a {
