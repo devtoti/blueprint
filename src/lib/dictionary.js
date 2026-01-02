@@ -56,7 +56,7 @@ export const dictionary = {
         },
         subheading: {
             en: "Architect turned UI/UX Engineer. I help remote startups bridge the gap between design and frontend engineering for smoother user experiences, less team friction, and faster, higher-quality launches.",
-            es: "Arquitecto convertido en Ingeniero de UI/UX. Ayudo a startups y pequeños negocios a conectar el diseño y el desarrollo frontend, logrando experiencias de usuario más fluidas, menos fricción en el trabajo en equipo y lanzamientos más rápidos y de mejor calidad."
+            es: "Arquitecto convertido en UX Engineer. Ayudo a startups y empresas medianas a conectar el diseño y el desarrollo frontend a partir de una visión transdisciplinaria centrada en el usuario."
         },
     },
     Error: {
@@ -98,29 +98,29 @@ export const dictionary = {
     Design: {
         heading: {
             en: "UI/UX Design",
-            es: "Diseño aficionado",
+            es: "Diseño UI/UX",
         },
         description: {
             en: "Research • Wireframing • Prototyping • Testing",
-            es: "Investigación, wireframes y prototipos",
+            es: "Investigación • Wireframes • Prototipos • Testing",
         },
         subheading: {
             en: "Architecture has given me a strong foundation in design principles. These have been key when crafting exceptional user experiences and empathizing with the user.",
-            es: "La arquitectura me ha dado una sólida base en principios de diseño. Estos han sido clave para crear experiencias de usuario excepcionales y empatizar con el usuario.",
+            es: "La arquitectura me ha dado una sólida base en principios de diseño. Estos han sido clave para crear experiencias de usuario excepcionales y empatizar con el usuario mediante el User Centered Design (UCD).",
         },
     },
     Concept: {
         heading: {
-            en: "ArchUI Design System v1.1.1",
-            es: "Sistema de diseño ArchUI v1.1.1",
+            en: "Arch UI Design System",
+            es: "Arch UI Design System",
         },
         description: {
             en: "Granularity • Flexibility • Elegance",
-            es: "Sistema de diseño Blueprint",
+            es: "Granularidad • Flexibilidad • Elegancia",
         },
         subheading: {
             en: "This website has been built using the new ArchUI Design System I published in 2025. It's a granular and flexible design system inspired in architectural blueprints. Learn more about the project!",
-            es: "Este sitio tan solo es el inicio de un proyecto mucho más grande, actualmente en desarrollo. Es una invitación a la creatividad y la innovación, a través del cual busco mostrar mi enfoque arquitectónico aplicado al desarrollo web.",
+            es: "Este sitio web ha sido construido utilizando el nuevo Sistema de Diseño ArchUI que publiqué en 2025. Es un sistema de granular y flexible inspirado en el diseño blueprint y la arquitectura clásica.",
         },
     },
     Contact: {
@@ -172,7 +172,7 @@ export const dictionary = {
         },
         subheading: {
             en: "I have worked as a frontend developer, UI/UX designer, architect, and digital illustrator for startups and small businesses. My approach to web development is based on the User Centered Design framework (UCD)",
-            es: "He trabajado como desarrollador frontend, diseñador UI/UX, arquitecto e ilustrador digital para startups y pequeños negocios. Mi enfoque al desarrollo web se sustenta en el User Centered Design (UCD)",
+            es: "He trabajado como desarrollador frontend, diseñador UI/UX, arquitecto e ilustrador digital para startups y +100 clientes internacionales. Mi trayectoria y experiencia laboral han sido variadas durante los últimos años.",
         },
     },
     ["services"]: {
@@ -187,12 +187,12 @@ export const dictionary = {
     },
     ["archui"]: {
         heading: {
-            en: "A beautifullly unique design system",
-            es: "Un sistema de diseño único y estético",
+            en: "What is ArchUI?",
+            es: "¿Qué es ArchUI?",
         },
         subheading: {
-            en: "As someone passionate about classical architecture and modular design systems, I decided to create my own component library inspired in three architecutural orders: doric, ionic, and corinthian. Each theme is fully customizable and can be used in any project.",
-            es: "Como alguien apasionado por la arquitectura clásica y los sistemas de diseño modulares, decidí crear mi propia librería de componentes inspirada en tres órdenes arquitectónicos: dórico, jónico, y corintio. Cada Theme es completamente personalizable y puede ser utilizado en cualquier proyecto.",
+            en: "ArchUI is a new modular and flexible design system inspired by Classical Architecture and blueprint design. Its components utilize granular tokens, allowing you to create highly customizable and reusable web interfaces.",
+            es: "ArchUI es un nuevo sistema de diseño modular y flexible inspirado en la arquitectura clásica y los blueprints. Sus componentes están diseñados mediante tokens granulares para desarrollar interfaces web altamente personalizables y reutilizables.",
         },
     },
     ["marketing"]: {
@@ -268,7 +268,7 @@ export const dictionary = {
         },
         subheading: {
             en: "A collection of my most notable projects when it comes to frontend development and UI/UX design.",
-            es: "Una colección de mis proyectos más notables de desarrollo web y diseño UI/UX.",
+            es: "Una colección de mis proyectos públicos más notables de desarrollo web y diseño UI/UX.",
         },
     },
     ["projects-design"]: [
@@ -339,7 +339,7 @@ export const dictionary = {
             image: "archui-preview.png",
             description: {
                 en: "A React and Tailwind component library inspired by architectural blueprints. ArchUI is a flexible design system for prototyping and building web apps.",
-                es: "Librería de componentes React y Tailwind inspirada en planos arquitectónicos. ArchUI es un sistema de diseño flexible para prototipar y crear aplicaciones web.",
+                es: "Librería de componentes hecha con React y Tailwind inspirada en planos arquitectónicos. ArchUI es un nuevo sistema de diseño flexible para prototipar y crear aplicaciones web.",
             },
             tags: ["React", "TailwindCSS", "Storybook", "Chromatic", "Astro", "Svelte","Typescript", "Figma", "Design System", "UI Component Kit"],
             bullets: [
@@ -476,7 +476,7 @@ export const dictionary = {
             image: "bb4md-preview.png",
             description: {
                 en: "Redesign of the BB4MD landing page for a Canadian company selling illustrated books that motivate and teach new parents through parenting science.",
-                es: "Rediseño de la landing page de BB4MD, una empresa canadiense que vende libros ilustrados para motivar y enseñar a nuevos padres mediante la ciencia del parenting.",
+                es: "Rediseño de la landing page de BB4MD, una empresa canadiense que vende libros ilustrados para motivar y enseñar a nuevos padres mediante la ciencia del new parenting.",
             },
             tags: ["UI/UX", "Frontend", "Figma", "Illustrations", "Wix", "Custom UI"],
             bullets: [
@@ -826,7 +826,7 @@ export const dictionary = {
         },
         description: {
             en: "Whether you're interested in a project collaboration, or you need some technical or design consultancy, don't hesitate to contact me.",
-            es: "Si te interesa crear un proyecto conmigo, o si buscas alguna asesoría técnica o de diseño personalizada, no dudes en contactarme.",
+            es: "Si te interesa crear un proyecto conmigo, o si buscas alguna asesoría técnica personalizada, no dudes en contactarme.",
         },
         primaryButton: {
             en: "Schedule a call",

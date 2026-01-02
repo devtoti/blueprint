@@ -69,7 +69,7 @@
     buttonOneText="development"
     buttonOneHref="/#projects"
     buttonTwoText="design"
-    buttonTwoHref="/#services"
+    buttonTwoHref="https://github.com/devtoti/archui-lib"
     HeroImage={isDarkMode ? IsoCubeDark : IsoCube}
     children={() => null}
   />
