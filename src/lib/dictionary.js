@@ -243,10 +243,14 @@ export const dictionary = {
             },
         },
     ],
-    ["projects-banner"]: {
-        title: {
-            en: "Highlighted Projects",
-            es: "Proyectos Destacados",
+    ["projects"]: {
+        heading: {
+            en: "Projects",
+            es: "Proyectos",
+        },
+        subheading: {
+            en: "A collection of my most notable projects when it comes to frontend development and UI/UX design.",
+            es: "Una colección de mis proyectos más notables de desarrollo web y diseño UI/UX.",
         },
     },
     ["projects-design"]: [
@@ -308,9 +312,56 @@ export const dictionary = {
     ["highlighted-projects"]: [
 
         {
+            id: 0,
+            number: "00",
+            title: "ArchUI React Library",
+            subheading: "UI Component Kit",
+            url: "https://archui-website.netlify.app",
+            figmaUrl: "https://www.figma.com/community/file/1585101937198168427/archui-design-system-v1-1-0",
+            image: "archui-preview.png",
+            description: {
+                en: "A React and Tailwind component library inspired by architectural blueprints. ArchUI is a flexible design system for prototyping and building web apps.",
+                es: "Librería de componentes React y Tailwind inspirada en planos arquitectónicos. ArchUI es un sistema de diseño flexible para prototipar y crear aplicaciones web.",
+            },
+            tags: ["React", "TailwindCSS", "Storybook", "Chromatic", "Astro", "Svelte","Typescript", "Figma", "Design System", "UI Component Kit"],
+            bullets: [
+                {
+                    title: {
+                        en: "Redesign",
+                        es: "Rediseño",
+                    },
+                    description: {
+                        en: "Radical redesign of the website from a new design system and navigation structure.",
+                        es: "Rediseño radical de la página web a partir de un nuevo sistema de diseño y estructura de navegación.",
+                    }
+                },
+                {
+                    title: {
+                        en: "Illustrations",
+                        es: "Ilustraciones",
+                    },
+                    description: {
+                        en: "Design of vectorized illustrations for the new landing page created from scratch.",
+                        es: "Diseño de ilustraciones vectorizadas para la nueva landing page creadas desde cero.",
+                    },
+                },
+                {
+                    title: {
+                        en: "Apple Approval",
+                        es: "Aprobación Apple",
+                    },
+                    description: {
+                        en: "The new landing page was approved by Apple in terms of aesthetics and design requirements.",
+                        es: "La nueva landing page fue aprobada por Apple en cuanto a estética y requerimientos de diseño.",
+                    },
+                },
+            ]
+        }, 
+        {
             id: 1,
             number: "01",
             title: "MobileKangaroo",
+            subheading: "Landing Page",
             url: "https://mobilekangaroo.com",
             figmaUrl: "https://www.figma.com/design/dF4RjnxjxV0xF2gi8iMfXU/MobileKangaroo-Website-Revamp?node-id=0-1&t=U2HbEfk7Y2UhRWo1-1",
             image: "mobilekangaroo-preview.png",
@@ -354,13 +405,14 @@ export const dictionary = {
         }, {
             id: 2,
             number: "02",
-            title: "Junkhaul Moving Services",
-            url: "https://365junkhaul.com/booking",
-            figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
+            title: "365 Junkhaul",
+            subheading: "Dashboard & Checkout App",
+            url: "https://365junkhaul.com/",
+            figmaUrl: "https://www.figma.com/design/vdbpMHcBulF2nfpocoPgRu/Checkout-User-Flow?node-id=5-2805&t=ZOUJG1A25JOLO1ge-1",
             image: "365junkhaul-preview.png",
             description: {
-                en: "Checkout with payment system and admin dashboard for the company Junkhaul Moving Services. Developed with React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
-                es: "Checkout con sistema de pagos y dashboard de administración para la empresa Junkhaul Moving Services. Desarrollado con React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
+                en: "Checkout with payment system and admin dashboard for managing orders. Stripe and Supabase integrations for payment processing.",
+                es: "Checkout con sistema de pagos y dashboard de administración para administrar pedidos. Integraciones con Stripe y Supabase para procesar pagos.",
             },
             tags: ["React", "Nextjs", "TailwindCSS", "Typescript", "Figma", "Stripe", "Supabase"],
             bullets: [
@@ -400,12 +452,13 @@ export const dictionary = {
             id: 3,
             number: "03",
             title: "BB4MD Website",
+            subheading: "Website Design",
             url: "https://bb4md.com",
             figmaUrl: "https://www.figma.com/design/zG985mX5ZGboL0GvxWbVMU/BB4MD-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
             image: "bb4md-preview.png",
             description: {
-                en: "Redesign of the BB4MD landing page, a small Canadian company dedicated to the sale of illustrated books focused on motivating and teaching new parents to take care of their babies through the science of parenting.",
-                es: "Rediseño de la landing page de BB4MD, una pequeña empresa canadiense dedicada a la venta de libros ilustrados enfocados en motivar y enseñar a nuevos padres de familia a cuidar de sus bebés por medio de la ciencia del parenting.",
+                en: "Redesign of the BB4MD landing page for a Canadian company selling illustrated books that motivate and teach new parents through parenting science.",
+                es: "Rediseño de la landing page de BB4MD, una empresa canadiense que vende libros ilustrados para motivar y enseñar a nuevos padres mediante la ciencia del parenting.",
             },
             tags: ["UI/UX", "Frontend", "Figma", "Illustrations", "Wix", "Custom UI"],
             bullets: [
@@ -445,6 +498,7 @@ export const dictionary = {
             id: 4,
             number: "04",
             title: "IKOL Web 3.0",
+            subheading: "Design System",
             url: "https://landing-pages-lime.vercel.app/",
             figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
             image: "ikol-preview.png",
@@ -489,6 +543,7 @@ export const dictionary = {
             id: 5,
             number: "05",
             title: "ClassicUI Library",
+            subheading: "UI Library",
             url: null,
             figmaUrl: null,
             image: "classic-preview.png",

@@ -87,7 +87,7 @@
     <WorkExperience />
   </section>
   {@render sectionDividers(2)}
-  <section class="main-content projects grainy" id="projects">
+  <section class="main-content projectsx grainy" id="projects">
     <Projects />
   </section>
   {@render sectionDividers(2)}
@@ -134,8 +134,14 @@
 </main>
 
 <style>
-  .projects {
-    grid-template-rows: 3rem repeat(4, 1fr);
+  #projects {
+    gap: 1rem;
+    /* grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); */
+    grid-template-rows: auto repeat(auto-fill, minmax(440px, 1fr));
+    height: auto;
+    width: 100%;
+    overflow: visible;
+    background-color: var(--sand-radix-100);
   }
   section {
     border: 1.5px solid var(--border-tertiary);

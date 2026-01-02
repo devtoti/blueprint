@@ -1,277 +1,241 @@
 <script lang="ts">
-  let { project, isActive, activeProject = $bindable() } = $props();
-  import SolarLinkMinimalistic2Bold from "~icons/solar/link-minimalistic-2-bold";
-  import FigmaIcon from "$lib/icons/figma.svelte";
-  import IconWrapper from "$lib/components/IconWrapper.svelte";
   import Text from "$lib/components/Text.svelte";
-  let innerWidth = $state(0);
-  function handleClick() {
-    activeProject = project;
-    if (innerWidth <= 1024) {
-      const element = document.getElementById("projects");
-      const offset = 64;
-      const elementPosition = element?.getBoundingClientRect().top ?? 0;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  }
+  import Button from "$lib/components/Button.svelte";
+  import FigmaIcon from "$lib/icons/GgFigma.svelte";
+  import ExternalIcon from "$lib/icons/PajamasExternalLink.svelte";
+  let { project } = $props();
 
-  function handleKeydown(event: KeyboardEvent) {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      handleClick();
-    }
-  }
+  const imageContext = import.meta.glob("$lib/images/*.{svg,png}", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }) as Record<string, string>;
 </script>
 
-<svelte:window bind:innerWidth />
-<div
-  class="project-card"
-  onclick={handleClick}
-  onkeydown={handleKeydown}
-  tabindex="0"
-  role="button"
-  class:active={isActive}
->
-  <h3 class="project-number arc-h3">{project.number}</h3>
-  <h3 class="arc-h4 project-title">{project.title}</h3>
-  <p class="arc-body-1 project-description">
-    <Text
-      text="description"
-      section="highlighted-projects"
-      sectionIx={project.ix}
+<div class="new-project-card" tabindex="0" role="button">
+  <div class="project-image-container">
+    <img
+      src={imageContext[`/src/lib/images/${project.image}`]}
+      alt={project.title}
+      loading="lazy"
+      draggable="false"
     />
-  </p>
-  <div class="project-card-icons">
-    {#if project.url || project.figmaUrl}
-      <div class="icons-wrapper">
-        <button
-          onclick={() => window.open(project.url, "_blank")}
-          aria-label="Visit the project's website"
-        >
-          <IconWrapper Icon={SolarLinkMinimalistic2Bold} />
-        </button>
-        <button
-          onclick={() => window.open(project.figmaUrl, "_blank")}
-          aria-label="Visit the project's Figma file"
-        >
-          <IconWrapper Icon={FigmaIcon} />
-        </button>
-      </div>
-    {/if}
   </div>
-  <span class="bracket top-left"></span>
-  <span class="bracket top-right"></span>
-  <span class="bracket bottom-left"></span>
-  <span class="bracket bottom-right"></span>
+
+  <div class="project-content">
+    <div class="project-title-container">
+      <h3 class="arc-h4 project-title">{project.title}</h3>
+      {#if project.id === 0}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.25em"
+          height="1.25em"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <title>Highlighted Project</title>
+          <path
+            fill="oklch(79.5% 0.184 86.047)"
+            d="M20 2H4v2l5.81 4.36a7.004 7.004 0 0 0-4.46 8.84a6.996 6.996 0 0 0 8.84 4.46a7 7 0 0 0 0-13.3L20 4zm-5.06 17.5L12 17.78L9.06 19.5l.78-3.33l-2.59-2.24l3.41-.29L12 10.5l1.34 3.14l3.41.29l-2.59 2.24z"
+          />
+        </svg>
+      {/if}
+    </div>
+    <h4 class="arc-h5 project-subheading">{project.subheading}</h4>
+    <p class="arc-body-1 project-description">
+      <Text
+        text="description"
+        section="highlighted-projects"
+        sectionIx={project.ix}
+      />
+    </p>
+    <div class="chips">
+      {#each project.tags as tag}
+        <span class="chip arc-body-3">{tag}</span>
+      {/each}
+    </div>
+  </div>
+  <div class="project-buttons">
+    <Button
+      text="Visit Website"
+      href={project.url}
+      secondary={true}
+      invert={true}
+      Icon={ExternalIcon}
+      external={true}
+    />
+    <Button
+      text="Figma"
+      href={project.figmaUrl}
+      tertiary={true}
+      invert={true}
+      Icon={FigmaIcon}
+      external={true}
+    />
+  </div>
 </div>
 
 <style>
-  .project-card {
-    grid-column: 1 / -1;
-    position: relative;
-    background-color: var(--bg-secondary);
+  /* Base styles */
+  .new-project-card {
+    grid-column: 1/-1;
+    background-color: var(--bg-primary-dark);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-3);
+    padding: 1rem;
     width: 100%;
-    height: 100%;
-    border: 1px solid var(--border-tertiary);
+    min-height: fit-content;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    z-index: 10;
+    overflow: hidden;
+  }
+  .project-title-container {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .project-image-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    max-height: 220px;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+  .project-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
-    gap: 0.2rem;
-    padding: 0.5rem;
-    background-image: radial-gradient(var(--bg-light) 1px, transparent 0);
-    background-size: 10px 10px;
-    background-position: -5px -5px;
-    .project-title {
-      color: var(--text-secondary);
-    }
-    .project-description {
-      color: var(--text-secondary);
-    }
-    .bracket {
-      position: absolute;
-      box-sizing: border-box;
-      height: 16px;
-      width: 16px;
-      border: none;
-    }
-    &:hover {
-      background-color: var(--bg-primary);
-      cursor: pointer;
-      outline: 1px solid var(--border-secondary);
-      box-shadow: var(--shadow-3);
-      .bracket {
-        position: absolute;
-        box-sizing: border-box;
-        height: 16px;
-        width: 16px;
-      }
-      .bracket.top-right {
-        top: 0;
-        right: 0;
-        border-top: 1px solid var(--border-secondary);
-        border-right: 1px solid var(--border-secondary);
-      }
-      .bracket.top-left {
-        top: 0;
-        left: 0;
-        border-top: 1px solid var(--border-secondary);
-        border-left: 1px solid var(--border-secondary);
-      }
-      .bracket.bottom-left {
-        bottom: 0;
-        left: 0;
-        border-bottom: 1px solid var(--border-secondary);
-        border-left: 1px solid var(--border-secondary);
-      }
-      .bracket.bottom-right {
-        bottom: 0;
-        right: 0;
-        border-bottom: 1px solid var(--border-secondary);
-        border-right: 1px solid var(--border-secondary);
-      }
-    }
-  }
-  .icons-wrapper {
-    display: flex;
     gap: 0.5rem;
-    button {
-      margin: 0;
-      padding: 0;
-    }
+    min-height: 0;
+    overflow: hidden;
   }
-  .project-card.active {
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-secondary);
-    .bracket {
-      position: absolute;
-      box-sizing: border-box;
-      height: 16px;
-      width: 16px;
-    }
-    .bracket.top-right {
-      top: -6px;
-      right: -6px;
-      border-top: 2px solid var(--border-primary);
-      border-right: 2px solid var(--border-primary);
-    }
-    .bracket.top-left {
-      top: -6px;
-      left: -6px;
-      border-top: 2px solid var(--border-primary);
-      border-left: 2px solid var(--border-primary);
-    }
-    .bracket.bottom-left {
-      bottom: -6px;
-      left: -6px;
-      border-bottom: 2px solid var(--border-primary);
-      border-left: 2px solid var(--border-primary);
-    }
-    .bracket.bottom-right {
-      bottom: -6px;
-      right: -6px;
-      border-bottom: 2px solid var(--border-primary);
-      border-right: 2px solid var(--border-primary);
-    }
-  }
-  .project-card-icons {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 0.5rem;
-    display: flex;
-    gap: 0.5rem;
-    margin-top: auto;
-  }
-  .project-number {
-    width: 100%;
-    text-align: left;
+  .project-content h4 {
     color: var(--text-secondary);
+    background-color: var(--bg-tertiary);
+    font-weight: 700;
+    font-size: 10px;
+    padding: 0.25rem 0.5rem;
+    width: fit-content;
+    border-radius: 999rem;
   }
-  .project-card.active {
-    .project-title {
-      color: var(--text-primary);
-    }
-    .project-number {
-      color: var(--text-primary);
+  .project-content h3 {
+    display: inline-flex;
+  }
+  .project-description {
+    margin: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  .chips {
+    display: none;
+  }
+  .project-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+  .project-buttons :global(.button-wrapper a) {
+    display: flex;
+    gap: 0.25rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    border: 1.5px solid var(--border-secondary);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+  .project-buttons :global(.button-wrapper a:hover) {
+    border: 1.5px solid var(--border-primary);
+  }
+  .project-buttons > :global(.button-wrapper:nth-child(1)) {
+    flex-grow: 2;
+    width: auto;
+  }
+  .project-buttons > :global(.button-wrapper:nth-child(2)) {
+    flex-grow: 1;
+    width: auto;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 0.5rem;
+    background: #f4f4f4;
+    user-select: none;
+  }
+
+  /* Unified media queries */
+  @media (min-width: 480px),
+    (min-width: 720px),
+    (min-width: 1029px),
+    (min-width: 1920px) {
+    /* 480px+ project-image-container overrides */
+    .project-image-container {
+      max-height: 240px;
+      min-height: 160px;
     }
   }
-  /* 
-  :global(.projects-container:has(.project-card:hover))
-    .project-card:not(:hover) {
-    opacity: 0.7;
-    filter: grayscale(0.3);
-  } */
-  @media (min-width: 480px) {
-    .project-card:first-of-type {
-      grid-column: 1 / span 3;
+
+  @media (min-width: 720px) {
+    /* 720px+ card and content layout */
+    .new-project-card {
+      grid-column: span 3;
+      aspect-ratio: 1/1.5;
+      width: 100%;
+      max-width: none;
+      max-height: 420px;
     }
-    .project-card:nth-of-type(2) {
-      grid-column: 4 / span 3;
-    }
-    .project-card:nth-of-type(3) {
-      grid-column: 1 / span 3;
-    }
-    .project-card:nth-of-type(4) {
-      grid-column: 4 / span 3;
+    .project-image-container {
+      aspect-ratio: 16/8;
+      max-height: 180px;
+      min-height: 135px;
     }
   }
-  @media (min-width: 1024px) {
-    .project-card {
-      grid-column: span 4 / -1 !important;
-    }
-  }
-  @media (min-width: 1920px) {
-    .project-card {
-      grid-column: span 3 / -2 !important;
-    }
-  }
-  :global([data-theme="dark"]) {
-    .project-card {
-      background-color: var(--bg-primary);
-      border: 1px solid var(--border-tertiary);
-      background-image: radial-gradient(var(--bg-light) 1px, transparent 0);
-      &:hover {
-        background-color: var(--bg-secondary);
-      }
-    }
-    .project-card.active {
-      background-color: var(--bg-secondary);
-      border-color: var(--border-secondary);
-    }
-    .project-number {
-      color: var(--text-light);
-    }
-    .project-title {
-      color: var(--text-primary);
-    }
+
+  @media (min-width: 1029px) {
+    /* 1029px+ card max width */
     .project-description {
-      color: var(--text-tertiary);
+      border-bottom: 1px solid var(--border-tertiary);
+      padding-bottom: 1rem;
     }
-    .bracket {
-      border-color: var(--border-secondary) !important;
+    .chips {
+      max-width: 100%;
+      max-height: 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+      font-style: italic;
+    }
+    .new-project-card {
+      max-width: 350px;
+      /* min-height: 520px; */
+      aspect-ratio: 1/1.5;
     }
   }
-  :global([data-theme="dark"]) {
-    .project-card {
-      background-color: var(--bg-primary);
-      border: 1px solid var(--border-light);
-      background-image: radial-gradient(
-        var(--blue-radix-200) 1px,
-        transparent 0
-      );
-    }
-    .project-card.active {
-      background-color: var(--white-alpha-10);
-      border-color: var(--border-primary);
-    }
-    .bracket {
-      border-color: var(--border-primary) !important;
+
+  @media (min-width: 1920px) {
+    /* 1920px+ make card more square */
+    .new-project-card {
+      aspect-ratio: 1/1;
+      max-width: 350px;
     }
   }
 </style>

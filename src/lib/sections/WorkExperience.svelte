@@ -1,7 +1,6 @@
 <script lang="ts">
   import Heading from "../components/Heading.svelte";
   import ExperienceCard from "../components/ExperienceCard.svelte";
-  import { dictionary } from "../dictionary";
 </script>
 
 <Heading page="work-experience" />
