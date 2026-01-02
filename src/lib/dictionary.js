@@ -13,11 +13,11 @@ export const dictionary = {
             es: "Explorar Blueprint",
         },
         design: {
-            en: "View services",
-            es: "Ver servicios",
+            en: "NPM Repo",
+            es: "NPM Repo",
         },
         development: {
-            en: "Explore projects",
+            en: "ArchUI Website",
             es: "Explorar proyectos",
         },
         ["send-message"]: {
@@ -29,8 +29,16 @@ export const dictionary = {
             es: "Explorar concepto",
         },
         ["view-projects"]: {
-            en: " projects",
+            en: "View Projects",
             es: "Explorar proyectos"
+        },
+        ["visit-github"]: {
+            en: "Visit Github",
+            es: "Visitar Github"
+        },
+        ["visit-dribbble"]: {
+            en: "Visit Dribbble",
+            es: "Visitar Dribbble"
         },
         ["view-skills"]: {
             en: "Explore skills",
@@ -39,16 +47,16 @@ export const dictionary = {
     },
     Home: {
         heading: {
-            en: " Frontend Developer • UX Engineer",
-            es: " Frontend Developer • UX Engineer",
+            en: "Blueprint Engineering",
+            es: "Blueprint Engineering",
         },
         description: {
-            en: "Personal Work Portfolio 2025",
+            en: "@devtoti – Antonio Ruiz",
             es: "Portafolio Personal 2025",
         },
         subheading: {
-            en: "I am an architect with a strong passion for design and web development. I specialize in unifying UI/UX design with frontend engineering. I enjoy creating persuasive, high-impact websites and web applications focused on improving user experience and brand perception.",
-            es: "Arquitecto de profesión, apasionado por el diseño y desarrollo de software. Me especializo en unificar el diseño UI/UX con el frontend para crear páginas y aplicaciones web enfocadas en el usuario y la percepción de marca."
+            en: "Architect turned UI/UX Engineer. I help remote startups bridge the gap between design and frontend engineering for smoother user experiences, less team friction, and faster, higher-quality launches.",
+            es: "Arquitecto convertido en Ingeniero de UI/UX. Ayudo a startups y pequeños negocios a conectar el diseño y el desarrollo frontend, logrando experiencias de usuario más fluidas, menos fricción en el trabajo en equipo y lanzamientos más rápidos y de mejor calidad."
         },
     },
     Error: {
@@ -75,11 +83,11 @@ export const dictionary = {
     },
     Dev: {
         heading: {
-            en: "Frontend Development",
-            es: "Desarrollo Frontend",
+            en: "Development",
+            es: "Development",
         },
         description: {
-            en: "Modular websites and webapps",
+            en: "Modular websites & applications",
             es: "Páginas y aplicaciones modulares",
         },
         subheading: {
@@ -90,28 +98,28 @@ export const dictionary = {
     Design: {
         heading: {
             en: "UI/UX Design",
-            es: "Diseño UI/UX",
+            es: "Diseño aficionado",
         },
         description: {
-            en: "UX Resarch, wireframing and prototyping",
+            en: "Research • Wireframing • Prototyping • Testing",
             es: "Investigación, wireframes y prototipos",
         },
         subheading: {
-            en: "Coming up with creative solutions to improve user experience and cause a lasting imrpession is something I love doing. My design process is based on UX research and the User Centered Design framework (UCD).",
-            es: "Me gusta encontrar soluciones creativas para mejorar la experiencia del usuario y causar un impacto memorable. Mi proceso de diseño se sustenta en la investigación UX y el User Centered Design (UCD).",
+            en: "Architecture has given me a strong foundation in design principles. These have been key when crafting exceptional user experiences and empathizing with the user.",
+            es: "La arquitectura me ha dado una sólida base en principios de diseño. Estos han sido clave para crear experiencias de usuario excepcionales y empatizar con el usuario.",
         },
     },
     Concept: {
         heading: {
-            en: "Site concept",
-            es: "Concepto del sitio",
+            en: "ArchUI Design System v1.1.1",
+            es: "Sistema de diseño ArchUI v1.1.1",
         },
         description: {
-            en: "Blueprint design system",
+            en: "Granularity • Flexibility • Elegance",
             es: "Sistema de diseño Blueprint",
         },
         subheading: {
-            en: "This website is just the beginning of a much bigger project, currently in development. It's a callout for creativeness and innovation, through which I seek to show my architectural approach applied to web development.",
+            en: "This website has been built using the new ArchUI Design System I published in 2025. It's a granular and flexible design system inspired in architectural blueprints. Learn more about the project!",
             es: "Este sitio tan solo es el inicio de un proyecto mucho más grande, actualmente en desarrollo. Es una invitación a la creatividad y la innovación, a través del cual busco mostrar mi enfoque arquitectónico aplicado al desarrollo web.",
         },
     },
@@ -159,22 +167,32 @@ export const dictionary = {
     },
     ["work-experience"]: {
         heading: {
-            en: "Work Experience",
-            es: "Trayectoria profesional",
+            en: "Experience",
+            es: "Experiencia",
         },
         subheading: {
-            en: "My approach to web development has always been done hand in hand with UI/UX design. I enjoy solving both technical and design problems, which is why I like to think about myself as a UX Engineer.",
-            es: "El enfoque que le he dado al desarrollo web ha ido siempre de la mano con el diseño UI/UX. Disfruto resolver constantemente problemas técnicos y de diseño, por ello es que me consideroun UX Engineer.",
+            en: "I have worked as a frontend developer, UI/UX designer, architect, and digital illustrator for startups and small businesses. My approach to web development is based on the User Centered Design framework (UCD)",
+            es: "He trabajado como desarrollador frontend, diseñador UI/UX, arquitecto e ilustrador digital para startups y pequeños negocios. Mi enfoque al desarrollo web se sustenta en el User Centered Design (UCD)",
         },
     },
     ["services"]: {
         heading: {
-            en: "What I am good at",
-            es: "Lo que sé hacer",
+            en: "Digital Services",
+            es: "Servicios digitales",
         },
         subheading: {
-            en: "Get to know some of the things I enjoy the most and do best when developing software. This includes design-related tasks, frontend development, and backend integrations.",
-            es: "Conoce algunas de las cosas que más disfruto y mejor sé hacer dentro de la industria del desarrollo de software. Esto incluye procesos de diseño que van desde la ideación hasta la producción de código.",
+            en: "My skills range all the way from UX research and design, to frontend development and backend integrations. I can handle most of the production process from initial concept to final delivery.",
+            es: "Mis habilidades abarcan desde la investigación UX y el diseño, hasta el desarrollo frontend y las integraciones backend. Puedo manejar la mayor parte del proceso de producción desde la concepción inicial hasta el lanzamiento final.",
+        },
+    },
+    ["archui"]: {
+        heading: {
+            en: "A beautifullly unique design system",
+            es: "Un sistema de diseño único y estético",
+        },
+        subheading: {
+            en: "As someone passionate about classical architecture and modular design systems, I decided to create my own component library inspired in three architecutural orders: doric, ionic, and corinthian. Each theme is fully customizable and can be used in any project.",
+            es: "Como alguien apasionado por la arquitectura clásica y los sistemas de diseño modulares, decidí crear mi propia librería de componentes inspirada en tres órdenes arquitectónicos: dórico, jónico, y corintio. Cada Theme es completamente personalizable y puede ser utilizado en cualquier proyecto.",
         },
     },
     ["marketing"]: {
@@ -804,19 +822,37 @@ export const dictionary = {
     ["cta-banner"]: {
         title: {
             en: "Get in touch now",
-            es: "Ponte en contacto",
+            es: "Ponte en contacto ahora",
         },
         description: {
-            en: "If you are interested in creating a project with me, or if you are looking for a specialized technical or design consultancy, do not hesitate to contact me.",
+            en: "Whether you're interested in a project collaboration, or you need some technical or design consultancy, don't hesitate to contact me.",
             es: "Si te interesa crear un proyecto conmigo, o si buscas alguna asesoría técnica o de diseño personalizada, no dudes en contactarme.",
         },
         primaryButton: {
-            en: "Contact me",
+            en: "Schedule a call",
             es: "Contáctame",
         },
         secondaryButton: {
-            en: "Explore Blueprint",
-            es: "Explorar Blueprint",
+            en: "Connect with me",
+            es: "Conecta conmigo",
+        }
+    },
+    ["archui-banner"]: {
+        title: {
+            en: "Discover ArchUI",
+            es: "Descubre ArchUI",
+        },
+        description: {
+            en: "Start using ArchUI now and take your projects to the next level. Download the library for free and start building your next big idea with ease.",
+            es: "Comienza a usar ArchUI ahora y lleva tus proyectos al siguiente nivel. Descarga la librería de forma gratuita y comienza a construir tu próxima gran idea con facilidad.",
+        },
+        primaryButton: {
+            en: "Read Docs",
+            es: "Leer documentación",
+        },
+        secondaryButton: {
+            en: "Get Figma UI Kit",
+            es: "Obten kit de Figma",
         }
     },
     ["navigation"]: {
@@ -868,12 +904,12 @@ export const dictionary = {
     },
     ["footer-legend"]: {
         title: {
-            es: "devtoti-portfolio",
-            en: "devtoti-portfolio",
+            en: "Blueprint Design",
+            es: "ArchUI - Blueprint",
         },
         description: {
-            en: "Frontend development from a new perspective",
-            es: "Desarrollo frontend desde una nueva perspectiva",
+            en: "Built using the new ArchUI Design System v1.1.1",
+            es: "Desarrollado utilizando el nuevo Sistema de Diseño ArchUI v1.1.1",
         },
         techs: {
             en: "Made with",
@@ -907,12 +943,12 @@ export const dictionary = {
     },
     ["contact-banner"]: {
         title: {
-            en: "Schedule a meeting",
-            es: "Ponte en contacto conmigo",
+            en: "Don't forget to say hello!",
+            es: "No olvides saludarme",
         },
         description: {
-            en: "Schedule a meeting with me to learn more about my work, skills and services. Let's talk about your next project.",
-            es: "Agenda una reunión conmigo para conocer más acerca de mi trabajo, habilidades y servicios. Platiquemos de tu próximo proyecto.",
+            en: "Schedule a quick video call with me if you want to discuss your next big project. Let's get to work!",
+            es: "Agenda una llamada rápida conmigo si quieres hablar de tu próximo gran proyecto. ¡Vamos a trabajar!",
         },
     }
 };

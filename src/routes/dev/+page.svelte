@@ -28,8 +28,8 @@
   <HeroContent
     buttonOneText="view-projects"
     buttonOneHref="/#projects"
-    buttonTwoText="contact"
-    buttonTwoHref="/contact"
+    buttonTwoText="visit-github"
+    buttonTwoHref="https://github.com/devtoti"
     currentPage="Dev"
     isHome={false}
     HeroImage={PaperBox}

@@ -236,6 +236,10 @@
     .new-project-card {
       aspect-ratio: 1/1;
       max-width: 350px;
+      min-height: 640px;
+    }
+    .chips {
+      max-height: 100%;
     }
   }
 </style>

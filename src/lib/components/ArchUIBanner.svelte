@@ -64,23 +64,24 @@
 <article class="cta-banner">
   <div class="cta-banner-info">
     <h2 class="arc-h0 cta-text color-invert">
-      <Text section="cta-banner" text="title" />
+      <Text section="archui-banner" text="title" />
     </h2>
     <h3 class="arc-body-0 color-invert">
-      <Text section="cta-banner" text="description" />
+      <Text section="archui-banner" text="description" />
     </h3>
     <div class="button-wrapper">
       <Button
-        text={dictionary["cta-banner"].primaryButton[lan]}
-        href="/contact"
+        text={dictionary["archui-banner"].primaryButton[lan]}
+        href="https://archui-website.netlify.app"
+        external
         primary
         invert
       />
     </div>
     <div class="button-wrapper">
       <Button
-        text={dictionary["cta-banner"].secondaryButton[lan]}
-        href="https://www.linkedin.com/in/devtoti"
+        text={dictionary["archui-banner"].secondaryButton[lan]}
+        href="https://www.figma.com/community/file/1585101937198168427"
         secondary
         external
         invert
@@ -176,6 +177,11 @@
   .right-hand.active {
     transform: translateX(0%);
     opacity: 1;
+  }
+  @media (min-width: 460px) {
+    .cta-banner {
+      grid-column: 3 / -3;
+    }
   }
   @media (min-width: 720px) {
     .illustrations-container {

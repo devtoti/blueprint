@@ -89,6 +89,7 @@
   .button-container {
     position: relative;
     z-index: 1;
+    gap: 1rem;
   }
   .hero-text {
     border-top: 0;
