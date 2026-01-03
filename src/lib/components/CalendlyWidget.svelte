@@ -19,7 +19,7 @@
   .calendly-inline-widget {
     width: 100%;
     height: 100%;
-    grid-row: 4/5;
+    grid-row-start: 2;
     grid-column: 2/-2;
   }
 </style>

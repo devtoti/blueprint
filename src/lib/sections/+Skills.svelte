@@ -155,7 +155,7 @@
     flex-direction: column;
     gap: 1rem;
     margin: 0.25rem;
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-primary);
     padding: 0.5rem 1rem;
     padding: 0.25rem 0.5rem;
     transition: background-color 0.5s ease-in-out;

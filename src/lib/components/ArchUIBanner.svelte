@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import LeftHand from "./LeftHand.svelte";
-  import RightHand from "./RightHand.svelte";
+  import BlueprintArchs from "../images/archui-archs.svelte";
   import Button from "./Button.svelte";
   import Text from "./Text.svelte";
   import { dictionary } from "$lib/dictionary";
@@ -9,16 +8,12 @@
   import { theme } from "$lib/stores";
   const isDarkMode = $derived($theme === "dark");
   const lan = $derived($lang as "en" | "es");
-  let active = $state(false);
 
   onMount(() => {
-    const rightHand = document.querySelector(
-      ".cta-banner .right-hand"
+    const blueprintArchs = document.querySelector(
+      ".cta-banner .blueprint-archs-container"
     ) as HTMLElement;
-    const leftHand = document.querySelector(
-      ".cta-banner .left-hand"
-    ) as HTMLElement;
-    if (!rightHand || !leftHand) return;
+    if (!blueprintArchs) return;
 
     let ticking = false;
 
@@ -38,13 +33,10 @@
 
           const ratio = Math.max(0, 1 - distanceFromCenter / maxDistance);
           const transition = "transform 0.5s ease-out";
-          rightHand.style.transition = transition;
-          leftHand.style.transition = transition;
-          const rightPosition = 25 - 25 * ratio;
-          const leftPosition = -25 + 28 * ratio;
+          blueprintArchs.style.transition = transition;
 
-          rightHand.style.transform = `translateX(${rightPosition}%)`;
-          leftHand.style.transform = `translateX(${leftPosition}%)`;
+          const scale = 1.5 + 0.75 * ratio;
+          blueprintArchs.style.transform = `scale(${scale})`;
 
           ticking = false;
         });
@@ -64,23 +56,24 @@
 <article class="cta-banner">
   <div class="cta-banner-info">
     <h2 class="arc-h0 cta-text color-invert">
-      <Text section="cta-banner" text="title" />
+      <Text section="archui-banner" text="title" />
     </h2>
     <h3 class="arc-body-0 color-invert">
-      <Text section="cta-banner" text="description" />
+      <Text section="archui-banner" text="description" />
     </h3>
     <div class="button-wrapper">
       <Button
-        text={dictionary["cta-banner"].primaryButton[lan]}
-        href="/contact"
+        text={dictionary["archui-banner"].primaryButton[lan]}
+        href="https://archui-website.netlify.app"
+        external
         primary
         invert
       />
     </div>
     <div class="button-wrapper">
       <Button
-        text={dictionary["cta-banner"].secondaryButton[lan]}
-        href="https://www.linkedin.com/in/devtoti"
+        text={dictionary["archui-banner"].secondaryButton[lan]}
+        href="https://www.figma.com/community/file/1585101937198168427"
         secondary
         external
         invert
@@ -88,11 +81,8 @@
     </div>
   </div>
   <div class="illustrations-container">
-    <div class="left-hand container" class:active>
-      <LeftHand isDark={isDarkMode} />
-    </div>
-    <div class="right-hand container" class:active>
-      <RightHand isDark={isDarkMode} />
+    <div class="blueprint-archs-container">
+      <BlueprintArchs isDark={isDarkMode} />
     </div>
   </div>
 </article>
@@ -100,6 +90,7 @@
 <style>
   .cta-banner {
     position: relative;
+    /* Use the same radial gradient as in CTABanner.svelte */
     background: radial-gradient(#adb2de, #aeb2d9 50%, #878cbe 100%);
     height: 80svh;
     grid-column: 1 / -1;
@@ -140,48 +131,33 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    transform-origin: center;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    place-items: center;
-    transform: translate(-50%, -20%) scale(1.75) rotate(20deg);
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     pointer-events: none;
     mix-blend-mode: multiply;
     z-index: 1;
   }
-  .container {
+  .blueprint-archs-container {
     position: relative;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-  }
-  .left-hand,
-  .right-hand {
-    transition: all 2s ease-in-out;
+    width: fit-content;
+    height: fit-content;
     opacity: 0.5;
+    transform-origin: center;
+    object-position: center;
   }
-  .left-hand:first-child {
-    width: 100%;
-    height: fit-content;
-    transform: translateX(-20%);
+  .blueprint-archs-container :global(svg) {
+    object-position: center;
   }
-  .right-hand {
-    width: 100%;
-    height: fit-content;
-    transform: translateX(20%);
-  }
-  .left-hand.active {
-    transform: translateX(3%);
-    opacity: 1;
-  }
-  .right-hand.active {
-    transform: translateX(0%);
-    opacity: 1;
+  @media (min-width: 460px) {
+    .cta-banner {
+      grid-column: 3 / -3;
+    }
   }
   @media (min-width: 720px) {
     .illustrations-container {
-      transform: translate(-45%, -60%) scale(1.2) rotate(10deg) !important;
-      align-items: flex-end;
-      padding-bottom: 2rem;
+      transform: translate(-50%, -50%);
     }
     .cta-banner-info {
       justify-content: flex-start;
@@ -197,14 +173,13 @@
     }
     @media (min-width: 1024px) {
       .illustrations-container {
-        transform: translate(-50%, -45%) scale(1) rotate(10deg) !important;
-        align-items: flex-end;
-        padding-bottom: 2rem;
+        transform: translate(-50%, -50%);
       }
     }
   }
   :global([data-theme="dark"]) {
     .cta-banner {
+      /* Use the CTABanner dark theme gradient */
       background: radial-gradient(#7b81a8, #3a4d8e 50%, #161d4a 100%);
     }
     .illustrations-container {

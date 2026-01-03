@@ -1,0 +1,16 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 32 32"
+>
+  <!-- Icon from Bytesize Icons by Dan Klammer - https://github.com/danklammer/bytesize-icons/blob/master/LICENSE.md -->
+  <path
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    d="M14 9H3v20h20V18M18 4h10v10m0-10L14 18"
+  />
+</svg>

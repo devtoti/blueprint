@@ -20,7 +20,7 @@
     "@sveltejs/kit": "^2.16.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@types/node": "^24.0.13",
-    "svelte": "^5.0.0",
+    "svelte": "^5.35.6",
     "svelte-check": "^4.0.0",
     "tinro": "^0.6.12",
     "typescript": "^5.0.0",

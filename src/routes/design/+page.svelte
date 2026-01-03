@@ -27,8 +27,8 @@
   <HeroContent
     buttonOneText="view-skills"
     buttonOneHref="/#skills"
-    buttonTwoText="contact"
-    buttonTwoHref="/contact"
+    buttonTwoText="visit-dribbble"
+    buttonTwoHref="https://dribbble.com/totisketches"
     currentPage="Design"
     isHome={false}
     bgPattern={isDarkMode

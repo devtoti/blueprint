@@ -62,6 +62,7 @@
     border-bottom: 0;
     grid-column: 1 / -1;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;

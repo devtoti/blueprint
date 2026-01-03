@@ -13,11 +13,11 @@ export const dictionary = {
             es: "Explorar Blueprint",
         },
         design: {
-            en: "View services",
-            es: "Ver servicios",
+            en: "NPM Repo",
+            es: "NPM Repo",
         },
         development: {
-            en: "Explore projects",
+            en: "ArchUI Website",
             es: "Explorar proyectos",
         },
         ["send-message"]: {
@@ -29,8 +29,16 @@ export const dictionary = {
             es: "Explorar concepto",
         },
         ["view-projects"]: {
-            en: " projects",
+            en: "View Projects",
             es: "Explorar proyectos"
+        },
+        ["visit-github"]: {
+            en: "Visit Github",
+            es: "Visitar Github"
+        },
+        ["visit-dribbble"]: {
+            en: "Visit Dribbble",
+            es: "Visitar Dribbble"
         },
         ["view-skills"]: {
             en: "Explore skills",
@@ -39,16 +47,16 @@ export const dictionary = {
     },
     Home: {
         heading: {
-            en: " Frontend Developer • UX Engineer",
-            es: " Frontend Developer • UX Engineer",
+            en: "Blueprint Engineering",
+            es: "Blueprint Engineering",
         },
         description: {
-            en: "Personal Work Portfolio 2025",
+            en: "@devtoti – Antonio Ruiz",
             es: "Portafolio Personal 2025",
         },
         subheading: {
-            en: "I am an architect with a strong passion for design and web development. I specialize in unifying UI/UX design with frontend engineering. I enjoy creating persuasive, high-impact websites and web applications focused on improving user experience and brand perception.",
-            es: "Arquitecto de profesión, apasionado por el diseño y desarrollo de software. Me especializo en unificar el diseño UI/UX con el frontend para crear páginas y aplicaciones web enfocadas en el usuario y la percepción de marca."
+            en: "Architect turned UI/UX Engineer. I help remote startups bridge the gap between design and frontend engineering for smoother user experiences, less team friction, and faster, higher-quality launches.",
+            es: "Arquitecto convertido en UX Engineer. Ayudo a startups y empresas medianas a conectar el diseño y el desarrollo frontend a partir de una visión transdisciplinaria centrada en el usuario."
         },
     },
     Error: {
@@ -75,11 +83,11 @@ export const dictionary = {
     },
     Dev: {
         heading: {
-            en: "Frontend Development",
-            es: "Desarrollo Frontend",
+            en: "Development",
+            es: "Development",
         },
         description: {
-            en: "Modular websites and webapps",
+            en: "Modular websites & applications",
             es: "Páginas y aplicaciones modulares",
         },
         subheading: {
@@ -93,26 +101,26 @@ export const dictionary = {
             es: "Diseño UI/UX",
         },
         description: {
-            en: "UX Resarch, wireframing and prototyping",
-            es: "Investigación, wireframes y prototipos",
+            en: "Research • Wireframing • Prototyping • Testing",
+            es: "Investigación • Wireframes • Prototipos • Testing",
         },
         subheading: {
-            en: "Coming up with creative solutions to improve user experience and cause a lasting imrpession is something I love doing. My design process is based on UX research and the User Centered Design framework (UCD).",
-            es: "Me gusta encontrar soluciones creativas para mejorar la experiencia del usuario y causar un impacto memorable. Mi proceso de diseño se sustenta en la investigación UX y el User Centered Design (UCD).",
+            en: "Architecture has given me a strong foundation in design principles. These have been key when crafting exceptional user experiences and empathizing with the user.",
+            es: "La arquitectura me ha dado una sólida base en principios de diseño. Estos han sido clave para crear experiencias de usuario excepcionales y empatizar con el usuario mediante el User Centered Design (UCD).",
         },
     },
     Concept: {
         heading: {
-            en: "Site concept",
-            es: "Concepto del sitio",
+            en: "Arch UI Design System",
+            es: "Arch UI Design System",
         },
         description: {
-            en: "Blueprint design system",
-            es: "Sistema de diseño Blueprint",
+            en: "Granularity • Flexibility • Elegance",
+            es: "Granularidad • Flexibilidad • Elegancia",
         },
         subheading: {
-            en: "This website is just the beginning of a much bigger project, currently in development. It's a callout for creativeness and innovation, through which I seek to show my architectural approach applied to web development.",
-            es: "Este sitio tan solo es el inicio de un proyecto mucho más grande, actualmente en desarrollo. Es una invitación a la creatividad y la innovación, a través del cual busco mostrar mi enfoque arquitectónico aplicado al desarrollo web.",
+            en: "This website has been built using the new ArchUI Design System I published in 2025. It's a granular and flexible design system inspired in architectural blueprints. Learn more about the project!",
+            es: "Este sitio web ha sido construido utilizando el nuevo Sistema de Diseño ArchUI que publiqué en 2025. Es un sistema de granular y flexible inspirado en el diseño blueprint y la arquitectura clásica.",
         },
     },
     Contact: {
@@ -159,22 +167,42 @@ export const dictionary = {
     },
     ["work-experience"]: {
         heading: {
-            en: "Work Experience",
-            es: "Trayectoria profesional",
+            en: "Experience",
+            es: "Experiencia",
         },
         subheading: {
-            en: "My approach to web development has always been done hand in hand with UI/UX design. I enjoy solving both technical and design problems, which is why I like to think about myself as a UX Engineer.",
-            es: "El enfoque que le he dado al desarrollo web ha ido siempre de la mano con el diseño UI/UX. Disfruto resolver constantemente problemas técnicos y de diseño, por ello es que me consideroun UX Engineer.",
+            en: "I have worked as a frontend developer, UI/UX designer, architect, and digital illustrator for startups and small businesses. My approach to web development is based on the User Centered Design framework (UCD)",
+            es: "He trabajado como desarrollador frontend, diseñador UI/UX, arquitecto e ilustrador digital para startups y +100 clientes internacionales. Mi trayectoria y experiencia laboral han sido variadas durante los últimos años.",
         },
     },
     ["services"]: {
         heading: {
-            en: "What I am good at",
-            es: "Lo que sé hacer",
+            en: "Digital Services",
+            es: "Servicios digitales",
         },
         subheading: {
-            en: "Get to know some of the things I enjoy the most and do best when developing software. This includes design-related tasks, frontend development, and backend integrations.",
-            es: "Conoce algunas de las cosas que más disfruto y mejor sé hacer dentro de la industria del desarrollo de software. Esto incluye procesos de diseño que van desde la ideación hasta la producción de código.",
+            en: "My skills range all the way from UX research and design, to frontend development and backend integrations. I can handle most of the production process from initial concept to final delivery.",
+            es: "Mis habilidades abarcan desde la investigación UX y el diseño, hasta el desarrollo frontend y las integraciones backend. Puedo manejar la mayor parte del proceso de producción desde la concepción inicial hasta el lanzamiento final.",
+        },
+    },
+    ["archui"]: {
+        heading: {
+            en: "What is ArchUI?",
+            es: "¿Qué es ArchUI?",
+        },
+        subheading: {
+            en: "ArchUI is a new modular and flexible design system inspired by Classical Architecture and blueprint design. Its components utilize granular tokens, allowing you to create highly customizable and reusable web interfaces.",
+            es: "ArchUI es un nuevo sistema de diseño modular y flexible inspirado en la arquitectura clásica y los blueprints. Sus componentes están diseñados mediante tokens granulares para desarrollar interfaces web altamente personalizables y reutilizables.",
+        },
+    },
+    ["archui-themes"]: {
+        heading: {
+            en: "Three unique App themes",
+            es: "Tres App Themes únicos",
+        },
+        subheading: {
+            en: "Each theme is based on a different architectural style and uses its own color palette and typography. Since all the components are built using the same base tokens, the themes are highly consistent and maintain a coherent visual identity.",
+            es: "Cada Theme está basado en un estilo arquitectónico diferente y utiliza su propia paleta de colores y tipografía. Como todos los componentes se construyen utilizando los mismos tokens base, los temas son altamente consistentes y mantienen una identidad visual coherente.",
         },
     },
     ["marketing"]: {
@@ -243,10 +271,14 @@ export const dictionary = {
             },
         },
     ],
-    ["projects-banner"]: {
-        title: {
-            en: "Highlighted Projects",
-            es: "Proyectos Destacados",
+    ["projects"]: {
+        heading: {
+            en: "Projects",
+            es: "Proyectos",
+        },
+        subheading: {
+            en: "A collection of my most notable projects when it comes to frontend development and UI/UX design.",
+            es: "Una colección de mis proyectos públicos más notables de desarrollo web y diseño UI/UX.",
         },
     },
     ["projects-design"]: [
@@ -308,9 +340,56 @@ export const dictionary = {
     ["highlighted-projects"]: [
 
         {
+            id: 0,
+            number: "00",
+            title: "ArchUI React Library",
+            subheading: "UI Component Kit",
+            url: "https://archui-website.netlify.app",
+            figmaUrl: "https://www.figma.com/community/file/1585101937198168427/archui-design-system-v1-1-0",
+            image: "archui-preview.png",
+            description: {
+                en: "A React and Tailwind component library inspired by architectural blueprints. ArchUI is a flexible design system for prototyping and building web apps.",
+                es: "Librería de componentes hecha con React y Tailwind inspirada en planos arquitectónicos. ArchUI es un nuevo sistema de diseño flexible para prototipar y crear aplicaciones web.",
+            },
+            tags: ["React", "TailwindCSS", "Storybook", "Chromatic", "Astro", "Svelte","Typescript", "Figma", "Design System", "UI Component Kit"],
+            bullets: [
+                {
+                    title: {
+                        en: "Redesign",
+                        es: "Rediseño",
+                    },
+                    description: {
+                        en: "Radical redesign of the website from a new design system and navigation structure.",
+                        es: "Rediseño radical de la página web a partir de un nuevo sistema de diseño y estructura de navegación.",
+                    }
+                },
+                {
+                    title: {
+                        en: "Illustrations",
+                        es: "Ilustraciones",
+                    },
+                    description: {
+                        en: "Design of vectorized illustrations for the new landing page created from scratch.",
+                        es: "Diseño de ilustraciones vectorizadas para la nueva landing page creadas desde cero.",
+                    },
+                },
+                {
+                    title: {
+                        en: "Apple Approval",
+                        es: "Aprobación Apple",
+                    },
+                    description: {
+                        en: "The new landing page was approved by Apple in terms of aesthetics and design requirements.",
+                        es: "La nueva landing page fue aprobada por Apple en cuanto a estética y requerimientos de diseño.",
+                    },
+                },
+            ]
+        }, 
+        {
             id: 1,
             number: "01",
             title: "MobileKangaroo",
+            subheading: "Landing Page",
             url: "https://mobilekangaroo.com",
             figmaUrl: "https://www.figma.com/design/dF4RjnxjxV0xF2gi8iMfXU/MobileKangaroo-Website-Revamp?node-id=0-1&t=U2HbEfk7Y2UhRWo1-1",
             image: "mobilekangaroo-preview.png",
@@ -354,13 +433,14 @@ export const dictionary = {
         }, {
             id: 2,
             number: "02",
-            title: "Junkhaul Moving Services",
-            url: "https://365junkhaul.com/booking",
-            figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
+            title: "365 Junkhaul",
+            subheading: "Dashboard & Checkout App",
+            url: "https://365junkhaul.com/",
+            figmaUrl: "https://www.figma.com/design/vdbpMHcBulF2nfpocoPgRu/Checkout-User-Flow?node-id=5-2805&t=ZOUJG1A25JOLO1ge-1",
             image: "365junkhaul-preview.png",
             description: {
-                en: "Checkout with payment system and admin dashboard for the company Junkhaul Moving Services. Developed with React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
-                es: "Checkout con sistema de pagos y dashboard de administración para la empresa Junkhaul Moving Services. Desarrollado con React, Nextjs, TailwindCSS, Typescript, Figma, Stripe, Supabase.",
+                en: "Checkout with payment system and admin dashboard for managing orders. Stripe and Supabase integrations for payment processing.",
+                es: "Checkout con sistema de pagos y dashboard de administración para administrar pedidos. Integraciones con Stripe y Supabase para procesar pagos.",
             },
             tags: ["React", "Nextjs", "TailwindCSS", "Typescript", "Figma", "Stripe", "Supabase"],
             bullets: [
@@ -400,12 +480,13 @@ export const dictionary = {
             id: 3,
             number: "03",
             title: "BB4MD Website",
+            subheading: "Website Design",
             url: "https://bb4md.com",
             figmaUrl: "https://www.figma.com/design/zG985mX5ZGboL0GvxWbVMU/BB4MD-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
             image: "bb4md-preview.png",
             description: {
-                en: "Redesign of the BB4MD landing page, a small Canadian company dedicated to the sale of illustrated books focused on motivating and teaching new parents to take care of their babies through the science of parenting.",
-                es: "Rediseño de la landing page de BB4MD, una pequeña empresa canadiense dedicada a la venta de libros ilustrados enfocados en motivar y enseñar a nuevos padres de familia a cuidar de sus bebés por medio de la ciencia del parenting.",
+                en: "Redesign of the BB4MD landing page for a Canadian company selling illustrated books that motivate and teach new parents through parenting science.",
+                es: "Rediseño de la landing page de BB4MD, una empresa canadiense que vende libros ilustrados para motivar y enseñar a nuevos padres mediante la ciencia del new parenting.",
             },
             tags: ["UI/UX", "Frontend", "Figma", "Illustrations", "Wix", "Custom UI"],
             bullets: [
@@ -445,6 +526,7 @@ export const dictionary = {
             id: 4,
             number: "04",
             title: "IKOL Web 3.0",
+            subheading: "Design System",
             url: "https://landing-pages-lime.vercel.app/",
             figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
             image: "ikol-preview.png",
@@ -489,6 +571,7 @@ export const dictionary = {
             id: 5,
             number: "05",
             title: "ClassicUI Library",
+            subheading: "UI Library",
             url: null,
             figmaUrl: null,
             image: "classic-preview.png",
@@ -749,19 +832,37 @@ export const dictionary = {
     ["cta-banner"]: {
         title: {
             en: "Get in touch now",
-            es: "Ponte en contacto",
+            es: "Ponte en contacto ahora",
         },
         description: {
-            en: "If you are interested in creating a project with me, or if you are looking for a specialized technical or design consultancy, do not hesitate to contact me.",
-            es: "Si te interesa crear un proyecto conmigo, o si buscas alguna asesoría técnica o de diseño personalizada, no dudes en contactarme.",
+            en: "Whether you're interested in a project collaboration, or you need some technical or design consultancy, don't hesitate to contact me.",
+            es: "Si te interesa crear un proyecto conmigo, o si buscas alguna asesoría técnica personalizada, no dudes en contactarme.",
         },
         primaryButton: {
-            en: "Contact me",
+            en: "Schedule a call",
             es: "Contáctame",
         },
         secondaryButton: {
-            en: "Explore Blueprint",
-            es: "Explorar Blueprint",
+            en: "Connect with me",
+            es: "Conecta conmigo",
+        }
+    },
+    ["archui-banner"]: {
+        title: {
+            en: "Discover ArchUI",
+            es: "Descubre ArchUI",
+        },
+        description: {
+            en: "Start using ArchUI now and take your projects to the next level. Download the library for free and start building your next big idea with ease.",
+            es: "Comienza a usar ArchUI ahora y lleva tus proyectos al siguiente nivel. Descarga la librería de forma gratuita y comienza a construir tu próxima gran idea con facilidad.",
+        },
+        primaryButton: {
+            en: "Read Docs",
+            es: "Leer documentación",
+        },
+        secondaryButton: {
+            en: "Get Figma UI Kit",
+            es: "Obten kit de Figma",
         }
     },
     ["navigation"]: {
@@ -813,12 +914,12 @@ export const dictionary = {
     },
     ["footer-legend"]: {
         title: {
-            es: "devtoti-portfolio",
-            en: "devtoti-portfolio",
+            en: "Blueprint Design",
+            es: "ArchUI - Blueprint",
         },
         description: {
-            en: "Frontend development from a new perspective",
-            es: "Desarrollo frontend desde una nueva perspectiva",
+            en: "Built using the new ArchUI Design System v1.1.1",
+            es: "Desarrollado utilizando el nuevo Sistema de Diseño ArchUI v1.1.1",
         },
         techs: {
             en: "Made with",
@@ -852,12 +953,12 @@ export const dictionary = {
     },
     ["contact-banner"]: {
         title: {
-            en: "Schedule a meeting",
-            es: "Ponte en contacto conmigo",
+            en: "Don't forget to say hello!",
+            es: "No olvides saludarme",
         },
         description: {
-            en: "Schedule a meeting with me to learn more about my work, skills and services. Let's talk about your next project.",
-            es: "Agenda una reunión conmigo para conocer más acerca de mi trabajo, habilidades y servicios. Platiquemos de tu próximo proyecto.",
+            en: "Schedule a quick video call with me if you want to discuss your next big project. Let's get to work!",
+            es: "Agenda una llamada rápida conmigo si quieres hablar de tu próximo gran proyecto. ¡Vamos a trabajar!",
         },
     }
 };
