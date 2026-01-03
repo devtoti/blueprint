@@ -64,7 +64,7 @@
     buttonOneText="contact"
     buttonOneHref="/contact"
     buttonTwoText="resume"
-    buttonTwoHref="/docs/arc-frontend-developer-en-resume.pdf"
+    buttonTwoHref="/docs/Antonio_Ruiz_CV.pdf"
     HeroImage={Blueprint}
     isHome
     currentPage="Home"
