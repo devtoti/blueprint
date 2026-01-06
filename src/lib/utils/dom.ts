@@ -1,6 +1,6 @@
-import type { theme } from "$lib/stores";
 import type { Writable } from "svelte/store";
 import { browser } from "$app/environment";
+import { tick } from "svelte";
 
 export const injectCalendly = () => {
   const script = document.createElement("script");
@@ -91,12 +91,6 @@ export const showHideNavOnScroll = (
   showNav: boolean,
   currScrollPos: number
 ) => {
-//   const newPosition = window.scrollY;
-//   if (newPosition > currScrollPos + 200) {
-//     ref.set(false);
-//     currScrollPos = newPosition;
-//   } else if (currScrollPos - newPosition >= 200) {
-  console.log(currScrollPos);
 };
 
 export const showHideAxesOnClick = () => {
@@ -117,4 +111,23 @@ export const showHideAxesOnClick = () => {
     });
     nav?.classList.remove("no-axes");
   }
+};
+
+export const setupGridResize = (updateGrid: () => void) => {
+  if (!browser) return () => {};
+  
+  const initialize = async () => {
+    const main = document.querySelector("main");
+    if (!main) {
+      await tick();
+    }
+    updateGrid();
+  };
+
+  initialize();
+  
+  window.addEventListener("resize", updateGrid);
+  return () => {
+    window.removeEventListener("resize", updateGrid);
+  };
 };

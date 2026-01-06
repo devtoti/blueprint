@@ -1,16 +1,13 @@
 <script>
   import { GRID } from "$lib/utils/gridData";
   import { onMount } from "svelte";
+  import { setupGridResize } from "$lib/utils";
   let grid = $state(GRID());
   let { width = 100, height = 100, color = "var(--bg-primary)" } = $props();
   onMount(() => {
-    grid = GRID();
-    window.addEventListener("resize", () => {
+    return setupGridResize(() => {
       grid = GRID();
     });
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
   });
   let triangleWidth = $derived(grid.columnWidth + grid.gap * 2.5);
 </script>

@@ -3,7 +3,7 @@
   import LogRocket from "logrocket";
   import "$lib/fonts/fonts.css";
   import { fade } from "svelte/transition";
-  import { onMount, setContext, tick } from "svelte";
+  import { onMount, setContext } from "svelte";
   let { children } = $props();
   import { theme } from "$lib/stores";
   import Navbar from "$lib/components/Navbar.svelte";
@@ -16,6 +16,7 @@
     handleAnchorClick,
     handleHashOnLoad,
     toggleTheme,
+    setupGridResize,
   } from "$lib/utils";
   let pageHasLoaded = $state(false);
   let innerWidth = $state(0);
@@ -30,17 +31,11 @@
   });
 
   onMount(() => {
-    tick().then(() => {
+    return setupGridResize(() => {
       grid = GRID();
     });
-
-    window.addEventListener("resize", () => {
-      grid = GRID();
-    });
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
   });
+
   onMount(() => {
     pageHasLoaded = true;
     injectAnalytics();
@@ -53,9 +48,12 @@
     document.addEventListener("click", handleAnchorClick);
     handleHashOnLoad();
 
+    const handleHashChange = () => handleHashOnLoad();
+    window.addEventListener("hashchange", handleHashChange);
+
     return () => {
-      window.removeEventListener("resize", () => {});
-      window.removeEventListener("hashchange", handleHashOnLoad);
+      document.removeEventListener("click", handleAnchorClick);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   });
 

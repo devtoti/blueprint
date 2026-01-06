@@ -6,6 +6,7 @@
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
+  import { setupGridResize } from "$lib/utils";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import LevelsPattern from "$lib/images/levels-pattern-cdmx-gray.svelte";
   import { theme } from "$lib/stores";
@@ -14,13 +15,9 @@
   let grid = $state(GRID());
   let isDarkMode = $derived($theme === "dark");
   onMount(() => {
-    grid = GRID();
-    window.addEventListener("resize", () => {
+    return setupGridResize(() => {
       grid = GRID();
     });
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
   });
 </script>
 

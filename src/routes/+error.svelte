@@ -7,17 +7,14 @@
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount } from "svelte";
   import { GRID } from "$lib/utils/gridData";
+  import { setupGridResize } from "$lib/utils";
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
   onMount(() => {
-    grid = GRID();
-    window.addEventListener("resize", () => {
+    return setupGridResize(() => {
       grid = GRID();
     });
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
   });
 </script>
 

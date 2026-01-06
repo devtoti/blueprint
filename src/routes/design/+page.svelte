@@ -6,6 +6,7 @@
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import { GRID } from "$lib/utils/gridData";
+  import { setupGridResize } from "$lib/utils";
   import PortalDorico from "$lib/images/portal-dorico.svelte";
   import { theme } from "$lib/stores";
   let isDarkMode = $derived($theme === "dark");
@@ -13,13 +14,9 @@
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
   onMount(() => {
-    grid = GRID();
-    window.addEventListener("resize", () => {
+    return setupGridResize(() => {
       grid = GRID();
     });
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
   });
 </script>
 

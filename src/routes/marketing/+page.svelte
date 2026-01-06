@@ -7,7 +7,7 @@
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
   import { GRID } from "$lib/utils/gridData";
-  import { setDividerWidth as computeDividerWidth } from "$lib/utils";
+  import { setDividerWidth as computeDividerWidth, setupGridResize } from "$lib/utils";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import { theme, lang } from "$lib/stores";
@@ -20,13 +20,9 @@
   let hoveredStrategyId = $state(null);
 
   onMount(() => {
-    grid = GRID();
-    window.addEventListener("resize", () => {
+    return setupGridResize(() => {
       grid = GRID();
     });
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
   });
 
   const setDividerWidth = (width: number) => computeDividerWidth(width, grid);

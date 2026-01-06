@@ -14,17 +14,16 @@
   import Services from "$lib/sections/+Services.svelte";
   import Skills from "$lib/sections/+Skills.svelte";
   import Blueprint from "$lib/images/blueprint.svelte";
-  import { setDividerWidth as computeDividerWidth } from "$lib/utils";
+  import {
+    setDividerWidth as computeDividerWidth,
+    setupGridResize,
+  } from "$lib/utils";
   let grid = $state<ReturnType<typeof GRID>>(GRID());
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   onMount(() => {
-    grid = GRID();
-    window.addEventListener("resize", () => {
+    return setupGridResize(() => {
       grid = GRID();
     });
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
   });
   const isMobile = $derived(WINDOW.width <= 480);
   const setDividerWidth = (width: number) => computeDividerWidth(width, grid);

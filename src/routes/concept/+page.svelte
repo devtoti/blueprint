@@ -11,20 +11,19 @@
   import Heading from "$lib/components/Heading.svelte";
   import IsoCubeDark from "$lib/images/iso-cube-dark.svelte";
   import ArchUIHero from "$lib/images/archui-hero.svelte";
-  import { setDividerWidth as computeDividerWidth } from "$lib/utils";
+  import {
+    setDividerWidth as computeDividerWidth,
+    setupGridResize,
+  } from "$lib/utils";
   import { theme } from "$lib/stores";
   let isDarkMode = $derived($theme === "dark");
   let WINDOW: { width: number; height: number } = getContext("WINDOW");
   let isMobile = $derived(WINDOW.width <= 464);
   let grid = $state(GRID());
   onMount(() => {
-    grid = GRID();
-    window.addEventListener("resize", () => {
+    return setupGridResize(() => {
       grid = GRID();
     });
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
   });
   const setDividerWidth = (width: number) => computeDividerWidth(width, grid);
   const imageContext = import.meta.glob("$lib/images/*.{svg,png}", {
