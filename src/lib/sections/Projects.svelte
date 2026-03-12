@@ -3,14 +3,14 @@
   import Heading from "../components/Heading.svelte";
   import { dictionary } from "../dictionary";
   import NewProjectCard from "../components/ProjectCard.svelte";
-  const projectData = dictionary["highlighted-projects"]
-    .slice(0, -1)
-    .toSorted((a, b) => a.id - b.id);
+  const projectData = dictionary["highlighted-projects"].toSorted(
+    (a, b) => a.id - b.id,
+  );
 </script>
 
 <Heading page="projects" />
 <div class="projects-container">
-  {#each projectData as project, index}
+  {#each projectData as project}
     <NewProjectCard
       project={{
         id: project.id,
@@ -22,7 +22,9 @@
         figmaUrl: project.figmaUrl,
         image: project.image,
         subheading: project.subheading,
-        ix: index,
+        ix: dictionary["highlighted-projects"].findIndex(
+          (p) => p.id === project.id,
+        ),
       }}
     />
   {/each}
@@ -33,10 +35,13 @@
     display: contents;
   }
 
-  .projects-container > :global(.new-project-card:first-child) {
-    grid-column: 1 / -1;
+  .projects-container > :global(.new-project-card:first-child),
+  .projects-container > :global(.new-project-card:nth-child(2)) {
     border: 2px solid var(--border-secondary);
     box-shadow: var(--shadow-4);
+  }
+  .projects-container > :global(.new-project-card:first-child) {
+    grid-column: 1 / -1;
   }
   @media (min-width: 1029px) {
     .projects-container {

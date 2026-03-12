@@ -25,7 +25,7 @@
   <div class="project-content">
     <div class="project-title-container">
       <h3 class="arc-h4 project-title">{project.title}</h3>
-      {#if project.id === 0}
+      {#if project.id === 0 || project.id === 1}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1.25em"
@@ -65,14 +65,16 @@
       Icon={ExternalIcon}
       external={true}
     />
-    <Button
-      text="Figma"
-      href={project.figmaUrl}
-      tertiary={true}
-      invert={true}
-      Icon={FigmaIcon}
-      external={true}
-    />
+    {#if project.figmaUrl}
+      <Button
+        text="Figma"
+        href={project.figmaUrl}
+        tertiary={true}
+        invert={true}
+        Icon={FigmaIcon}
+        external={true}
+      />
+    {/if}
   </div>
 </div>
 
@@ -81,7 +83,7 @@
   .new-project-card {
     grid-column: 1/-1;
     background-color: var(--bg-primary-dark);
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
     box-shadow: var(--shadow-3);
     padding: 1rem;
     width: 100%;

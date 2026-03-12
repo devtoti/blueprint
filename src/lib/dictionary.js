@@ -386,8 +386,8 @@ export const dictionary = {
             ]
         }, 
         {
-            id: 1,
-            number: "01",
+            id: 2,
+            number: "02",
             title: "MobileKangaroo",
             subheading: "Landing Page",
             url: "https://mobilekangaroo.com",
@@ -431,8 +431,8 @@ export const dictionary = {
                 },
             ]
         }, {
-            id: 2,
-            number: "02",
+            id: 6,
+            number: "06",
             title: "365 Junkhaul",
             subheading: "Dashboard & Checkout App",
             url: "https://365junkhaul.com/",
@@ -572,7 +572,7 @@ export const dictionary = {
             number: "05",
             title: "ClassicUI Library",
             subheading: "UI Library",
-            url: null,
+            url: "https://archui-website.netlify.app/",
             figmaUrl: null,
             image: "classic-preview.png",
             description: {
@@ -613,6 +613,22 @@ export const dictionary = {
                 }
             ]
         },
+         {
+            id: 1,
+            number: "01",
+            title: "Computation in Architecture",
+            subheading: "Interactive architecture portfolio",
+            url: 'https://www.bluelineatelier.com/portfolio',
+            figmaUrl: null,
+            image: "architecture-portfolio-preview.png",
+            description: {
+                en: "An interactive portfolio website showcasing my architectural journey with six projects developed using computational design tools such as 3D modeling, BIM, and rendering.",
+                es: "Portafolio interactivo de trabajo como arquitecto destacando seis proyectos desarrollados con un enfoque tecnológico-computacional como modelado 3D, BIM, y renderizado.",
+            },
+            tags: ["Computation in Architecture", "AutoCAD", "Revit", "Rhino", "Grasshopper", "Affinity"],
+            bullets: [
+            ]
+        }
     ],
     ["mid-banner"]: {
         title: {

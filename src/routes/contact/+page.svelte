@@ -68,20 +68,22 @@
 </main>
 
 <style>
-  .hero-main {
+  .hero-main.contact-section {
     background-color: var(--bg-secondary);
     width: 100%;
-    min-height: 75svh;
+    min-height: 0;
     grid-column: 1 / -1;
+    grid-template-rows: auto;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     row-gap: 1rem;
     position: relative;
+    padding: 2rem 0;
   }
-  .section-content,
-  .hero-text {
+  .contact-section .section-content,
+  .contact-section .hero-text {
     border-top: 0;
     border-bottom: 0;
     grid-column: 2 / -2;
@@ -90,45 +92,40 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   .text-caption {
     color: var(--text-dark);
-  }
-  .hero-main {
-    min-height: 75svh;
-    padding: 2rem 0;
   }
   .text-subheader {
     margin-top: 0.5rem;
     max-width: 60ch;
   }
   @media (min-width: 720px) {
-    .hero-text {
+    .contact-section .hero-text {
       grid-column: 3 / span 3;
       display: flex;
       text-align: left;
       gap: 0rem;
       align-items: flex-start;
     }
-    .hero-main {
-      grid-template-rows: 2fr 0.5fr;
-      min-height: 65svh !important;
+    .hero-main.contact-section {
+      grid-template-rows: auto;
     }
   }
   @media (min-width: 1024px) {
-    .hero-text {
+    .contact-section .hero-text {
       grid-column: 4 / span 4;
     }
 
-    .title {
+    .contact-section .title {
       h1 {
         margin-bottom: -4px;
       }
     }
   }
   :global([data-theme="dark"]) {
-    .hero-main {
+    .hero-main.contact-section {
       background-color: var(--bg-darksand);
     }
   }
