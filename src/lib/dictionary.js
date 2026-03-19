@@ -47,16 +47,16 @@ export const dictionary = {
     },
     Home: {
         heading: {
-            en: "Blueprint Engineering",
-            es: "Blueprint Engineering",
+            en: "Hey, I'm Toti",
+            es: "¡Hola, soy Toti!",
         },
         description: {
-            en: "@devtoti – Antonio Ruiz",
-            es: "Portafolio Personal 2025",
+            en: "Developer • Designer • Architect",
+            es: "Desarrollador • Diseñador • Arquitecto",
         },
         subheading: {
-            en: "Architect turned UI/UX Engineer. I help remote startups bridge the gap between design and frontend engineering for smoother user experiences, less team friction, and faster, higher-quality launches.",
-            es: "Arquitecto convertido en UX Engineer. Ayudo a startups y empresas medianas a conectar el diseño y el desarrollo frontend a partir de una visión transdisciplinaria centrada en el usuario."
+            en: "I help remote startups bridge the gap between design and frontend engineering for smoother user experiences, less team friction, and faster, higher-quality launches. I specialize in design systems, webapps and landing pages.",
+            es: "Ayudo a startups y empresas medianas a conectar el diseño y el desarrollo frontend a partir de una visión transdisciplinaria centrada en el usuario. Me especializo en sistemas de diseño, aplicaciones web y landing pages."
         },
     },
     Error: {
@@ -386,8 +386,8 @@ export const dictionary = {
             ]
         }, 
         {
-            id: 2,
-            number: "02",
+            id: 6,
+            number: "06",
             title: "MobileKangaroo",
             subheading: "Landing Page",
             url: "https://mobilekangaroo.com",
@@ -431,8 +431,8 @@ export const dictionary = {
                 },
             ]
         }, {
-            id: 6,
-            number: "06",
+            id: 2,
+            number: "02",
             title: "365 Junkhaul",
             subheading: "Dashboard & Checkout App",
             url: "https://365junkhaul.com/",
@@ -567,57 +567,12 @@ export const dictionary = {
                     }
                 },
             ],
-        }, {
-            id: 5,
-            number: "05",
-            title: "ClassicUI Library",
-            subheading: "UI Library",
-            url: "https://archui-website.netlify.app/",
-            figmaUrl: null,
-            image: "classic-preview.png",
-            description: {
-                en: "In progress project of a UI component library for React inspired by the Blueprint design of this website.",
-                es: "Proyecto en curso de una librería de componentes de UI para React inspirada el diseño blueprint de esta página web.",
-            },
-            tags: ["Nodejs", "React", "npm", "TailwindCSS"],
-            bullets: [
-                {
-                    title: {
-                        en: "UI Components",
-                        es: "Componentes de UI",
-                    },
-                    description: {
-                        en: "UI designs inspired by the three most relevant classical architectural orders: dórico, jónico, corintio",
-                        es: "Diseños de componentes inspirados en los tres ordenes clásicos arquitectónicos más relevantes: dórico, jónico, corintio",
-                    },
-                },
-                {
-                    title: {
-                        en: "Blueprint",
-                        es: "Blueprint",
-                    },
-                    description: {
-                        en: "Each component is designed first through wireframes, and then prototyped using design tokens.",
-                        es: "Cada componente es diseñado primeramente mediante wireframes, y luego prototipado utilizando tokens de diseño.",
-                    },
-                },
-                {
-                    title: {
-                        en: "Tokens",
-                        es: "Tokens",
-                    },
-                    description: {
-                        en: "Consistent design parameters to maintain the visual and aesthetic consistency of the library.",
-                        es: "Parámetros de diseño consistentes para mantener la coherencia visual y estética de la librería.",
-                    },
-                }
-            ]
-        },
+        }, 
          {
             id: 1,
             number: "01",
-            title: "Computation in Architecture",
-            subheading: "Interactive architecture portfolio",
+            title: "Architecture Portfolio",
+            subheading: "Computation in Architecture",
             url: 'https://www.bluelineatelier.com/portfolio',
             figmaUrl: null,
             image: "architecture-portfolio-preview.png",
