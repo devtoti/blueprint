@@ -12,7 +12,7 @@
   import SolarSettingsLinear from "~icons/solar/settings-linear";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { showHideAxesOnClick, disableScroll, enableScroll } from "$lib/utils";
-  import { getContext } from "svelte";
+  import { getContext, onMount } from "svelte";
   import { theme, lang } from "$lib/stores";
   import { page } from "$app/stores";
   let { currentPath = "/", toggleTheme, grid } = $props();
@@ -20,7 +20,8 @@
   let isNavOpen = $state(false);
   let isDarkMode = $derived($theme === "dark");
   let showNav = $state(true);
-  let currScrollPos = $state(0);
+  let lastScrollY = 0;
+  let hiddenScrollY: number | null = null;
   let isSettingsOpen = $state(false);
   let hasActiveAxes = $state(true);
   let isMobile = $derived(WINDOW.width <= 480);
@@ -38,22 +39,56 @@
   const getBodyHeight = (body: HTMLElement) => {
     bodyHeight = body.clientHeight;
   };
+
+  onMount(() => {
+    lastScrollY = window.scrollY || 0;
+
+    let ticking = false;
+    const SCROLL_DELTA_THRESHOLD = 20; // px
+    const SHOW_NAV_UP_DELTA = 80; // px
+
+    const update = () => {
+      ticking = false;
+
+      const currentY = window.scrollY || 0;
+      const delta = currentY - lastScrollY;
+      if (Math.abs(delta) < SCROLL_DELTA_THRESHOLD) return;
+
+      if (delta > 0) {
+        if (showNav) {
+          showNav = false;
+          isSettingsOpen = false;
+          isNavOpen = false;
+          hiddenScrollY = currentY;
+        } else {
+          hiddenScrollY = currentY;
+        }
+      } else {
+        if (!showNav) {
+          const ref = hiddenScrollY ?? lastScrollY;
+          const upDistance = ref - currentY;
+          if (upDistance >= SHOW_NAV_UP_DELTA) {
+            showNav = true;
+            hiddenScrollY = null;
+          }
+        }
+      }
+
+      lastScrollY = currentY;
+    };
+
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
 </script>
 
 <svelte:body use:getBodyHeight />
-<svelte:window
-  on:scroll={() => {
-    if (window.scrollY > currScrollPos + 20) {
-      showNav = false;
-      isSettingsOpen = false;
-      isNavOpen = false;
-      currScrollPos = window.scrollY;
-    } else if (window.scrollY < currScrollPos) {
-      currScrollPos = window.scrollY;
-      showNav = true;
-    }
-  }}
-/>
 <HorizontalAxes
   width={WINDOW.width}
   handleClick={() => {
@@ -501,23 +536,27 @@
     font-weight: 400;
     text-transform: uppercase;
     color: var(--text-secondary);
-    transition: top 0.5s ease-in-out;
+    /* Transform-based animation avoids layout thrash from `top` changes. */
+    transition: transform 0.25s ease-in-out;
+    transform: translateY(0);
+    will-change: transform;
     overflow: visible;
   }
   nav.active {
-    top: 12px;
+    transform: translateY(0);
   }
   nav:not(.active) {
-    top: -28px;
+    transform: translateY(-40px);
   }
   :global(nav:not(.active).no-axes) {
-    top: -40px;
+    transform: translateY(-52px);
   }
   :global(.axes.disabled) {
     height: 0px !important;
   }
-  :global(.active.no-axes) {
-    top: -0px !important;
+  :global(nav.active.no-axes) {
+    /* When axes guides are hidden, nudge nav up so it feels aligned. */
+    transform: translateY(-12px);
   }
   .nav-container {
     display: relative;
@@ -637,9 +676,6 @@
     }
     .active-nav-container {
       background-color: var(--bg-primary);
-    }
-    .mobile-nav-settings {
-      color: var(--text-secondary);
     }
     .active-nav-links {
       background-color: var(--bg-darksand);

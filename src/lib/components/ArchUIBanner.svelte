@@ -10,45 +10,70 @@
   const lan = $derived($lang as "en" | "es");
 
   onMount(() => {
+    const banner = document.querySelector(".cta-banner") as HTMLElement;
     const blueprintArchs = document.querySelector(
       ".cta-banner .blueprint-archs-container"
     ) as HTMLElement;
-    if (!blueprintArchs) return;
+    if (!banner || !blueprintArchs) return;
+
+    // Cache measurements once and reuse them during scroll.
+    // This avoids layout reads (getBoundingClientRect) on every tick.
+    let bannerTop = 0;
+    let bannerHeight = 0;
+    const measure = () => {
+      bannerTop = banner.offsetTop;
+      bannerHeight = banner.offsetHeight;
+    };
+    measure();
 
     let ticking = false;
+    let lastScale = -1;
+
+    // Set transition once; don't keep re-applying it during scroll.
+    blueprintArchs.style.transition = "transform 0.5s ease-out";
+
+    const update = () => {
+      ticking = false;
+
+      const viewportHeight = window.innerHeight;
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+
+      // Convert banner doc-position to viewport-position.
+      const elementCenter = bannerTop - scrollY + bannerHeight / 2;
+
+      const distanceFromCenter = Math.abs(
+        viewportHeight / 2 - elementCenter
+      );
+      const maxDistance = viewportHeight / 2;
+      const ratio = Math.max(0, 1 - distanceFromCenter / maxDistance);
+
+      const scale = 1.5 + 0.75 * ratio;
+
+      // Avoid writing styles when the change is imperceptible.
+      if (Math.abs(scale - lastScale) < 0.01) return;
+      lastScale = scale;
+
+      blueprintArchs.style.transform = `scale(${scale})`;
+    };
 
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const banner = document.querySelector(".cta-banner") as HTMLElement;
-          if (!banner) return;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
 
-          const rect = banner.getBoundingClientRect();
-          const viewportHeight = window.innerHeight;
-          const elementCenter = rect.top + rect.height / 2;
-          const distanceFromCenter = Math.abs(
-            viewportHeight / 2 - elementCenter
-          );
-          const maxDistance = viewportHeight / 2;
-
-          const ratio = Math.max(0, 1 - distanceFromCenter / maxDistance);
-          const transition = "transform 0.5s ease-out";
-          blueprintArchs.style.transition = transition;
-
-          const scale = 1.5 + 0.75 * ratio;
-          blueprintArchs.style.transform = `scale(${scale})`;
-
-          ticking = false;
-        });
-        ticking = true;
-      }
+    const handleResize = () => {
+      measure();
+      update();
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener("resize", handleResize);
+    update();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   });
 </script>

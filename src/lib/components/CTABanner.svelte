@@ -12,51 +12,78 @@
   let active = $state(false);
 
   onMount(() => {
+    const banner = document.querySelector(".cta-banner") as HTMLElement;
     const rightHand = document.querySelector(
       ".cta-banner .right-hand"
     ) as HTMLElement;
     const leftHand = document.querySelector(
       ".cta-banner .left-hand"
     ) as HTMLElement;
-    if (!rightHand || !leftHand) return;
+
+    if (!banner || !rightHand || !leftHand) return;
+
+    // Cache measurements once and reuse them during scroll.
+    // This avoids layout reads (getBoundingClientRect) on every scroll tick.
+    let bannerTop = 0;
+    let bannerHeight = 0;
+    const measure = () => {
+      bannerTop = banner.offsetTop;
+      bannerHeight = banner.offsetHeight;
+    };
+    measure();
 
     let ticking = false;
+    let lastRatio = -1;
+
+    // Set transition once; don't keep re-applying it during scroll.
+    const transition = "transform 0.5s ease-out";
+    rightHand.style.transition = transition;
+    leftHand.style.transition = transition;
+
+    const update = () => {
+      ticking = false;
+
+      const viewportHeight = window.innerHeight;
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+
+      // Convert banner doc-position to viewport-position.
+      const elementCenter = bannerTop - scrollY + bannerHeight / 2;
+
+      const distanceFromCenter = Math.abs(
+        viewportHeight / 2 - elementCenter
+      );
+      const maxDistance = viewportHeight / 2;
+
+      const ratio = Math.max(0, 1 - distanceFromCenter / maxDistance);
+
+      // Avoid writing styles when the change is imperceptible.
+      if (Math.abs(ratio - lastRatio) < 0.005) return;
+      lastRatio = ratio;
+
+      const rightPosition = 25 - 25 * ratio;
+      const leftPosition = -25 + 28 * ratio;
+      rightHand.style.transform = `translateX(${rightPosition}%)`;
+      leftHand.style.transform = `translateX(${leftPosition}%)`;
+    };
 
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const banner = document.querySelector(".cta-banner") as HTMLElement;
-          if (!banner) return;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
 
-          const rect = banner.getBoundingClientRect();
-          const viewportHeight = window.innerHeight;
-          const elementCenter = rect.top + rect.height / 2;
-          const distanceFromCenter = Math.abs(
-            viewportHeight / 2 - elementCenter
-          );
-          const maxDistance = viewportHeight / 2;
-
-          const ratio = Math.max(0, 1 - distanceFromCenter / maxDistance);
-          const transition = "transform 0.5s ease-out";
-          rightHand.style.transition = transition;
-          leftHand.style.transition = transition;
-          const rightPosition = 25 - 25 * ratio;
-          const leftPosition = -25 + 28 * ratio;
-
-          rightHand.style.transform = `translateX(${rightPosition}%)`;
-          leftHand.style.transform = `translateX(${leftPosition}%)`;
-
-          ticking = false;
-        });
-        ticking = true;
-      }
+    const handleResize = () => {
+      measure();
+      update();
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener("resize", handleResize);
+    update();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   });
 </script>
