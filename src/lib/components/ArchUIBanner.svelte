@@ -78,7 +78,7 @@
   });
 </script>
 
-<article class="cta-banner">
+<div class="cta-banner">
   <div class="cta-banner-info">
     <h2 class="arc-h0 cta-text color-invert">
       <Text section="archui-banner" text="title" />
@@ -110,7 +110,7 @@
       <BlueprintArchs isDark={isDarkMode} />
     </div>
   </div>
-</article>
+</div>
 
 <style>
   .cta-banner {

@@ -3,7 +3,7 @@
 </script>
 
 <section class="hero grainy">
-  <article class="section-content hero-content">
+  <div class="section-content hero-content">
     <div class="title">
       <h1 class="arc-h2 barlow-extrabold">Blueprint.dev</h1>
       <h4 class="text-caption">Frontend development & design portfolio</h4>
@@ -12,25 +12,28 @@
         beautiful and functional web applications.
       </p>
     </div>
-  </article>
+  </div>
   <span class="button-container">
     <div class="button-wrapper">
       <a
         href="/docs/Antonio_Ruiz_CV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Curriculum (opens PDF in new tab)"
         class="arc-button-secondary arc-h3 invert">Curriculum</a
       >
     </div>
     <div class="button-wrapper">
-      <a href="/about" class="arc-button-primary arc-h3 invert">Contáctame</a>
+      <a href="/contact" class="arc-button-primary arc-h3 invert">Contáctame</a>
       <span class="square top-left"></span>
       <span class="square top-right"></span>
       <span class="square bottom-left"></span>
       <span class="square bottom-right"></span>
     </div>
   </span>
-  <article class="illustration-container">
+  <div class="illustration-container">
     <MainIllustration />
-  </article>
+  </div>
 </section>
 
 <style>

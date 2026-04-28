@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "../../tokens.css";
   import Heading from "../components/Heading.svelte";
   import { dictionary } from "../dictionary";
   import NewProjectCard from "../components/ProjectCard.svelte";
@@ -16,6 +15,7 @@
         id: project.id,
         number: project.number,
         title: project.title,
+        altText: project.altText,
         tags: project.tags,
         description: project.description,
         url: project.url,

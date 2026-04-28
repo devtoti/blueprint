@@ -1,6 +1,4 @@
 <script lang="ts">
-  import "../../styles.css";
-  import "../../tokens.css";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount } from "svelte";
   import LandingMidBanner from "$lib/components/LandingMidBanner.svelte";

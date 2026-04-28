@@ -4,8 +4,8 @@
   import Text from "$lib/components/Text.svelte";
 </script>
 
-<article style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
-  <article class="floating-container">
+<div style={`--offset: ${offset}px`} class="mid-banner stripped-divider">
+  <div class="floating-container">
     <h2 class="arc-h1 color-invert">
       <Text section="contact-banner" text="title" />
     </h2>
@@ -15,8 +15,8 @@
     <div class="button-container">
       <Button {href} text={buttonText} primary invert />
     </div>
-  </article>
-</article>
+  </div>
+</div>
 
 <style>
   .button-container {

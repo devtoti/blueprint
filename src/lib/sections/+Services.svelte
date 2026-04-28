@@ -82,7 +82,7 @@
 {/snippet}
 
 <Heading page="services" alignRight />
-<article class="services-container">
+<div class="services-container">
   <div class="services-list-left">
     {#each uxServices as UXservice, ix}
       {@render item(UXservice, "design", ix)}
@@ -109,7 +109,7 @@
       height="520"
     />
   </div>
-</article>
+</div>
 
 <style>
   .services-container {

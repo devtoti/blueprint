@@ -16,7 +16,7 @@
   <div class="project-image-container">
     <img
       src={imageContext[`/src/lib/images/${project.image}`]}
-      alt={project.title}
+      alt={project.altText ?? project.title}
       loading="lazy"
       draggable="false"
       width="640"
@@ -52,11 +52,11 @@
         sectionIx={project.ix}
       />
     </p>
-    <div class="chips">
+    <!-- <div class="chips">
       {#each project.tags as tag}
         <span class="chip arc-body-3">{tag}</span>
       {/each}
-    </div>
+    </div> -->
   </div>
   <div class="project-buttons">
     <Button
@@ -127,7 +127,7 @@
     color: var(--text-secondary);
     background-color: var(--bg-tertiary);
     font-weight: 700;
-    font-size: 10px;
+    font-size: 11px;
     padding: 0.25rem 0.5rem;
     width: fit-content;
     border-radius: 999rem;
@@ -135,11 +135,15 @@
   .project-content h3 {
     display: inline-flex;
   }
+  /* .project-subheading {
+    font-size: clamp(11px, 3vw, 14px) !important;
+  } */
   .project-description {
     margin: 0;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+    flex: 1;
   }
   .chips {
     display: none;
@@ -227,6 +231,8 @@
       gap: 0.5rem;
       margin-top: auto;
       font-style: italic;
+      color: var(--text-primary);
+      font-size: 11px;
     }
     .new-project-card {
       max-width: 350px;

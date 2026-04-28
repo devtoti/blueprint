@@ -1,6 +1,8 @@
 <script lang="ts">
   import { injectAnalytics } from "@vercel/analytics/sveltekit";
   import "$lib/fonts/fonts.css";
+  import "../styles.css";
+  import "../tokens.css";
   import { fade } from "svelte/transition";
   import { onMount, setContext } from "svelte";
   let { children } = $props();

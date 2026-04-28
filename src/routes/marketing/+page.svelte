@@ -1,7 +1,4 @@
 <script lang="ts">
-  import "../../styles.css";
-  import "../../tokens.css";
-  import "../../styles/text-styles.css";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import PaperBox from "$lib/images/paper-box.svelte";
   import { getContext, onMount } from "svelte";
@@ -86,7 +83,7 @@
     startEnd={1}
     children={() => null}
   />
-  <article class="main-content stripped-divider"></article>
+  <div class="main-content stripped-divider" aria-hidden="true"></div>
   {@render sectionDividers(2)}
   <section class="main-content marketing grainy">
     <Heading page="marketing" />

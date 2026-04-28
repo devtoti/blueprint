@@ -15,8 +15,8 @@
     design: boolean;
   }
 )}
-  <article class="floor-plan-1">
-    <div class="north-facade">
+  <div class="floor-plan-1" role="presentation">
+    <div class="north-facade" aria-hidden="true">
       <div class="wall-corner" style="transform: rotate(270deg);"></div>
       <div class="wall-middle"></div>
       <div class="wall-end"></div>
@@ -26,7 +26,7 @@
       <div class="wall-corner"></div>
     </div>
     <div class="middle-facade">
-      <div class="west-facade" style="grid-row: 1 / 2;">
+      <div class="west-facade" aria-hidden="true" style="grid-row: 1 / 2;">
         <div class="wall-middle vertical"></div>
         <div class="wall-end vertical"></div>
         <div class="void"></div>
@@ -38,7 +38,7 @@
           <ExperienceCard experience={data.experience} design={data.design} />
         </div>
       </div>
-      <div class="east-facade" style="grid-row: 1 / 2;">
+      <div class="east-facade" aria-hidden="true" style="grid-row: 1 / 2;">
         <div class="wall-middle vertical"></div>
         <div class="wall-end vertical"></div>
         <div class="void"></div>
@@ -46,7 +46,7 @@
         <div class="wall-middle vertical"></div>
       </div>
     </div>
-    <div class="south-facade">
+    <div class="south-facade" aria-hidden="true">
       <div class="wall-corner" style="transform: rotate(180deg);"></div>
       <div class="wall-middle"></div>
       <div class="wall-end"></div>
@@ -55,7 +55,7 @@
       <div class="wall-middle" style="transform: rotate(180deg);"></div>
       <div class="wall-corner" style="transform: rotate(90deg);"></div>
     </div>
-  </article>
+  </div>
 {/snippet}
 
 <div class="experience-cards">

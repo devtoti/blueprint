@@ -32,7 +32,7 @@
   class="hero-main {printPath.length > 1 ? printPath : 'home'}-section"
   style="background-image: url('./images/{bgPattern}');background-size: cover;background-position: center;background-repeat: repeat;"
 >
-  <article class="hero-text section-content">
+  <div class="hero-text section-content">
     <div class="title">
       <h1 class="text-title barlow-extrabold arc-h2" class:isHome>
         <Text section={currentPage} text="heading" />
@@ -46,15 +46,15 @@
         <Text section={currentPage} text="subheading" />
       </p>
     </div>
-  </article>
-  <article class="hero-img">
+  </div>
+  <div class="hero-img">
     {#if HeroImage}
       <HeroImage />
     {:else}
       <IsoCube />
     {/if}
-  </article>
-  <article class="button-container">
+  </div>
+  <div class="button-container">
     {#if buttonOneText && buttonOneHref}
       <Button text={buttonOneText} href={buttonOneHref} primary />
     {/if}
@@ -67,7 +67,7 @@
         newtab
       />
     {/if}
-  </article>
+  </div>
   {#if children}
     {@render children()}
   {/if}

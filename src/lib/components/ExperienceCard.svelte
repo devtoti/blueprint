@@ -1,6 +1,5 @@
 <script lang="ts">
   let { experience, design } = $props();
-  import "../../styles/text-styles.css";
   import IconCode from "~icons/solar/code-bold-duotone";
   import Text from "$lib/components/Text.svelte";
   import IconPenNib from "$lib/icons/pen-nib.svelte";
@@ -34,7 +33,7 @@
     class="experience-card"
     class:dev={!design}
     onclick={() => (isActive = !isActive)}
-    aria-label="Open and explore my career path"
+    aria-expanded={isActive}
   >
     <div class="experience-card-icon">
       {#if experience.role === "Frontend Developer"}

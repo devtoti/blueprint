@@ -1,9 +1,5 @@
 <script lang="ts">
   import { onMount, getContext } from "svelte";
-  import "@radix-ui/themes/styles.css";
-  import "../styles.css";
-  import "../tokens.css";
-  import "../styles/text-styles.css";
   import { GRID } from "$lib/utils/gridData";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import HeroContent from "$lib/components/HeroContent.svelte";
@@ -80,7 +76,7 @@
   />
 
   <!-- {@render sectionDividers(2)} -->
-  <article class="main-content stripped-divider"></article>
+  <div class="main-content stripped-divider" aria-hidden="true"></div>
   {@render sectionDividers(2)}
   <section class="main-content work-experience grainy" id="work-experience">
     <WorkExperience />
@@ -91,7 +87,7 @@
   </section>
   {@render sectionDividers(2)}
   <!-- <LandingMidBanner winWidth={WINDOW.width} offset={grid.columnWidth} /> -->
-  <article class="main-content stripped-divider"></article>
+  <div class="main-content stripped-divider" aria-hidden="true"></div>
   {@render sectionDividers(2, true)}
   <section class="main-content skills grainy" id="skills">
     <Skills />
@@ -101,7 +97,7 @@
     <Services />
   </section>
   {@render sectionDividers(2, true)}
-  <article class="main-content stripped-divider"></article>
+  <div class="main-content stripped-divider" aria-hidden="true"></div>
   <DividerTrapezoid
     width={setDividerWidth(WINDOW.width)}
     y={isMobile ? 16 : 12}
@@ -118,7 +114,7 @@
     invert
     children={() => null}
   />
-  <article class="main-content stripped-divider"></article>
+  <div class="main-content stripped-divider" aria-hidden="true"></div>
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}

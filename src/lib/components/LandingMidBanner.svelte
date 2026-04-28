@@ -11,7 +11,7 @@
 
 <svelte:window bind:innerWidth />
 <section class="mid-banner-wrapper">
-  <article
+  <div
     bind:clientHeight
     class="mid-banner stripped-divider"
     style={`--innerWidth: ${innerWidth}px; --offset: ${offset}px`}
@@ -42,7 +42,7 @@
         invert
       />
     </span>
-  </article>
+  </div>
   <div class="mid-banner-background" style="height: {clientHeight}px"></div>
 </section>
 

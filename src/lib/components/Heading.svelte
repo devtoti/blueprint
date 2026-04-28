@@ -7,14 +7,14 @@
   import Text from "$lib/components/Text.svelte";
 </script>
 
-<article class="heading" class:alignRight class:isCentered>
+<div class="heading" class:alignRight class:isCentered>
   <h2 class="arc-h3">
     <Text section={page} text="heading" />
   </h2>
   <h3 class="subheading arc-body-1">
     <Text section={page} text="subheading" />
   </h3>
-</article>
+</div>
 
 <style>
   .heading {

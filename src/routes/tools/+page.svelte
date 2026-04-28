@@ -16,7 +16,7 @@
 
 <main>
   <section class="contact-page grainy">
-    <article class="section-content hero-content">
+    <div class="section-content hero-content">
       <div class="title">
         <h1 class="text-title barlow-extrabold">Tools</h1>
         <h4 class="text-caption caption">
@@ -32,7 +32,7 @@
       <div class="buttons">
         <button>Get in touch</button>
       </div>
-    </article>
+    </div>
   </section>
   <DividerTrapezoid
     width={WINDOW.width}

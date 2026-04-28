@@ -109,7 +109,7 @@
   </button>
 {/snippet}
 <Heading page="skills" isCentered />
-<article class="skills-container">
+<div class="skills-container">
   <div class="hover-me-top-container">
     <HoverMeTop />
   </div>
@@ -119,7 +119,7 @@
   <div class="hover-me-bottom-container">
     <HoverMeBottom />
   </div>
-</article>
+</div>
 
 <style>
   .skills-container {

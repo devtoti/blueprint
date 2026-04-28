@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "../../styles/text-styles.css";
   import RadialDeco from "$lib/images/radial-deco.svelte";
   import Github from "$lib/icons/github.svelte";
   import Linkedin from "$lib/icons/linkedin.svelte";
@@ -58,82 +57,83 @@
     </div>
   </span>
   <div class="footer-container">
-    <nav class="navigation-left" aria-label="Primary navigation links">
-      <ul>
-        <li>
-          <a href="/" class="arc-body-2"
-            ><Text section="navigation" text="home" /></a
-          >
-        </li>
-        <li>
-          <a href="/#work-experience" class="arc-body-2"
-            ><Text section="navigation" text="home-work-experience" /></a
-          >
-        </li>
-        <li>
-          <a href="/#projects" class="arc-body-2"
-            ><Text section="navigation" text="home-projects" /></a
-          >
-        </li>
-        <li>
-          <a href="/#skills" class="arc-body-2"
-            ><Text section="navigation" text="home-skills" /></a
-          >
-        </li>
-        <li>
-          <a href="/#services" class="arc-body-2"
-            ><Text section="navigation" text="home-services" /></a
-          >
-        </li>
-        <!-- <a href="/mystery" class="arc-body-2">Mystery Box</a> -->
-      </ul>
+    <nav class="footer-nav" aria-label="Footer site navigation">
+      <div class="navigation-left">
+        <ul>
+          <li>
+            <a href="/" class="arc-body-2"
+              ><Text section="navigation" text="home" /></a
+            >
+          </li>
+          <li>
+            <a href="/#work-experience" class="arc-body-2"
+              ><Text section="navigation" text="home-work-experience" /></a
+            >
+          </li>
+          <li>
+            <a href="/#projects" class="arc-body-2"
+              ><Text section="navigation" text="home-projects" /></a
+            >
+          </li>
+          <li>
+            <a href="/#skills" class="arc-body-2"
+              ><Text section="navigation" text="home-skills" /></a
+            >
+          </li>
+          <li>
+            <a href="/#services" class="arc-body-2"
+              ><Text section="navigation" text="home-services" /></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="navigation-right">
+        <ul>
+          <li>
+            <a href="/about" class="arc-body-2">Blueprint</a>
+          </li>
+          <li>
+            <a href="/dev" class="arc-body-2"
+              ><Text section="navigation" text="development" /></a
+            >
+          </li>
+          <li>
+            <a href="/design" class="arc-body-2"
+              ><Text section="navigation" text="design" /></a
+            >
+          </li>
+          <li>
+            <a href="/concept" class="arc-body-2"
+              ><Text section="navigation" text="concept" /></a
+            >
+          </li>
+          <li>
+            <a href="/contact" class="arc-body-2"
+              ><Text section="navigation" text="contact" /></a
+            >
+          </li>
+          <li>
+            <a href="/about" class="arc-body-2"
+              ><Text section="navigation" text="about" /></a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
-    <nav class="navigation-right" aria-label="Secondary navigation links">
-      <ul>
-        <li>
-          <a href="/about" class="arc-body-2">Blueprint</a>
-        </li>
-        <li>
-          <a href="/dev" class="arc-body-2"
-            ><Text section="navigation" text="development" /></a
-          >
-        </li>
-        <li>
-          <a href="/design" class="arc-body-2"
-            ><Text section="navigation" text="design" /></a
-          >
-        </li>
-        <li>
-          <a href="/concept" class="arc-body-2"
-            ><Text section="navigation" text="concept" /></a
-          >
-        </li>
-        <li>
-          <a href="/contact" class="arc-body-2"
-            ><Text section="navigation" text="contact" /></a
-          >
-        </li>
-        <li>
-          <a href="/about" class="arc-body-2"
-            ><Text section="navigation" text="about" /></a
-          >
-        </li>
-      </ul>
-    </nav>
-    <article class="plan-info techs">
-      <span class="arc-h6"><Text section="footer-legend" text="techs" /></span>
+    <div class="plan-info techs">
+      <h3 class="arc-h6"><Text section="footer-legend" text="techs" /></h3>
       <p class="arc-body-3">Svelte, TypeScript, Figma</p>
-    </article>
-    <article class="plan-info proj">
-      <h2 class="arc-h6"><Text section="footer-legend" text="project" /></h2>
+    </div>
+    <div class="plan-info proj">
+      <h3 class="arc-h6"><Text section="footer-legend" text="project" /></h3>
       <p class="arc-body-3">Frontend & Design Portfolio</p>
-    </article>
-    <article class="plan-info loc">
-      <h2 class="arc-h6"><Text section="footer-legend" text="location" /></h2>
+    </div>
+    <div class="plan-info loc">
+      <h3 class="arc-h6"><Text section="footer-legend" text="location" /></h3>
       <p class="arc-body-3">CDMX, México</p>
-    </article>
-    <article class="plan-info scale">
-      <h2 class="arc-h6"><Text section="footer-legend" text="scale" /></h2>
+    </div>
+    <div class="plan-info scale">
+      <h3 class="arc-h6"><Text section="footer-legend" text="scale" /></h3>
       <div id="scale">
         <div class="scale-top">
           <span class="arc-h6"></span>
@@ -157,29 +157,29 @@
           <li class="arc-h6">20</li>
         </ul> -->
       </div>
-    </article>
-    <article class="plan-info rev">
-      <h2 class="arc-h6">
+    </div>
+    <div class="plan-info rev">
+      <h3 class="arc-h6">
         <Text section="footer-legend" text="last-update" />
-      </h2>
+      </h3>
       <p class="arc-body-3">2025-10-15</p>
-    </article>
-    <article class="plan-info collab">
-      <h2 class="arc-h6">
+    </div>
+    <div class="plan-info collab">
+      <h3 class="arc-h6">
         <Text section="footer-legend" text="collaborators" />
-      </h2>
+      </h3>
       <p class="arc-body-3">@devtoti</p>
-    </article>
-    <article class="plan-info author">
-      <h2 class="arc-h6"><Text section="footer-legend" text="author" /></h2>
+    </div>
+    <div class="plan-info author">
+      <h3 class="arc-h6"><Text section="footer-legend" text="author" /></h3>
       <p class="arc-body-3">Antonio Ruiz</p>
-    </article>
-    <article class="plan-info v">
-      <h4 class="arc-h3">V1.1.0</h4>
-    </article>
-    <article class="plan-info id" id="clave">
-      <h5 class="arc-h0">A1</h5>
-    </article>
+    </div>
+    <div class="plan-info v">
+      <h3 class="arc-h3">V1.1.0</h3>
+    </div>
+    <div class="plan-info id" id="clave">
+      <h3 class="arc-h0">A1</h3>
+    </div>
   </div>
 </footer>
 <HorizontalAxes width={innerWidth} handleClick={showHideAxesOnClick} />
@@ -239,12 +239,14 @@
     outline: 1px solid var(--border-primary);
     padding-left: 0.25rem;
     width: 100%;
-    h4 {
+    h3:not(.arc-h0):not(.arc-h3) {
       font-weight: 700;
       padding-top: 0.25rem;
+      font-size: 11px;
     }
     p {
       padding-bottom: 0.25rem;
+      font-size: 11px;
     }
   }
   .footer {
@@ -286,7 +288,7 @@
     grid-area: author;
   }
   #clave {
-    h4 {
+    h3 {
       padding: 0 !important;
     }
   }
@@ -370,6 +372,9 @@
   }
   .v {
     grid-area: v;
+  }
+  .footer-nav {
+    display: contents;
   }
   .navigation-left {
     grid-area: nav;
@@ -455,7 +460,7 @@
     }
     .plan-info {
       outline: 1px solid var(--border-secondary);
-      h4 {
+      h3 {
         color: var(--text-primary) !important;
       }
       p {
@@ -466,7 +471,7 @@
       color: var(--text-primary) !important;
     }
     .plan-info.id {
-      h4 {
+      h3 {
         color: var(--bleu-100) !important;
       }
     }

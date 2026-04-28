@@ -1,7 +1,4 @@
 <script lang="ts">
-  import "../../../styles.css";
-  import "../../../tokens.css";
-  import "../../../styles/text-styles.css";
   import RadialDeco from "$lib/images/radial-deco.svelte";
   import { getContext, onMount } from "svelte";
   import { GRID } from "$lib/utils/gridData";
@@ -35,14 +32,14 @@
 {#snippet renderList(title: string, content: any)}
   {#if content}
     <div class="content-row">
-      <article class="content-block" id={title}>
+      <div class="content-block" id={title}>
         <h3 class="arc-h3">{title}</h3>
         <ul>
           {#each Object.values(content) as value, idx}
             <li class="arc-body-2">{idx + 1}. {value}</li>
           {/each}
         </ul>
-      </article>
+      </div>
       <aside class="illustration-area">
         <!-- illustration / image slot for {title} -->
       </aside>
@@ -86,7 +83,7 @@
     invert
     children={() => null}
   />
-  <article class="main-content stripped-divider"></article>
+  <div class="main-content stripped-divider" aria-hidden="true"></div>
   {@render sectionDividers(2)}
   <section class="main-content project-page grainy">
     <header class="project-page-header">
@@ -97,16 +94,16 @@
       <p class="arc-body-1">{project.overview}</p>
     </header>
 
-    <article class="gallery-full" id="gallery">
+    <div class="gallery-full" id="gallery">
       {#if projectImageSrc}
         <img src={projectImageSrc} alt={project.title} />
       {/if}
-    </article>
+    </div>
 
-    <article class="content-block" id="context">
+    <div class="content-block" id="context">
       <h3 class="arc-h3">Context</h3>
       <p class="arc-body-1">{project.context}</p>
-    </article>
+    </div>
   </section>
   {@render sectionDividers(2)}
   <section class="main-content project-page grainy">
@@ -126,7 +123,7 @@
     </div>
   </section>
   {@render sectionDividers(2)}
-  <article class="main-content stripped-divider"></article>
+  <div class="main-content stripped-divider" aria-hidden="true"></div>
 
   <DividerTrapezoid
     width={WINDOW.width}

@@ -1,8 +1,5 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import "../styles.css";
-  import "../tokens.css";
-  import "../styles/text-styles.css";
   import HeroContent from "$lib/components/HeroContent.svelte";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount } from "svelte";
@@ -37,7 +34,7 @@
     startEnd={1}
     children={() => null}
   />
-  <article class="main-content stripped-divider"></article>
+  <div class="main-content stripped-divider" aria-hidden="true"></div>
   <DividerTrapezoid
     width={WINDOW.width}
     y={isMobile ? 16 : 100}

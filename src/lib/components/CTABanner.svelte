@@ -86,7 +86,7 @@
   });
 </script>
 
-<article class="cta-banner">
+<div class="cta-banner">
   <div class="cta-banner-info">
     <h2 class="arc-h0 cta-text color-invert">
       <Text section="cta-banner" text="title" />
@@ -120,7 +120,7 @@
       <RightHand isDark={isDarkMode} />
     </div>
   </div>
-</article>
+</div>
 
 <style>
   .cta-banner {

@@ -1,6 +1,4 @@
 <script lang="ts">
-  import "../../styles.css";
-  import "../../tokens.css";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import { getContext, onMount } from "svelte";
   import GenericBanner from "$lib/components/GenericBanner.svelte";
@@ -80,7 +78,7 @@
     startEnd={1}
     children={() => null}
   />
-  <article class="main-content stripped-divider"></article>
+  <div class="main-content stripped-divider" aria-hidden="true"></div>
   {@render sectionDividers(2)}
   <section class="main-content archui grainy" id="archui">
     <Heading page="archui" />

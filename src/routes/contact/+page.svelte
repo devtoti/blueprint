@@ -1,6 +1,4 @@
 <script lang="ts">
-  import "../../styles.css";
-  import "../../tokens.css";
   import DividerTrapezoid from "$lib/components/DividerTrapezoid.svelte";
   import Text from "$lib/components/Text.svelte";
   import RadialDeco from "$lib/images/radial-deco.svelte";
@@ -28,7 +26,7 @@
     class="hero-main contact-section"
     style="background-image: url('./images/iso-grid.svg');background-size: cover;background-position: center;background-repeat: repeat;"
   >
-    <article class="hero-text section-content">
+    <div class="hero-text section-content">
       <div class="title">
         <h1 class="text-title barlow-extrabold arc-h2">
           <Text section="Contact" text="heading" />
@@ -42,7 +40,7 @@
           <Text section="Contact" text="subheading" />
         </p>
       </div>
-    </article>
+    </div>
     <CalendlyWidget />
   </section>
 

@@ -1,6 +1,5 @@
 <script lang="ts">
   let { project, ix } = $props();
-  import "../../styles/text-styles.css";
   import SolarLinkMinimalistic2Bold from "~icons/solar/link-minimalistic-2-bold";
   import FigmaIcon from "$lib/icons/figma.svelte";
   import IconWrapper from "$lib/components/IconWrapper.svelte";
@@ -63,11 +62,11 @@
   />
 </div>
 {#if bullets}
-  <article class="bullets">
+  <div class="bullets">
     {#each bullets as blt, ix}
       {@render bullet(blt, ix)}
     {/each}
-  </article>
+  </div>
 {/if}
 
 <style>

@@ -1,7 +1,4 @@
 <script lang="ts">
-  import "../../styles.css";
-  import "../../tokens.css";
-  import "../../styles/text-styles.css";
   import AxesActive from "$lib/icons/location-crosshairs.svelte";
   import AxesInactive from "$lib/icons/location-crosshairs-slash.svelte";
   import HorizontalAxes from "$lib/components/HorizontalAxes.svelte";
@@ -98,8 +95,8 @@
 />
 <!-- DESKTOP -->
 <nav class="grainy" class:active={showNav}>
-  <article class="nav-container">
-    <ul class="nav-links desktop-only">
+  <div class="nav-container">
+    <ul class="nav-links desktop-only" role="navigation">
       <li>
         <a href="/" class:active={currentPath === "/"}>Home</a>
       </li>
@@ -132,10 +129,11 @@
         <table class="settings-table" role="presentation">
           <tbody>
             <tr>
-              <th class="arc-body-3">LANG</th>
-              <th class="arc-body-3">THEME</th>
-              <th class="arc-body-3">GUIDES</th>
+              <th class="arc-body-3" scope="col">LANG</th>
+              <th class="arc-body-3" scope="col">THEME</th>
+              <th class="arc-body-3" scope="col">GUIDES</th>
             </tr>
+  
             <tr>
               <td>
                 <select
@@ -344,9 +342,9 @@
         </div>
       </div>
     </section>
-  </article>
-  <article class="active-nav-container" class:isNavOpen>
-    <article class="main-content stripped-divider"></article>
+  </div>
+  <div class="active-nav-container" class:isNavOpen>
+    <div class="main-content stripped-divider" aria-hidden="true"></div>
     <DividerTrapezoid
       width={WINDOW.width}
       y={isMobile ? 16 : 100}
@@ -409,8 +407,8 @@
       invert
       children={() => null}
     />
-    <article class="main-content stripped-divider"></article>
-  </article>
+    <div class="main-content stripped-divider" aria-hidden="true"></div>
+  </div>
 </nav>
 <div class="black-overlay" class:isNavOpen style="height: 100svh"></div>
 
