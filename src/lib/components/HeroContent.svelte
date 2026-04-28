@@ -59,7 +59,13 @@
       <Button text={buttonOneText} href={buttonOneHref} primary />
     {/if}
     {#if buttonTwoText && buttonTwoHref}
-      <Button text={buttonTwoText} href={buttonTwoHref} secondary invert />
+      <Button
+        text={buttonTwoText}
+        href={buttonTwoHref}
+        secondary
+        invert
+        newtab
+      />
     {/if}
   </article>
   {#if children}
@@ -130,7 +136,7 @@
   }
   .hero-main {
     min-height: 75svh;
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
   .text-subheader {
     margin-top: 0.5rem;

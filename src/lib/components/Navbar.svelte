@@ -225,11 +225,11 @@
     <section class="mobile-only mobile-nav">
       <div class="mobile-nav-icons">
         {#if isNavOpen}
-          <button onclick={() => (isNavOpen = false)}>
+          <button aria-label="Close navigation" onclick={() => (isNavOpen = false)}>
             <IconCloseNav isDark={isDarkMode} />
           </button>
         {:else}
-          <button onclick={() => (isNavOpen = true)}>
+          <button aria-label="Open navigation" onclick={() => (isNavOpen = true)}>
             <IconHamburger isDark={isDarkMode} />
           </button>
         {/if}
@@ -509,6 +509,7 @@
   .nav-links a {
     font-size: 0.75rem;
     font-weight: 400;
+    text-decoration: none;
   }
   .mobile-nav-icons {
     width: 100%;

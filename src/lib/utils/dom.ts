@@ -2,13 +2,6 @@ import type { Writable } from "svelte/store";
 import { browser } from "$app/environment";
 import { tick } from "svelte";
 
-export const injectCalendly = () => {
-  const script = document.createElement("script");
-  script.src = "https://assets.calendly.com/assets/external/widget.js";
-  script.async = true;
-  document.head.appendChild(script);
-};
-
 export const establishTheme = (ref: Writable<string>) => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {

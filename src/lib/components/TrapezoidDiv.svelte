@@ -38,7 +38,7 @@
     width: 100%;
     /* outline: 1px solid blue; */
     > * {
-      background: url("/src/lib/images/grainy-texture.png");
+      background: url("/src/lib/images/grainy-texture.webp");
       background-size: 64px 64px;
       background-position: center center;
       background-repeat: repeat;
@@ -53,7 +53,7 @@
     /* outline: 1px solid red; */
     position: relative;
     & .texture {
-      background-image: url("/src/lib/images/grainy-texture.png");
+      background-image: url("/src/lib/images/grainy-texture.webp");
       background-size: 64px 64px;
       background-position: center;
       background-repeat: repeat;

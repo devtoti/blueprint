@@ -13,6 +13,7 @@
     sm = false,
     Icon = undefined as Component | undefined,
     external = false,
+    newtab = false,
   } = $props();
   import Text from "$lib/components/Text.svelte";
   import { dictionary } from "$lib/dictionary";
@@ -27,8 +28,8 @@
       {href}
       class="arc-button-primary arc-h4 button-text"
       class:invert
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
+      target={external || newtab ? "_blank" : undefined}
+      rel={external || newtab ? "noopener noreferrer" : undefined}
     >
       {#if isTranslatable}
         <Text section="Buttons" {text} />
@@ -51,8 +52,8 @@
       {href}
       class="arc-button-secondary arc-h4"
       class:invert
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
+      target={external || newtab ? "_blank" : undefined}
+      rel={external || newtab ? "noopener noreferrer" : undefined}
     >
       {#if isTranslatable}
         <Text section="Buttons" {text} />
@@ -71,8 +72,8 @@
       {href}
       class="arc-button-tertiary arc-h4"
       class:invert
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
+      target={external || newtab ? "_blank" : undefined}
+      rel={external || newtab ? "noopener noreferrer" : undefined}
     >
       {#if isTranslatable}
         <Text section="Buttons" {text} />

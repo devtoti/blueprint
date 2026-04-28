@@ -17,12 +17,17 @@ const GRID = () => {
     const grid = document.querySelector("main")
     if (!grid) return initialGrid;
     const computedStyle = window.getComputedStyle(grid);
-    const columnGap = parseFloat(computedStyle.columnGap);
-    const columnWidth = parseFloat(
+    // Guard against styles not being ready yet (can result in NaN).
+    const columnGapRaw = parseFloat(computedStyle.columnGap);
+    const columnGap = Number.isFinite(columnGapRaw) ? columnGapRaw : 0;
+
+    const columnWidthRaw = parseFloat(
         computedStyle.gridTemplateColumns.split(" ")[2]
     );
+    const columnWidth = Number.isFinite(columnWidthRaw) ? columnWidthRaw : 0;
     const columns = computedStyle.getPropertyValue("grid-template-columns");
-    const padding = parseFloat(computedStyle.getPropertyValue("padding").split(" ")[1])
+    const paddingRaw = parseFloat(computedStyle.getPropertyValue("padding").split(" ")[1])
+    const padding = Number.isFinite(paddingRaw) ? paddingRaw : 0
     const gridData = {
         width: grid.clientWidth,
         widthNoPadding: grid.clientWidth - padding * 2,

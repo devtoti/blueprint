@@ -14,10 +14,10 @@
   onMount(() => {
     const banner = document.querySelector(".cta-banner") as HTMLElement;
     const rightHand = document.querySelector(
-      ".cta-banner .right-hand"
+      ".cta-banner .right-hand",
     ) as HTMLElement;
     const leftHand = document.querySelector(
-      ".cta-banner .left-hand"
+      ".cta-banner .left-hand",
     ) as HTMLElement;
 
     if (!banner || !rightHand || !leftHand) return;
@@ -49,9 +49,7 @@
       // Convert banner doc-position to viewport-position.
       const elementCenter = bannerTop - scrollY + bannerHeight / 2;
 
-      const distanceFromCenter = Math.abs(
-        viewportHeight / 2 - elementCenter
-      );
+      const distanceFromCenter = Math.abs(viewportHeight / 2 - elementCenter);
       const maxDistance = viewportHeight / 2;
 
       const ratio = Math.max(0, 1 - distanceFromCenter / maxDistance);
@@ -152,6 +150,7 @@
     .cta-text {
       margin-bottom: 0 !important;
       padding-bottom: 0 !important;
+      font-size: 2rem !important;
     }
     h3 {
       padding-bottom: 0.5rem;

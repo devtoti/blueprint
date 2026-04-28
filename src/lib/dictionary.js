@@ -47,16 +47,19 @@ export const dictionary = {
     },
     Home: {
         heading: {
-            en: "Hey, I'm Toti",
-            es: "¡Hola, soy Toti!",
+            en: "Hey, I'm Antonio!",
+            es: "¡Hola, soy Antonio!",
         },
         description: {
-            en: "Developer • Designer • Architect",
-            es: "Desarrollador • Diseñador • Arquitecto",
+            en: "UI Engineer — Design Systems & Frontend Architecture",
+            es: "UI Engineer — Sistemas de Diseño & Arquitectura Frontend",
         },
         subheading: {
-            en: "I help remote startups bridge the gap between design and frontend engineering for smoother user experiences, less team friction, and faster, higher-quality launches. I specialize in design systems, webapps and landing pages.",
-            es: "Ayudo a startups y empresas medianas a conectar el diseño y el desarrollo frontend a partir de una visión transdisciplinaria centrada en el usuario. Me especializo en sistemas de diseño, aplicaciones web y landing pages."
+            en: "I create scalable, accessible design systems and component libraries in React and TypeScript, focused on speed, consistency, and accessibility, fully meeting WCAG and ADA standards.",
+            es: "Diseño sistemas y librerías de componentes escalables y accesibles en React y TypeScript, enfocados en velocidad, consistencia y colaboración, cumpliendo plenamente con WCAG y ADA."
+       
+       
+
         },
     },
     Error: {
@@ -83,30 +86,30 @@ export const dictionary = {
     },
     Dev: {
         heading: {
-            en: "Development",
-            es: "Development",
+            en: "Frontend Architecture",
+            es: "Arquitectura Frontend",
         },
         description: {
-            en: "Modular websites & applications",
-            es: "Páginas y aplicaciones modulares",
+            en: "Component libraries & scalable UI systems",
+            es: "Librerías de componentes y sistemas UI escalables",
         },
         subheading: {
-            en: "I specialize in translating custom user interfaces into dynamic, functional and reusable components. I enjoy designing and developing with cutting-edge technologies like React, Svelte, TypeScript and Tailwind CSS.",
-            es: "Me especializo en traducir diseños de interfaces en código dinámico,funcional y reutilizable. Me apasiona mezclar el diseño de interfaces altamente personalizables con tecnologías como React, Svelte, TypeScript y Tailwind CSS.",
+            en: "I architect frontend systems that scale — from design tokens and component APIs to multi-theme implementations and versioned npm packages. My stack centers on React, TypeScript, Tailwind, and tools like Storybook and Chromatic for documentation and visual testing.",
+            es: "Diseño sistemas frontend que escalan — desde design tokens y APIs de componentes hasta implementaciones multi-tema y paquetes npm versionados. Mi stack se centra en React, TypeScript, Tailwind, y herramientas como Storybook y Chromatic para documentación y testing visual.",
         },
     },
     Design: {
         heading: {
-            en: "UI/UX Design",
-            es: "Diseño UI/UX",
+            en: "Design Systems",
+            es: "Sistemas de Diseño",
         },
         description: {
-            en: "Research • Wireframing • Prototyping • Testing",
-            es: "Investigación • Wireframes • Prototipos • Testing",
+            en: "Tokens • Components • Theming • Accessibility",
+            es: "Tokens • Componentes • Theming • Accesibilidad",
         },
         subheading: {
-            en: "Architecture has given me a strong foundation in design principles. These have been key when crafting exceptional user experiences and empathizing with the user.",
-            es: "La arquitectura me ha dado una sólida base en principios de diseño. Estos han sido clave para crear experiencias de usuario excepcionales y empatizar con el usuario mediante el User Centered Design (UCD).",
+            en: "I work at the intersection of design and engineering, defining design tokens, structuring component APIs, and building accessible (WCAG 2.1) interfaces. My architecture background gives me a systems-level perspective on how UI patterns compose and scale.",
+            es: "Trabajo en la intersección entre diseño e ingeniería — definiendo design tokens, estructurando APIs de componentes y construyendo interfaces accesibles (WCAG 2.1). Mi formación en arquitectura me da una perspectiva sistémica sobre cómo los patrones UI se componen y escalan.",
         },
     },
     Concept: {
@@ -133,8 +136,8 @@ export const dictionary = {
             es: "Agenda una llamada / escríbeme",
         },
         subheading: {
-            en: "I am currently working as a designer and frontend developer, so my availability is limited. If you have any particular request, please don't hesitate to contact me!",
-            es: "Actualmente me encuentro trabajando como diseñador y desarrollador frontend, por lo que mi disponibilidad es limitada. Si tienes alguna solicitud en particular, por favor, ¡no dudes en contactarme!",
+            en: "Looking for someone to own your design system, build a component library, or improve your frontend architecture? I'm open to contract work and collaborations: let's talk.",
+            es: "¿Buscas a alguien que se haga cargo de tu sistema de diseño, construya una librería de componentes o mejore tu arquitectura frontend? Estoy disponible para contratos y colaboraciones.",
         },
     },
     About: {
@@ -143,26 +146,26 @@ export const dictionary = {
             es: "Acerca de Blueprint",
         },
         description: {
-            en: "An architectural approach to web design",
-            es: "Un enfoque arquitectónico al diseño web",
+            en: "Where design systems meet frontend architecture",
+            es: "Donde los sistemas de diseño se encuentran con la arquitectura frontend",
         },
         subheading: {
-            en: "Originally conceived as personal project to create a new design system, Blueprint.dev ended up becoming a playground where I can experiment with new ideas and frontend technologies.",
-            es: "Originalmente concebido como un proyecto personal para crear un nuevo sistema de diseño, Blueprint.dev se convirtió en un sandbox experimental donde puedo experimentar con nuevas ideas y tecnologías de desarrollo frontend.",
+            en: "Blueprint started as a personal design system experiment and evolved into a sandbox for testing token-based theming, component APIs, and frontend architecture patterns at scale.",
+            es: "Blueprint comenzó como un experimento personal de sistemas de diseño y evolucionó en un sandbox para probar theming basado en tokens, APIs de componentes y patrones de arquitectura frontend a escala.",
         },
     },
     Marketing: {
         heading: {
-            en: "Digital marketing solutions",
-            es: "Soluciones digitales para marketing",
+            en: "Performance-driven UI",
+            es: "UI orientada a resultados",
         },
         description: {
-            en: "Antonio Ruiz – UI/UX - Frontend",
-            es: "Antonio Ruiz – UI/UX - Frontend",
+            en: "Antonio Ruiz – UI Engineer",
+            es: "Antonio Ruiz – UI Engineer",
         },
         subheading: {
-            en: "Experience in crafting lead-generation websites with persuasive UI/UX/UCD designs. I help small-businesses and startups find their brand identity and increase their digital presence.",
-            es: "Experiencia creando lead-generation websites con diseño UI/UX/UCD persuasivo. Facilito la presencia digital e identidad de marca para startups y negocios emergentes",
+            en: "Beyond design systems, I bring experience optimizing conversion funnels and building responsive, performance-focused interfaces. I apply A/B testing and UX analysis to align interface decisions with measurable business outcomes.",
+            es: "Más allá de los sistemas de diseño, cuento con experiencia optimizando embudos de conversión y construyendo interfaces responsivas orientadas al rendimiento. Aplico A/B testing y análisis UX para alinear decisiones de interfaz con resultados de negocio medibles.",
         },
     },
     ["work-experience"]: {
@@ -171,18 +174,18 @@ export const dictionary = {
             es: "Experiencia",
         },
         subheading: {
-            en: "I have worked as a frontend developer, UI/UX designer, architect, and digital illustrator for startups and small businesses. My approach to web development is based on the User Centered Design framework (UCD)",
-            es: "He trabajado como desarrollador frontend, diseñador UI/UX, arquitecto e ilustrador digital para startups y +100 clientes internacionales. Mi trayectoria y experiencia laboral han sido variadas durante los últimos años.",
+            en: "3+ years building and scaling design systems, component libraries, and frontend architecture for product teams. I collaborate closely with designers and engineers to ship consistent, high-quality interfaces.",
+            es: "3+ años construyendo y escalando sistemas de diseño, librerías de componentes y arquitectura frontend para equipos de producto. Colaboro estrechamente con diseñadores e ingenieros para entregar interfaces consistentes y de alta calidad.",
         },
     },
     ["services"]: {
         heading: {
-            en: "Digital Services",
-            es: "Servicios digitales",
+            en: "What I Deliver",
+            es: "Lo que ofrezco",
         },
         subheading: {
-            en: "My skills range all the way from UX research and design, to frontend development and backend integrations. I can handle most of the production process from initial concept to final delivery.",
-            es: "Mis habilidades abarcan desde la investigación UX y el diseño, hasta el desarrollo frontend y las integraciones backend. Puedo manejar la mayor parte del proceso de producción desde la concepción inicial hasta el lanzamiento final.",
+            en: "From design token architecture and Figma-to-code workflows, to documented component libraries and accessible UI implementations: I own the full design-to-engineering pipeline.",
+            es: "Desde arquitectura de design tokens y flujos Figma-to-code, hasta librerías de componentes documentadas e implementaciones UI accesibles — soy responsable del pipeline completo de diseño a ingeniería.",
         },
     },
     ["archui"]: {
@@ -207,22 +210,22 @@ export const dictionary = {
     },
     ["marketing"]: {
         heading: {
-            en: "Design strategies",
-            es: "Estrategias de diseño",
+            en: "How I work",
+            es: "Cómo trabajo",
         },
         subheading: {
-            en: "My approach to digital marketing leverages a unique combination of technical expertise, design thinking, and research methodology. I deliver comprehensive digital solutions from initial concept through implementation, employing proven strategies outlined below:",
-            es: "La aproximación al marketing digital que utilizo destaca en la combinación de habilidades técnicas, de diseño y de investigación para crear productos digitales de inicio a fin, de forma integral. Conoce algunas de mis estrategies:",
+            en: "My approach combines design thinking with frontend engineering rigor. I define token-based systems, build documented component libraries, and ensure UI implementations meet accessibility and performance standards from day one.",
+            es: "Mi enfoque combina design thinking con rigor de ingeniería frontend. Defino sistemas basados en tokens, construyo librerías de componentes documentadas y aseguro que las implementaciones UI cumplan estándares de accesibilidad y rendimiento desde el inicio.",
         },
     },
     ["skills"]: {
         heading: {
-            en: "Design & Development Duality",
-            es: "Enfoque dual desarrollo y diseño",
+            en: "Design Systems & Frontend Tooling",
+            es: "Sistemas de Diseño & Herramientas Frontend",
         },
         subheading: {
-            en: "This is a list of the technologies and tools I use most of the time. Hover over each skill to visualize how these technologies are wired together.",
-            es: "Este es un listado de las tecnologías y herramientas con las que trabajo constantemente. Pasa el cursor sobre cada habilidad para visualizar cómo estas tecnologías se relacionan entre sí.",
+            en: "The technologies and tools I use to build, document, and ship scalable UI systems. Hover over each skill to visualize how they connect across the design-to-code workflow.",
+            es: "Las tecnologías y herramientas que utilizo para construir, documentar y entregar sistemas UI escalables. Pasa el cursor sobre cada habilidad para visualizar cómo se conectan en el flujo de diseño a código.",
         },
     },
     ["projects-frontend"]: [
@@ -277,8 +280,8 @@ export const dictionary = {
             es: "Proyectos",
         },
         subheading: {
-            en: "A collection of my most notable projects when it comes to frontend development and UI/UX design.",
-            es: "Una colección de mis proyectos públicos más notables de desarrollo web y diseño UI/UX.",
+            en: "Selected work showcasing design systems, component libraries, and frontend architecture across real products.",
+            es: "Trabajo seleccionado que muestra sistemas de diseño, librerías de componentes y arquitectura frontend en productos reales.",
         },
     },
     ["projects-design"]: [
@@ -346,12 +349,12 @@ export const dictionary = {
             subheading: "UI Component Kit",
             url: "https://archui-website.netlify.app",
             figmaUrl: "https://www.figma.com/community/file/1585101937198168427/archui-design-system-v1-1-0",
-            image: "archui-preview.png",
+            image: "archui-preview.webp",
             description: {
                 en: "A React and Tailwind component library inspired by architectural blueprints. ArchUI is a flexible design system for prototyping and building web apps.",
                 es: "Librería de componentes hecha con React y Tailwind inspirada en planos arquitectónicos. ArchUI es un nuevo sistema de diseño flexible para prototipar y crear aplicaciones web.",
             },
-            tags: ["React", "TailwindCSS", "Storybook", "Chromatic", "Astro", "Svelte","Typescript", "Figma", "Design System", "UI Component Kit"],
+            tags: ["React", "TailwindCSS", "Storybook", "Chromatic", "Astro", "Svelte", "Typescript", "Figma", "Design System", "UI Component Kit"],
             bullets: [
                 {
                     title: {
@@ -384,7 +387,7 @@ export const dictionary = {
                     },
                 },
             ]
-        }, 
+        },
         {
             id: 6,
             number: "06",
@@ -392,7 +395,7 @@ export const dictionary = {
             subheading: "Landing Page",
             url: "https://mobilekangaroo.com",
             figmaUrl: "https://www.figma.com/design/dF4RjnxjxV0xF2gi8iMfXU/MobileKangaroo-Website-Revamp?node-id=0-1&t=U2HbEfk7Y2UhRWo1-1",
-            image: "mobilekangaroo-preview.png",
+            image: "mobilekangaroo-preview.webp",
             description: {
                 en: "Redesign of the MobileKangaroo landing page, a company certified by Apple specialized in the repair of electronic devices with 30+ stores in the United States.",
                 es: "Rediseño de la landing page de MobileKangaroo, una empresa certificada por la Apple especializada en la reparación de dispositivos electrónicos con 30+ tiendas en los Estados Unidos.",
@@ -435,7 +438,7 @@ export const dictionary = {
             number: "02",
             title: "365 Junkhaul",
             subheading: "Dashboard & Checkout App",
-            url: "https://365junkhaul.com/",
+            url: "https://365junkhaul.vercel.app/",
             figmaUrl: "https://www.figma.com/design/vdbpMHcBulF2nfpocoPgRu/Checkout-User-Flow?node-id=5-2805&t=ZOUJG1A25JOLO1ge-1",
             image: "365junkhaul-preview.png",
             description: {
@@ -483,7 +486,7 @@ export const dictionary = {
             subheading: "Website Design",
             url: "https://bb4md.com",
             figmaUrl: "https://www.figma.com/design/zG985mX5ZGboL0GvxWbVMU/BB4MD-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
-            image: "bb4md-preview.png",
+            image: "bb4md-preview.webp",
             description: {
                 en: "Redesign of the BB4MD landing page for a Canadian company selling illustrated books that motivate and teach new parents through parenting science.",
                 es: "Rediseño de la landing page de BB4MD, una empresa canadiense que vende libros ilustrados para motivar y enseñar a nuevos padres mediante la ciencia del new parenting.",
@@ -529,7 +532,7 @@ export const dictionary = {
             subheading: "Design System",
             url: "https://landing-pages-lime.vercel.app/",
             figmaUrl: "https://www.figma.com/design/4TdqqJPYD8Izdw9juaBbwQ/IKOL-Website-Revamp?m=auto&t=Rq2F6EOQRSZ11S3z-1",
-            image: "ikol-preview.png",
+            image: "ikol-preview.webp",
             description: {
                 en: "Revamp of the IKOL Coin landing page, an ecosystem of cryptocurrencies focused on influencer hiring through a decentralized payment system.",
                 es: "Revamp de la landing page de IKOL Coin, un ecosistema de criptomonedas enfocado a la contratación de influencers mediante un sistema de pago descentralizado.",
@@ -567,32 +570,67 @@ export const dictionary = {
                     }
                 },
             ],
-        }, 
-         {
+        },
+        {
             id: 1,
             number: "01",
             title: "Architecture Portfolio",
             subheading: "Computation in Architecture",
             url: 'https://www.bluelineatelier.com/portfolio',
             figmaUrl: null,
-            image: "architecture-portfolio-preview.png",
+            image: "architecture-portfolio.webp",
             description: {
                 en: "An interactive portfolio website showcasing my architectural journey with six projects developed using computational design tools such as 3D modeling, BIM, and rendering.",
                 es: "Portafolio interactivo de trabajo como arquitecto destacando seis proyectos desarrollados con un enfoque tecnológico-computacional como modelado 3D, BIM, y renderizado.",
             },
-            tags: ["Computation in Architecture", "AutoCAD", "Revit", "Rhino", "Grasshopper", "Affinity"],
             bullets: [
-            ]
+            ],
+            overview: "An interactive portfolio website showcasing my architectural journey with six projects developed using computational design tools such as 3D modeling, BIM, and rendering.",
+            context: "The journey began in 2019 when I was pursuing my Bachelor's degree in Architecture at UNAM. I aimed to design and print my own portfolio for an exchange program and various internships. Lacking expertise at the time, I took the initiative to learn coding and create simple static websites, with the aspiration of eventually hosting my portfolio online using HTML, CSS, and a bit of JavaScript. Ironically, although I acquired coding skills, I never managed to realize my project. Instead, I found myself working as a frontend developer and UI/UX designer on a diverse range of projects, except for my own. This is how the portfolio website was born.",
+            challenges: {
+                1: "The website needed to be responsive and mobile-friendly",
+                2: "Integrate with Strapi CMS and an external database to display the projects",
+                3: "Create a consistent design system for the website"
+            },
+            objectives: {
+                1: "Host an interactive online portfolio with my architectural projects",
+                2: "Display the projects in a visually appealing and engaging way",
+                3: "Ensure the website is accessible and easy to navigate",
+                4: "Ability to add new projects and update the website content using a headless CMS"
+            },
+            approach: {
+                1: "Design the printable portfolio layout using Affinity Publisher",
+                2: "Categorize the projects and produce all the necessary documentation and graphics",
+                3: "Create a consistent design system matching the printable version for the website",
+                4: "Translate all the data to the backend database using Strapi CMS",
+                5: "Link the Strapi Cloud deployment to TiDB Cloud for data storage and retrieval",
+                6: "Deploy the Nextjs website to Vercel"
+            },
+            results: {
+                1: "An easy-to-navigate portfolio website showcasing my architectural projects and work experience as a developer",
+                2: "A Nextjs website with a headless CMS backend for easy content management",
+                3: "An interactive browsing experience based on a rich Gallery optimized for mobile and desktop devices",
+            },
+            learnings: {
+                1: "Headless CMS deployment and management for a Nextjs application",
+                2: "Database security measures using TiDB Cloud and MySQL database files",
+                3: "ISR strategies for dynamic content and project pages"
+            },
+            nextSteps: {
+                1: "Improve the existing Gallery and Carrousel components to enhance the browsing experience",
+                2: "Add 3D modeling visualization to the projects using Three.js",
+                3: "Include projects made with computational design tools such as Rhino and Grasshopper"
+            }, tags: ["Nextjs", "Headless CMS", "TiDB Cloud", "MySQL", "Three.js", "Rhino", "Grasshopper", "Gallery", "Carrousel", "ISR", "Accessibility", "Performance"],
         }
     ],
     ["mid-banner"]: {
         title: {
-            en: "Add Blueprint to your project",
-            es: "Añade Blueprint a tu proyecto",
+            en: "Need a design system for your product?",
+            es: "¿Necesitas un sistema de diseño para tu producto?",
         },
         description: {
-            en: "Would you like to implement the design philosophy of Blueprint.dev in your project, or simply want to get some technical-projectual feedback?",
-            es: "¿Te interesaría implementar la filosofía de diseño de Blueprint.dev en tu proyecto, o simplemente te gustaría contar con alguna opinión técnica-proyectual?",
+            en: "Whether you need to build a component library from scratch, scale an existing design system, or improve your frontend architecture — I can help.",
+            es: "Ya sea que necesites construir una librería de componentes desde cero, escalar un sistema de diseño existente o mejorar tu arquitectura frontend, puedo ayudarte.",
         },
         primaryButton: {
             en: "Explore Blueprint",
@@ -610,7 +648,7 @@ export const dictionary = {
                 en: "Prototypes",
                 es: "Prototipos",
             },
-            img: "ui-designs.png",
+            img: "ui-designs.webp",
             description: {
                 en: "Handmade from mockups and then transferred to high fidelity",
                 es: "Hechos a mano a partir de mockups y posteriormente trasladados a alta fidelidad",
@@ -646,7 +684,7 @@ export const dictionary = {
                 en: "App Development",
                 es: "Desarrollo de Aplicaciones",
             },
-            img: "app-development.png",
+            img: "app-development.webp",
             description: {
                 en: "Translation of design to code, establishing first the technologies and the design system to use",
                 es: "Traducción de diseño a código, estableciendo primeramente las tecnologías y el sistema de diseño a utilizar",
@@ -802,12 +840,12 @@ export const dictionary = {
     ],
     ["cta-banner"]: {
         title: {
-            en: "Get in touch now",
-            es: "Ponte en contacto ahora",
+            en: "Let's build your UI foundation",
+            es: "Construyamos la base de tu UI",
         },
         description: {
-            en: "Whether you're interested in a project collaboration, or you need some technical or design consultancy, don't hesitate to contact me.",
-            es: "Si te interesa crear un proyecto conmigo, o si buscas alguna asesoría técnica personalizada, no dudes en contactarme.",
+            en: "Looking for a UI engineer to own your design system, establish frontend patterns, or ship a component library? Let's talk about what you need.",
+            es: "¿Buscas un UI engineer que se haga cargo de tu sistema de diseño, establezca patrones frontend o entregue una librería de componentes? Hablemos de lo que necesitas.",
         },
         primaryButton: {
             en: "Schedule a call",
@@ -924,12 +962,12 @@ export const dictionary = {
     },
     ["contact-banner"]: {
         title: {
-            en: "Don't forget to say hello!",
-            es: "No olvides saludarme",
+            en: "Let's talk design systems",
+            es: "Hablemos de sistemas de diseño",
         },
         description: {
-            en: "Schedule a quick video call with me if you want to discuss your next big project. Let's get to work!",
-            es: "Agenda una llamada rápida conmigo si quieres hablar de tu próximo gran proyecto. ¡Vamos a trabajar!",
+            en: "Have a design system challenge, a component library to build, or a frontend architecture to improve? Schedule a call and let's figure it out together.",
+            es: "¿Tienes un reto de sistema de diseño, una librería de componentes que construir o una arquitectura frontend que mejorar? Agenda una llamada y lo resolvemos juntos.",
         },
     }
 };

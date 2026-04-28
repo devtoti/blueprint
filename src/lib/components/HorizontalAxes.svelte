@@ -67,7 +67,7 @@
   .highlight-before,
   .highlight-after {
     position: absolute;
-    background: center center url("$lib/images/stripes-strong-2.png") repeat;
+    background: center center url("$lib/images/stripes-strong-2.webp") repeat;
     opacity: 0.75;
     background-size: 100px 100px;
     pointer-events: none;

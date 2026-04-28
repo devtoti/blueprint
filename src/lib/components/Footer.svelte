@@ -58,92 +58,82 @@
     </div>
   </span>
   <div class="footer-container">
-    <article class="nav-links">
-      <article
-        class="navigation-left"
-        role="navigation"
-        aria-label="Primary navigation links"
-      >
-        <ul>
-          <li>
-            <a href="/" class="arc-body-2"
-              ><Text section="navigation" text="home" /></a
-            >
-          </li>
-          <li>
-            <a href="/#work-experience" class="arc-body-2"
-              ><Text section="navigation" text="home-work-experience" /></a
-            >
-          </li>
-          <li>
-            <a href="/#projects" class="arc-body-2"
-              ><Text section="navigation" text="home-projects" /></a
-            >
-          </li>
-          <li>
-            <a href="/#skills" class="arc-body-2"
-              ><Text section="navigation" text="home-skills" /></a
-            >
-          </li>
-          <li>
-            <a href="/#services" class="arc-body-2"
-              ><Text section="navigation" text="home-services" /></a
-            >
-          </li>
-          <!-- <a href="/mystery" class="arc-body-2">Mystery Box</a> -->
-        </ul>
-      </article>
-      <article
-        class="navigation-right"
-        role="navigation"
-        aria-label="Secondary navigation links"
-      >
-        <ul>
-          <li>
-            <a href="/about" class="arc-body-2">Blueprint</a>
-          </li>
-          <li>
-            <a href="/dev" class="arc-body-2"
-              ><Text section="navigation" text="development" /></a
-            >
-          </li>
-          <li>
-            <a href="/design" class="arc-body-2"
-              ><Text section="navigation" text="design" /></a
-            >
-          </li>
-          <li>
-            <a href="/concept" class="arc-body-2"
-              ><Text section="navigation" text="concept" /></a
-            >
-          </li>
-          <li>
-            <a href="/contact" class="arc-body-2"
-              ><Text section="navigation" text="contact" /></a
-            >
-          </li>
-          <li>
-            <a href="/about" class="arc-body-2"
-              ><Text section="navigation" text="about" /></a
-            >
-          </li>
-        </ul>
-      </article>
-    </article>
+    <nav class="navigation-left" aria-label="Primary navigation links">
+      <ul>
+        <li>
+          <a href="/" class="arc-body-2"
+            ><Text section="navigation" text="home" /></a
+          >
+        </li>
+        <li>
+          <a href="/#work-experience" class="arc-body-2"
+            ><Text section="navigation" text="home-work-experience" /></a
+          >
+        </li>
+        <li>
+          <a href="/#projects" class="arc-body-2"
+            ><Text section="navigation" text="home-projects" /></a
+          >
+        </li>
+        <li>
+          <a href="/#skills" class="arc-body-2"
+            ><Text section="navigation" text="home-skills" /></a
+          >
+        </li>
+        <li>
+          <a href="/#services" class="arc-body-2"
+            ><Text section="navigation" text="home-services" /></a
+          >
+        </li>
+        <!-- <a href="/mystery" class="arc-body-2">Mystery Box</a> -->
+      </ul>
+    </nav>
+    <nav class="navigation-right" aria-label="Secondary navigation links">
+      <ul>
+        <li>
+          <a href="/about" class="arc-body-2">Blueprint</a>
+        </li>
+        <li>
+          <a href="/dev" class="arc-body-2"
+            ><Text section="navigation" text="development" /></a
+          >
+        </li>
+        <li>
+          <a href="/design" class="arc-body-2"
+            ><Text section="navigation" text="design" /></a
+          >
+        </li>
+        <li>
+          <a href="/concept" class="arc-body-2"
+            ><Text section="navigation" text="concept" /></a
+          >
+        </li>
+        <li>
+          <a href="/contact" class="arc-body-2"
+            ><Text section="navigation" text="contact" /></a
+          >
+        </li>
+        <li>
+          <a href="/about" class="arc-body-2"
+            ><Text section="navigation" text="about" /></a
+          >
+        </li>
+      </ul>
+    </nav>
     <article class="plan-info techs">
       <span class="arc-h6"><Text section="footer-legend" text="techs" /></span>
       <p class="arc-body-3">Svelte, TypeScript, Figma</p>
     </article>
     <article class="plan-info proj">
-      <h6 class="arc-h6"><Text section="footer-legend" text="project" /></h6>
+      <h2 class="arc-h6"><Text section="footer-legend" text="project" /></h2>
       <p class="arc-body-3">Frontend & Design Portfolio</p>
     </article>
     <article class="plan-info loc">
-      <h6 class="arc-h6"><Text section="footer-legend" text="location" /></h6>
+      <h2 class="arc-h6"><Text section="footer-legend" text="location" /></h2>
       <p class="arc-body-3">CDMX, México</p>
     </article>
     <article class="plan-info scale">
-      <h6 class="arc-h6"><Text section="footer-legend" text="scale" /></h6>
+      <h2 class="arc-h6"><Text section="footer-legend" text="scale" /></h2>
       <div id="scale">
         <div class="scale-top">
           <span class="arc-h6"></span>
@@ -169,19 +159,19 @@
       </div>
     </article>
     <article class="plan-info rev">
-      <h6 class="arc-h6">
+      <h2 class="arc-h6">
         <Text section="footer-legend" text="last-update" />
-      </h6>
+      </h2>
       <p class="arc-body-3">2025-10-15</p>
     </article>
     <article class="plan-info collab">
-      <h6 class="arc-h6">
+      <h2 class="arc-h6">
         <Text section="footer-legend" text="collaborators" />
-      </h6>
+      </h2>
       <p class="arc-body-3">@devtoti</p>
     </article>
     <article class="plan-info author">
-      <h6 class="arc-h6"><Text section="footer-legend" text="author" /></h6>
+      <h2 class="arc-h6"><Text section="footer-legend" text="author" /></h2>
       <p class="arc-body-3">Antonio Ruiz</p>
     </article>
     <article class="plan-info v">
@@ -209,7 +199,7 @@
     color: var(--text-primary) !important;
   }
   a {
-    padding: 0.5rem 0.5rem;
+    padding: 0.25rem 0.5rem;
   }
   .footer-title {
     display: flex;
@@ -219,6 +209,9 @@
     grid-column: 2 / -2;
     grid-row: 2 / 3;
     padding-top: 1rem;
+    h2 {
+      text-align: center;
+    }
     .icons {
       padding-top: 0.5rem;
       display: flex;
@@ -386,45 +379,41 @@
   }
   .navigation-left,
   .navigation-right {
-    width: 140px;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: start;
   }
   ul {
     list-style: none;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    width: 100%;
     a {
-      text-decoration: none;
+      text-decoration: underline;
       color: var(--text-tertiary);
-      padding: 0;
-      justify-content: flex-end;
+      display: flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 0.5rem;
       &:hover {
         color: var(--bleu-600) !important;
         font-weight: 500;
       }
     }
   }
-  .navigation-left ul {
-    a {
-      justify-content: flex-end;
-    }
+  .navigation-left ul a {
+    justify-content: flex-end;
+    text-align: right;
   }
-  .navigation-right ul {
-    a {
-      justify-content: flex-start;
-    }
+  .navigation-right ul a {
+    justify-content: flex-start;
   }
   .nav-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    margin: 1rem 0;
-    width: 100%;
-    grid-column: 1 / -1;
+    display: contents;
   }
   @media (min-width: 480px) {
     .footer-container {

@@ -5,20 +5,22 @@
   import ExternalIcon from "$lib/icons/PajamasExternalLink.svelte";
   let { project } = $props();
 
-  const imageContext = import.meta.glob("$lib/images/*.{svg,png}", {
+  const imageContext = import.meta.glob("$lib/images/*.{svg,png,webp}", {
     eager: true,
     query: "?url",
     import: "default",
   }) as Record<string, string>;
 </script>
 
-<div class="new-project-card" tabindex="0" role="button">
+<div class="new-project-card">
   <div class="project-image-container">
     <img
       src={imageContext[`/src/lib/images/${project.image}`]}
       alt={project.title}
       loading="lazy"
       draggable="false"
+      width="640"
+      height="384"
     />
   </div>
 

@@ -1,6 +1,5 @@
 <script lang="ts">
   import { injectAnalytics } from "@vercel/analytics/sveltekit";
-  import LogRocket from "logrocket";
   import "$lib/fonts/fonts.css";
   import { fade } from "svelte/transition";
   import { onMount, setContext } from "svelte";
@@ -11,7 +10,6 @@
   import { page } from "$app/stores";
   import { GRID, initialGrid } from "$lib/utils/gridData";
   import {
-    injectCalendly,
     establishTheme,
     handleAnchorClick,
     handleHashOnLoad,
@@ -39,11 +37,16 @@
   onMount(() => {
     pageHasLoaded = true;
     injectAnalytics();
-    //webdev
-    // LogRocket.init("devtoti/blueprintdev");
-    //sketches
-    LogRocket.init("lwg6hv/blueprint");
-    injectCalendly();
+    const initLogRocket = () => {
+      import("logrocket").then(({ default: LogRocket }) => {
+        LogRocket.init("lwg6hv/blueprint");
+      });
+    };
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(initLogRocket);
+    } else {
+      setTimeout(initLogRocket, 2000);
+    }
     establishTheme(theme);
     document.addEventListener("click", handleAnchorClick);
     handleHashOnLoad();
@@ -90,7 +93,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/src/lib/images/grainy-texture.png"),
+    background-image: url("/src/lib/images/grainy-texture.webp"),
       url("/src/lib/images/iso-grid.svg");
     background-size:
       64px 64px,

@@ -2,7 +2,7 @@
   import Heading from "$lib/components/Heading.svelte";
   import Text from "$lib/components/Text.svelte";
   import { dictionary as services } from "$lib/dictionary";
-  const imageContext = import.meta.glob("$lib/images/*.png", {
+  const imageContext = import.meta.glob("$lib/images/*.{png,webp,svg}", {
     eager: true,
     query: "?url",
     import: "default",
@@ -97,12 +97,16 @@
     <img
       src={imageContext[`/src/lib/images/${activeDesign.img}`]}
       alt="Design"
+      width="334"
+      height="520"
     />
   </div>
   <div class="services-illustration-2 development">
     <img
       src={imageContext[`/src/lib/images/${activeFrontend.img}`]}
       alt="Development"
+      width="333"
+      height="520"
     />
   </div>
 </article>
